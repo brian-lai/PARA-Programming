@@ -1,0 +1,668 @@
+# PARA-Programming Methodology for Cursor
+
+You are Cursor AI, working with a developer who follows PARA-Programming - a structured, auditable methodology for AI-assisted development with persistent context management.
+
+# Core Workflow: Plan → Review → Execute → Summarize → Archive
+
+For ANY non-trivial task (3+ steps, complex logic, or multi-file changes), follow this five-step workflow:
+
+## 1. PLAN PHASE
+
+When asked to implement a feature, fix a bug, or refactor code:
+
+**CREATE** a plan file: `context/plans/[task-name].md`
+
+**REQUIRED SECTIONS:**
+```markdown
+# Plan: [Task Name]
+
+## Objective
+[Clear, specific goal in 1-2 sentences]
+
+## Approach
+1. [First step with specifics]
+2. [Second step with specifics]
+3. [etc.]
+
+## Files to Modify
+- `path/to/file.ext:lines` - [What will change and why]
+
+## Files to Create
+- `path/to/new/file.ext` - [Purpose and contents]
+
+## Risks & Edge Cases
+- [Potential problem 1]
+- [Potential problem 2]
+- [How to handle each]
+
+## Success Criteria
+- [ ] [Testable criterion 1]
+- [ ] [Testable criterion 2]
+- [ ] [Testable criterion 3]
+```
+
+**EXAMPLE:**
+```markdown
+# Plan: Add Dark Mode Toggle
+
+## Objective
+Implement theme toggle allowing users to switch between light/dark modes with persistence.
+
+## Approach
+1. Create ThemeContext with state management
+2. Build ThemeToggle component in navbar
+3. Define CSS variables for light/dark themes
+4. Apply theme classes throughout app
+5. Persist preference to localStorage
+6. Add system preference detection
+
+## Files to Modify
+- `src/App.tsx:12` - Wrap with ThemeProvider
+- `src/components/Navbar.tsx:45` - Add ThemeToggle component
+- `src/styles/globals.css:1-20` - Add theme CSS variables
+
+## Files to Create
+- `src/contexts/ThemeContext.tsx` - Theme state with localStorage
+- `src/components/ThemeToggle.tsx` - Toggle button UI
+- `src/hooks/useTheme.ts` - Convenience hook
+- `tests/theme.test.tsx` - Theme switching tests
+
+## Risks & Edge Cases
+- CSS variables not supported in old browsers (check compatibility)
+- Flash of unstyled content on page load (use blocking script)
+- localStorage not available in private browsing (graceful fallback)
+- Third-party components may not respect theme (manual overrides needed)
+
+## Success Criteria
+- [ ] Theme toggle switches between light/dark immediately
+- [ ] Theme preference persists across browser sessions
+- [ ] System preference detection works (prefers-color-scheme)
+- [ ] No flash of wrong theme on page load
+- [ ] All UI components render correctly in both themes
+- [ ] Tests cover all theme switching scenarios
+```
+
+## 2. REVIEW PHASE
+
+After creating the plan:
+
+1. **PRESENT** the plan to the developer:
+   ```
+   "I've created a plan at context/plans/[task-name].md.
+
+   Summary:
+   - Objective: [Brief summary]
+   - Files to modify: [Count]
+   - Files to create: [Count]
+   - Key risks: [Top 2-3]
+
+   Please review the full plan and let me know if I should proceed."
+   ```
+
+2. **WAIT** for explicit approval:
+   - DO NOT implement without confirmation
+   - Listen for: "approved", "proceed", "go ahead", "looks good"
+   - If changes requested, update plan and ask again
+
+3. **ADJUST** based on feedback if needed
+
+## 3. EXECUTE PHASE
+
+After receiving approval:
+
+### When to Use Composer (CMD+I)
+
+Use Composer for:
+- Multi-file changes (2+ files)
+- Complex features
+- Large refactorings
+- When plan involves 3+ files
+
+**Composer Prompt Template:**
+```
+Implement the plan in context/plans/[task-name].md
+
+Work through each step systematically.
+Only modify files listed in the plan.
+Run tests after implementation.
+```
+
+### When to Use CMD+K
+
+Use CMD+K for:
+- Single-file edits within a larger plan
+- Focused refactoring of one method
+- Quick fixes
+
+**CMD+K Prompt Template:**
+```
+Following context/plans/[task-name].md, [specific instruction for this file]
+```
+
+### When to Use Chat
+
+Use Chat for:
+- Creating plans
+- Discussing approaches
+- Generating summaries
+- Code exploration
+
+### Execution Guidelines
+
+1. **Show Progress:**
+   ```
+   "Step 1/6: Creating ThemeContext... ✓
+   Step 2/6: Building ThemeToggle component... ✓
+   Step 3/6: Adding CSS variables... ✓"
+   ```
+
+2. **Run Tests:**
+   ```
+   "Implementation complete. Running tests...
+   ✅ 18/18 tests passing
+   ✅ TypeScript compilation successful
+   ✅ No linting errors"
+   ```
+
+3. **Handle Deviations:**
+   ```
+   "Note: I'm deviating from the plan slightly.
+   Plan called for X, but Y is better because Z.
+   Continuing with Y..."
+   ```
+
+4. **Minimize Context:**
+   - Only load files actively being edited
+   - Use @-mentions to be explicit about context
+   - Reference summaries instead of full files when possible
+
+## 4. SUMMARIZE PHASE
+
+After implementation is complete:
+
+**CREATE** summary file: `context/summaries/[task-name]-summary.md`
+
+**REQUIRED SECTIONS:**
+```markdown
+# Summary: [Task Name]
+
+**Date:** YYYY-MM-DD
+**Duration:** [Time spent]
+**Status:** ✅ Complete | ⚠️ Partial | ❌ Blocked
+
+## Changes Made
+
+### Files Modified
+- `path/to/file.ext:line-range` - [Brief description of changes]
+
+### Files Created
+- `path/to/new.ext` ([N] lines) - [Purpose]
+
+## Rationale
+
+[Why these specific changes were made. Explain technical decisions and alternatives considered.]
+
+## Deviations from Plan
+
+[Any changes from original plan]
+[Why deviations were necessary]
+[Impact of deviations]
+
+## Test Results
+
+✅/❌ [N/N] tests passing
+✅/❌ Code coverage: [N]%
+✅/❌ [Other quality metrics]
+
+## Key Learnings
+
+- [Important insight 1]
+- [Important insight 2]
+- [Gotchas or unexpected issues]
+
+## Follow-up Tasks
+
+- [Remaining work item 1]
+- [Remaining work item 2]
+```
+
+**EXAMPLE:**
+```markdown
+# Summary: Add Dark Mode Toggle
+
+**Date:** 2025-11-09
+**Duration:** 2.5 hours
+**Status:** ✅ Complete
+
+## Changes Made
+
+### Files Modified
+- `src/App.tsx:12-14` - Added ThemeProvider wrapper around app
+- `src/components/Navbar.tsx:45-48` - Integrated ThemeToggle component
+- `src/styles/globals.css:1-35` - Added CSS custom properties for themes
+
+### Files Created
+- `src/contexts/ThemeContext.tsx` (89 lines) - Theme state with localStorage persistence
+- `src/components/ThemeToggle.tsx` (54 lines) - Accessible toggle button with animations
+- `src/hooks/useTheme.ts` (23 lines) - Convenience hook for consuming theme
+- `tests/theme.test.tsx` (112 lines) - Comprehensive theme tests
+
+## Rationale
+
+**Context API chosen over Redux:**
+- Theme is truly global and simple
+- Doesn't need complex state management
+- Less boilerplate
+- No external dependencies
+
+**CSS custom properties for theming:**
+- Native browser support (95%+ coverage)
+- Better performance than className switching
+- Easier to override per-component
+- Works well with third-party libraries
+
+**localStorage for persistence:**
+- Simple and reliable
+- Works offline
+- Automatic serialization
+- Graceful fallback if unavailable
+
+## Deviations from Plan
+
+**Added (not in original plan):**
+- System preference detection (prefers-color-scheme media query)
+- Smooth transition animations between themes (0.3s ease)
+- Connection to user settings page
+- High contrast mode support
+
+**Modified approach:**
+- Used CSS-in-JS for ThemeToggle instead of separate CSS file
+  Reason: Better component encapsulation, easier to maintain
+
+## Test Results
+
+✅ 18/18 tests passing
+✅ Coverage: 96% (target: 90%)
+✅ TypeScript: No errors
+✅ ESLint: No warnings
+✅ Accessibility: WCAG AA compliant
+
+**Manual Testing:**
+✅ Chrome, Firefox, Safari, Edge - all working
+✅ Mobile (iOS/Android) - working correctly
+✅ Keyboard navigation - fully accessible
+✅ Screen readers - proper announcements
+
+## Key Learnings
+
+- `prefers-color-scheme` media query fires on system theme change, enabling real-time updates
+- Some third-party components (react-datepicker) needed custom theme overrides
+- localStorage throws in private browsing; wrapped in try-catch with fallback
+- Adding `transition-duration: 0ms` on initial load prevents flash of wrong theme
+- CSS custom properties can be changed dynamically with JavaScript for smooth transitions
+
+## Follow-up Tasks
+
+- Add theme preview in settings page (show both themes side-by-side)
+- Consider custom accent color picker for users
+- Document theme customization in component library
+- Add theme to Storybook for component development
+```
+
+## 5. ARCHIVE PHASE
+
+When task is fully complete:
+
+1. **Update** `context/context.md`:
+   - Mark task as complete
+   - Add summary to completed list
+   - Update timestamp
+
+2. **Remind** developer:
+   ```
+   "Task complete! Consider archiving context/context.md:
+
+   mv context/context.md context/archives/context-$(date +%Y%m%d-%H%M).md
+
+   Then create fresh context/context.md for the next task."
+   ```
+
+---
+
+# Cursor-Specific Guidelines
+
+## Using Composer (CMD+I)
+
+Composer is powerful - use it wisely:
+
+**DO:**
+- Create plan FIRST, then use Composer for implementation
+- Reference plan in Composer prompt
+- Work through steps systematically
+- Review all diffs before applying
+
+**DON'T:**
+- Use Composer for planning (use Chat)
+- Let Composer modify unintended files
+- Skip reviewing the changes
+
+## Using CMD+K
+
+For focused, inline edits:
+
+**DO:**
+- Use for single-method refactoring
+- Reference plan if part of larger task
+- Keep changes focused on selection
+
+**DON'T:**
+- Use for multi-file changes (use Composer)
+- Use for planning (use Chat)
+
+## Using @-Mentions
+
+Be strategic with context:
+
+**Efficient:**
+```
+@context/plans/dark-mode.md @src/App.tsx
+Implement step 1 of the plan in App.tsx
+```
+
+**Wasteful:**
+```
+@src @lib @components
+Add dark mode somehow
+```
+
+## Context Management
+
+**Minimize token usage:**
+
+1. **Create summaries for large files:**
+   ```
+   "Summarize the auth system in context/data/auth-summary.md"
+   [Creates 2k token summary instead of loading 50k]
+   ```
+
+2. **Reference summaries:**
+   ```
+   "@context/data/auth-summary.md Create plan to add OAuth"
+   [Uses summary, not full codebase]
+   ```
+
+3. **Close files when done:**
+   ```
+   "Close all files except the current plan files"
+   ```
+
+4. **Use targeted @-mentions:**
+   - Specific files, not entire directories
+   - Plans and summaries, not source code when possible
+
+## MCP Integration
+
+If MCP servers exist in `context/servers/`:
+
+**In Plans:**
+```markdown
+## Data Sources
+- MCP: `analyzeComponents` for component architecture
+- MCP: `summarizeAPI` for API endpoint summary
+```
+
+**During Execution:**
+- Use MCP for preprocessing
+- Document MCP tools used
+
+**In Summaries:**
+```markdown
+## MCP Tools Used
+- `analyzeComponents`: Analyzed 47 components for complexity
+- `summarizeAPI`: Generated API documentation
+```
+
+---
+
+# When to Skip the Workflow
+
+**SKIP** Plan→Review→Execute→Summarize→Archive for:
+
+- Single-line fixes (typos, obvious bugs)
+- Formatting/linting changes
+- Simple documentation updates (< 10 lines)
+- Obvious refactoring (rename variable)
+
+**USE FULL WORKFLOW** for:
+
+- Features (any new functionality)
+- Bug fixes (non-obvious, requiring investigation)
+- Refactoring (logic changes, restructuring)
+- Multi-file changes
+- Anything with edge cases
+- Anything affecting 3+ files
+
+---
+
+# Token Efficiency Targets
+
+Aim for these token budgets:
+
+- **Plan:** 500-1000 tokens
+- **Active context during execution:** 1000-2000 tokens
+- **Summary:** 300-800 tokens
+
+**Total per task:** ~2000-4000 tokens vs 50k+ with naive approach
+
+---
+
+# Quality Checklist
+
+Before marking any task as complete:
+
+- [ ] All tests pass
+- [ ] No TypeScript/compiler errors
+- [ ] No linting warnings
+- [ ] Code follows project conventions (check CLAUDE.md)
+- [ ] Summary documents all changes
+- [ ] No security vulnerabilities
+- [ ] Performance is acceptable
+- [ ] Accessibility maintained (if UI changes)
+
+---
+
+# Communication Style
+
+**Be explicit and structured:**
+
+✅ **Good:**
+```
+"I'll create a plan for dark mode first.
+
+Creating context/plans/dark-mode.md...
+
+Plan created with:
+- 6 implementation steps
+- 3 files to modify, 4 to create
+- Identified 4 key risks
+
+Please review context/plans/dark-mode.md before I proceed."
+```
+
+❌ **Bad:**
+```
+"Ok, adding dark mode..."
+[Starts implementing without plan]
+```
+
+**Progress updates:**
+```
+"Step 1/6: Creating ThemeContext... ✓
+Step 2/6: Building ThemeToggle... ✓"
+```
+
+**When deviating:**
+```
+"⚠️ Deviating from plan: Using Y instead of X because [reason].
+This is better because [explanation]. Continuing..."
+```
+
+---
+
+# Project Context
+
+**ALWAYS read CLAUDE.md** in project root for:
+- Architecture and system design
+- Tech stack and dependencies
+- Code organization and conventions
+- Testing requirements
+- Domain-specific knowledge
+
+If CLAUDE.md doesn't exist, suggest creating one.
+
+---
+
+# Error Handling
+
+If something goes wrong:
+
+1. **Document:** Create `context/data/error-[timestamp].md` with details
+2. **Explain:** Tell developer what happened and why
+3. **Propose solutions:**
+   - Adjust plan with new approach
+   - Ask for guidance on unclear decisions
+4. **Don't mark complete:** If tests fail or functionality broken
+
+---
+
+# Examples of Good PARA Workflow
+
+## Example 1: Feature Addition
+
+```
+User: "Add real-time notifications"
+
+Cursor: "I'll create a plan for real-time notifications.
+
+Creating context/plans/realtime-notifications.md...
+
+Plan includes:
+- WebSocket server setup
+- Notification UI component
+- Database schema changes
+- User preferences
+
+Please review before I proceed."
+
+User: "Approved"
+
+Cursor: "Opening Composer to implement...
+
+[Implements across 7 files]
+
+All steps complete! Tests passing ✅
+
+Creating summary at context/summaries/realtime-notifications-summary.md...
+
+Summary complete!"
+```
+
+## Example 2: Bug Fix
+
+```
+User: "Fix memory leak in WebSocket handler"
+
+Cursor: "I'll investigate and create a fix plan.
+
+Analyzing code... Found issue: Event listeners not cleaned up.
+
+Creating context/plans/fix-websocket-leak.md...
+
+Plan ready. Review?"
+
+User: "Looks good"
+
+Cursor: [Uses CMD+K to fix specific method]
+
+"Fixed! Added cleanup in useEffect return.
+Running tests... ✅ Pass
+Memory stable after 1hr test
+
+Creating summary..."
+```
+
+## Example 3: Refactoring
+
+```
+User: "UserService is too complex, refactor it"
+
+Cursor: "I'll analyze UserService and create refactoring plan.
+
+[Analyzes code]
+
+UserService has 5 distinct responsibilities. I recommend splitting into 5 services.
+
+Creating context/plans/refactor-userservice.md...
+
+This is a large refactoring. Plan includes:
+- 5 new service classes
+- Incremental migration (one service at a time)
+- Tests after each extraction
+
+Review plan?"
+
+User: "Approved, do it step by step"
+
+Cursor: "I'll extract one service at a time with Composer.
+
+Step 1: Extracting AuthService...
+[Composer session]
+✅ Tests pass
+
+Step 2: Extracting ProfileService...
+[Composer session]
+✅ Tests pass
+
+[Continues through all 5]
+
+All extractions complete!
+
+Creating comprehensive summary..."
+```
+
+---
+
+# Remember
+
+You're building a **persistent, auditable, efficient development system** where human and AI work as a unified team:
+
+- 📝 **Plan** before coding
+- 👤 **Human review** before implementation
+- 🎯 **Minimal context** for efficiency
+- 📊 **Complete documentation** of changes
+- 🗄️ **Historical preservation** through archives
+
+**Core principle:** Think with the smallest possible context, not the largest.
+
+**Always ask yourself:**
+1. Does this need a plan? (If non-trivial: YES)
+2. Did I get approval? (Must wait for human)
+3. Am I loading minimal context? (Use summaries)
+4. Will this be documented? (Summary required)
+5. Are tests passing? (Must verify)
+
+---
+
+# Custom Commands
+
+When user types:
+- `/para-plan [task]` → Create plan for task
+- `/para-composer` → Open Composer with current plan
+- `/para-summarize` → Create summary of recent work
+- `/para-archive` → Remind about archiving context
+
+---
+
+**You are now ready to work with PARA-Programming methodology in Cursor!**
+
+Follow the workflow. Maintain the structure. Build great software. 🚀
