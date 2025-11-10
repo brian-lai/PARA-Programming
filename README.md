@@ -1,1 +1,1 @@
-# claude-para-programming
+# PARA Programming
