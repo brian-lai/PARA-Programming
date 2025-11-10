@@ -12,6 +12,7 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 - [The PARA Structure](#the-para-structure)
 - [The Workflow Loop](#the-workflow-loop)
 - [Getting Started](#getting-started)
+- [IDE & Agent Setup](#ide--agent-setup)
 - [Token Efficiency & MCP Integration](#token-efficiency--mcp-integration)
 - [Examples](#examples)
 - [Best Practices](#best-practices)
@@ -424,6 +425,74 @@ The AI will:
 3. Execute the plan
 4. Write a summary in `context/summaries/`
 5. Archive the context
+
+---
+
+## IDE & Agent Setup
+
+PARA-Programming works with **any AI coding assistant**. The methodology remains consistent—only the setup varies.
+
+### Supported AI Assistants
+
+| Agent | IDE Support | PARA Compatibility | Configuration |
+|-------|-------------|-------------------|---------------|
+| **GitHub Copilot** | VSCode, JetBrains, Neovim | ⭐⭐⭐ Good | [Setup Guide](examples/agent-configs/github-copilot-instructions.md) |
+| **Cursor** | Standalone | ⭐⭐⭐⭐⭐ Excellent | [Setup Guide](examples/agent-configs/cursor-rules.md) |
+| **JetBrains AI** | All JetBrains IDEs | ⭐⭐⭐⭐ Very Good | [Setup Guide](examples/agent-configs/jetbrains-ai-instructions.md) |
+| **Continue.dev** | VSCode, JetBrains | ⭐⭐⭐⭐⭐ Excellent | [Universal Guide](AGENT-INSTRUCTIONS.md) |
+| **Claude Code** | CLI | ⭐⭐⭐⭐⭐ Excellent | Uses global `~/.claude/CLAUDE.md` |
+
+### Quick Setup
+
+**1. Choose your AI assistant from the table above**
+
+**2. Copy the appropriate configuration file:**
+
+```bash
+# For GitHub Copilot (VSCode)
+mkdir -p .github
+cp examples/agent-configs/github-copilot-instructions.md .github/copilot-instructions.md
+
+# For Cursor
+cp examples/agent-configs/cursor-rules.md .cursorrules
+
+# For JetBrains AI
+mkdir -p .idea
+cp examples/agent-configs/jetbrains-ai-instructions.md .idea/ai-instructions.md
+```
+
+**3. Initialize PARA structure** (see [Getting Started](#getting-started) above)
+
+**4. Test with a simple task:**
+
+```
+You: "Create a plan for adding a health check endpoint"
+AI: [Should create context/plans/health-check.md and wait for approval]
+```
+
+### Universal Agent Instructions
+
+For agents not listed above, or for understanding how to adapt PARA-Programming to any tool:
+
+📖 **[Read the Universal Agent Instructions →](AGENT-INSTRUCTIONS.md)**
+
+This comprehensive guide covers:
+- How to implement PARA-Programming with any AI assistant
+- Agent compatibility matrix
+- Workflow adaptations for different agent capabilities
+- Platform-specific features and workarounds
+- Examples for each major AI coding assistant
+
+### Key Principle: Methodology First, Tools Second
+
+**PARA-Programming is tool-agnostic.** Whether you use:
+- GitHub Copilot's chat interface
+- Cursor's Composer mode
+- JetBrains AI's code generation
+- Continue.dev's MCP integration
+- Or any other AI assistant
+
+...the five-step workflow (Plan → Review → Execute → Summarize → Archive) remains the same. Only the implementation details change.
 
 ---
 
