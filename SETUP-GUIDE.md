@@ -4,167 +4,27 @@
 
 ---
 
-## 🎯 Choose Your Path
+## 🎯 Choose Your Guide
 
-Select your AI assistant to get started:
+There are guides for the three most popular AI assistants. Each guide includes complete setup instructions, templates, and examples:
+
+| AI Assistant | Where to Go |
+|--------------|-------------|
+| 🤖 **Claude Code** (CLI) | **[→ Claude Guide & Quickstart](claude/)** |
+| ✨ **GitHub Copilot** (VSCode, JetBrains, Neovim) | **[→ Copilot Guide & Quickstart](copilot/)** |
+| 🔮 **Cursor** (Standalone IDE) | **[→ Cursor Guide & Quickstart](cursor/)** |
+
+---
+
+## Other AI Assistants (Unofficial)
+
+Using a different tool? Here are quick setup instructions for other popular AI assistants:
 
 | If you use... | Then go to... |
 |---------------|---------------|
-| 🤖 **GitHub Copilot** (VSCode, JetBrains) | [GitHub Copilot Setup](#github-copilot-setup) |
-| 🔮 **Cursor IDE** | [Cursor Setup](#cursor-setup) |
 | 🧠 **JetBrains AI Assistant** | [JetBrains Setup](#jetbrains-setup) |
 | 🔄 **Continue.dev** | [Continue.dev Setup](#continuedev-setup) |
-| 💻 **Claude Code CLI** | [Claude Code Setup](#claude-code-setup) |
 | ❓ **Other or unsure** | [Universal Setup](#universal-setup) |
-
----
-
-## GitHub Copilot Setup
-
-### Prerequisites
-- GitHub Copilot subscription
-- VSCode or JetBrains IDE installed
-
-### Installation
-
-```bash
-# Navigate to your project
-cd your-project/
-
-# Create context directory structure
-mkdir -p context/{data,plans,summaries,archives,servers}
-
-# Copy configuration file
-mkdir -p .github
-curl -o .github/copilot-instructions.md \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/examples/agent-configs/github-copilot-instructions.md
-
-# Initialize context.md
-cat > context/context.md << 'EOF'
-# Current Work Summary
-
-Ready to start using PARA-Programming with GitHub Copilot.
-
----
-
-```json
-{
-  "active_context": [],
-  "completed_summaries": [],
-  "last_updated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-}
-```
-EOF
-
-# Create project CLAUDE.md
-cat > CLAUDE.md << 'EOF'
-# Project Name
-
-> **Workflow Methodology:** Follow `.github/copilot-instructions.md`
-
-## About
-[Brief description]
-
-## Tech Stack
-- [Your stack]
-
-## Getting Started
-```bash
-# Your setup commands
-```
-EOF
-```
-
-### Test It
-
-Open VSCode and try:
-
-```
-You: "@workspace Create a plan for adding a health check endpoint"
-
-GitHub Copilot: "I'll create a plan at context/plans/health-check.md..."
-```
-
-### Next Steps
-- [Full GitHub Copilot Instructions](examples/agent-configs/github-copilot-instructions.md)
-- [Example workflows](#example-workflows)
-
----
-
-## Cursor Setup
-
-### Prerequisites
-- Cursor IDE installed
-- Cursor Pro subscription (recommended for best experience)
-
-### Installation
-
-```bash
-# Navigate to your project
-cd your-project/
-
-# Create context directory structure
-mkdir -p context/{data,plans,summaries,archives,servers}
-
-# Copy Cursor rules
-curl -o .cursorrules \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/examples/agent-configs/cursor-rules.md
-
-# Initialize context.md
-cat > context/context.md << 'EOF'
-# Current Work Summary
-
-Ready to start using PARA-Programming with Cursor.
-
----
-
-```json
-{
-  "active_context": [],
-  "completed_summaries": [],
-  "last_updated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-}
-```
-EOF
-
-# Create project CLAUDE.md
-cat > CLAUDE.md << 'EOF'
-# Project Name
-
-> **Workflow Methodology:** Follow `.cursorrules`
-
-## About
-[Brief description]
-
-## Tech Stack
-- [Your stack]
-
-## Getting Started
-```bash
-# Your setup commands
-```
-EOF
-```
-
-### Test It
-
-Open Cursor and try:
-
-**Using Chat:**
-```
-You: "Create a plan for adding dark mode"
-Cursor: "I'll create a plan at context/plans/dark-mode.md..."
-```
-
-**Using Composer (CMD+I):**
-```
-You: "Following PARA methodology, add dark mode support"
-Cursor: [Creates plan, waits for approval, then implements]
-```
-
-### Next Steps
-- [Full Cursor Instructions](examples/agent-configs/cursor-rules.md)
-- [MCP Integration Guide](AGENT-INSTRUCTIONS.md#mcp-integration)
 
 ---
 
@@ -202,8 +62,9 @@ Ready to start using PARA-Programming with JetBrains AI Assistant.
   "completed_summaries": [],
   "last_updated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 }
-```
+```.
 EOF
+```
 
 # Create project CLAUDE.md
 cat > CLAUDE.md << 'EOF'
@@ -310,82 +171,6 @@ Continue: "Creating plan for rate limiting..."
 ### Next Steps
 - [Universal Agent Instructions](AGENT-INSTRUCTIONS.md)
 - [MCP Server Setup](AGENT-INSTRUCTIONS.md#mcp-integration)
-
----
-
-## Claude Code Setup
-
-### Prerequisites
-- Claude Code CLI installed
-- Claude API access
-
-### Installation
-
-```bash
-# Navigate to your project
-cd your-project/
-
-# Create context directory structure
-mkdir -p context/{data,plans,summaries,archives,servers}
-
-# Copy global CLAUDE.md to home directory (one-time setup)
-mkdir -p ~/.claude
-curl -o ~/.claude/CLAUDE.md \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/claude/CLAUDE.md
-
-# Initialize context.md
-cat > context/context.md << 'EOF'
-# Current Work Summary
-
-Ready to start using PARA-Programming with Claude Code.
-
----
-
-```json
-{
-  "active_context": [],
-  "completed_summaries": [],
-  "last_updated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-}
-```
-EOF
-
-# Create project CLAUDE.md
-cat > CLAUDE.md << 'EOF'
-# Project Name
-
-> **Workflow Methodology:** Follow `~/.claude/CLAUDE.md`
-
-## About
-[Brief description of your project]
-
-## Tech Stack
-- [Your stack]
-
-## Architecture
-[High-level architecture]
-
-## Getting Started
-```bash
-# Your setup commands
-```
-EOF
-```
-
-### Test It
-
-```bash
-# Start Claude Code
-claude-code
-
-# In Claude Code:
-You: "Following PARA methodology, create a plan for adding authentication"
-Claude: "I'll create a plan at context/plans/authentication.md..."
-```
-
-### Next Steps
-- [Global CLAUDE.md Template](claude/CLAUDE.md)
-- [Project CLAUDE.md Guide](claude/CLAUDE.md#creating-local-project-claudemd-files)
 
 ---
 
@@ -550,15 +335,14 @@ Gradually automate as you and your agent get comfortable.
 
 ## Next Steps
 
+### Complete Guides
+- 🤖 **[Claude Code Guide](claude/)** - Full setup for Claude CLI
+- ✨ **[GitHub Copilot Guide](copilot/)** - Complete Copilot integration
+- 🔮 **[Cursor Guide](cursor/)** - Full Cursor IDE setup
+
 ### Learn More
 - 📖 [Full PARA-Programming Documentation](README.md)
-- 🤖 [Universal Agent Instructions](AGENT-INSTRUCTIONS.md)
-- 🎓 [Example Workflows and Patterns](examples/)
-
-### Customize
-- 📝 [Create your project CLAUDE.md](claude/CLAUDE.md#creating-local-project-claudemd-files)
-- ⚙️ [Configure MCP servers](AGENT-INSTRUCTIONS.md#mcp-integration)
-- 🎨 [Adapt to your team's needs](README.md#best-practices)
+- 🤖 [Universal Agent Instructions](AGENT-INSTRUCTIONS.md) (for other tools)
 
 ### Get Help
 - 💬 [GitHub Discussions](../../discussions)
@@ -588,11 +372,11 @@ project-root/
 └── CLAUDE.md             # Project context
 
 ⚙️ Configuration Files
-├── .cursorrules                        # Cursor
-├── .github/copilot-instructions.md     # GitHub Copilot
+├── ~/.claude/CLAUDE.md                 # Claude Code (see claude/ guide)
+├── .github/copilot-instructions.md     # GitHub Copilot (see copilot/ guide)
+├── .cursorrules                        # Cursor (see cursor/ guide)
 ├── .idea/ai-instructions.md            # JetBrains
-├── .continuerc.json                    # Continue.dev
-└── ~/.claude/CLAUDE.md                 # Claude Code
+└── .continuerc.json                    # Continue.dev
 
 🎯 Core Principle
 Plan → Review → Execute → Summarize → Archive

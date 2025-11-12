@@ -325,8 +325,8 @@ Mention plugin results in summaries.
 
 ### Main Documentation
 - [AGENT-INSTRUCTIONS.md](../../AGENT-INSTRUCTIONS.md) - Universal agent guide
-- [README.md](../../README.md) - Full PARA-Programming documentation
-- [claude/CLAUDE.md](../../claude/CLAUDE.md) - Global methodology template
+- [README.md](../../../README.md) - Full PARA-Programming documentation
+- [claude/CLAUDE.md](../../../claude/CLAUDE.md) - Global methodology template
 
 ### Templates
 - [Project CLAUDE.md templates](../templates/) - Project-specific context files
