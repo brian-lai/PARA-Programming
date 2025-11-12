@@ -92,14 +92,35 @@ project-root/
 
 ---
 
+## 📅 File Naming Convention
+
+**All context files must use date prefixes for chronological ordering:**
+
+- **Format:** `YYYY-MM-DD-descriptive-name.extension`
+- **Examples:**
+  - Plans: `2025-11-11-auth-refactor.md`
+  - Data: `2025-11-11-api-payload.json`
+  - Summaries: `2025-11-11-auth-refactor-summary.md`
+  - Archives: `2025-11-11-context.md`
+
+**Why date prefixes?**
+- Files naturally sort chronologically in directories
+- Easy to find recent work
+- Clear audit trail of when work was performed
+- No need to check file metadata for timestamps
+
+**Exception:** Files in `context/servers/` do NOT require date prefixes, as they are persistent MCP tool implementations, not session-specific artifacts.
+
+---
+
 ## 🧭 Context Directory Details
 
 | Directory            | Description                                                                                                                   |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `context/data/`      | Input files, API payloads, datasets (used by Claude or MCP).                                                                  |
-| `context/plans/`     | Planning artifacts written before code changes; defines scope and intent.                                                     |
-| `context/summaries/` | Summaries after execution, capturing results and rationale.                                                                   |
-| `context/archives/`  | Archived `context/context.md` files for traceability.                                                                         |
+| `context/data/`      | Input files, API payloads, datasets (used by Claude or MCP). Files prefixed with `YYYY-MM-DD-` for chronological ordering.                                                                  |
+| `context/plans/`     | Planning artifacts written before code changes; defines scope and intent. Files prefixed with `YYYY-MM-DD-` for chronological ordering.                                                     |
+| `context/summaries/` | Summaries after execution, capturing results and rationale. Files prefixed with `YYYY-MM-DD-` for chronological ordering.                                                                   |
+| `context/archives/`  | Archived `context/context.md` files for traceability. Files prefixed with `YYYY-MM-DD-` for chronological ordering.                                                                         |
 | `context/servers/`   | MCP tool wrappers (e.g., for repos, APIs, file ops). Enables code execution and preprocessing without bloating model context. |
 
 ---
@@ -121,12 +142,12 @@ Enhancing payroll API with token-efficient MCP integration.
 ```json
 {
   "active_context": [
-    "context/plans/payroll-api-mcp.md",
-    "context/data/payload-example.json",
+    "context/plans/2025-11-08-payroll-api-mcp.md",
+    "context/data/2025-11-08-payload-example.json",
     "context/servers/github/fetchRepo.ts"
   ],
   "completed_summaries": [
-    "context/summaries/payroll-mcp-summary.md"
+    "context/summaries/2025-11-08-payroll-mcp-summary.md"
   ],
   "last_updated": "2025-11-08T15:20:00Z"
 }
@@ -136,7 +157,7 @@ Enhancing payroll API with token-efficient MCP integration.
 
 After completion:
 ```bash
-mv context/context.md context/archives/context-$(date +%F-%H%M).md
+mv context/context.md context/archives/$(date +%F)-context.md
 ````
 
 ---
@@ -153,7 +174,7 @@ mv context/context.md context/archives/context-$(date +%F-%H%M).md
 
 #### 1. Plan
 
-* Claude drafts a plan in `context/plans/`.
+* Claude drafts a plan in `context/plans/` with filename format: `YYYY-MM-DD-task-name.md`
 * Include objective, scope, risks, data sources, and MCP tool usage.
 * Reference the **Plan Authoring Guide (Confluence)** for templates.
 
@@ -161,7 +182,7 @@ mv context/context.md context/archives/context-$(date +%F-%H%M).md
 
 Claude pauses and requests human validation:
 
-> “Please review `context/plans/task-name.md`. Does it align with your intent and the MCP tools specified?”
+> "Please review `context/plans/YYYY-MM-DD-task-name.md`. Does it align with your intent and the MCP tools specified?"
 
 #### 3. Execute
 
@@ -171,7 +192,8 @@ Claude pauses and requests human validation:
 
 #### 4. Summarize
 
-* Claude writes a report to `context/summaries/` describing:
+* Claude writes a report to `context/summaries/` with filename format: `YYYY-MM-DD-task-name-summary.md`
+* The summary should describe:
 
     * What changed
     * Why
@@ -180,8 +202,9 @@ Claude pauses and requests human validation:
 
 #### 5. Archive
 
-* Move `context/context.md` → `context/archives/`
+* Move `context/context.md` → `context/archives/YYYY-MM-DD-context.md`
 * Start a new `context/context.md` seeded with ongoing data if needed.
+* Use the current date in YYYY-MM-DD format for the archived filename.
 
 ---
 
@@ -263,7 +286,7 @@ Bootstrapping MCP-aware project.
 ```json
 {
   "active_context": [
-    "context/plans/hello-mcp.md"
+    "context/plans/2025-11-11-hello-mcp.md"
   ],
   "completed_summaries": [],
   "last_updated": "YYYY-MM-DDTHH:MM:SSZ"
@@ -273,7 +296,7 @@ Bootstrapping MCP-aware project.
 ````
 
 ### 3) Create your first plan (referencing MCP)
-`context/plans/hello-mcp.md`
+`context/plans/2025-11-11-hello-mcp.md`
 ```markdown
 # Plan: Hello MCP Tooling
 
@@ -292,7 +315,7 @@ Test an MCP wrapper that lists repo files and returns a short summary.
 ## Review Checklist
 - [ ] Wrapper created
 - [ ] Output <= 1–2k tokens
-- [ ] Summary captured in `context/summaries/hello-mcp.md`
+- [ ] Summary captured in `context/summaries/2025-11-11-hello-mcp-summary.md`
 ````
 
 ### 4) Add a minimal MCP wrapper
@@ -320,10 +343,10 @@ export async function listFiles(prefix: string) {
 
 ### 5) Run the workflow
 
-1. **Plan**: Open `hello-mcp.md`, approve steps.
+1. **Plan**: Open `2025-11-11-hello-mcp.md`, approve steps.
 2. **Execute**: Call `listFiles()` from your MCP client / agent runtime.
-3. **Summarize**: Save a short write‑up → `context/summaries/hello-mcp.md`.
-4. **Archive**: Move `context/context.md` to `context/archives/` when done.
+3. **Summarize**: Save a short write‑up → `context/summaries/2025-11-11-hello-mcp-summary.md`.
+4. **Archive**: Move `context/context.md` to `context/archives/2025-11-11-context.md` when done.
 
 ### 6) Keep it lean
 
