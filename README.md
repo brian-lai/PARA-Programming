@@ -473,7 +473,7 @@ We provide **comprehensive, dedicated guides** for the three most popular AI ass
 
 For other tools (JetBrains AI, Continue.dev, Codeium, etc.):
 
-📖 **[Universal Agent Instructions →](AGENT-INSTRUCTIONS.md)**
+📖 **[Universal Agent Instructions →](other-ai-assitants/AGENT-INSTRUCTIONS.md)**
 
 This guide shows how to adapt PARA-Programming to any AI assistant:
 - Agent compatibility matrix
