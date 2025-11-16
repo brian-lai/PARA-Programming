@@ -6,11 +6,12 @@
 
 ## 🎯 Choose Your Guide
 
-There are guides for the three most popular AI assistants. Each guide includes complete setup instructions, templates, and examples:
+There are guides for the most popular AI assistants. Each guide includes complete setup instructions, templates, and examples:
 
 | AI Assistant | Where to Go |
 |--------------|-------------|
 | 🤖 **Claude Code** (CLI) | **[→ Claude Guide & Quickstart](claude/)** |
+| 🔷 **Codex CLI** (OpenAI CLI) | **[→ Codex Guide & Quickstart](codex/)** |
 | ✨ **GitHub Copilot** (VSCode, JetBrains, Neovim) | **[→ Copilot Guide & Quickstart](copilot/)** |
 | 🔮 **Cursor** (Standalone IDE) | **[→ Cursor Guide & Quickstart](cursor/)** |
 

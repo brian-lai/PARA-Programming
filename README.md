@@ -451,6 +451,7 @@ We provide **comprehensive, dedicated guides** for the three most popular AI ass
 | AI Assistant | IDE | Guide | What's Included |
 |--------------|-----|-------|-----------------|
 | **🤖 Claude Code** | CLI | **[→ Claude Guide](claude/)** | Global methodology, project templates, MCP integration, quickstart |
+| **🔷 Codex CLI** | CLI | **[→ Codex Guide](codex/)** | Global methodology, project templates, preprocessing patterns, quickstart |
 | **✨ GitHub Copilot** | VSCode, JetBrains, Neovim | **[→ Copilot Guide](copilot/)** | Instructions file, templates, examples, quickstart |
 | **🔮 Cursor** | Standalone IDE | **[→ Cursor Guide](cursor/)** | Cursor rules, Composer integration, templates, quickstart |
 
