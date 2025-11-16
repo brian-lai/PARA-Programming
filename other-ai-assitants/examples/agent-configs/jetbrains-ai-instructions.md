@@ -16,7 +16,12 @@ For any non-trivial task, follow this five-step loop:
 
 ## 1. Plan Phase
 
-Create `context/plans/[task-name].md` with:
+**First, ensure the context directory exists:** If `context/` and its subdirectories don't exist, create them:
+```bash
+mkdir -p context/{data,plans,summaries,archives,servers}
+```
+
+**Then create** `context/plans/[task-name].md` with:
 
 ```markdown
 # Plan: [Task Name]

@@ -18,8 +18,12 @@ For any non-trivial task (3+ steps or complex logic), follow this workflow:
 
 When asked to implement a feature or fix:
 
-1. Create a plan file in `context/plans/[task-name].md`
-2. Include:
+1. **First, ensure the context directory exists:** If `context/` and its subdirectories don't exist, create them:
+   ```bash
+   mkdir -p context/{data,plans,summaries,archives,servers}
+   ```
+2. Create a plan file in `context/plans/[task-name].md`
+3. Include:
    - **Objective:** Clear goal statement
    - **Approach:** Step-by-step implementation strategy
    - **Files to modify/create:** Complete list

@@ -79,8 +79,12 @@ Follow this loop for ALL significant coding tasks (3+ steps or non-trivial compl
 ### 1. Plan Phase
 When the developer requests a feature, fix, or refactor:
 
-1. **Create a plan file** in `context/plans/[task-name].md`
-2. **Include these sections:**
+1. **First, ensure the context directory exists:** If `context/` and its subdirectories don't exist, create them:
+   ```bash
+   mkdir -p context/{data,plans,summaries,archives,servers}
+   ```
+2. **Create a plan file** in `context/plans/[task-name].md`
+3. **Include these sections:**
    - **Objective:** What are we trying to achieve?
    - **Approach:** How will we implement it? (step-by-step)
    - **Files to modify:** List all files that will change

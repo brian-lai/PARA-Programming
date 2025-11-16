@@ -407,13 +407,13 @@ cat > context/context.md << 'EOF'
 
 ---
 
-```json
+\`\`\`json
 {
   "active_context": [],
   "completed_summaries": [],
   "last_updated": "2025-11-12T10:00:00Z"
 }
-```
+\`\`\`
 EOF
 ```
 

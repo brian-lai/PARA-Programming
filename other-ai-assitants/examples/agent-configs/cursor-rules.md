@@ -14,7 +14,12 @@ For any non-trivial task (3+ steps or complex), follow this five-step loop:
 
 ## 1. Plan Phase
 
-Create a plan in `context/plans/[task-name].md` with:
+**First, ensure the context directory exists:** If `context/` and its subdirectories don't exist, create them:
+```bash
+mkdir -p context/{data,plans,summaries,archives,servers}
+```
+
+**Then create** a plan in `context/plans/[task-name].md` with:
 
 **Required Sections:**
 - **Objective:** Clear goal (1-2 sentences)

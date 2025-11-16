@@ -173,6 +173,10 @@ mv context/context.md context/archives/$(date +%F)-context.md
 
 #### 1. Plan
 
+* **First, ensure context directory exists:** If `context/` and its subdirectories don't exist, create them automatically:
+  ```bash
+  mkdir -p context/{data,plans,summaries,archives,servers}
+  ```
 * Codex drafts a plan in `context/plans/` with filename format: `YYYY-MM-DD-task-name.md`
 * Include objective, scope, risks, data sources, and preprocessing tool usage.
 

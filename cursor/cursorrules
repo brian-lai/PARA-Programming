@@ -10,7 +10,12 @@ For ANY non-trivial task (3+ steps, complex logic, or multi-file changes), follo
 
 When asked to implement a feature, fix a bug, or refactor code:
 
-**CREATE** a plan file: `context/plans/[task-name].md`
+**FIRST**: Ensure the context directory structure exists. If not, create it:
+```bash
+mkdir -p context/{data,plans,summaries,archives,servers}
+```
+
+**THEN CREATE** a plan file: `context/plans/[task-name].md`
 
 **REQUIRED SECTIONS:**
 ```markdown

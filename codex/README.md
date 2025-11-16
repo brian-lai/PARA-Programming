@@ -87,16 +87,18 @@ cat > context/context.md << 'EOF'
 
 ---
 
-```json
+\`\`\`json
 {
   "active_context": [],
   "completed_summaries": [],
   "last_updated": "2025-11-15T10:00:00Z"
 }
-```
+\`\`\`
 EOF
+```
 
 # 5. Create project AGENTS.md
+```bash
 cat > AGENTS.md << 'EOF'
 # My Project
 
@@ -109,15 +111,16 @@ cat > AGENTS.md << 'EOF'
 - [Your technologies]
 
 ## Getting Started
-```bash
+\`\`\`bash
 npm install
 npm start
-```
+\`\`\`
 EOF
+```
+
 
 # 6. Start Codex
-codex
-```
+`codex`
 
 ---
 

@@ -10,7 +10,12 @@ For **any non-trivial task** (3+ steps, multiple files, or complex logic), follo
 
 When asked to implement a feature, fix a bug, or refactor:
 
-**CREATE** a detailed plan file: `context/plans/[task-name].md`
+**FIRST**: Ensure the context directory structure exists. If not, create it:
+```bash
+mkdir -p context/{data,plans,summaries,archives,servers}
+```
+
+**THEN CREATE** a detailed plan file: `context/plans/[task-name].md`
 
 **REQUIRED SECTIONS:**
 

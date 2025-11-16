@@ -104,15 +104,17 @@ Ready to start using PARA-Programming with Codex CLI.
 
 ---
 
-```json
+\`\`\`json
 {
   "active_context": [],
   "completed_summaries": [],
   "last_updated": "2025-11-15T10:00:00Z"
 }
-```
+\`\`\`
 EOF
+```
 
+```
 # Verify structure
 tree context/ -L 1
 # Should show:
@@ -150,12 +152,10 @@ A sample project for testing PARA-Programming with Codex CLI.
 - [Add your technologies]
 
 ## Structure
-```
-src/
+```src/
 ├── index.js      # Entry point
 └── routes/       # API routes
 ```
-
 ## Key Files
 - `src/index.js`: Application entry point
 
@@ -164,10 +164,10 @@ src/
 - Add JSDoc comments to all functions
 
 ## Getting Started
-```bash
+\`\`\`bash
 npm install
 npm start
-```
+\`\`\`
 EOF
 ```
 
@@ -327,13 +327,13 @@ cat > context/context.md << 'EOF'
 
 ---
 
-```json
+\`\`\`json
 {
   "active_context": [],
   "completed_summaries": [],
   "last_updated": "2025-11-15T10:00:00Z"
 }
-```
+\`\`\`
 EOF
 ```
 
@@ -456,9 +456,9 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 cat > context/context.md << 'EOF'
 # Current Work Summary
 ---
-```json
+\`\`\`json
 {"active_context":[],"completed_summaries":[],"last_updated":"2025-11-15T10:00:00Z"}
-```
+\`\`\`
 EOF
 
 # Create project AGENTS.md (edit after)

@@ -174,6 +174,10 @@ mv context/context.md context/archives/$(date +%F)-context.md
 
 #### 1. Plan
 
+* **First, ensure context directory exists:** If `context/` and its subdirectories don't exist, create them automatically:
+  ```bash
+  mkdir -p context/{data,plans,summaries,archives,servers}
+  ```
 * Claude drafts a plan in `context/plans/` with filename format: `YYYY-MM-DD-task-name.md`
 * Include objective, scope, risks, data sources, and MCP tool usage.
 * Reference the **Plan Authoring Guide (Confluence)** for templates.
