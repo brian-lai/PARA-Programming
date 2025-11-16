@@ -1,6 +1,6 @@
 # [Project Name]
 
-> **Workflow Methodology:** Follow `~/.codex/CODEX.md`
+> **Workflow Methodology:** Follow `~/.codex/AGENTS.md`
 
 ## About
 [Brief description of what this project does]

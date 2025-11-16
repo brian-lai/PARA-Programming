@@ -25,7 +25,7 @@ Before you begin, make sure you have:
 
 ---
 
-## Step 1: Install Global CODEX.md
+## Step 1: Install Global AGENTS.md
 
 This is a **one-time setup** that applies to all your projects.
 
@@ -34,11 +34,11 @@ This is a **one-time setup** that applies to all your projects.
 # (Alternatively use ~/.config/codex if that's your preference)
 mkdir -p ~/.codex
 
-# Copy the global CODEX.md file
-cp CODEX.md ~/.codex/CODEX.md
+# Copy the global AGENTS.md file
+cp AGENTS.md ~/.codex/AGENTS.md
 
 # Verify it was created
-ls -la ~/.codex/CODEX.md
+ls -la ~/.codex/AGENTS.md
 ```
 
 **What this does:** Tells Codex CLI how to follow the PARA-Programming methodology (Plan → Review → Execute → Summarize → Archive) across all your projects.
@@ -47,9 +47,9 @@ ls -la ~/.codex/CODEX.md
 
 ---
 
-## Step 2: Configure Codex to Read CODEX.md
+## Step 2: Configure Codex to Read AGENTS.md
 
-Add this to your Codex CLI configuration to automatically load the global CODEX.md:
+Add this to your Codex CLI configuration to automatically load the global AGENTS.md:
 
 ```bash
 # Create or edit your Codex config
@@ -58,12 +58,12 @@ cat >> ~/.codex/config.json << 'EOF'
 {
   "system_prompts": [
     {
-      "path": "~/.codex/CODEX.md",
+      "path": "~/.codex/AGENTS.md",
       "type": "methodology"
     }
   ],
   "project_context_files": [
-    "CODEX.md",
+    "AGENTS.md",
     "context/context.md"
   ]
 }
@@ -134,13 +134,13 @@ tree context/ -L 1
 
 ---
 
-## Step 5: Create Project CODEX.md
+## Step 5: Create Project AGENTS.md
 
 ```bash
-cat > CODEX.md << 'EOF'
+cat > AGENTS.md << 'EOF'
 # My Project
 
-> **Workflow Methodology:** Follow `~/.codex/CODEX.md`
+> **Workflow Methodology:** Follow `~/.codex/AGENTS.md`
 
 ## About
 A sample project for testing PARA-Programming with Codex CLI.
@@ -244,8 +244,8 @@ Let's break down what Codex did automatically:
 5. **🗄️ Archive** - (Would happen next when you start a new task)
 
 All of this happened because:
-- Codex read `~/.codex/CODEX.md` and knows to follow the PARA workflow
-- Codex read `./CODEX.md` and understands your project structure
+- Codex read `~/.codex/AGENTS.md` and knows to follow the PARA workflow
+- Codex read `./AGENTS.md` and understands your project structure
 - Codex maintains the `context/` directory automatically
 
 ---
@@ -272,11 +272,11 @@ All of this happened because:
 
 1. **Preprocessing Tools** - Create data filters in `context/servers/`
 2. **Templates** - Check out `codex/templates/` for more examples
-3. **Team Workflow** - Share your global CODEX.md with teammates
+3. **Team Workflow** - Share your global AGENTS.md with teammates
 
 ### Customize Your Workflow
 
-Edit `~/.codex/CODEX.md` to:
+Edit `~/.codex/AGENTS.md` to:
 - Add your own preprocessing patterns
 - Adjust the workflow steps
 - Include team-specific conventions
@@ -290,18 +290,18 @@ Edit `~/.codex/CODEX.md` to:
 **Check:**
 ```bash
 # Verify global file exists
-ls -la ~/.codex/CODEX.md
+ls -la ~/.codex/AGENTS.md
 
 # Verify project file exists
-ls -la ./CODEX.md
+ls -la ./AGENTS.md
 
 # Check that project file references global
-grep "Follow.*codex/CODEX.md" CODEX.md
+grep "Follow.*codex/AGENTS.md" AGENTS.md
 ```
 
-**Fix:** Make sure your project `CODEX.md` includes:
+**Fix:** Make sure your project `AGENTS.md` includes:
 ```markdown
-> **Workflow Methodology:** Follow `~/.codex/CODEX.md`
+> **Workflow Methodology:** Follow `~/.codex/AGENTS.md`
 ```
 
 ### Issue: Context directory not being used
@@ -337,11 +337,11 @@ cat > context/context.md << 'EOF'
 EOF
 ```
 
-### Issue: Codex not reading CODEX.md files
+### Issue: Codex not reading AGENTS.md files
 
 **Solution:** Ensure your Codex CLI is configured to load context files. Add to your prompt:
 ```
-"Please read ~/.codex/CODEX.md for workflow methodology and ./CODEX.md for project context before proceeding"
+"Please read ~/.codex/AGENTS.md for workflow methodology and ./AGENTS.md for project context before proceeding"
 ```
 
 Or configure Codex to auto-load these files (see Step 2).
@@ -352,13 +352,13 @@ Or configure Codex to auto-load these files (see Step 2).
 
 ### One-Time Setup (Do Once)
 - [ ] Install Codex CLI
-- [ ] Copy CODEX.md to `~/.codex/CODEX.md`
-- [ ] Configure Codex to auto-load CODEX.md (optional but recommended)
+- [ ] Copy AGENTS.md to `~/.codex/AGENTS.md`
+- [ ] Configure Codex to auto-load AGENTS.md (optional but recommended)
 
 ### Per-Project Setup (Do For Each Project)
 - [ ] Create `context/` directory structure
 - [ ] Initialize `context/context.md`
-- [ ] Create project `CODEX.md`
+- [ ] Create project `AGENTS.md`
 - [ ] Start `codex`
 
 ### Per-Task Workflow (Automatic with proper config!)
@@ -376,7 +376,7 @@ After following this guide, your project should look like:
 
 ```
 your-project/
-├── CODEX.md                            # Project context (you created)
+├── AGENTS.md                            # Project context (you created)
 ├── context/
 │   ├── context.md                      # Current work state (you created)
 │   ├── plans/
@@ -389,7 +389,7 @@ your-project/
 └── [your source code...]
 
 ~/.codex/
-└── CODEX.md                            # Global methodology (you created)
+└── AGENTS.md                           # Global methodology (you created)
 ```
 
 ---
@@ -398,7 +398,7 @@ your-project/
 
 Codex CLI works excellently with PARA-Programming:
 
-✅ **Configurable context loading** - Can auto-read CODEX.md files
+✅ **Automatic AGENTS.md discovery** - Auto-reads AGENTS.md files
 ✅ **Structured prompting** - Responds well to methodology instructions
 ✅ **Multi-file operations** - Handles complex refactors
 ✅ **OpenAI's powerful models** - Excellent code understanding
@@ -413,7 +413,7 @@ Codex CLI works excellently with PARA-Programming:
 ### Documentation
 - 📖 [Full Codex CLI Guide](README.md)
 - 📚 [Main PARA-Programming Docs](../README.md)
-- 🎓 [Understanding CODEX.md](README.md#understanding-the-codexmd-system)
+- 🎓 [Understanding AGENTS.md](README.md#understanding-the-agentsmd-system)
 
 ### Templates & Examples
 - 📝 [Project Templates](templates/)
@@ -429,8 +429,8 @@ Codex CLI works excellently with PARA-Programming:
 ## Ready to Go!
 
 You now have:
-- ✅ Global CODEX.md defining workflow
-- ✅ Project CODEX.md defining your project
+- ✅ Global AGENTS.md defining workflow
+- ✅ Project AGENTS.md defining your project
 - ✅ Context directory structure
 - ✅ Working PARA-Programming setup
 
@@ -449,7 +449,7 @@ You now have:
 ```bash
 # One-time setup
 mkdir -p ~/.codex
-cp CODEX.md ~/.codex/CODEX.md
+cp AGENTS.md ~/.codex/AGENTS.md
 
 # Per-project setup
 mkdir -p context/{data,plans,summaries,archives,servers}
@@ -461,8 +461,8 @@ cat > context/context.md << 'EOF'
 ```
 EOF
 
-# Create project CODEX.md (edit after)
-cp templates/basic-CODEX.md ./CODEX.md
+# Create project AGENTS.md (edit after)
+cp templates/basic-AGENTS.md ./AGENTS.md
 
 # Start working
 codex

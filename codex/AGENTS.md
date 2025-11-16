@@ -1,6 +1,6 @@
-# Global CODEX.md – Workflow & Methodology Guide
+# Global AGENTS.md – Workflow & Methodology Guide
 
-> **Location:** `~/.codex/CODEX.md` (or `~/.config/codex/CODEX.md` depending on your setup)
+> **Location:** `~/.codex/AGENTS.md` (or `~/.config/codex/AGENTS.md` depending on your setup)
 > **Purpose:** Defines **HOW** to do work with Codex CLI across all projects
 > **Scope:** Global instructions for workflow, methodology, and tool integration
 
@@ -10,24 +10,24 @@
 
 This is your **global workflow guide**. It defines the methodology for how Codex should work with you across all projects.
 
-### Global vs. Local CODEX.md Files
+### Global vs. Local AGENTS.md Files
 
 | File Type | Location | Purpose | Contents |
 |-----------|----------|---------|----------|
-| **Global** (this file) | `~/.codex/CODEX.md` | Workflow methodology & best practices | How to plan, execute, summarize, archive; preprocessing patterns; token efficiency strategies |
-| **Local** (project-specific) | `<project-root>/CODEX.md` | Project-specific context | Architecture, tech stack, conventions, domain knowledge, team practices |
+| **Global** (this file) | `~/.codex/AGENTS.md` | Workflow methodology & best practices | How to plan, execute, summarize, archive; preprocessing patterns; token efficiency strategies |
+| **Local** (project-specific) | `<project-root>/AGENTS.md` | Project-specific context | Architecture, tech stack, conventions, domain knowledge, team practices |
 
 ### How Local Files Should Reference This Document
 
-Every project-level `CODEX.md` should include a reference to this global guide:
+Every project-level `AGENTS.md` should include a reference to this global guide:
 
 ```markdown
-# Project CODEX.md
+# Project AGENTS.md
 
 This document contains project-specific context only.
 
 # CRITICAL (MUST FOLLOW RULES)
-**Workflow Methodology:** Follow the global workflow guide at `~/.codex/CODEX.md`
+**Workflow Methodology:** Follow the global workflow guide at `~/.codex/AGENTS.md`
 
 ## About This Project
 [Your project description here...]
@@ -87,7 +87,7 @@ project-root/
 │   ├── summaries/              # Post-work summaries and reports
 │   ├── archives/               # Archived session states
 │   └── servers/                # Preprocessing tool wrappers and execution code
-└── CODEX.md                    # Local project context (references global guide)
+└── AGENTS.md                    # Local project context (references global guide)
 ```
 
 ---
@@ -353,11 +353,11 @@ export async function listFiles(prefix: string) {
 
 ---
 
-## 📝 Creating Local Project CODEX.md Files
+## 📝 Creating Local Project AGENTS.md Files
 
-### What Belongs in a Local CODEX.md
+### What Belongs in a Local AGENTS.md
 
-Local `CODEX.md` files should contain **project-specific context**, not workflow methodology. Focus on:
+Local `AGENTS.md` files should contain **project-specific context**, not workflow methodology. Focus on:
 
 #### ✅ Include in Local Files
 - **Project purpose & domain knowledge**
@@ -378,14 +378,14 @@ Local `CODEX.md` files should contain **project-specific context**, not workflow
 - Token efficiency strategies (covered here)
 - Context directory structure (covered here)
 
-### Template for Local CODEX.md
+### Template for Local AGENTS.md
 
-Here's a template for initializing a new project's `CODEX.md`:
+Here's a template for initializing a new project's `AGENTS.md`:
 
 ````markdown
 # [Project Name] – Context Guide
 
-> **Workflow Methodology:** All workflow practices follow `~/.codex/CODEX.md`
+> **Workflow Methodology:** All workflow practices follow `~/.codex/AGENTS.md`
 > This document provides project-specific context only.
 
 ---
@@ -521,7 +521,7 @@ For simpler projects, use this condensed version:
 ````markdown
 # [Project Name]
 
-> **Workflow Methodology:** Follow `~/.codex/CODEX.md`
+> **Workflow Methodology:** Follow `~/.codex/AGENTS.md`
 
 ## About
 [Brief description of what this project does]
@@ -552,9 +552,9 @@ src/
 ```
 ````
 
-### When to Update Local CODEX.md
+### When to Update Local AGENTS.md
 
-Update your project's `CODEX.md` when:
+Update your project's `AGENTS.md` when:
 - Architecture changes significantly
 - New major dependencies are added
 - Team conventions are established or changed
@@ -563,7 +563,7 @@ Update your project's `CODEX.md` when:
 
 ### Keep It Lean
 
-Remember: Codex reads this on **every** session. Keep local CODEX.md files:
+Remember: Codex reads this on **every** session. Keep local AGENTS.md files:
 - **Concise** (aim for 500-1500 lines max)
 - **Structured** (use headers and tables)
 - **Current** (update when the project evolves)

@@ -11,7 +11,7 @@ Codex CLI is OpenAI's command-line interface for code generation and assistance.
 - [Why Codex CLI for PARA-Programming?](#why-codex-cli-for-para-programming)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
-- [Understanding the CODEX.md System](#understanding-the-codexmd-system)
+- [Understanding the AGENTS.md System](#understanding-the-codexmd-system)
 - [Workflow with Codex CLI](#workflow-with-codex-cli)
 - [Best Practices](#best-practices)
 - [Examples](#examples)
@@ -26,7 +26,7 @@ Codex CLI earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
 
 ### Advantages
 
-✅ **CODEX.md Support** - Can be configured to automatically read global `~/.codex/CODEX.md` and project-local `CODEX.md`
+✅ **AGENTS.md Support** - Automatically reads global `~/.codex/AGENTS.md` and project-local `AGENTS.md`
 ✅ **Powerful Code Understanding** - OpenAI's models excel at code comprehension and generation
 ✅ **Multi-File Operations** - Can work across multiple files simultaneously
 ✅ **Flexible Configuration** - Customizable system prompts and context loading
@@ -35,7 +35,7 @@ Codex CLI earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
 
 ### Limitations
 
-⚠️ **Configuration Required** - Needs setup to auto-load CODEX.md files (unlike Claude Code's native support)
+⚠️ **Configuration Required** - Needs setup to auto-load AGENTS.md files (unlike Claude Code's native support)
 ⚠️ **CLI-Only** - No GUI (though this can be an advantage for automation)
 ⚠️ **API Costs** - Requires OpenAI API key with usage-based pricing
 ⚠️ **Manual Workflow Reminder** - May need explicit reminders to follow PARA methodology
@@ -50,11 +50,11 @@ Codex CLI earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
 
 ### The Codex Advantage
 
-Codex CLI works excellently with PARA when configured:
-- Can automatically load and follow `~/.codex/CODEX.md` with proper configuration
+Codex CLI works excellently with PARA-Programming:
+- Automatically discovers and loads `~/.codex/AGENTS.md` on startup
 - Understands the Plan → Review → Execute → Summarize → Archive loop
 - Can create and manage context files when instructed
-- Works with the two-file system (global + local CODEX.md)
+- Works with the two-file system (global + local AGENTS.md)
 
 ---
 
@@ -71,9 +71,9 @@ Codex CLI works excellently with PARA when configured:
 ### 5-Minute Setup
 
 ```bash
-# 1. Create global CODEX.md (one-time setup)
+# 1. Create global AGENTS.md (one-time setup)
 mkdir -p ~/.codex
-cp CODEX.md ~/.codex/CODEX.md
+cp AGENTS.md ~/.codex/AGENTS.md
 
 # 2. Navigate to your project
 cd your-project/
@@ -96,11 +96,11 @@ cat > context/context.md << 'EOF'
 ```
 EOF
 
-# 5. Create project CODEX.md
-cat > CODEX.md << 'EOF'
+# 5. Create project AGENTS.md
+cat > AGENTS.md << 'EOF'
 # My Project
 
-> **Workflow Methodology:** Follow `~/.codex/CODEX.md`
+> **Workflow Methodology:** Follow `~/.codex/AGENTS.md`
 
 ## About
 [Brief description of your project]
@@ -150,18 +150,18 @@ echo 'export OPENAI_API_KEY="your-api-key-here"' >> ~/.bashrc
 # Create Codex config directory
 mkdir -p ~/.codex
 
-# Configure Codex to auto-load CODEX.md files
+# Optional: Configure additional context loading (AGENTS.md is auto-loaded)
 cat > ~/.codex/config.json << 'EOF'
 {
   "system_prompts": [
     {
-      "path": "~/.codex/CODEX.md",
+      "path": "~/.codex/AGENTS.md",
       "type": "methodology",
       "priority": "high"
     }
   ],
   "project_context_files": [
-    "CODEX.md",
+    "AGENTS.md",
     "context/context.md"
   ],
   "auto_load_context": true
@@ -169,19 +169,19 @@ cat > ~/.codex/config.json << 'EOF'
 EOF
 ```
 
-**Note:** Configuration format may vary based on your Codex CLI version. Check official Codex documentation for exact syntax.
+**Note:** Codex CLI automatically discovers and loads `AGENTS.md` files from `~/.codex/` and your project directory. See [official documentation](https://developers.openai.com/codex/guides/agents-md/) for details.
 
 ---
 
-## Understanding the CODEX.md System
+## Understanding the AGENTS.md System
 
 Codex CLI uses a **two-file system** for context management:
 
-### 1. Global CODEX.md (`~/.codex/CODEX.md`)
+### 1. Global AGENTS.md (`~/.codex/AGENTS.md`)
 
 **Purpose:** Defines **HOW** to work (methodology, workflow, patterns)
 
-**Location:** `~/.codex/CODEX.md` in your home directory
+**Location:** `~/.codex/AGENTS.md` in your home directory
 
 **Contents:**
 - The Plan → Review → Execute → Summarize → Archive workflow
@@ -194,10 +194,10 @@ Codex CLI uses a **two-file system** for context management:
 
 ```bash
 mkdir -p ~/.codex
-cp codex/CODEX.md ~/.codex/CODEX.md
+cp codex/AGENTS.md ~/.codex/AGENTS.md
 ```
 
-### 2. Local CODEX.md (`<project>/CODEX.md`)
+### 2. Local AGENTS.md (`<project>/AGENTS.md`)
 
 **Purpose:** Defines **WHAT** (project-specific context)
 
@@ -217,7 +217,7 @@ cp codex/CODEX.md ~/.codex/CODEX.md
 
 ```
 ┌─────────────────────────────────────────────┐
-│  Global: ~/.codex/CODEX.md                  │
+│  Global: ~/.codex/AGENTS.md                  │
 │  "HOW to work"                              │
 │  - Plan before executing                    │
 │  - Always get human review                  │
@@ -226,7 +226,7 @@ cp codex/CODEX.md ~/.codex/CODEX.md
 └─────────────────────────────────────────────┘
                      +
 ┌─────────────────────────────────────────────┐
-│  Local: <project>/CODEX.md                  │
+│  Local: <project>/AGENTS.md                  │
 │  "WHAT this project is"                     │
 │  - Next.js + PostgreSQL + Prisma            │
 │  - Microservices architecture               │
@@ -255,8 +255,8 @@ codex
 ```
 
 Codex CLI will (with proper configuration):
-1. ✅ Read `~/.codex/CODEX.md` (global methodology)
-2. ✅ Read `<project>/CODEX.md` (project context)
+1. ✅ Read `~/.codex/AGENTS.md` (global methodology)
+2. ✅ Read `<project>/AGENTS.md` (project context)
 3. ✅ Load `context/context.md` (current work state)
 4. ✅ Understand the PARA workflow
 
@@ -315,7 +315,7 @@ Ready for the next task!"
 
 ```
 # Good prompts
-"Following PARA methodology from ~/.codex/CODEX.md, let's add feature X"
+"Following PARA methodology from ~/.codex/AGENTS.md, let's add feature X"
 "Using the PARA workflow, create a plan for refactoring Y"
 "PARA mode: Fix bug Z"
 ```
@@ -324,8 +324,8 @@ Ready for the next task!"
 
 ```
 "Before starting, please read:
-1. ~/.codex/CODEX.md (methodology)
-2. ./CODEX.md (project context)
+1. ~/.codex/AGENTS.md (methodology)
+2. ./AGENTS.md (project context)
 3. context/context.md (current state)"
 ```
 
@@ -333,7 +333,7 @@ Ready for the next task!"
 
 ## Best Practices
 
-### Global CODEX.md Maintenance
+### Global AGENTS.md Maintenance
 
 ✅ **Do:**
 - Keep it updated as your workflow evolves
@@ -346,7 +346,7 @@ Ready for the next task!"
 - Make it too long (aim for 500-1500 lines)
 - Change it frequently (workflow should be stable)
 
-### Local CODEX.md Maintenance
+### Local AGENTS.md Maintenance
 
 ✅ **Do:**
 - Update when architecture changes
@@ -390,7 +390,7 @@ Since Codex may need explicit reminders:
 
 **Start of session:**
 ```
-"Load PARA methodology from ~/.codex/CODEX.md and project context from ./CODEX.md.
+"Load PARA methodology from ~/.codex/AGENTS.md and project context from ./AGENTS.md.
 We'll follow the Plan → Review → Execute → Summarize → Archive workflow."
 ```
 
@@ -504,26 +504,26 @@ Review the plan?"
 **Problem:** Codex implements without creating a plan
 
 **Solution:**
-1. Check that `~/.codex/CODEX.md` exists and is correct
-2. Verify project `CODEX.md` references the global file
-3. Be explicit in prompts: "Following PARA methodology from ~/.codex/CODEX.md, create a plan first"
+1. Check that `~/.codex/AGENTS.md` exists and is correct
+2. Verify project `AGENTS.md` references the global file
+3. Be explicit in prompts: "Following PARA methodology from ~/.codex/AGENTS.md, create a plan first"
 4. Check Codex configuration to ensure auto-loading of context files
 
-### Can't find global CODEX.md
+### Can't find global AGENTS.md
 
 **Problem:** Codex CLI says it doesn't see the methodology
 
 **Solution:**
 ```bash
 # Verify file exists
-ls -la ~/.codex/CODEX.md
+ls -la ~/.codex/AGENTS.md
 
 # If not, create it
 mkdir -p ~/.codex
-cp /path/to/PARA-Programming/codex/CODEX.md ~/.codex/
+cp /path/to/PARA-Programming/codex/AGENTS.md ~/.codex/
 
 # Explicitly reference in prompt
-"Please read ~/.codex/CODEX.md for workflow methodology"
+"Please read ~/.codex/AGENTS.md for workflow methodology"
 ```
 
 ### Context files not being created
@@ -624,13 +624,13 @@ Reference in plans:
 ```bash
 # Team dotfiles repo
 mkdir -p ~/.codex
-curl https://your-company.com/dotfiles/CODEX.md > ~/.codex/CODEX.md
+curl https://your-company.com/dotfiles/AGENTS.md > ~/.codex/AGENTS.md
 ```
 
 **Version control local context:**
 ```bash
 # Commit project-specific context
-git add CODEX.md
+git add AGENTS.md
 git add context/context.md
 git commit -m "docs: update project context"
 
@@ -705,7 +705,7 @@ jobs:
 
 See the [templates/](templates/) directory for ready-to-use examples:
 
-- **Project CODEX.md templates** for different tech stacks
+- **Project AGENTS.md templates** for different tech stacks
 - **Preprocessing tool examples** for common data filtering tasks
 - **Context structure examples** for various project types
 
@@ -716,7 +716,7 @@ See the [templates/](templates/) directory for ready-to-use examples:
 | Feature | Codex CLI | Claude Code | Cursor | Copilot |
 |---------|-----------|-------------|--------|---------|
 | **PARA Compatibility** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Auto-read CODEX.md** | ⚠️ Config needed | ✅ Native | ✅ Native | ⚠️ Limited |
+| **Auto-read AGENTS.md** | ⚠️ Config needed | ✅ Native | ✅ Native | ⚠️ Limited |
 | **Multi-file edits** | ✅ | ✅ | ✅ | ❌ |
 | **Preprocessing support** | ✅ | ✅ (MCP) | ✅ | ❌ |
 | **CLI-based** | ✅ | ✅ | ❌ | ❌ |
@@ -743,12 +743,12 @@ See the [templates/](templates/) directory for ready-to-use examples:
 ```bash
 # One-time global setup
 mkdir -p ~/.codex
-cp codex/CODEX.md ~/.codex/CODEX.md
+cp codex/AGENTS.md ~/.codex/AGENTS.md
 
 # Per-project setup
 mkdir -p context/{data,plans,summaries,archives,servers}
-cp templates/basic-CODEX.md ./CODEX.md
-# Edit CODEX.md with your project details
+cp templates/basic-AGENTS.md ./AGENTS.md
+# Edit AGENTS.md with your project details
 
 # Start working
 codex
