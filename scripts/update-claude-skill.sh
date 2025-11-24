@@ -69,10 +69,24 @@ if check_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"; then
         print_warning "Expected $expected_count commands, found $command_count"
     fi
 
+    # Update hooks if they exist
+    echo ""
+    print_step "Checking SessionStart hook..."
+    HOOKS_DIR="$CLAUDE_DIR/hooks"
+    if [ -f "$SKILL_DIR/hooks/para-session-start.sh" ]; then
+        if [ ! -d "$HOOKS_DIR" ]; then
+            mkdir -p "$HOOKS_DIR"
+        fi
+        cp "$SKILL_DIR/hooks/para-session-start.sh" "$HOOKS_DIR/"
+        chmod +x "$HOOKS_DIR/para-session-start.sh"
+        print_success "Updated SessionStart hook"
+    fi
+
     echo ""
     print_success "✨ Update complete!"
     print_info "Global methodology (CLAUDE.md) auto-updates with 'git pull'"
     print_info "Slash commands updated to latest version"
+    print_info "SessionStart hook updated"
     exit 0
 else
     # Using regular files - offer to convert to symlinks
@@ -133,6 +147,19 @@ else
             print_success "All $command_count PARA commands updated"
         else
             print_warning "Expected $expected_count commands, found $command_count"
+        fi
+
+        # Update hooks if they exist
+        echo ""
+        print_step "Checking SessionStart hook..."
+        HOOKS_DIR="$CLAUDE_DIR/hooks"
+        if [ -f "$SKILL_DIR/hooks/para-session-start.sh" ]; then
+            if [ ! -d "$HOOKS_DIR" ]; then
+                mkdir -p "$HOOKS_DIR"
+            fi
+            cp "$SKILL_DIR/hooks/para-session-start.sh" "$HOOKS_DIR/"
+            chmod +x "$HOOKS_DIR/para-session-start.sh"
+            print_success "Updated SessionStart hook"
         fi
 
         echo ""
