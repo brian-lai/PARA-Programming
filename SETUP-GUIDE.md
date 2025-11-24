@@ -4,6 +4,20 @@
 
 ---
 
+## 🚀 Automated Setup (Recommended)
+
+**One-command installation - takes <10 seconds:**
+
+```bash
+git clone https://github.com/para-programming/para-programming.git
+cd para-programming
+make setup claude-skill  # or: cursor, copilot
+```
+
+**→ [Complete Automated Setup Guide](AUTOMATED-SETUP.md)**
+
+---
+
 ## 🎯 Choose Your Guide
 
 There are guides for the three most popular AI assistants. Each guide includes complete setup instructions, templates, and examples:
@@ -390,3 +404,184 @@ The workflow is consistent. Only tools change.
 **Questions?** See the [troubleshooting section](#troubleshooting) or [ask in discussions](../../discussions).
 
 **Happy PARA-Programming! 🚀**
+
+---
+
+## 🧪 Testing Your Setup
+
+After installation, verify everything is working:
+
+```bash
+# Test all installations
+make test
+
+# Or test manually
+ls -la ~/.claude/CLAUDE.md        # Should show symlink
+ls ~/.claude/commands/para-*.md   # Should list 6 commands
+ls -la ~/.cursorrules              # Should show symlink
+ls -la ~/.github/copilot-instructions.md  # Should show symlink
+```
+
+---
+
+## 🔄 Updating
+
+One of the benefits of using symlinks is automatic updates!
+
+```bash
+# Navigate to the repository
+cd /path/to/para-programming
+
+# Pull latest changes
+git pull origin main
+
+# Your symlinked files are automatically updated! ✨
+```
+
+**No need to re-run setup!** The symlinks ensure you always have the latest methodology.
+
+### Update Commands Only
+
+If new slash commands were added:
+
+```bash
+cp claude-skill/commands/*.md ~/.claude/commands/
+```
+
+---
+
+## 🗑️ Uninstalling
+
+To remove PARA-Programming setup:
+
+```bash
+# Uninstall specific assistant
+make uninstall claude-skill
+make uninstall cursor
+make uninstall copilot
+
+# Or uninstall everything
+make uninstall all
+```
+
+### Manual Uninstall
+
+```bash
+# Remove Claude Code setup
+rm ~/.claude/CLAUDE.md
+rm ~/.claude/commands/para-*.md
+
+# Remove Cursor setup
+rm ~/.cursorrules
+
+# Remove Copilot setup
+rm ~/.github/copilot-instructions.md
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Makefile Commands Not Working
+
+**Problem:** `make: command not found`
+
+**Solution:** Install make:
+- **Mac:** `xcode-select --install`
+- **Linux:** `sudo apt install build-essential` or `sudo yum install make`
+- **Windows:** Use Git Bash or WSL
+
+### Symlink Broken
+
+**Problem:** `ls -la ~/.claude/CLAUDE.md` shows broken link
+
+**Solution:**
+```bash
+# Remove broken link
+rm ~/.claude/CLAUDE.md
+
+# Recreate from correct location
+cd /path/to/para-programming
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
+```
+
+### Permissions Error
+
+**Problem:** Permission denied when running scripts
+
+**Solution:**
+```bash
+# Make scripts executable
+chmod +x scripts/*.sh
+
+# Or use make which handles this automatically
+make setup claude-skill
+```
+
+### Setup Script Fails
+
+**Problem:** Script exits with error
+
+**Solution:**
+1. Check script output for specific error
+2. Ensure you're in the cloned repository directory
+3. Verify git is installed: `git --version`
+4. Try manual setup instructions instead
+5. Report issue on GitHub with error details
+
+---
+
+## 📚 Additional Resources
+
+### Documentation by Assistant
+
+- **Claude Code**
+  - [README](claude/README.md) - Complete guide
+  - [QUICKSTART](claude/QUICKSTART.md) - 5-minute start
+  - [Skill README](claude-skill/README.md) - Skill documentation
+  - [INSTALL](claude-skill/INSTALL.md) - Installation details
+
+- **Cursor**
+  - [README](cursor/README.md) - Complete guide
+  - [QUICKSTART](cursor/QUICKSTART.md) - 5-minute start
+
+- **Copilot**
+  - [README](copilot/README.md) - Complete guide
+  - [QUICKSTART](copilot/QUICKSTART.md) - 5-minute start
+
+### Getting Help
+
+- 💬 [GitHub Discussions](https://github.com/para-programming/para-programming/discussions)
+- 🐛 [Report Issues](https://github.com/para-programming/para-programming/issues)
+- 📖 [Main PARA Guide](README.md)
+
+---
+
+## ⚡ Quick Commands Reference
+
+```bash
+# Setup
+make setup claude-skill  # Claude Code with skill
+make setup cursor        # Cursor IDE
+make setup copilot       # GitHub Copilot
+make setup-all           # All assistants
+
+# Testing
+make test                # Verify installation
+
+# Updating
+cd para-programming && git pull origin main
+
+# Uninstalling
+make uninstall claude-skill
+make uninstall cursor
+make uninstall copilot
+make uninstall all
+
+# Help
+make help                # Show all available commands
+```
+
+---
+
+**Setup complete! Start building with PARA-Programming! 🚀**
