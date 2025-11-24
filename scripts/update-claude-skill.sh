@@ -49,19 +49,19 @@ if check_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"; then
     echo ""
 
     # Backup existing commands
-    if [ -d "$COMMANDS_DIR" ] && [ "$(ls -A $COMMANDS_DIR/para-*.md 2>/dev/null)" ]; then
+    if [ -d "$COMMANDS_DIR" ] && [ "$(ls -A $COMMANDS_DIR/*.md 2>/dev/null)" ]; then
         backup_dir="$COMMANDS_DIR/backup-$(date +%Y%m%d-%H%M%S)"
         mkdir -p "$backup_dir"
-        mv "$COMMANDS_DIR"/para-*.md "$backup_dir/" 2>/dev/null || true
+        mv "$COMMANDS_DIR"/*.md "$backup_dir/" 2>/dev/null || true
         print_info "Backed up existing commands to: $backup_dir"
     fi
 
     # Copy updated commands
-    copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "para-*.md" "PARA commands"
+    copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "*.md" "PARA commands"
 
     # Count installed commands
-    command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
-    expected_count=$(ls -1 "$SKILL_DIR/commands"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
+    command_count=$(ls -1 "$COMMANDS_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+    expected_count=$(ls -1 "$SKILL_DIR/commands"/*.md 2>/dev/null | wc -l | tr -d ' ')
 
     if [ "$command_count" -eq "$expected_count" ]; then
         print_success "All $command_count PARA commands updated"
@@ -129,19 +129,19 @@ else
         print_success "Updated CLAUDE.md"
 
         # Backup existing commands
-        if [ -d "$COMMANDS_DIR" ] && [ "$(ls -A $COMMANDS_DIR/para-*.md 2>/dev/null)" ]; then
+        if [ -d "$COMMANDS_DIR" ] && [ "$(ls -A $COMMANDS_DIR/*.md 2>/dev/null)" ]; then
             backup_dir="$COMMANDS_DIR/backup-$(date +%Y%m%d-%H%M%S)"
             mkdir -p "$backup_dir"
-            mv "$COMMANDS_DIR"/para-*.md "$backup_dir/" 2>/dev/null || true
+            mv "$COMMANDS_DIR"/*.md "$backup_dir/" 2>/dev/null || true
             print_info "Backed up existing commands to: $backup_dir"
         fi
 
         # Copy updated commands
-        copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "para-*.md" "PARA commands"
+        copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "*.md" "PARA commands"
 
         # Count installed commands
-        command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
-        expected_count=$(ls -1 "$SKILL_DIR/commands"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
+        command_count=$(ls -1 "$COMMANDS_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+        expected_count=$(ls -1 "$SKILL_DIR/commands"/*.md 2>/dev/null | wc -l | tr -d ' ')
 
         if [ "$command_count" -eq "$expected_count" ]; then
             print_success "All $command_count PARA commands updated"

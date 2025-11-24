@@ -30,11 +30,11 @@ SKILL_DIR="$REPO_ROOT/claude-skill"
 
 # Check if already set up
 if check_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"; then
-    command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
-    if [ "$command_count" -eq 6 ]; then
+    command_count=$(ls -1 "$COMMANDS_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+    if [ "$command_count" -eq 8 ]; then
         print_success "✨ Already set up correctly!"
         print_info "Global CLAUDE.md: ✓"
-        print_info "PARA commands: ✓ (6/6)"
+        print_info "PARA commands: ✓ (8/8)"
         echo ""
         print_info "To reinstall, first run: make uninstall claude-skill"
         exit 0
@@ -53,7 +53,7 @@ create_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md" "Global CLAUDE.md"
 echo ""
 print_step "Step 3: Installing slash commands"
 if [ -d "$COMMANDS_DIR" ]; then
-    copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "para-*.md" "PARA commands"
+    copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "*.md" "PARA commands"
 else
     print_error "Commands directory not found"
     exit 1
@@ -132,24 +132,25 @@ print_step "Step 5: Verifying installation"
 verify_symlink "$CLAUDE_DIR/CLAUDE.md" "Global CLAUDE.md"
 
 # Count installed commands
-command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
-if [ "$command_count" -eq 7 ]; then
-    print_success "All 7 PARA commands installed"
+command_count=$(ls -1 "$COMMANDS_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+if [ "$command_count" -eq 8 ]; then
+    print_success "All 8 PARA commands installed"
 else
-    print_warning "Expected 7 commands, found $command_count"
+    print_warning "Expected 8 commands, found $command_count"
 fi
 
 # Print completion
 print_completion "Claude Code (with skill)"
 
 echo "Available Commands:"
-echo "  /para-init       - Initialize PARA structure"
-echo "  /para-plan       - Create a plan"
-echo "  /para-summarize  - Generate summary"
-echo "  /para-archive    - Archive context"
-echo "  /para-status     - Show status"
-echo "  /para-check      - Decision helper"
-echo "  /para-help       - Complete guide"
+echo "  /para-init           - Initialize PARA structure"
+echo "  /para-plan           - Create a plan"
+echo "  /para-summarize      - Generate summary"
+echo "  /para-archive        - Archive context"
+echo "  /para-status         - Show status"
+echo "  /para-check          - Decision helper"
+echo "  /para-help           - Complete guide"
+echo "  /init-para-claude    - Initialize project CLAUDE.md"
 echo ""
 echo "SessionStart Hook:"
 echo "  ✓ Installed - Shows status on Claude Code startup"
