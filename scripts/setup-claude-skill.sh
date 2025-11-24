@@ -80,11 +80,31 @@ if [ -f "$SETTINGS_FILE" ]; then
     if grep -q '"SessionStart"' "$SETTINGS_FILE" 2>/dev/null; then
         print_info "SessionStart hook already configured in settings.json"
     else
-        # Append hook configuration
-        print_info "Adding SessionStart hook to existing settings.json"
-        # This is complex, just warn user to configure manually
-        print_warning "Please manually add SessionStart hook to $SETTINGS_FILE"
-        print_info "See: https://github.com/anthropics/claude-code/docs/hooks"
+        # Merge hook configuration using jq if available
+        if command -v jq &> /dev/null; then
+            print_info "Adding SessionStart hook to existing settings.json"
+            # Backup existing file
+            cp "$SETTINGS_FILE" "$SETTINGS_FILE.backup"
+            # Merge hook configuration
+            jq '. + {"hooks": {"SessionStart": [{"hooks": [{"type": "command", "command": "bash ~/.claude/hooks/para-session-start.sh"}]}]}}' \
+                "$SETTINGS_FILE" > "$SETTINGS_FILE.tmp" && mv "$SETTINGS_FILE.tmp" "$SETTINGS_FILE"
+            print_success "Added SessionStart hook to settings.json"
+            print_info "Backup saved to settings.json.backup"
+        else
+            # jq not available, warn user
+            print_warning "jq not found - cannot automatically merge settings"
+            print_info "Please manually add SessionStart hook to $SETTINGS_FILE:"
+            echo ""
+            echo '  "hooks": {'
+            echo '    "SessionStart": [{'
+            echo '      "hooks": [{'
+            echo '        "type": "command",'
+            echo '        "command": "bash ~/.claude/hooks/para-session-start.sh"'
+            echo '      }]'
+            echo '    }]'
+            echo '  }'
+            echo ""
+        fi
     fi
 else
     # Create new settings.json with hook configuration
