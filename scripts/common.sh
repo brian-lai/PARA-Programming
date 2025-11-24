@@ -77,6 +77,24 @@ create_dir() {
     fi
 }
 
+# Check if symlink is correctly set up
+check_symlink() {
+    local source="$1"
+    local target="$2"
+
+    # Expand source to absolute path
+    source="$(cd "$(dirname "$source")" 2>/dev/null && pwd)/$(basename "$source")"
+
+    # Check if target exists and is a symlink pointing to source
+    if [ -L "$target" ]; then
+        local current_target=$(readlink "$target")
+        if [ "$current_target" = "$source" ]; then
+            return 0  # Correctly set up
+        fi
+    fi
+    return 1  # Not set up or incorrect
+}
+
 # Create symlink safely
 create_symlink() {
     local source="$1"

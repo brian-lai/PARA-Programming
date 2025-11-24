@@ -1,7 +1,7 @@
 # PARA-Programming Setup Makefile
 # Automated setup for different AI coding assistants
 
-.PHONY: help setup setup-all uninstall clean test claude-skill claude cursor copilot uninstall-claude-skill uninstall-claude uninstall-cursor uninstall-copilot uninstall-all
+.PHONY: help setup setup-all update update-all uninstall clean test claude-skill claude cursor copilot uninstall-claude-skill uninstall-claude uninstall-cursor uninstall-copilot uninstall-all
 
 # Default target - show help
 help:
@@ -10,11 +10,13 @@ help:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo ""
 	@echo "Usage:"
-	@echo "  make setup <assistant>   Set up PARA for specific assistant"
-	@echo "  make setup-all           Set up for all assistants"
-	@echo "  make uninstall <target>  Remove setup for specific assistant"
-	@echo "  make test                Verify installation"
-	@echo "  make clean               Clean up temporary files"
+	@echo "  make setup <assistant>        Set up PARA for specific assistant"
+	@echo "  make setup-all                Set up for all assistants"
+	@echo "  make update-<assistant>       Update global methodology for assistant"
+	@echo "  make update-all               Update for all (or just: git pull)"
+	@echo "  make uninstall <target>       Remove setup for specific assistant"
+	@echo "  make test                     Verify installation"
+	@echo "  make clean                    Clean up temporary files"
 	@echo ""
 	@echo "Available Assistants:"
 	@echo "  claude-skill    Claude Code with skill (recommended)"
@@ -23,10 +25,13 @@ help:
 	@echo "  copilot         GitHub Copilot"
 	@echo ""
 	@echo "Examples:"
-	@echo "  make setup claude-skill"
-	@echo "  make setup cursor"
-	@echo "  make setup-all"
-	@echo "  make uninstall claude-skill"
+	@echo "  make setup claude-skill          # Initial setup"
+	@echo "  make setup-all                   # Setup all assistants"
+	@echo "  make update-claude-skill         # Update methodology"
+	@echo "  make update-all                  # Or just: git pull"
+	@echo "  make uninstall claude-skill      # Remove setup"
+	@echo ""
+	@echo "💡 With symlinks, updates are automatic: just 'git pull'!"
 	@echo ""
 	@echo "For manual setup instructions, see:"
 	@echo "  - SETUP-GUIDE.md (overview)"
@@ -78,6 +83,31 @@ setup-all:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo "  ✨ All assistants configured!"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Update targets
+update-claude-skill:
+	@bash scripts/update-claude-skill.sh
+
+update-claude:
+	@bash scripts/update-claude.sh
+
+update-cursor:
+	@bash scripts/update-cursor.sh
+
+update-copilot:
+	@bash scripts/update-copilot.sh
+
+update-all:
+	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+	@echo "  Updating PARA-Programming"
+	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+	@echo ""
+	@echo "✨ With symlinks, updates are automatic!"
+	@echo ""
+	@echo "Just run:"
+	@echo "  git pull origin main"
+	@echo ""
+	@echo "Your symlinked files will automatically point to the latest version."
 
 # Uninstall targets
 uninstall:

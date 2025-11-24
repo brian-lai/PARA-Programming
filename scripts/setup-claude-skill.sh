@@ -28,6 +28,19 @@ COMMANDS_DIR="$CLAUDE_DIR/commands"
 GLOBAL_CLAUDE_MD="$REPO_ROOT/CLAUDE.md"
 SKILL_DIR="$REPO_ROOT/claude-skill"
 
+# Check if already set up
+if check_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"; then
+    command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
+    if [ "$command_count" -eq 6 ]; then
+        print_success "✨ Already set up correctly!"
+        print_info "Global CLAUDE.md: ✓"
+        print_info "PARA commands: ✓ (6/6)"
+        echo ""
+        print_info "To reinstall, first run: make uninstall claude-skill"
+        exit 0
+    fi
+fi
+
 echo ""
 print_step "Step 1: Creating directories"
 create_dir "$CLAUDE_DIR"
