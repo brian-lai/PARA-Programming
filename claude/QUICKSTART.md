@@ -33,12 +33,17 @@ The PARA-Programming skill provides **automated slash commands** that make the m
 
 ```bash
 # Clone the repository
-git clone https://github.com/para-programming/claude-skill.git
-cd claude-skill
+git clone https://github.com/para-programming/para-programming.git
+cd para-programming
 
 # Run the installation script
 ./claude-skill/scripts/install.sh
 ```
+
+**What this does:**
+- Creates symlink `~/.claude/CLAUDE.md` → `$(pwd)/CLAUDE.md`
+- Copies slash commands to `~/.claude/commands/`
+- When you `git pull`, your methodology auto-updates!
 
 **What this installs:**
 - ✅ Global `CLAUDE.md` methodology file
@@ -56,18 +61,24 @@ cd claude-skill
 ### Option B: Manual Installation
 
 ```bash
+# Ensure you're in the cloned repo
+cd /path/to/para-programming
+
 # Create directories
 mkdir -p ~/.claude/commands
 
-# Copy global methodology
-cp CLAUDE.md ~/.claude/CLAUDE.md
+# Create symlink for global methodology (recommended)
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 
 # Copy slash commands
 cp claude-skill/commands/*.md ~/.claude/commands/
 
 # Verify installation
-ls ~/.claude/commands/para-*.md
+ls -la ~/.claude/CLAUDE.md        # Should show symlink
+ls ~/.claude/commands/para-*.md   # Should show 6 commands
 ```
+
+**Symlink benefit:** Automatic updates when you `git pull`!
 
 **✅ Done!** Skip to [Step 2](#step-2-navigate-to-your-project) and use `/para-init` instead of manual setup.
 
@@ -78,14 +89,18 @@ ls ~/.claude/commands/para-*.md
 If you prefer not to use the skill, you can install just the global methodology:
 
 ```bash
+# Ensure you're in the cloned repo
+cd /path/to/para-programming
+
 # Create .claude directory in your home folder
 mkdir -p ~/.claude
 
-# Copy the global CLAUDE.md file
-cp CLAUDE.md ~/.claude/CLAUDE.md
+# Create symlink to global CLAUDE.md (recommended)
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 
-# Verify it was created
+# Verify the symlink
 ls -la ~/.claude/CLAUDE.md
+# Should show: ~/.claude/CLAUDE.md -> /path/to/para-programming/CLAUDE.md
 ```
 
 **What this does:** Tells Claude Code how to follow the PARA-Programming methodology (Plan → Review → Execute → Summarize → Archive) across all your projects.
@@ -506,9 +521,10 @@ claude
 ### Without Skill (Legacy)
 
 ```bash
-# One-time setup
+# One-time setup (in cloned repo directory)
+cd /path/to/para-programming
 mkdir -p ~/.claude
-cp CLAUDE.md ~/.claude/CLAUDE.md
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 
 # Per-project setup
 mkdir -p context/{data,plans,summaries,archives,servers}

@@ -44,12 +44,24 @@ If you prefer manual control:
 #### Step 1: Install Global Methodology
 
 ```bash
+# Ensure you're in the cloned repository
+cd /path/to/para-programming
+
 # Create Claude directory
 mkdir -p ~/.claude
 
-# Copy global CLAUDE.md
-cp CLAUDE.md ~/.claude/CLAUDE.md
+# Create symlink (recommended - automatic updates)
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
+
+# Verify the symlink
+ls -la ~/.claude/CLAUDE.md
+# Should show: ~/.claude/CLAUDE.md -> /path/to/para-programming/CLAUDE.md
 ```
+
+**Why symlink instead of copy?**
+- ✅ Automatic updates when you `git pull`
+- ✅ Single source of truth
+- ✅ No need to manually sync changes
 
 #### Step 2: Install Slash Commands
 

@@ -38,21 +38,36 @@ echo "📂 Creating directories..."
 mkdir -p "$CLAUDE_DIR"
 mkdir -p "$COMMANDS_DIR"
 
-# Install global CLAUDE.md
+# Install global CLAUDE.md (using symlink)
 echo "📄 Installing global CLAUDE.md..."
-if [ -f "$CLAUDE_DIR/CLAUDE.md" ]; then
-    echo "⚠️  Global CLAUDE.md already exists."
-    read -p "   Overwrite? (y/N): " -n 1 -r
+if [ -L "$CLAUDE_DIR/CLAUDE.md" ]; then
+    echo "⚠️  Global CLAUDE.md symlink already exists."
+    CURRENT_TARGET=$(readlink "$CLAUDE_DIR/CLAUDE.md")
+    echo "   Current target: $CURRENT_TARGET"
+    read -p "   Replace with new symlink? (y/N): " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        cp "$SKILL_DIR/../CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
-        echo "   ✅ Overwritten"
+        rm "$CLAUDE_DIR/CLAUDE.md"
+        ln -s "$SKILL_DIR/../CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+        echo "   ✅ Symlink updated"
+    else
+        echo "   ⏭️  Skipped"
+    fi
+elif [ -f "$CLAUDE_DIR/CLAUDE.md" ]; then
+    echo "⚠️  Global CLAUDE.md file exists (not a symlink)."
+    echo "   This will be replaced with a symlink to get automatic updates."
+    read -p "   Replace with symlink? (y/N): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        rm "$CLAUDE_DIR/CLAUDE.md"
+        ln -s "$SKILL_DIR/../CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+        echo "   ✅ Symlink created"
     else
         echo "   ⏭️  Skipped"
     fi
 else
-    cp "$SKILL_DIR/../CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
-    echo "   ✅ Installed"
+    ln -s "$SKILL_DIR/../CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+    echo "   ✅ Symlink created"
 fi
 
 # Install commands
@@ -78,9 +93,17 @@ done
 
 # Summary
 echo ""
+echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "  ✨ Installation Complete!"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "✅ Global CLAUDE.md is symlinked to:"
+echo "   $SKILL_DIR/../CLAUDE.md"
+echo ""
+echo "💡 To get methodology updates:"
+echo "   cd $(dirname "$SKILL_DIR")"
+echo "   git pull origin main"
 echo ""
 echo "📋 Next Steps:"
 echo ""
