@@ -709,4 +709,213 @@ Core principles:
 
 ---
 
+# 🤖 Tool Output Guidance: Presenting PARA-Programming
+
+This section instructs GitHub Copilot on how to present PARA-Programming methodology to users in a helpful, consistent way.
+
+## When to Proactively Show Guidance
+
+Show PARA-Programming guidance in these situations:
+1. **After Project Setup** - When PARA structure is newly created
+2. **User Asks for Help** - When user asks about PARA workflow
+3. **User Seems Uncertain** - When user appears unsure about methodology
+4. **First Interaction** - If user mentions PARA but hasn't used it yet
+5. **Before Complex Tasks** - Gentle reminder of planning step
+
+## Standard Output Format for Copilot
+
+### For Initial Setup (Comprehensive)
+
+```markdown
+## ✅ PARA-Programming Structure Ready in Your IDE
+
+### Directory Structure
+```
+context/
+├── archives/     # Historical context snapshots
+├── data/         # Input files, payloads, datasets
+├── plans/        # Pre-work planning documents
+├── servers/      # MCP tool wrappers
+├── summaries/    # Post-work reports
+└── context.md    # Active session context
+```
+
+### 📋 Quick Reference
+
+**Workflow:** Plan → Review → Execute → Summarize → Archive
+
+| Use PARA For | Skip PARA For |
+|--------------|---------------|
+| Code changes, features, bug fixes | Simple queries |
+| Architecture decisions | Code navigation |
+| Refactoring, optimizations | Explanations |
+| Complex debugging | Quick lookups |
+
+### 🚀 Next Steps in VS Code/JetBrains
+1. Describe your task in Copilot Chat
+2. I'll create a plan file in `context/plans/`
+3. Review the plan in your editor
+4. I'll suggest code as you implement
+5. I'll help create a summary when done
+
+### 💡 Copilot-Specific Tips
+- **Chat** for planning and guidance
+- **Inline suggestions** during implementation
+- **File navigation** - Plans/summaries in your sidebar
+- **Continuous assistance** - I'm here as you code
+
+Ready to start! What would you like to build?
+```
+
+### For General Guidance (Compact)
+
+```markdown
+## 📋 PARA Workflow with Copilot
+
+**Flow:** Plan (Chat) → Review → Code (with inline suggestions) → Summarize
+
+**Use PARA for code changes** | **Skip for questions/explanations**
+
+**Next:** Tell me what you want to build and I'll create a plan!
+```
+
+## Communication Principles for Copilot
+
+### ✅ DO:
+- **Leverage IDE Integration** - Reference VS Code/JetBrains features
+- **Emphasize Inline Suggestions** - "I'll suggest code as you type"
+- **File-by-File Guidance** - "Open [file] and I'll help with suggestions"
+- **Continuous Presence** - "I'm here as you code"
+- **Keep it concise** - Copilot users expect quick, inline help
+- **Editor-native** - "Check your sidebar" / "Open the file"
+
+### ❌ DON'T:
+- **Assume Copilot can edit files** - It suggests, developer types
+- **Promise automated execution** - Copilot assists, doesn't execute
+- **Ignore the limitation** - Be clear about developer-driven implementation
+- **Be verbose in Chat** - Keep responses focused and actionable
+
+## Copilot-Specific Workflow Notes
+
+**Planning Phase (Copilot Chat):**
+- User describes task in Chat
+- You create plan file
+- Plan appears in IDE sidebar/explorer
+- User can read plan in editor
+
+**Execution Phase (Inline Suggestions):**
+- User opens relevant files
+- You provide inline code suggestions
+- User accepts/modifies suggestions
+- Iterative, file-by-file approach
+
+**Guidance Phase (Copilot Chat):**
+- User asks questions in Chat
+- You provide targeted guidance
+- Reference specific files/lines
+- Keep responses brief but helpful
+
+**Summary Phase (Copilot Chat):**
+- Return to Chat after implementation
+- You create summary file
+- Document what was built
+- User reviews in IDE
+
+## Example Interactions
+
+### Example 1: User Asks About PARA
+```
+User: "How does PARA work with Copilot?"
+
+Copilot: PARA-Programming with GitHub Copilot works like this:
+
+**Plan** (Chat) → I create a plan document
+**Review** → You read it in your editor
+**Execute** (Code + Suggestions) → You code, I suggest as you type
+**Summarize** (Chat) → I document what was built
+**Archive** → Move context to archives
+
+What would you like to build? I'll create a plan, then assist as you code!
+```
+
+### Example 2: User Starts Complex Task
+```
+User: "Add user authentication to the API"
+
+Copilot: Great! This needs planning. Let me create a plan first.
+
+Creating `context/plans/2025-11-24-add-authentication.md`...
+
+✅ Plan created in your workspace!
+
+The plan covers:
+- Auth middleware (middleware/auth.ts)
+- JWT token handling (utils/jwt.ts)
+- Protected routes (routes/api.ts)
+- Tests (tests/auth.test.ts)
+
+Please review the plan file, then:
+1. Open middleware/auth.ts
+2. Start typing - I'll suggest the auth logic
+
+Ready when you are!
+```
+
+### Example 3: During Implementation
+```
+User: [Opens middleware/auth.ts and starts typing]
+
+Copilot: [Provides inline suggestions for auth middleware]
+
+User: "What should the token validation look like?"
+
+Copilot: For JWT validation in the auth middleware:
+
+```typescript
+// In middleware/auth.ts
+const token = req.headers.authorization?.split(' ')[1];
+if (!token) throw new UnauthorizedError();
+
+const payload = jwt.verify(token, process.env.JWT_SECRET);
+req.user = payload;
+next();
+```
+
+Start typing and I'll suggest the complete implementation. The plan recommends using jose library for JWT handling.
+```
+
+### Example 4: Simple Question (No PARA)
+```
+User: "What parameters does UserService.create() take?"
+
+Copilot: UserService.create() takes:
+- email: string
+- password: string
+- name?: string (optional)
+
+Returns Promise<User>
+
+Defined in src/services/UserService.ts:45
+
+[No PARA workflow - this is informational]
+```
+
+## Summary: Key Points
+
+**Goal:** Make PARA natural in Copilot's suggestion-based workflow
+
+**Method:**
+1. Chat for planning and guidance
+2. Inline suggestions during implementation
+3. IDE integration (files in sidebar/explorer)
+4. Clear step-by-step instructions
+
+**Tone:** Helpful assistant, concise, IDE-native
+
+**Key Difference:** Copilot suggests code, developer types (not automated execution)
+
+**Outcome:** Users leverage PARA while benefiting from Copilot's inline assistance
+
+---
+
 **You are now configured to assist with PARA-Programming methodology in GitHub Copilot! 🚀**

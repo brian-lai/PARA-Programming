@@ -702,3 +702,183 @@ By separating workflow methodology (global) from project context (local), we ach
 - **Maintainability** (update workflow once, applies everywhere)
 - **Clarity** (clear separation of concerns)
 
+---
+
+## 🤖 Tool Output Guidance: Presenting PARA-Programming
+
+This section instructs Claude Code (and other AI tools) on how to present PARA-Programming methodology to users in a helpful, consistent way.
+
+### When to Proactively Show Guidance
+
+Show PARA-Programming guidance in these situations:
+
+1. **After Initialization** - Always show comprehensive output after `/para-init`
+2. **User Asks for Help** - When user asks "how do I use PARA?" or similar
+3. **User Seems Uncertain** - When user appears unsure about workflow
+4. **After Archiving** - Brief reminder of next steps after `/para-archive`
+5. **First Interaction** - If user mentions PARA but hasn't used it yet
+
+### Standard Output Format
+
+When presenting PARA-Programming guidance, use this structure:
+
+#### For `/para-init` (Comprehensive Onboarding)
+
+```markdown
+## ✅ Directory Structure Created/Verified
+[Tree view showing context/ structure with descriptions]
+
+## ✅ Files Created/Updated
+[List of what was created or modified]
+
+## 📋 Quick Reference
+**Workflow:** Plan → Review → Execute → Summarize → Archive
+
+**Use PARA for:** Code changes, architecture decisions, complex tasks
+**Skip PARA for:** Simple queries, code navigation, explanations
+
+**Rule of thumb:** If it results in git changes, use PARA workflow.
+
+## 🚀 Next Steps
+1. Create your first plan: `/para-plan <task-description>`
+2. Check workflow status: `/para-status`
+3. Get help anytime: `/para-help`
+
+## 📚 Available Commands
+[List all 6 PARA commands with brief descriptions]
+
+Your PARA-Programming environment is ready! 🎉
+```
+
+#### For General Guidance (Compact Version)
+
+```markdown
+## 📋 PARA-Programming Quick Reference
+
+**Workflow:** Plan → Review → Execute → Summarize → Archive
+
+**When to use PARA:**
+- ✅ Code changes, features, bug fixes
+- ✅ Architecture decisions
+- ✅ File modifications
+- ✅ Complex debugging
+
+**When to skip PARA:**
+- ❌ Simple queries ("What does X do?")
+- ❌ Code navigation ("Show me X")
+- ❌ Explanations ("How does X work?")
+
+**Commands:**
+- `/para-plan` - Create plan
+- `/para-help` - Full guide
+- `/para-status` - Check state
+
+**Need help?** Run `/para-help` for the complete guide.
+```
+
+### Communication Principles
+
+When interacting with users about PARA-Programming:
+
+#### ✅ DO:
+- **Be helpful, not overwhelming** - Show what they need now, not everything at once
+- **Provide examples** - Show concrete use cases, not just theory
+- **Include next steps** - Always tell them what to do next
+- **Adapt to familiarity** - Compact version for repeat users, detailed for newcomers
+- **Use visual structure** - Tree views, tables, clear sections
+- **Reference commands** - Show actual commands they can run
+- **Be encouraging** - Positive, supportive tone
+
+#### ❌ DON'T:
+- **Overwhelm with theory** - Keep explanations practical
+- **Assume knowledge** - Explain concepts clearly
+- **Skip examples** - Always show concrete use cases
+- **Be vague** - Specific commands and steps
+- **Use jargon unnecessarily** - Plain language where possible
+- **Lecture** - Be conversational, not academic
+- **Leave them stuck** - Always provide next actions
+
+### Context-Aware Presentation
+
+#### For CLI Tools (Claude Code)
+- Use tree command output format for directory structures
+- Format commands with backticks: `/para-init`
+- Use markdown tables for comparisons
+- Keep output scannable with clear headers
+
+#### For GUI Tools (Cursor, Copilot)
+- Use visual markers (✅ ❌ 📋 🚀)
+- Consider collapsible sections if supported
+- Use tables and lists for scannability
+- Maintain same content, adapt presentation
+
+### Timing and Frequency
+
+**First Time Users:**
+- Show comprehensive guidance after `/para-init`
+- Offer `/para-help` in every response until they use it
+- Provide decision support with `/para-check` reference
+
+**Returning Users:**
+- Compact reminders when needed
+- Assume they know basics
+- Focus on specific help they request
+
+**All Users:**
+- Always available via `/para-help`
+- Status check via `/para-status`
+- Decision support via `/para-check`
+
+### Example Interactions
+
+#### Example 1: User Asks About PARA
+```
+User: "How do I use PARA-Programming?"
+Claude: I'll help you learn PARA-Programming! It's a structured workflow for working with AI assistants. Let me show you the basics:
+
+[Shows compact version of guidance from above]
+
+For the complete guide, run `/para-help`.
+```
+
+#### Example 2: After Running `/para-init`
+```
+[Claude automatically shows comprehensive onboarding output per template above]
+```
+
+#### Example 3: User Starts Task Without Planning
+```
+User: "Add authentication to the API"
+
+Claude: I'll create a plan for implementing authentication. This requires code changes, so let's follow the PARA workflow.
+
+[Claude runs /para-plan internally or prompts user to run it]
+```
+
+#### Example 4: User Asks Simple Question
+```
+User: "Where is the authentication middleware defined?"
+
+Claude: The authentication middleware is in src/middleware/auth.ts:45-89.
+
+[No PARA workflow - this is informational only]
+```
+
+---
+
+### Summary: Key Points
+
+**Goal:** Make PARA-Programming accessible and intuitive for all users, especially newcomers.
+
+**Method:**
+1. **Automatic guidance** after `/para-init`
+2. **On-demand help** via `/para-help`
+3. **Context-aware assistance** based on user familiarity
+4. **Decision support** via `/para-check`
+
+**Tone:** Helpful, encouraging, practical (not overwhelming or academic)
+
+**Format:** Visual, scannable, action-oriented
+
+**Outcome:** Users feel guided and confident using PARA-Programming methodology.
+
