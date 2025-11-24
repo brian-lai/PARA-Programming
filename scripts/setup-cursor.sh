@@ -38,7 +38,7 @@ case "$OS" in
         ;;
 esac
 
-CURSOR_RULES_SOURCE="$REPO_ROOT/cursor/.cursorrules"
+CURSOR_RULES_SOURCE="$REPO_ROOT/cursor/cursorrules"
 CURSOR_RULES_TARGET="$HOME/.cursorrules"
 
 echo ""
