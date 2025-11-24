@@ -1,0 +1,60 @@
+{
+  "name": "para-programming",
+  "version": "1.0.0",
+  "description": "PARA-Programming methodology for Claude Code - structured context, persistent memory, and intelligent execution",
+  "author": "PARA-Programming Community",
+  "namespace": "@para-programming",
+  "homepage": "https://github.com/para-programming/claude-skill",
+  "license": "MIT",
+  "keywords": [
+    "para",
+    "methodology",
+    "workflow",
+    "context",
+    "planning",
+    "ai-assisted-development"
+  ],
+  "commands": [
+    {
+      "name": "para-init",
+      "description": "Initialize PARA-Programming structure in current project",
+      "file": "commands/para-init.md"
+    },
+    {
+      "name": "para-plan",
+      "description": "Create a new plan with template",
+      "file": "commands/para-plan.md"
+    },
+    {
+      "name": "para-summarize",
+      "description": "Generate summary from current work",
+      "file": "commands/para-summarize.md"
+    },
+    {
+      "name": "para-archive",
+      "description": "Archive current context with timestamp",
+      "file": "commands/para-archive.md"
+    },
+    {
+      "name": "para-status",
+      "description": "Show current PARA context state",
+      "file": "commands/para-status.md"
+    },
+    {
+      "name": "para-check",
+      "description": "Decision helper: Should I use PARA workflow for this request?",
+      "file": "commands/para-check.md"
+    }
+  ],
+  "mcpTools": [
+    "mcp-tools/"
+  ],
+  "templates": [
+    "templates/"
+  ],
+  "documentation": "README.md",
+  "installation": {
+    "manual": "See README.md for manual installation instructions",
+    "skill": "claude install @para-programming/skill (when available)"
+  }
+}
