@@ -1,7 +1,7 @@
 # PARA-Programming Setup Makefile
 # Automated setup for different AI coding assistants
 
-.PHONY: help setup setup-all uninstall clean test
+.PHONY: help setup setup-all uninstall clean test claude-skill claude cursor copilot uninstall-claude-skill uninstall-claude uninstall-cursor uninstall-copilot uninstall-all
 
 # Default target - show help
 help:
