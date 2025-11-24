@@ -170,6 +170,84 @@ mv context/context.md context/archives/$(date +%F)-context.md
         Human Review                 Context Refresh
 ```
 
+---
+
+## ⚠️ CRITICAL: When to Apply PARA Workflow
+
+**The PARA workflow MUST be strictly followed for all project work. Do NOT skip or shortcut this process for complex projects.**
+
+### ✅ ALWAYS Use PARA Workflow For:
+
+- **All code changes** - Features, bug fixes, refactoring, optimizations
+- **Architecture decisions** - Adding libraries, changing patterns, major refactors
+- **File modifications** - Creating, editing, or deleting project files
+- **Configuration changes** - Build configs, dependencies, environment setup
+- **Database changes** - Migrations, schema updates, data transformations
+- **Testing implementation** - Writing or modifying tests
+- **Documentation that affects code** - API docs, technical specs
+- **Debugging complex issues** - Requiring code investigation and fixes
+- **Performance optimizations** - Requiring measurement and code changes
+- **Security implementations** - Authentication, authorization, encryption
+
+**Rule of thumb:** If it results in git changes to project files, use PARA workflow.
+
+### ❌ Do NOT Use PARA Workflow For:
+
+- **Simple informational queries** - "What does this function do?" "Where is X defined?"
+- **Codebase navigation** - "Show me the authentication logic" "List all API routes"
+- **Explanation requests** - "Explain how this works" "What's the difference between X and Y?"
+- **General questions** - Questions unrelated to the current project
+- **Quick lookups** - "What's the current version?" "What dependencies do we have?"
+- **Summary documentation** - Generating docs that describe existing code without changes
+
+**Rule of thumb:** If it's read-only or informational, skip PARA workflow and answer directly.
+
+### 🤔 Decision Tree
+
+```
+Is this request asking for code/file changes?
+├─ YES → Use PARA Workflow (Plan → Review → Execute → Summarize → Archive)
+└─ NO → Is it asking about this project's code?
+    ├─ YES → Provide direct answer with file references
+    └─ NO → Provide standard Claude response
+```
+
+### Examples
+
+**✅ Use PARA Workflow:**
+```
+User: "Add user authentication to the API"
+Claude: I'll create a plan for implementing authentication...
+[Creates context/plans/2025-11-24-user-auth.md]
+```
+
+**✅ Use PARA Workflow:**
+```
+User: "Fix the memory leak in the WebSocket handler"
+Claude: I'll create a plan to debug and fix this issue...
+[Creates context/plans/2025-11-24-fix-memory-leak.md]
+```
+
+**❌ Skip PARA Workflow:**
+```
+User: "Where is the authentication middleware defined?"
+Claude: The authentication middleware is in src/middleware/auth.ts:45-89
+```
+
+**❌ Skip PARA Workflow:**
+```
+User: "Explain how the caching system works"
+Claude: The caching system uses Redis for storing frequently accessed data...
+```
+
+**❌ Skip PARA Workflow:**
+```
+User: "What's the difference between OAuth and JWT?"
+Claude: OAuth is an authorization framework while JWT is a token format...
+```
+
+---
+
 ### Step Breakdown
 
 #### 1. Plan
