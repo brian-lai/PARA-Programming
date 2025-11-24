@@ -60,15 +60,83 @@ else
 fi
 
 echo ""
-print_step "Step 4: Verifying installation"
+print_step "Step 4: Installing SessionStart hook"
+HOOKS_DIR="$CLAUDE_DIR/hooks"
+create_dir "$HOOKS_DIR"
+
+# Copy hook script
+if [ -f "$SKILL_DIR/hooks/para-session-start.sh" ]; then
+    cp "$SKILL_DIR/hooks/para-session-start.sh" "$HOOKS_DIR/"
+    chmod +x "$HOOKS_DIR/para-session-start.sh"
+    print_success "Installed SessionStart hook"
+else
+    print_warning "Hook script not found, skipping"
+fi
+
+# Configure settings.json
+SETTINGS_FILE="$CLAUDE_DIR/settings.json"
+if [ -f "$SETTINGS_FILE" ]; then
+    # Settings file exists - check if hooks already configured
+    if grep -q '"SessionStart"' "$SETTINGS_FILE" 2>/dev/null; then
+        print_info "SessionStart hook already configured in settings.json"
+    else
+        # Merge hook configuration using jq if available
+        if command -v jq &> /dev/null; then
+            print_info "Adding SessionStart hook to existing settings.json"
+            # Backup existing file
+            cp "$SETTINGS_FILE" "$SETTINGS_FILE.backup"
+            # Merge hook configuration
+            jq '. + {"hooks": {"SessionStart": [{"hooks": [{"type": "command", "command": "bash ~/.claude/hooks/para-session-start.sh"}]}]}}' \
+                "$SETTINGS_FILE" > "$SETTINGS_FILE.tmp" && mv "$SETTINGS_FILE.tmp" "$SETTINGS_FILE"
+            print_success "Added SessionStart hook to settings.json"
+            print_info "Backup saved to settings.json.backup"
+        else
+            # jq not available, warn user
+            print_warning "jq not found - cannot automatically merge settings"
+            print_info "Please manually add SessionStart hook to $SETTINGS_FILE:"
+            echo ""
+            echo '  "hooks": {'
+            echo '    "SessionStart": [{'
+            echo '      "hooks": [{'
+            echo '        "type": "command",'
+            echo '        "command": "bash ~/.claude/hooks/para-session-start.sh"'
+            echo '      }]'
+            echo '    }]'
+            echo '  }'
+            echo ""
+        fi
+    fi
+else
+    # Create new settings.json with hook configuration
+    cat > "$SETTINGS_FILE" <<'SETTINGS_EOF'
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/para-session-start.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+SETTINGS_EOF
+    print_success "Created settings.json with SessionStart hook"
+fi
+
+echo ""
+print_step "Step 5: Verifying installation"
 verify_symlink "$CLAUDE_DIR/CLAUDE.md" "Global CLAUDE.md"
 
 # Count installed commands
 command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
-if [ "$command_count" -eq 6 ]; then
-    print_success "All 6 PARA commands installed"
+if [ "$command_count" -eq 7 ]; then
+    print_success "All 7 PARA commands installed"
 else
-    print_warning "Expected 6 commands, found $command_count"
+    print_warning "Expected 7 commands, found $command_count"
 fi
 
 # Print completion
@@ -81,6 +149,10 @@ echo "  /para-summarize  - Generate summary"
 echo "  /para-archive    - Archive context"
 echo "  /para-status     - Show status"
 echo "  /para-check      - Decision helper"
+echo "  /para-help       - Complete guide"
+echo ""
+echo "SessionStart Hook:"
+echo "  ✓ Installed - Shows status on Claude Code startup"
 echo ""
 
 print_update_instructions

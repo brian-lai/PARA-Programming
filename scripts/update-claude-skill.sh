@@ -17,7 +17,9 @@ print_header "Update Claude Code + PARA-Programming Skill"
 
 # Set paths
 CLAUDE_DIR="$HOME/.claude"
+COMMANDS_DIR="$CLAUDE_DIR/commands"
 GLOBAL_CLAUDE_MD="$REPO_ROOT/CLAUDE.md"
+SKILL_DIR="$REPO_ROOT/claude-skill"
 
 # Check if setup exists
 if [ ! -e "$CLAUDE_DIR/CLAUDE.md" ]; then
@@ -28,14 +30,63 @@ if [ ! -e "$CLAUDE_DIR/CLAUDE.md" ]; then
     exit 1
 fi
 
+# Check if commands directory exists
+if [ ! -d "$COMMANDS_DIR" ]; then
+    print_error "Commands directory not found: $COMMANDS_DIR"
+    echo ""
+    echo "Run setup first:"
+    echo "  make setup claude-skill"
+    exit 1
+fi
+
 # Check if using symlinks (recommended)
 if check_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"; then
-    print_success "✨ Using symlinks - updates are automatic!"
+    print_success "✨ Global CLAUDE.md is symlinked (auto-updates)"
     echo ""
-    print_info "Your setup uses symlinks, which means updates are automatic."
-    print_info "Just run: git pull origin main"
+
+    # Commands need to be re-copied
+    print_step "Updating slash commands..."
     echo ""
-    print_info "No action needed. You're already on the latest version!"
+
+    # Backup existing commands
+    if [ -d "$COMMANDS_DIR" ] && [ "$(ls -A $COMMANDS_DIR/para-*.md 2>/dev/null)" ]; then
+        backup_dir="$COMMANDS_DIR/backup-$(date +%Y%m%d-%H%M%S)"
+        mkdir -p "$backup_dir"
+        mv "$COMMANDS_DIR"/para-*.md "$backup_dir/" 2>/dev/null || true
+        print_info "Backed up existing commands to: $backup_dir"
+    fi
+
+    # Copy updated commands
+    copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "para-*.md" "PARA commands"
+
+    # Count installed commands
+    command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
+    expected_count=$(ls -1 "$SKILL_DIR/commands"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
+
+    if [ "$command_count" -eq "$expected_count" ]; then
+        print_success "All $command_count PARA commands updated"
+    else
+        print_warning "Expected $expected_count commands, found $command_count"
+    fi
+
+    # Update hooks if they exist
+    echo ""
+    print_step "Checking SessionStart hook..."
+    HOOKS_DIR="$CLAUDE_DIR/hooks"
+    if [ -f "$SKILL_DIR/hooks/para-session-start.sh" ]; then
+        if [ ! -d "$HOOKS_DIR" ]; then
+            mkdir -p "$HOOKS_DIR"
+        fi
+        cp "$SKILL_DIR/hooks/para-session-start.sh" "$HOOKS_DIR/"
+        chmod +x "$HOOKS_DIR/para-session-start.sh"
+        print_success "Updated SessionStart hook"
+    fi
+
+    echo ""
+    print_success "✨ Update complete!"
+    print_info "Global methodology (CLAUDE.md) auto-updates with 'git pull'"
+    print_info "Slash commands updated to latest version"
+    print_info "SessionStart hook updated"
     exit 0
 else
     # Using regular files - offer to convert to symlinks
@@ -71,13 +122,49 @@ else
         print_info "Future updates are now automatic with 'git pull'!"
     else
         print_step "Re-copying files..."
+        echo ""
 
-        # Copy files
+        # Copy global methodology
         cp "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"
         print_success "Updated CLAUDE.md"
 
+        # Backup existing commands
+        if [ -d "$COMMANDS_DIR" ] && [ "$(ls -A $COMMANDS_DIR/para-*.md 2>/dev/null)" ]; then
+            backup_dir="$COMMANDS_DIR/backup-$(date +%Y%m%d-%H%M%S)"
+            mkdir -p "$backup_dir"
+            mv "$COMMANDS_DIR"/para-*.md "$backup_dir/" 2>/dev/null || true
+            print_info "Backed up existing commands to: $backup_dir"
+        fi
+
+        # Copy updated commands
+        copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "para-*.md" "PARA commands"
+
+        # Count installed commands
+        command_count=$(ls -1 "$COMMANDS_DIR"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
+        expected_count=$(ls -1 "$SKILL_DIR/commands"/para-*.md 2>/dev/null | wc -l | tr -d ' ')
+
+        if [ "$command_count" -eq "$expected_count" ]; then
+            print_success "All $command_count PARA commands updated"
+        else
+            print_warning "Expected $expected_count commands, found $command_count"
+        fi
+
+        # Update hooks if they exist
         echo ""
+        print_step "Checking SessionStart hook..."
+        HOOKS_DIR="$CLAUDE_DIR/hooks"
+        if [ -f "$SKILL_DIR/hooks/para-session-start.sh" ]; then
+            if [ ! -d "$HOOKS_DIR" ]; then
+                mkdir -p "$HOOKS_DIR"
+            fi
+            cp "$SKILL_DIR/hooks/para-session-start.sh" "$HOOKS_DIR/"
+            chmod +x "$HOOKS_DIR/para-session-start.sh"
+            print_success "Updated SessionStart hook"
+        fi
+
+        echo ""
+        print_success "✨ Update complete!"
         print_info "Files updated. For automatic updates in the future,"
-        print_info "consider converting to symlinks: make update claude-skill"
+        print_info "consider converting to symlinks: make update-claude-skill"
     fi
 fi

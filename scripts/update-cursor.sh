@@ -15,7 +15,7 @@ source "$SCRIPT_DIR/common.sh"
 print_header "Update Cursor IDE + PARA-Programming"
 
 # Set paths
-CURSORRULES_SOURCE="$REPO_ROOT/cursor/.cursorrules"
+CURSORRULES_SOURCE="$REPO_ROOT/cursor/cursorrules"
 CURSORRULES_TARGET="$HOME/.cursorrules"
 
 # Check if setup exists
