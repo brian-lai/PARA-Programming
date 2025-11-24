@@ -25,24 +25,89 @@ Before you begin, make sure you have:
 
 ---
 
-## Step 1: Install Global CLAUDE.md
+## 🚀 Step 1: Install PARA-Programming Skill (Recommended)
 
-This is a **one-time setup** that applies to all your projects.
+The PARA-Programming skill provides **automated slash commands** that make the methodology easy to use.
+
+### Option A: Automated Installation (Fastest)
 
 ```bash
+# Clone the repository
+git clone https://github.com/para-programming/para-programming.git
+cd para-programming
+
+# Run the installation script
+./claude-skill/scripts/install.sh
+```
+
+**What this does:**
+- Creates symlink `~/.claude/CLAUDE.md` → `$(pwd)/CLAUDE.md`
+- Copies slash commands to `~/.claude/commands/`
+- When you `git pull`, your methodology auto-updates!
+
+**What this installs:**
+- ✅ Global `CLAUDE.md` methodology file
+- ✅ `/para-init` - Initialize PARA structure in projects
+- ✅ `/para-plan` - Create structured planning documents
+- ✅ `/para-summarize` - Generate summaries automatically
+- ✅ `/para-archive` - Archive completed contexts
+- ✅ `/para-status` - Display current workflow state
+- ✅ `/para-check` - Decision helper for workflow application
+
+**✅ Done!** Skip to [Step 2](#step-2-navigate-to-your-project) and use `/para-init` instead of manual setup.
+
+---
+
+### Option B: Manual Installation
+
+```bash
+# Ensure you're in the cloned repo
+cd /path/to/para-programming
+
+# Create directories
+mkdir -p ~/.claude/commands
+
+# Create symlink for global methodology (recommended)
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
+
+# Copy slash commands
+cp claude-skill/commands/*.md ~/.claude/commands/
+
+# Verify installation
+ls -la ~/.claude/CLAUDE.md        # Should show symlink
+ls ~/.claude/commands/para-*.md   # Should show 6 commands
+```
+
+**Symlink benefit:** Automatic updates when you `git pull`!
+
+**✅ Done!** Skip to [Step 2](#step-2-navigate-to-your-project) and use `/para-init` instead of manual setup.
+
+---
+
+### Option C: Legacy Method (No Skill)
+
+If you prefer not to use the skill, you can install just the global methodology:
+
+```bash
+# Ensure you're in the cloned repo
+cd /path/to/para-programming
+
 # Create .claude directory in your home folder
 mkdir -p ~/.claude
 
-# Copy the global CLAUDE.md file
-cp CLAUDE.md ~/.claude/CLAUDE.md
+# Create symlink to global CLAUDE.md (recommended)
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 
-# Verify it was created
+# Verify the symlink
 ls -la ~/.claude/CLAUDE.md
+# Should show: ~/.claude/CLAUDE.md -> /path/to/para-programming/CLAUDE.md
 ```
 
 **What this does:** Tells Claude Code how to follow the PARA-Programming methodology (Plan → Review → Execute → Summarize → Archive) across all your projects.
 
 **✅ You only need to do this once!** After this, every project will use the same workflow.
+
+**Note:** With this method, you'll need to manually create context directories and files (see [Step 3](#step-3-create-context-directory-structure)).
 
 ---
 
@@ -62,19 +127,49 @@ npm init -y  # or your language's equivalent
 
 ---
 
-## Step 3: Create Context Directory Structure
+## Step 3: Initialize PARA Structure
+
+### If You Installed the Skill (Recommended)
 
 ```bash
-# Initialize CLAUDE.md for your project
+# Start Claude Code
 claude
 
-/init
+# Initialize PARA structure with one command
+/para-init
 ```
 
-if all directories weren't created, you can also create manually
+**That's it!** The command automatically creates:
+- ✅ `context/` directory with all subdirectories
+- ✅ `context/context.md` with JSON structure
+- ✅ `CLAUDE.md` (if it doesn't exist)
+
+Skip to [Step 4](#step-4-your-first-task)!
+
+---
+
+### If You Used Legacy Method (No Skill)
+
+Create the structure manually:
+
 ```bash
 # Create all necessary directories
 mkdir -p context/{data,plans,summaries,archives,servers}
+
+# Create initial context.md
+cat > context/context.md << 'EOF'
+# Current Work Summary
+
+---
+
+```json
+{
+  "active_context": [],
+  "completed_summaries": [],
+  "last_updated": "2025-11-12T10:00:00Z"
+}
+```
+EOF
 
 # Verify structure
 tree context/
@@ -97,6 +192,53 @@ tree context/
 ---
 
 ## Step 4: Your First Task
+
+### If You Installed the Skill
+
+Use the slash commands for a streamlined experience:
+
+```
+You: "/para-plan add-health-check-endpoint"
+
+Claude: "I'll create a plan for adding a health check endpoint.
+
+Creating context/plans/2025-11-12-add-health-check-endpoint.md...
+
+[Creates a detailed plan with standard template]
+
+I've created the plan at context/plans/2025-11-12-add-health-check-endpoint.md.
+
+Please review it and let me know if it looks good before I proceed."
+
+You: "Looks good, proceed"
+
+Claude: [Implements the plan]
+
+You: "/para-summarize"
+
+Claude: "Analyzing changes and creating summary...
+
+Summary created at context/summaries/2025-11-12-add-health-check-endpoint-summary.md
+
+All tests passing ✅"
+
+You: "/para-status"
+
+Claude: "📊 PARA Status
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Completed Summaries:
+   → context/summaries/2025-11-12-add-health-check-endpoint-summary.md
+
+🎯 Next Action:
+   Run /para-archive to clean up and prepare for next task"
+```
+
+**🎉 That's the skill workflow!** Much faster than manual PARA.
+
+---
+
+### If You Used Legacy Method (No Skill)
 
 Try this to verify everything works:
 
@@ -318,9 +460,11 @@ Unlike Cursor or Copilot, Claude Code:
 ## Learn More
 
 ### Documentation
+- 🚀 [**Claude Code Skill Guide**](../claude-skill/README.md) - Using slash commands
 - 📖 [Full Claude Code Guide](README.md)
 - 📚 [Main PARA-Programming Docs](../README.md)
 - 🎓 [Understanding CLAUDE.md](README.md#understanding-the-claudemd-system)
+- 🔧 [Skill Installation Guide](../claude-skill/INSTALL.md)
 
 ### Templates & Examples
 - 📝 [Project Templates](templates/)
@@ -353,10 +497,34 @@ You now have:
 
 ## Quick Command Reference
 
+### With Skill (Recommended)
+
 ```bash
 # One-time setup
+./claude-skill/scripts/install.sh
+
+# Per-project setup
+cd your-project/
+claude
+/para-init
+
+# Working with PARA
+/para-plan "your task"        # Create plan
+# [Review and approve]
+# [Claude implements]
+/para-summarize               # Generate summary
+/para-archive                 # Clean up
+/para-status                  # Check status anytime
+/para-check "query"           # Should I use PARA for this?
+```
+
+### Without Skill (Legacy)
+
+```bash
+# One-time setup (in cloned repo directory)
+cd /path/to/para-programming
 mkdir -p ~/.claude
-cp CLAUDE.md ~/.claude/CLAUDE.md
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 
 # Per-project setup
 mkdir -p context/{data,plans,summaries,archives,servers}
@@ -375,4 +543,4 @@ cp templates/basic-CLAUDE.md ./CLAUDE.md
 claude-code
 ```
 
-Copy and paste these commands to get started in seconds! 🎯
+**💡 Tip:** Use the skill for the best experience! Installation takes <2 minutes.

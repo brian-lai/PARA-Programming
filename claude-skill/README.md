@@ -21,13 +21,20 @@ This skill provides slash commands and automation tools that make the PARA-Progr
 1. **Install global methodology file:**
 
 ```bash
-# Copy the global CLAUDE.md to your home directory
-mkdir -p ~/.claude
-curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/para-programming/claude-skill/main/CLAUDE.md
+# Clone the repository (if you haven't already)
+git clone https://github.com/para-programming/para-programming.git
+cd para-programming
 
-# Or if you cloned this repo:
-cp CLAUDE.md ~/.claude/CLAUDE.md
+# Create symlink (recommended - gets automatic updates)
+mkdir -p ~/.claude
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
+
+# Verify symlink
+ls -la ~/.claude/CLAUDE.md
+# Should show: ~/.claude/CLAUDE.md -> /path/to/para-programming/CLAUDE.md
 ```
+
+**Why symlink?** When you `git pull` to update the repo, your global methodology automatically gets the latest improvements!
 
 2. **Copy slash commands to your Claude Code commands directory:**
 
@@ -35,9 +42,11 @@ cp CLAUDE.md ~/.claude/CLAUDE.md
 # Create commands directory if it doesn't exist
 mkdir -p ~/.claude/commands
 
-# Copy all PARA commands
+# Copy all PARA commands (still copied, not symlinked)
 cp claude-skill/commands/*.md ~/.claude/commands/
 ```
+
+**Note:** Commands are copied (not symlinked) so you can customize them if needed.
 
 3. **Verify installation:**
 

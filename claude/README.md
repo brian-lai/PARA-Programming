@@ -70,25 +70,29 @@ Claude Code is **PARA-native**:
 ### 5-Minute Setup
 
 ```bash
-# 1. Create global CLAUDE.md (one-time setup)
-mkdir -p ~/.claude
-cp CLAUDE.md ~/.claude/CLAUDE.md
+# 1. Clone the repository
+git clone https://github.com/para-programming/para-programming.git
+cd para-programming
 
-# 2. Navigate to your project
+# 2. Create symlink to global CLAUDE.md (one-time setup, automatic updates)
+mkdir -p ~/.claude
+ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
+
+# 3. Navigate to your project
 cd your-project/
 
-# 3. Initialize claude code and create context structure
-# this creates the project-scoped CLAUDE.md file as well
+# 4. Initialize PARA structure
 claude
+/para-init
 
-# in the claude TUI
-/init
+# 5. Start building!
+/para-plan "your first task"
 ```
-EOF
 
-# Start Building
-
-Just start prompting claude what you want it to do and PARA-Program your way to a working product.
+**Benefits of symlink:**
+- Automatic updates: `git pull` in the repo updates your methodology
+- Single source of truth
+- No manual syncing needed
 
 
 ---
