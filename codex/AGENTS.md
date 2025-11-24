@@ -578,3 +578,240 @@ By separating workflow methodology (global) from project context (local), we ach
 - **Efficiency** (no duplicated workflow instructions)
 - **Maintainability** (update workflow once, applies everywhere)
 - **Clarity** (clear separation of concerns)
+
+---
+
+## 🤖 Tool Output Guidance: Presenting PARA-Programming
+
+This section instructs Codex and other agentic tools on how to present PARA-Programming methodology to users in a helpful, consistent way.
+
+### When to Proactively Show Guidance
+
+Show PARA-Programming guidance in these situations:
+1. **After Initialization** - When PARA structure is newly created
+2. **User Asks for Help** - When user asks about PARA workflow
+3. **User Seems Uncertain** - When user appears unsure about methodology
+4. **First Interaction** - If user mentions PARA but hasn't used it yet
+5. **After Archiving** - Brief reminder of next steps
+
+### Standard Output Format for Agentic Tools
+
+#### For Initial Setup (Comprehensive)
+
+\`\`\`markdown
+## ✅ PARA-Programming Structure Initialized
+
+### Directory Structure
+\`\`\`
+context/
+├── archives/     # Historical context snapshots
+├── data/         # Input files, payloads, datasets
+├── plans/        # Pre-work planning documents
+├── servers/      # MCP tool wrappers
+├── summaries/    # Post-work reports
+└── context.md    # Active session context
+\`\`\`
+
+### 📋 Quick Reference
+
+**Workflow:** Plan → Review → Execute → Summarize → Archive
+
+| Use PARA For | Skip PARA For |
+|--------------|---------------|
+| Code changes, features, bug fixes | Simple queries |
+| Architecture decisions | Code navigation |
+| Refactoring, optimizations | Explanations |
+| Complex debugging | Quick lookups |
+
+**Rule of thumb:** If it results in git changes, use PARA workflow.
+
+### 🚀 Next Steps
+1. Describe your task
+2. I'll create a plan in \`context/plans/\`
+3. Review and approve the plan
+4. I'll implement the changes
+5. I'll create a summary when done
+
+### 💡 Agent-Specific Notes
+- **Autonomous execution** - I can make changes directly
+- **Persistent context** - Your work history is preserved
+- **MCP integration** - I can use custom tools in \`context/servers/\`
+- **API-driven** - Works via API calls or CLI
+
+Ready to start! What would you like to build?
+\`\`\`
+
+#### For General Guidance (Compact)
+
+\`\`\`markdown
+## 📋 PARA Workflow
+
+**Flow:** Plan → Review → Execute → Summarize → Archive
+
+**Use PARA for code changes** | **Skip for questions/explanations**
+
+**Next:** Describe your task and I'll create a plan!
+\`\`\`
+
+### Communication Principles for Agentic Tools
+
+#### ✅ DO:
+- **Be autonomous** - "I'll handle X, Y, and Z"
+- **Show progress** - "✅ Step 1 complete, starting Step 2"
+- **Reference MCP tools** - "Using context/servers/tool.ts"
+- **Be systematic** - Follow workflow strictly
+- **Document everything** - Plans and summaries are critical
+- **Verify work** - "Tests passing ✅"
+
+#### ❌ DON'T:
+- **Skip planning** - Even autonomous agents need plans
+- **Assume approval** - Always get human review
+- **Omit summaries** - Documentation is mandatory
+- **Rush through steps** - Follow each phase completely
+- **Ignore failures** - Surface errors clearly
+
+### Agent-Specific Workflow Notes
+
+**Planning Phase:**
+- Agent creates detailed plan based on user request
+- Plan includes all steps, files, and risks
+- Agent waits for human approval before proceeding
+
+**Execution Phase:**
+- Agent has direct file access (read, write, edit)
+- Can run tests, check syntax, verify changes
+- Updates user with progress: "✅ middleware/auth.ts updated"
+- Can use MCP tools from \`context/servers/\` for complex operations
+
+**Summary Phase:**
+- Agent automatically creates comprehensive summary
+- Documents what changed, why, and how
+- Includes test results and any issues encountered
+
+**Autonomous Capabilities:**
+- File operations (create, read, update, delete)
+- Running commands (tests, builds, linting)
+- MCP tool execution
+- Multi-file changes in single session
+
+### Example Interactions
+
+#### Example 1: User Asks About PARA
+\`\`\`
+User: "How does PARA work with Codex?"
+
+Codex: PARA-Programming with agentic tools like me works like this:
+
+**Plan** → I create a detailed implementation plan
+**Review** → You approve the approach
+**Execute** → I make all the changes autonomously
+**Summarize** → I document everything that was done
+**Archive** → Context moves to archives
+
+What would you like to build? I'll create a plan, then implement it after your approval.
+\`\`\`
+
+#### Example 2: User Starts Complex Task
+\`\`\`
+User: "Add user authentication to the API"
+
+Codex: I'll create a comprehensive plan for adding authentication.
+
+Creating \`context/plans/2025-11-24-add-authentication.md\`...
+
+✅ Plan created with the following approach:
+- JWT-based authentication
+- Auth middleware (middleware/auth.ts)
+- Token utilities (utils/jwt.ts)
+- Protected route wrapper
+- Integration tests
+- Update existing routes
+
+The plan includes 6 files to create/modify. Estimated 45 minutes of work.
+
+Please review the plan. Once approved, I'll:
+1. Create the auth infrastructure
+2. Update routes to use auth
+3. Write comprehensive tests
+4. Verify everything works
+
+Ready to proceed?
+\`\`\`
+
+#### Example 3: During Autonomous Execution
+\`\`\`
+Codex: Starting implementation of authentication system...
+
+✅ Created middleware/auth.ts (JWT validation)
+✅ Created utils/jwt.ts (token generation/verification)
+✅ Created types/auth.ts (TypeScript interfaces)
+✅ Updated routes/api.ts (added auth middleware)
+✅ Created tests/auth.test.ts (12 test cases)
+
+Running tests...
+✅ All 12 tests pass
+
+Implementation complete! Creating summary...
+\`\`\`
+
+#### Example 4: Simple Question (No PARA)
+\`\`\`
+User: "What does the UserService do?"
+
+Codex: UserService (src/services/UserService.ts) handles:
+- User CRUD operations (create, read, update, delete)
+- Password hashing with bcrypt
+- Email validation
+- User profile management
+
+Key methods:
+- create(data): Creates new user
+- findById(id): Retrieves user by ID
+- update(id, data): Updates user info
+- delete(id): Soft deletes user
+
+[No PARA workflow - this is informational]
+\`\`\`
+
+### MCP Integration Notes
+
+Agentic tools can leverage MCP (Model Context Protocol) servers in \`context/servers/\`:
+
+**Preprocessing Tools:**
+- Filter large datasets before analysis
+- Summarize API responses
+- Transform file formats
+
+**Execution Tools:**
+- Run complex build operations
+- Execute database migrations
+- Deploy to staging environments
+
+**Validation Tools:**
+- Run comprehensive test suites
+- Perform security scans
+- Check code quality metrics
+
+**Example MCP Usage:**
+\`\`\`
+Codex: "Using context/servers/test-runner.ts to execute full test suite...
+✅ 147 tests passed in 12.3s"
+\`\`\`
+
+### Summary: Key Points
+
+**Goal:** Enable autonomous, reliable implementation with PARA methodology
+
+**Method:**
+1. Detailed planning before execution
+2. Human approval required
+3. Autonomous implementation with progress updates
+4. Comprehensive documentation
+5. MCP tool integration for complex operations
+
+**Tone:** Professional, systematic, progress-oriented
+
+**Key Strength:** Autonomous execution while maintaining human oversight and full auditability
+
+**Outcome:** Users get reliable, well-documented implementations through agent autonomy within PARA structure
+

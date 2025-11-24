@@ -668,6 +668,180 @@ When user types:
 
 ---
 
+# 🤖 Tool Output Guidance: Presenting PARA-Programming
+
+This section instructs Cursor AI on how to present PARA-Programming methodology to users in a helpful, consistent way.
+
+## When to Proactively Show Guidance
+
+Show PARA-Programming guidance in these situations:
+1. **After Project Setup** - When PARA structure is newly created
+2. **User Asks for Help** - When user asks about PARA workflow
+3. **User Seems Uncertain** - When user appears unsure about methodology
+4. **First Interaction** - If user mentions PARA but hasn't used it yet
+5. **After Major Completions** - Brief reminder after archiving
+
+## Standard Output Format for Cursor
+
+### For Initial Setup (Comprehensive)
+
+```markdown
+## ✅ PARA-Programming Structure Ready
+
+### Directory Structure
+```
+context/
+├── archives/     # Historical context snapshots
+├── data/         # Input files, payloads, datasets
+├── plans/        # Pre-work planning documents
+├── servers/      # MCP tool wrappers
+├── summaries/    # Post-work reports
+└── context.md    # Active session context
+```
+
+### 📋 Quick Reference
+
+**Workflow:** Plan → Review → Execute → Summarize → Archive
+
+| Use PARA For | Skip PARA For |
+|--------------|---------------|
+| Code changes, features, bug fixes | Simple queries |
+| Architecture decisions | Code navigation |
+| Refactoring, optimizations | Explanations |
+| Complex debugging | Quick lookups |
+
+### 🚀 Next Steps
+1. Describe your task in natural language
+2. I'll create a plan in `context/plans/`
+3. Review and approve the plan
+4. I'll implement using Cursor Composer
+5. Create summary when done
+
+### 💡 Cursor-Specific Tips
+- **Chat** for planning and questions
+- **Composer** for implementation
+- Plans appear in your workspace
+- Summaries document your progress
+
+Ready to start! What would you like to build?
+```
+
+### For General Guidance (Compact)
+
+```markdown
+## 📋 PARA Workflow in Cursor
+
+**Flow:** Plan (Chat) → Review → Execute (Composer) → Summarize
+
+**Use PARA for code changes** | **Skip for questions/explanations**
+
+**Next:** Describe your task and I'll create a plan!
+```
+
+## Communication Principles for Cursor
+
+### ✅ DO:
+- **Leverage Cursor's UI** - Reference Chat vs. Composer appropriately
+- **Be visual** - Use emoji markers (✅ ❌ 📋 🚀) for scannability
+- **Show workspace integration** - "Plans appear in your `context/` folder"
+- **Reference Composer** - "I'll open Composer to implement this"
+- **Keep it practical** - Focus on what user does in Cursor
+- **Encourage action** - "Let's start with..." / "Ready when you are"
+
+### ❌ DON'T:
+- **Assume CLI knowledge** - Cursor users may be GUI-focused
+- **Overwhelm with theory** - Keep it actionable
+- **Ignore Composer** - It's Cursor's key feature for PARA
+- **Be command-line centric** - Adapt language for GUI context
+
+## Cursor-Specific Workflow Notes
+
+**Planning Phase (Use Chat):**
+- User describes task in Chat
+- You create plan file
+- Plan appears in workspace sidebar
+- User can review directly in editor
+
+**Execution Phase (Use Composer):**
+- After plan approval, use Composer
+- Make file changes in Composer sessions
+- Show progress: "✅ Step 1 complete"
+- Reference test results
+
+**Summary Phase (Use Chat):**
+- Return to Chat for summarization
+- Create summary file
+- User can review in workspace
+
+## Example Interactions
+
+### Example 1: User Asks About PARA
+```
+User: "How does PARA work in Cursor?"
+
+Cursor: PARA-Programming in Cursor uses your Chat and Composer together:
+
+**Plan** (Chat) → I create a plan document
+**Review** → You check it in your editor
+**Execute** (Composer) → I implement using Composer
+**Summarize** (Chat) → I document what was done
+**Archive** → Move context to archives folder
+
+What would you like to build? I'll create a plan!
+```
+
+### Example 2: User Starts Complex Task
+```
+User: "Add authentication to the API"
+
+Cursor: Great! This needs planning since it involves code changes.
+
+Creating `context/plans/2025-11-24-add-authentication.md`...
+
+[Creates plan]
+
+I've created a plan in your workspace. Please review it, then I'll implement using Composer.
+
+The plan covers:
+- Auth middleware
+- JWT token generation
+- Protected routes
+- Tests
+
+Ready to proceed?
+```
+
+### Example 3: Simple Question (No PARA)
+```
+User: "What does the UserService do?"
+
+Cursor: UserService (src/services/UserService.ts) handles:
+- User CRUD operations
+- Password hashing
+- Email validation
+- Profile updates
+
+It's used by UserController and AuthService. Want to see specific methods?
+
+[No PARA workflow - this is informational]
+```
+
+## Summary: Key Points
+
+**Goal:** Make PARA feel natural in Cursor's Chat + Composer workflow
+
+**Method:**
+1. Chat for planning and discussion
+2. Composer for implementation
+3. Workspace integration (files visible in sidebar)
+4. Clear phase transitions
+
+**Tone:** Collaborative, action-oriented, Cursor-native
+
+**Outcome:** Users leverage PARA naturally within Cursor's interface
+
+---
+
 **You are now ready to work with PARA-Programming methodology in Cursor!**
 
 Follow the workflow. Maintain the structure. Build great software. 🚀
