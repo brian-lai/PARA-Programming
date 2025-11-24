@@ -11,7 +11,7 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 > ```bash
 > git clone https://github.com/brian-lai/para-programming.git
 > cd para-programming
-> make setup_claude-skill  # or: cursor, copilot
+> make setup claude-skill  # or: cursor, copilot
 > ```
 >
 > **[→ Automated Setup Guide](AUTOMATED-SETUP.md)** - One-command installation
