@@ -6,9 +6,17 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 
 ---
 
-> **🚀 Ready to start now?** Skip the theory and jump straight to setup:
+> **🚀 Ready to start now?** Get up and running in 10 seconds:
 >
-> **[→ Setup Guide](SETUP-GUIDE.md)** - Choose your AI assistant (Claude, Copilot, or Cursor) and get up and running in 5-10 minutes.
+> ```bash
+> git clone https://github.com/para-programming/para-programming.git
+> cd para-programming
+> make setup claude-skill  # or: cursor, copilot
+> ```
+>
+> **[→ Automated Setup Guide](AUTOMATED-SETUP.md)** - One-command installation
+>
+> **[→ Manual Setup Guide](SETUP-GUIDE.md)** - Step-by-step instructions
 
 ---
 
