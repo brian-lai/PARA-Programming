@@ -27,15 +27,15 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 
 # Download and copy .cursorrules
 curl -o .cursorrules \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/cursor/cursorrules
+  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/cursorrules
 
 # Download context template
 curl -o context/context.md \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/cursor/templates/context-template.md
+  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/templates/context-template.md
 
 # Download CLAUDE.md template
 curl -o CLAUDE.md \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/cursor/templates/claude-template.md
+  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/templates/claude-template.md
 
 # Edit CLAUDE.md with your project details
 cursor CLAUDE.md

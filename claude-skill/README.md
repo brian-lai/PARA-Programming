@@ -1,8 +1,16 @@
 # PARA-Programming Claude Code Skill
 
-**Structured context, persistent memory, and intelligent execution for Claude Code**
+**⭐ Recommended: The easiest way to use PARA-Programming**
 
 This skill provides slash commands and automation tools that make the PARA-Programming methodology easy to use within Claude Code sessions. It eliminates manual setup, enforces workflow consistency, and helps you build better software with AI.
+
+**Why this skill?**
+- ✅ Maximum automation with slash commands
+- ✅ Smart workflow guidance and decision helpers
+- ✅ Full MCP support for token efficiency
+- ✅ One-command setup: `make setup claude-skill`
+
+**Note:** While we recommend this skill for the best experience, the PARA methodology works with any AI assistant. The workflow is universal—only the automation level differs. See the [main README](../README.md) for other platforms.
 
 ---
 

@@ -56,7 +56,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 
 # 3. Copy Cursor rules
 curl -o .cursorrules \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/cursor/cursorrules
+  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/cursorrules
 
 # 4. Initialize context
 cat > context/context.md << 'EOF'
@@ -130,7 +130,7 @@ Download from [cursor.sh](https://cursor.sh)
 ### Step 2: Clone or Download This Repository
 
 ```bash
-git clone https://github.com/[your-repo]/PARA-Programming.git
+git clone https://github.com/brian-lai/PARA-Programming.git
 cd PARA-Programming
 ```
 

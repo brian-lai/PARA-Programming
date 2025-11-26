@@ -72,7 +72,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 # 3. Create .github directory and instructions
 mkdir -p .github
 curl -o .github/copilot-instructions.md \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/copilot/copilot-instructions.md
+  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/copilot/copilot-instructions.md
 
 # 4. Initialize context
 cat > context/context.md << 'EOF'

@@ -11,8 +11,11 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 > ```bash
 > git clone https://github.com/brian-lai/para-programming.git
 > cd para-programming
-> make setup claude-skill  # or: cursor, copilot
+> make setup claude-skill  # Recommended - full automation!
+> # Also available: cursor, copilot, or any other AI assistant
 > ```
+>
+> **⭐ We recommend Claude Code with the skill** for the best experience—automated commands, smart guidance, and full MCP support. **However, the PARA methodology works with any AI assistant.** Choose what fits your workflow!
 >
 > **[→ Automated Setup Guide](AUTOMATED-SETUP.md)** - One-command installation
 >
@@ -450,49 +453,74 @@ The AI will:
 
 ## IDE & Agent Setup
 
-PARA-Programming works with **any AI coding assistant**. The methodology remains consistent—only the setup varies.
+PARA-Programming is a **methodology**, not a tool. The workflow (Plan → Review → Execute → Summarize → Archive) works with any AI assistant. We provide tools to make it easier, but the principles are universal.
 
-### 🎯 Choose Your Guide
+### 🎯 Choose Your Approach
 
-We provide **comprehensive, dedicated guides** for the three most popular AI assistants:
+**⭐ Recommended: Claude Code with Skill** (Best experience)
 
-| AI Assistant | IDE | Guide | What's Included |
-|--------------|-----|-------|-----------------|
-| **🤖 Claude Code** | CLI | **[→ Claude Guide](claude/)** | Global methodology, project templates, MCP integration, quickstart |
-| **🔷 Codex CLI** | CLI | **[→ Codex Guide](codex/)** | Global methodology, project templates, preprocessing patterns, quickstart |
-| **✨ GitHub Copilot** | VSCode, JetBrains, Neovim | **[→ Copilot Guide](copilot/)** | Instructions file, templates, examples, quickstart |
-| **🔮 Cursor** | Standalone IDE | **[→ Cursor Guide](cursor/)** | Cursor rules, Composer integration, templates, quickstart |
+The PARA-Programming skill for Claude Code provides the most integrated experience:
+- ✅ Automated slash commands (`/para-init`, `/para-plan`, `/para-summarize`)
+- ✅ Smart workflow guidance and decision helpers
+- ✅ Full MCP support for token efficiency
+- ✅ SessionStart hooks for automatic status display
+- ✅ One-command setup with `make setup claude-skill`
+
+**[→ Claude Code Skill Guide](claude-skill/)** | **[→ Quick Start](claude/QUICKSTART.md)**
+
+---
+
+### Other AI Assistants (Full Support)
+
+The PARA methodology works identically across all platforms—only the setup differs:
+
+| AI Assistant | Platform | Guide | Experience Level |
+|--------------|----------|-------|------------------|
+| **🤖 Claude Code (Skill)** | CLI | **[→ Guide](claude-skill/)** | ⭐⭐⭐⭐⭐ Automated |
+| **🤖 Claude Code (Manual)** | CLI | **[→ Guide](claude/)** | ⭐⭐⭐⭐ Streamlined |
+| **🔮 Cursor** | Standalone IDE | **[→ Guide](cursor/)** | ⭐⭐⭐⭐ Streamlined |
+| **✨ GitHub Copilot** | VSCode, JetBrains | **[→ Guide](copilot/)** | ⭐⭐⭐ Manual |
+| **🔷 Codex CLI** | CLI | **[→ Guide](codex/)** | ⭐⭐⭐ Manual |
+| **🛠️ Any Other Tool** | Various | **[→ Universal Guide](other-ai-assitants/)** | ⭐⭐ Adaptable |
 
 **Each guide contains:**
-- ✅ Complete setup instructions
+- ✅ Complete setup instructions tailored to that tool
 - ✅ Configuration files and templates
-- ✅ Quickstart tutorials
-- ✅ Working examples
-- ✅ Best practices and tips
+- ✅ Quickstart tutorials (5-10 minutes)
+- ✅ Working examples and best practices
 
 ### Quick Setup
 
-**1. Choose your AI assistant** from the table above and open its guide
+**1. Choose your AI assistant** from the table above
 
-**2. Follow the quickstart** in that guide (typically 5-10 minutes)
+**2. Follow the setup guide** for your chosen tool (typically 5-10 minutes)
 
-**3. Start using PARA-Programming** with the five-step workflow
+**3. Start using PARA-Programming** with the same five-step workflow everywhere
 
-### Using Another AI Assistant?
+### Universal Principles
 
-For other tools (JetBrains AI, Continue.dev, Codeium, etc.):
+No matter which tool you use, the methodology is identical:
 
-📖 **[Universal Agent Instructions →](other-ai-assitants/AGENT-INSTRUCTIONS.md)**
+```
+1. Plan     → Create structured plan before execution
+2. Review   → Human validates approach
+3. Execute  → AI implements with oversight
+4. Summarize → Document what was done and why
+5. Archive  → Maintain clear history
+```
 
-This guide shows how to adapt PARA-Programming to any AI assistant:
-- Agent compatibility matrix
-- Workflow adaptations for different capabilities
-- Platform-specific features and workarounds
-- Examples for multiple AI assistants
+The same `context/` directory structure, the same workflow, the same benefits—just different automation levels based on your tool's capabilities.
 
-### Key Principle: Methodology First, Tools Second
+### Why We Recommend Claude Code with Skill
 
-**PARA-Programming is tool-agnostic.** The five-step workflow (Plan → Review → Execute → Summarize → Archive) remains the same across all tools. Only the implementation details change.
+While PARA works everywhere, Claude Code with the skill offers:
+- **Maximum automation** - Commands handle workflow steps for you
+- **Best guidance** - Built-in decision helpers and status checks
+- **Token efficiency** - Full MCP support reduces costs
+- **Fastest setup** - One command: `make setup claude-skill`
+- **Auto-updates** - Symlinked methodology stays current
+
+**But if you prefer another tool, that's completely fine!** The methodology is what matters, not the tooling.
 
 ---
 

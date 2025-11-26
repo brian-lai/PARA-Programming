@@ -4,6 +4,14 @@
 
 ---
 
+## 🌟 About PARA-Programming
+
+PARA-Programming is a **methodology**, not a tool. The workflow (Plan → Review → Execute → Summarize → Archive) works with **any AI assistant**. We provide automation to make it easier, but the principles are universal.
+
+**⭐ We recommend Claude Code with the skill** for the best experience, but you can use any tool you prefer—the methodology is identical everywhere.
+
+---
+
 ## 🚀 Automated Setup (Recommended)
 
 **One-command installation - takes <10 seconds:**
@@ -11,7 +19,8 @@
 ```bash
 git clone https://github.com/para-programming/para-programming.git
 cd para-programming
-make setup claude-skill  # or: cursor, copilot
+make setup claude-skill  # Recommended - full automation!
+# Also available: cursor, copilot, or manual for any tool
 ```
 
 **→ [Complete Automated Setup Guide](AUTOMATED-SETUP.md)**
@@ -20,20 +29,29 @@ make setup claude-skill  # or: cursor, copilot
 
 ## 🎯 Choose Your Guide
 
-There are guides for the most popular AI assistants. Each guide includes complete setup instructions, templates, and examples:
+**⭐ Recommended: Claude Code with Skill** (Maximum automation, best experience)
 
-| AI Assistant | Where to Go |
-|--------------|-------------|
-| 🤖 **Claude Code** (CLI) | **[→ Claude Guide & Quickstart](claude/)** |
-| 🔷 **Codex CLI** (OpenAI CLI) | **[→ Codex Guide & Quickstart](codex/)** |
-| ✨ **GitHub Copilot** (VSCode, JetBrains, Neovim) | **[→ Copilot Guide & Quickstart](copilot/)** |
-| 🔮 **Cursor** (Standalone IDE) | **[→ Cursor Guide & Quickstart](cursor/)** |
+| AI Assistant | Experience | Setup Time | Where to Go |
+|--------------|------------|------------|-------------|
+| 🤖 **Claude Code (Skill)** | ⭐⭐⭐⭐⭐ Automated | <2 min | **[→ Skill Guide](claude-skill/)**  |
+| 🤖 **Claude Code (Manual)** | ⭐⭐⭐⭐ Streamlined | 5 min | **[→ Claude Guide](claude/)** |
+| 🔮 **Cursor** | ⭐⭐⭐⭐ Streamlined | 5 min | **[→ Cursor Guide](cursor/)** |
+| ✨ **GitHub Copilot** | ⭐⭐⭐ Manual | 10 min | **[→ Copilot Guide](copilot/)** |
+| 🔷 **Codex CLI** | ⭐⭐⭐ Manual | 10 min | **[→ Codex Guide](codex/)** |
+
+**All guides include:**
+- Complete setup instructions tailored to that tool
+- Configuration files and templates
+- Quickstart tutorials
+- Working examples
+
+**The methodology is the same everywhere—only the automation level differs.**
 
 ---
 
-## Other AI Assistants (Unofficial)
+## Other AI Assistants (Universal Support)
 
-Using a different tool? Here are quick setup instructions for other popular AI assistants:
+**PARA-Programming works with any AI assistant!** The core methodology (Plan → Review → Execute → Summarize → Archive) is tool-agnostic. Here are setup instructions for other popular tools:
 
 | If you use... | Then go to... |
 |---------------|---------------|
@@ -61,7 +79,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 # Copy AI instructions
 mkdir -p .idea
 curl -o .idea/ai-instructions.md \
-  https://raw.githubusercontent.com/[your-repo]/PARA-Programming/main/other-ai-assitants/examples/agent-configs/jetbrains-ai-instructions.md
+  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/other-ai-assitants/examples/agent-configs/jetbrains-ai-instructions.md
 
 # Initialize context.md
 cat > context/context.md << 'EOF'

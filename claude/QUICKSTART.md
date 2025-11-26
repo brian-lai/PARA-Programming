@@ -1,14 +1,31 @@
 # Claude Code Quickstart Guide
 
-**Get up and running with PARA-Programming and Claude Code in 5 minutes**
+**Get up and running with PARA-Programming and Claude Code in under 5 minutes**
 
 This guide will take you from zero to your first PARA-Programming session with Claude Code.
 
 ---
 
+## 🌟 About This Guide
+
+PARA-Programming is a **methodology** that works with any AI assistant. This guide shows you how to use it with Claude Code—the **recommended platform** for the best experience.
+
+**Why Claude Code?**
+- ✅ Native CLAUDE.md file support
+- ✅ Full MCP integration for token efficiency
+- ✅ Multi-file operations
+- ✅ Perfect for the PARA workflow
+
+**Two Setup Options:**
+1. **Skill (Recommended)** - Automated commands, maximum productivity
+2. **Manual** - More control, learn the methodology deeply
+
+---
+
 ## ⚡ Quick Navigation
 
-- **Already have Claude Code?** → [Skip to Setup](#1-install-global-claudemd)
+- **Want the fastest setup?** → [Use the Skill](#option-a-automated-installation-fastest) (⭐ Recommended)
+- **Prefer manual control?** → [Manual Setup](#option-c-legacy-method-no-skill)
 - **New to PARA?** → [Read Overview First](README.md)
 - **Want examples?** → [See Templates](templates/)
 
@@ -21,11 +38,13 @@ Before you begin, make sure you have:
 - [ ] **Claude Code CLI installed** ([Installation guide](https://docs.anthropic.com/claude/docs/claude-code))
 - [ ] **Claude API access** (API key or subscription)
 - [ ] **A project to work on** (any codebase works!)
-- [ ] **5 minutes** of time
+- [ ] **2-5 minutes** of time (depends on method)
 
 ---
 
-## 🚀 Step 1: Install PARA-Programming Skill (Recommended)
+## 🚀 Step 1: Install PARA-Programming
+
+### ⭐ Recommended: Use the Skill (Maximum Automation)
 
 The PARA-Programming skill provides **automated slash commands** that make the methodology easy to use.
 
@@ -108,6 +127,19 @@ ls -la ~/.claude/CLAUDE.md
 **✅ You only need to do this once!** After this, every project will use the same workflow.
 
 **Note:** With this method, you'll need to manually create context directories and files (see [Step 3](#step-3-create-context-directory-structure)).
+
+---
+
+### 💡 Which Method Should You Choose?
+
+| Method | Best For | Automation Level | Learning Curve |
+|--------|----------|------------------|----------------|
+| **Skill (Option A/B)** | Most users, maximum productivity | ⭐⭐⭐⭐⭐ Full | Low - commands guide you |
+| **Manual (Option C)** | Deep learners, custom workflows | ⭐⭐ Minimal | Medium - learn by doing |
+
+**Our recommendation:** Start with the skill (Option A). It automates the workflow while teaching you the methodology. You can always switch to manual later if you want more control.
+
+**Remember:** The underlying PARA methodology is identical in both approaches—only the automation differs. And the same methodology works across all AI assistants, not just Claude Code!
 
 ---
 
@@ -443,9 +475,9 @@ your-project/
 
 ---
 
-## What Makes Claude Code Different?
+## Why We Recommend Claude Code (But It's Not Required!)
 
-Unlike Cursor or Copilot, Claude Code:
+Claude Code offers the best experience for PARA-Programming:
 
 ✅ **Automatically reads CLAUDE.md files** - No need to paste or reference
 ✅ **Follows PARA workflow natively** - Creates plans/summaries without prompting
@@ -454,6 +486,8 @@ Unlike Cursor or Copilot, Claude Code:
 ✅ **Perfect memory** - Maintains project context across sessions
 
 **This is why Claude Code gets ⭐⭐⭐⭐⭐ for PARA compatibility!**
+
+**However:** The PARA methodology works identically with Cursor (⭐⭐⭐⭐), Copilot (⭐⭐⭐), and any other AI assistant. The workflow is universal—only the automation level differs. Use what fits your workflow!
 
 ---
 
