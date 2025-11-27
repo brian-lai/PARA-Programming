@@ -38,6 +38,7 @@ make setup claude-skill  # Recommended - full automation!
 | 🔮 **Cursor** | ⭐⭐⭐⭐ Streamlined | 5 min | **[→ Cursor Guide](cursor/)** |
 | ✨ **GitHub Copilot** | ⭐⭐⭐ Manual | 10 min | **[→ Copilot Guide](copilot/)** |
 | 🔷 **Codex CLI** | ⭐⭐⭐ Manual | 10 min | **[→ Codex Guide](codex/)** |
+| ♊ **Gemini** | ⭐⭐⭐ Manual | 5 min | **[→ Gemini Guide](gemini/)** |
 
 **All guides include:**
 - Complete setup instructions tailored to that tool
@@ -258,6 +259,72 @@ Begin with the basic workflow:
 4. Archive when done
 
 Gradually automate as you and your agent get comfortable.
+
+---
+
+## Gemini Setup
+
+### Prerequisites
+- Gemini CLI installed and configured.
+
+### Installation
+
+```bash
+# Navigate to your project
+cd your-project/
+
+# Create context directory structure
+mkdir -p context/{data,plans,summaries,archives,servers}
+
+# Initialize context.md
+cat > context/context.md << 'EOF'
+# Current Work Summary
+
+Ready to start using PARA-Programming with Gemini.
+
+---
+
+```json
+{
+  "active_context": [],
+  "completed_summaries": [],
+  "last_updated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+}
+```
+EOF
+```
+
+# Create project GEMINI.md
+cat > GEMINI.md << 'EOF'
+# Project Name
+
+> **Workflow Methodology:** Follow `~/.gemini/GEMINI.md`
+
+## About
+[Brief description]
+
+## Tech Stack
+- [Your stack]
+
+## Getting Started
+```bash
+# Your setup commands
+```
+EOF
+```
+
+### Test It
+
+In Gemini CLI:
+
+```
+You: "Create a plan for refactoring the UserService class"
+AI: "I'll analyze UserService and create a refactoring plan..."
+```
+
+### Next Steps
+- [Full Gemini Instructions](gemini/README.md)
+- [MCP Server Setup](other-ai-assitants/AGENT-INSTRUCTIONS.md#mcp-integration)
 
 ---
 

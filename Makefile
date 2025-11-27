@@ -48,7 +48,7 @@ setup:
 		echo ""; \
 		echo "Usage: make setup <assistant>"; \
 		echo ""; \
-		echo "Available: claude-skill, claude, cursor, copilot"; \
+		echo "Available: claude-skill, claude, cursor, copilot, gemini"; \
 		exit 1; \
 	fi
 
@@ -68,6 +68,10 @@ copilot:
 	@echo "🚀 Setting up GitHub Copilot with PARA-Programming..."
 	@bash scripts/setup-copilot.sh
 
+gemini:
+	@echo "🚀 Setting up Gemini with PARA-Programming..."
+	@bash scripts/setup-gemini.sh
+
 # Setup for all assistants
 setup-all:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -79,6 +83,8 @@ setup-all:
 	@$(MAKE) cursor
 	@echo ""
 	@$(MAKE) copilot
+	@echo ""
+	@$(MAKE) gemini
 	@echo ""
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo "  ✨ All assistants configured!"
@@ -96,6 +102,9 @@ update-cursor:
 
 update-copilot:
 	@bash scripts/update-copilot.sh
+
+update-gemini:
+	@bash scripts/update-gemini.sh
 
 update-all:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -116,7 +125,7 @@ uninstall:
 		echo ""; \
 		echo "Usage: make uninstall <target>"; \
 		echo ""; \
-		echo "Available: claude-skill, claude, cursor, copilot, all"; \
+		echo "Available: claude-skill, claude, cursor, copilot, gemini, all"; \
 		exit 1; \
 	fi
 
@@ -136,6 +145,10 @@ uninstall-copilot:
 	@echo "🗑️  Uninstalling Copilot setup..."
 	@bash scripts/uninstall-copilot.sh
 
+uninstall-gemini:
+	@echo "🗑️  Uninstalling Gemini setup..."
+	@bash scripts/uninstall-gemini.sh
+
 uninstall-all:
 	@echo "⚠️  This will remove PARA-Programming setup for ALL assistants"
 	@read -p "Continue? (y/N): " confirm; \
@@ -143,6 +156,7 @@ uninstall-all:
 		$(MAKE) uninstall-claude-skill; \
 		$(MAKE) uninstall-cursor; \
 		$(MAKE) uninstall-copilot; \
+		$(MAKE) uninstall-gemini; \
 	else \
 		echo "❌ Cancelled"; \
 	fi
@@ -163,6 +177,7 @@ clean:
 setup_claude-skill: claude-skill
 setup_cursor: cursor
 setup_copilot: copilot
+setup_gemini: gemini
 install: setup
 
 # Help for specific assistants
@@ -174,3 +189,6 @@ help-cursor:
 
 help-copilot:
 	@cat copilot/README.md | head -50
+
+help-gemini:
+	@cat gemini/README.md | head -50

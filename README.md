@@ -12,7 +12,7 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 > git clone https://github.com/brian-lai/para-programming.git
 > cd para-programming
 > make setup claude-skill  # Recommended - full automation!
-> # Also available: cursor, copilot, or any other AI assistant
+> # Also available: cursor, copilot, gemini, or any other AI assistant
 > ```
 >
 > **⭐ We recommend Claude Code with the skill** for the best experience—automated commands, smart guidance, and full MCP support. **However, the PARA methodology works with any AI assistant.** Choose what fits your workflow!
@@ -353,7 +353,7 @@ This creates a full audit trail while keeping active context clean.
 
 > **📖 Prefer detailed setup instructions?** See the **[Setup Guide](SETUP-GUIDE.md)** for step-by-step instructions tailored to your specific AI assistant.
 
-This section provides a quick overview of the setup process. For complete guides with templates and examples, see the dedicated guides for [Claude](claude/), [Copilot](copilot/), or [Cursor](cursor/).
+This section provides a quick overview of the setup process. For complete guides with templates and examples, see the dedicated guides for [Claude](claude/), [Copilot](copilot/), [Cursor](cursor/), or [Gemini](gemini/).
 
 ### 1. Set Up Global Methodology
 
@@ -480,6 +480,7 @@ The PARA methodology works identically across all platforms—only the setup dif
 | **🤖 Claude Code (Manual)** | CLI | **[→ Guide](claude/)** | ⭐⭐⭐⭐ Streamlined |
 | **🔮 Cursor** | Standalone IDE | **[→ Guide](cursor/)** | ⭐⭐⭐⭐ Streamlined |
 | **✨ GitHub Copilot** | VSCode, JetBrains | **[→ Guide](copilot/)** | ⭐⭐⭐ Manual |
+| **♊ Gemini** | CLI | **[→ Guide](gemini/)** | ⭐⭐⭐ Manual |
 | **🔷 Codex CLI** | CLI | **[→ Guide](codex/)** | ⭐⭐⭐ Manual |
 | **🛠️ Any Other Tool** | Various | **[→ Universal Guide](other-ai-assitants/)** | ⭐⭐ Adaptable |
 
