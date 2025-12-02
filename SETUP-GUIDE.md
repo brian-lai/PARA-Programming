@@ -80,7 +80,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 # Copy AI instructions
 mkdir -p .idea
 curl -o .idea/ai-instructions.md \
-  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/other-ai-assitants/examples/agent-configs/jetbrains-ai-instructions.md
+  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/other-ai-assistants/examples/agent-configs/jetbrains-ai-instructions.md
 
 # Initialize context.md
 cat > context/context.md << 'EOF'
@@ -139,8 +139,8 @@ AI: "I'll analyze UserService and create a refactoring plan..."
 ```
 
 ### Next Steps
-- [Full JetBrains Instructions](other-ai-assitants/examples/agent-configs/jetbrains-ai-instructions.md)
-- [IDE Refactoring Integration](other-ai-assitants/examples/agent-configs/jetbrains-ai-instructions.md#ide-integration)
+- [Full JetBrains Instructions](other-ai-assistants/examples/agent-configs/jetbrains-ai-instructions.md)
+- [IDE Refactoring Integration](other-ai-assistants/examples/agent-configs/jetbrains-ai-instructions.md#ide-integration)
 
 ---
 
@@ -161,7 +161,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 # Create Continue config
 cat > .continuerc.json << 'EOF'
 {
-  "customInstructions": "Follow PARA-Programming methodology. See other-ai-assitants/AGENT-INSTRUCTIONS.md for full details.",
+  "customInstructions": "Follow PARA-Programming methodology. See other-ai-assistants/AGENT-INSTRUCTIONS.md for full details.",
   "contextProviders": [
     {
       "name": "code",
@@ -203,8 +203,8 @@ Continue: "Creating plan for rate limiting..."
 ```
 
 ### Next Steps
-- [Universal Agent Instructions](other-ai-assitants/AGENT-INSTRUCTIONS.md)
-- [MCP Server Setup](other-ai-assitants/AGENT-INSTRUCTIONS.md#mcp-integration)
+- [Universal Agent Instructions](other-ai-assistants/AGENT-INSTRUCTIONS.md)
+- [MCP Server Setup](other-ai-assistants/AGENT-INSTRUCTIONS.md#mcp-integration)
 
 ---
 
@@ -237,7 +237,7 @@ EOF
 
 ### 2. Read Universal Instructions
 
-📖 **[AGENT-INSTRUCTIONS.md](other-ai-assitants/AGENT-INSTRUCTIONS.md)** contains:
+📖 **[AGENT-INSTRUCTIONS.md](other-ai-assistants/AGENT-INSTRUCTIONS.md)** contains:
 - Complete PARA methodology explanation
 - Agent-agnostic workflow
 - Adaptation guide for any tool
@@ -245,7 +245,7 @@ EOF
 
 ### 3. Train Your Agent
 
-Copy relevant sections from `other-ai-assitants/AGENT-INSTRUCTIONS.md` to:
+Copy relevant sections from `other-ai-assistants/AGENT-INSTRUCTIONS.md` to:
 - Your IDE's custom instructions
 - Project-specific prompt files
 - Team documentation
@@ -324,7 +324,7 @@ AI: "I'll analyze UserService and create a refactoring plan..."
 
 ### Next Steps
 - [Full Gemini Instructions](gemini/README.md)
-- [MCP Server Setup](other-ai-assitants/AGENT-INSTRUCTIONS.md#mcp-integration)
+- [MCP Server Setup](other-ai-assistants/AGENT-INSTRUCTIONS.md#mcp-integration)
 
 ---
 
@@ -442,7 +442,7 @@ AI: "I'll analyze UserService and create a refactoring plan..."
 
 ### Learn More
 - 📖 [Full PARA-Programming Documentation](README.md)
-- 🤖 [Universal Agent Instructions](other-ai-assitants/AGENT-INSTRUCTIONS.md) (for other tools)
+- 🤖 [Universal Agent Instructions](other-ai-assistants/AGENT-INSTRUCTIONS.md) (for other tools)
 
 ### Get Help
 - 💬 [GitHub Discussions](../../discussions)
