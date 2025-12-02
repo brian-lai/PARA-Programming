@@ -67,7 +67,62 @@ After creating plan:
 
 ## 3. Execute Phase
 
-**Leverage IDE Features:**
+### Git Workflow (CRITICAL - Apply When Working in Git Repositories)
+
+**When working in a git repository, you MUST follow these git practices:**
+
+1. **ALWAYS create a new branch** when starting a new plan:
+   ```bash
+   git checkout -b feature/task-name-YYYY-MM-DD
+   ```
+   - Branch name should reflect the task from the plan
+   - Include date for easy tracking
+   - Examples: `feature/auth-refactor-2025-12-02`, `fix/memory-leak-2025-12-02`
+
+2. **Track todos in `context/context.md`** during execution:
+   - All work items must be documented as todos in `context/context.md`
+   - Update todo status as you progress through the plan
+   - Keep the todo list synchronized with your actual progress
+
+3. **Commit after EVERY completed todo**:
+   - When a todo is marked complete, immediately create a git commit
+   - **Commit message MUST be the todo item text**
+   - Examples:
+     ```bash
+     git add .
+     git commit -m "Create authentication middleware in src/middleware/auth.ts"
+     ```
+   - This creates an atomic, auditable history of all changes
+   - Each commit represents a single, complete unit of work
+
+**Why this matters:**
+- **Auditability:** Every change is tracked with clear intent
+- **Rollback:** Easy to revert individual changes if needed
+- **Collaboration:** Clear history helps team members understand evolution
+- **Context preservation:** Git history complements PARA summaries
+
+**Example workflow:**
+```bash
+# Starting new plan
+git checkout -b feature/add-rate-limiting-2025-12-02
+
+# Working through todos in context/context.md
+# ✅ Todo 1: Add rate-limit-redis dependency
+git add package.json package-lock.json
+git commit -m "Add rate-limit-redis dependency"
+
+# ✅ Todo 2: Create rate limiting middleware
+git add src/middleware/rateLimit.ts
+git commit -m "Create rate limiting middleware"
+
+# ✅ Todo 3: Apply middleware to API routes
+git add src/routes/api.ts
+git commit -m "Apply middleware to API routes"
+
+# Continue until all todos complete...
+```
+
+### Leverage IDE Features
 
 **Code Generation:**
 - Use AI to generate boilerplate
