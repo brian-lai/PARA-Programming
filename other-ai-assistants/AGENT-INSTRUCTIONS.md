@@ -960,7 +960,7 @@ The specific agent you use affects **how** you implement each step, not **whethe
 
 - [PARA-Programming Main Documentation](../README.md)
 - [Global CLAUDE.md Template](../claude/CLAUDE.md)
-- [Agent Configuration Examples](other-ai-assitants/examples/agent-configs/)
+- [Agent Configuration Examples](other-ai-assistants/examples/agent-configs/)
 - [Community Contributions](../../discussions)
 
 ---

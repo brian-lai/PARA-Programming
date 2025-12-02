@@ -482,7 +482,7 @@ The PARA methodology works identically across all platforms—only the setup dif
 | **✨ GitHub Copilot** | VSCode, JetBrains | **[→ Guide](copilot/)** | ⭐⭐⭐ Manual |
 | **♊ Gemini** | CLI | **[→ Guide](gemini/)** | ⭐⭐⭐ Manual |
 | **🔷 Codex CLI** | CLI | **[→ Guide](codex/)** | ⭐⭐⭐ Manual |
-| **🛠️ Any Other Tool** | Various | **[→ Universal Guide](other-ai-assitants/)** | ⭐⭐ Adaptable |
+| **🛠️ Any Other Tool** | Various | **[→ Universal Guide](other-ai-assistants/)** | ⭐⭐ Adaptable |
 
 **Each guide contains:**
 - ✅ Complete setup instructions tailored to that tool
