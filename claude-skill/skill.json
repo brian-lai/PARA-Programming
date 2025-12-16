@@ -26,6 +26,11 @@
       "file": "commands/para-plan.md"
     },
     {
+      "name": "para-execute",
+      "description": "Execute active plan: create branch and track to-dos",
+      "file": "commands/para-execute.md"
+    },
+    {
       "name": "para-summarize",
       "description": "Generate summary from current work",
       "file": "commands/para-summarize.md"

@@ -126,6 +126,27 @@ Create a structured plan for your task.
 - Updates `context/context.md`
 - Requests human review
 
+### `/para-execute`
+
+Execute the active plan by creating a branch and tracking to-dos.
+
+```
+/para-execute                        # Execute active plan
+/para-execute --branch=custom-name   # Use custom branch name
+/para-execute --no-branch            # Skip branch creation
+```
+
+**Actions:**
+- Creates git branch `para/{task-name}`
+- Extracts to-dos from plan's Implementation Steps
+- Updates `context/context.md` with trackable to-do list
+- Commits context update as first commit on branch
+
+**To-Do Tracking:**
+- Mark items `[x]` as you complete them
+- Commit after each to-do with descriptive message
+- Run `/para-summarize` when all items complete
+
 ### `/para-summarize`
 
 Generate summary after completing work.
@@ -196,8 +217,9 @@ Decision helper for workflow application.
 
 ```
 (Plan) → (Review) → (Execute) → (Summarize) → (Archive)
-              ↑                           ↓
-        Human Review                 Context Refresh
+   ↓         ↑          ↓              ↓            ↓
+/para-plan  Human   /para-execute  /para-summarize  /para-archive
+            Review   + commits
 ```
 
 ### When to Use PARA Workflow
@@ -264,19 +286,27 @@ claude
 # [Claude creates context/plans/2025-11-24-add-user-auth.md]
 # [Human reviews and approves]
 
-# 6. Claude executes the plan
-# [Implementation happens following the plan]
+# 6. Start execution
+/para-execute
 
-# 7. Generate summary
+# [Creates branch: para/add-user-auth]
+# [Updates context.md with to-do list]
+# [Commits: "chore: Initialize execution context"]
+
+# 7. Work through to-dos
+# [Complete each item, commit as you go]
+# [Mark items [x] in context.md]
+
+# 8. Generate summary
 /para-summarize
 
 # [Claude analyzes git diff and creates summary]
 
-# 8. Check status
+# 9. Check status
 /para-status
 # Output: Ready to archive
 
-# 9. Archive and prepare for next task
+# 10. Archive and prepare for next task
 /para-archive
 ```
 

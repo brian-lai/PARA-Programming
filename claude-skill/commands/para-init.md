@@ -125,6 +125,7 @@ context/
 ## 📚 Available PARA Commands
 
 - **`/para-plan`** - Create a new planning document
+- **`/para-execute`** - Start execution: create branch and track to-dos
 - **`/para-summarize`** - Generate post-work summary
 - **`/para-archive`** - Archive current context
 - **`/para-status`** - Check current workflow state
