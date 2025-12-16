@@ -82,6 +82,7 @@ ls ~/.claude/commands/para-*.md
 # Should show:
 # para-archive.md
 # para-check.md
+# para-execute.md
 # para-init.md
 # para-plan.md
 # para-status.md
@@ -124,6 +125,7 @@ This will automatically:
    You should see:
    - `/para-init` - Initialize PARA structure
    - `/para-plan` - Create a plan
+   - `/para-execute` - Start execution with branch and to-dos
    - `/para-summarize` - Generate summary
    - `/para-archive` - Archive context
    - `/para-status` - Show status

@@ -76,6 +76,7 @@ echo "🔧 Installing slash commands..."
 COMMANDS=(
     "para-init"
     "para-plan"
+    "para-execute"
     "para-summarize"
     "para-archive"
     "para-status"

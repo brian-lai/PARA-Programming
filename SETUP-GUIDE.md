@@ -503,7 +503,7 @@ make test
 
 # Or test manually
 ls -la ~/.claude/CLAUDE.md        # Should show symlink
-ls ~/.claude/commands/para-*.md   # Should list 6 commands
+ls ~/.claude/commands/para-*.md   # Should list 7 commands
 ls -la ~/.cursorrules              # Should show symlink
 ls -la ~/.github/copilot-instructions.md  # Should show symlink
 ```
