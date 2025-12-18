@@ -1,19 +1,23 @@
 # Command: para-execute
 
-Execute the active plan by creating a branch and tracking to-dos.
+Execute the active plan by creating a branch and tracking to-dos. Supports both simple and phased plans.
 
 ## What This Does
 
 This command implements the **Execute** phase of the PARA workflow:
 
 1. Reads the active plan from `context/context.md`
-2. Creates a new git branch named `para/{task-name}`
-3. Extracts implementation steps from the plan as to-dos
-4. Updates `context/context.md` with a trackable to-do list
-5. Commits the context update as the first commit on the branch
-6. Guides incremental commits as each to-do is completed
+2. Detects if it's a simple or phased plan
+3. For phased plans, executes a specific phase (or prompts for which phase)
+4. Creates a new git branch named `para/{task-name}` or `para/{task-name}-phase-N`
+5. Extracts implementation steps from the plan as to-dos
+6. Updates `context/context.md` with a trackable to-do list
+7. Commits the context update as the first commit on the branch
+8. Guides incremental commits as each to-do is completed
 
 ## Usage
+
+### Simple Plans
 
 ```
 /para-execute
@@ -24,14 +28,31 @@ The command automatically:
 - Creates an appropriately named branch
 - Sets up to-do tracking
 
+### Phased Plans
+
+```
+/para-execute --phase=1               # Execute specific phase
+/para-execute --phase=2               # Execute next phase
+/para-execute                         # Will prompt for which phase to execute
+```
+
+For phased plans:
+- Each phase creates a separate branch: `para/{task-name}-phase-N`
+- Each branch starts from `main` (assuming previous phases are merged)
+- Phase execution updates `phased_execution.current_phase` in context
+- Phase status changes from "pending" → "in_progress" → "completed"
+
 ### Options
 
 ```
-/para-execute --branch=custom-name    # Use custom branch name
+/para-execute --branch=custom-name    # Use custom branch name (simple plans only)
 /para-execute --no-branch             # Skip branch creation (continue on current branch)
+/para-execute --phase=N               # Execute specific phase (phased plans only)
 ```
 
 ## Workflow Integration
+
+### Simple Plan Workflow
 
 This command bridges planning and summarizing:
 
@@ -41,14 +62,36 @@ This command bridges planning and summarizing:
 4. **Summarize** - `/para-summarize` captures results (after work is done)
 5. **Archive** - `/para-archive` cleans up (after summarizing)
 
+### Phased Plan Workflow
+
+For each phase:
+
+1. **Plan** - `/para-plan` creates master + sub-plans (done before this)
+2. **Review** - Human validates all phases (done before this)
+3. **Execute Phase N** - `/para-execute --phase=N` sets up phase tracking ← YOU ARE HERE
+4. **Implement** - Work through phase to-dos, commit incrementally
+5. **Summarize Phase N** - `/para-summarize --phase=N` captures phase results
+6. **PR & Merge** - Create PR, get review, merge to main
+7. **Repeat** - Move to next phase
+8. **Archive** - `/para-archive` cleans up after all phases complete
+
 ## Implementation
 
 ### Step 1: Validate Prerequisites
 
 1. Check if `context/context.md` exists
 2. Parse the JSON block to find `active_context` array
-3. Verify exactly one active plan exists (if multiple, ask user which one)
-4. If no active plan, error with: "No active plan found. Run `/para-plan` first."
+3. Determine if this is a simple or phased plan:
+   - If `phased_execution` exists in JSON → phased plan
+   - Otherwise → simple plan
+4. For simple plans:
+   - Verify exactly one active plan exists (if multiple, ask user which one)
+   - If no active plan, error with: "No active plan found. Run `/para-plan` first."
+5. For phased plans:
+   - If `--phase=N` option provided, validate phase N exists
+   - If no `--phase` option, prompt user: "Which phase should we execute? (1-N)"
+   - Verify phase N is "pending" or "in_progress" (not "completed")
+   - If previous phases exist, verify they are "completed"
 
 ### Step 2: Check Git State
 
@@ -64,6 +107,8 @@ This command bridges planning and summarizing:
 
 ### Step 3: Read the Plan
 
+#### For Simple Plans
+
 1. Extract task name from plan filename (e.g., `2025-12-15-add-user-auth.md` → `add-user-auth`)
 2. Read the plan file
 3. Extract implementation steps from either:
@@ -71,13 +116,31 @@ This command bridges planning and summarizing:
    - "Approach" section (fallback)
    - If neither has actionable items, prompt user for to-dos
 
+#### For Phased Plans
+
+1. Extract task name from phase plan filename (e.g., `2025-12-15-add-auth-phase-1.md` → `add-auth`)
+2. Read the phase-specific plan file
+3. Extract implementation steps from "Detailed Implementation Steps" section
+4. If no steps found, prompt user for to-dos
+
 ### Step 4: Create Branch
+
+#### For Simple Plans
 
 1. Generate branch name: `para/{task-name}`
 2. Run: `git checkout -b para/{task-name}`
 3. If branch creation fails, report error
 
+#### For Phased Plans
+
+1. Ensure we're on `main` branch first: `git checkout main && git pull`
+2. Generate branch name: `para/{task-name}-phase-{N}`
+3. Run: `git checkout -b para/{task-name}-phase-{N}`
+4. If branch creation fails, report error
+
 ### Step 5: Update context.md
+
+#### For Simple Plans
 
 Replace `context/context.md` with execution tracking format:
 
@@ -110,6 +173,62 @@ _Update this section as you complete items._
   "completed_summaries": [],
   "execution_branch": "para/{task-name}",
   "execution_started": "{ISO timestamp}",
+  "last_updated": "{ISO timestamp}"
+}
+```
+```
+
+#### For Phased Plans
+
+Replace `context/context.md` with phase execution tracking format:
+
+```markdown
+# Current Work Summary
+
+Executing: {Task Name} - Phase {N}: {Phase Name}
+
+**Branch:** `para/{task-name}-phase-{N}`
+**Master Plan:** context/plans/{master-plan-filename}
+**Phase Plan:** context/plans/{phase-plan-filename}
+
+## To-Do List
+
+- [ ] {Step 1 from phase plan}
+- [ ] {Step 2 from phase plan}
+- [ ] {Step 3 from phase plan}
+...
+
+## Progress Notes
+
+_Update this section as you complete items._
+
+---
+
+```json
+{
+  "active_context": [
+    "context/plans/{master-plan-filename}",
+    "context/plans/{phase-plan-filename}"
+  ],
+  "completed_summaries": [],
+  "execution_branch": "para/{task-name}-phase-{N}",
+  "execution_started": "{ISO timestamp}",
+  "phased_execution": {
+    "master_plan": "context/plans/{master-plan-filename}",
+    "phases": [
+      {
+        "phase": 1,
+        "plan": "context/plans/{phase-1-plan}",
+        "status": "completed"
+      },
+      {
+        "phase": N,
+        "plan": "context/plans/{phase-N-plan}",
+        "status": "in_progress"
+      }
+    ],
+    "current_phase": N
+  },
   "last_updated": "{ISO timestamp}"
 }
 ```
