@@ -15,12 +15,12 @@ The PARA-Programming commands are now available as an **official Claude Code plu
 /plugin marketplace add brian-lai/para-programming-plugin
 
 # Install the plugin
-/plugin install para-programming@brian-lai/para-programming-plugin
+/plugin install para-program@brian-lai/para-programming-plugin
 
 # Start using in your project
 cd your-project
 claude
-/para-programming:para-init
+/para-program:init
 ```
 
 ### Plugin Repository
@@ -55,7 +55,7 @@ If you're currently using the manual installation:
 
 3. **Install the plugin**:
    ```bash
-   /plugin install para-programming@brian-lai/para-programming-plugin
+   /plugin install para-program@brian-lai/para-programming-plugin
    ```
 
 4. **Your projects are unaffected** - The `context/` directories and workflow remain unchanged

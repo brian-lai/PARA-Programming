@@ -15,7 +15,7 @@ The PARA-Programming commands are now available as an **official Claude Code plu
 /plugin marketplace add brian-lai/para-programming-plugin
 
 # Install the plugin
-/plugin install para-programming@brian-lai/para-programming-plugin
+/plugin install para-program@brian-lai/para-programming-plugin
 ```
 
 **Plugin Repository:** https://github.com/brian-lai/para-programming-plugin

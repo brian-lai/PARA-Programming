@@ -11,7 +11,7 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 > ```bash
 > # Recommended: Install the Claude Code plugin
 > /plugin marketplace add brian-lai/para-programming-plugin
-> /plugin install para-programming@brian-lai/para-programming-plugin
+> /plugin install para-program@brian-lai/para-programming-plugin
 >
 > # Alternative: Manual setup for other AI assistants
 > git clone https://github.com/brian-lai/para-programming.git
