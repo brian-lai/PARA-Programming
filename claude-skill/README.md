@@ -12,10 +12,10 @@ The PARA-Programming commands are now available as an **official Claude Code plu
 
 ```bash
 # Add the marketplace
-claude plugin marketplace add brian-lai/para-programming-plugin
+/plugin marketplace add brian-lai/para-programming-plugin
 
 # Install the plugin
-claude plugin install para-programming@brian-lai --scope user
+/plugin install para-programming@brian-lai/para-programming-plugin
 ```
 
 **Plugin Repository:** https://github.com/brian-lai/para-programming-plugin
