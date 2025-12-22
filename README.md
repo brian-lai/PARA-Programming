@@ -216,6 +216,8 @@ Implementing authentication system with OAuth2 support.
 - MCP tools to be used
 - Success criteria
 
+For complex work spanning multiple architectural layers or affecting many files, PARA-Programming supports **phased plans** where work is broken into independently reviewable and mergeable phases. See [Phased Plans Documentation](claude-skill/docs/phased-plans-quick-reference.md) for details.
+
 **Example:** `context/plans/add-user-authentication.md`
 
 ```markdown

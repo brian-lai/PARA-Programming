@@ -1,18 +1,20 @@
 # Command: para-summarize
 
-Generate a summary document from the current work session.
+Generate a summary document from the current work session. Supports both simple and phased plans.
 
 ## What This Does
 
 This command creates a structured summary after completing work:
 
 1. Analyzes git changes (files modified, added, deleted)
-2. Reviews the active plan from `context/context.md`
-3. Generates a summary with proper date prefix: `context/summaries/YYYY-MM-DD-task-name-summary.md`
+2. Reviews the active plan (or phase) from `context/context.md`
+3. Generates a summary with proper date prefix: `context/summaries/YYYY-MM-DD-task-name-summary.md` or `context/summaries/YYYY-MM-DD-task-name-phase-N-summary.md`
 4. Documents what changed, why, and key learnings
-5. Updates `context/context.md` to mark work as complete
+5. Updates `context/context.md` to mark work (or phase) as complete
 
 ## Usage
+
+### Simple Plans
 
 ```
 /para-summarize
@@ -22,6 +24,19 @@ The command will automatically:
 - Detect the current active plan
 - Analyze git diff for changes
 - Generate a comprehensive summary
+
+### Phased Plans
+
+```
+/para-summarize --phase=1         # Summarize specific phase
+/para-summarize                   # Will prompt for which phase to summarize
+```
+
+For phased plans:
+- Each phase gets its own summary file
+- Phase status changes from "in_progress" → "completed"
+- Summary includes phase-specific success criteria validation
+- After all phases complete, a final summary can be generated
 
 ## Summary Template Structure
 
