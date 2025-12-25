@@ -1,16 +1,42 @@
-# PARA-Programming Claude Code Skill
+# ⚠️ DEPRECATED - Use the Plugin Instead
 
-**⭐ Recommended: The easiest way to use PARA-Programming**
+## PARA-Programming Claude Code Plugin
 
-This skill provides slash commands and automation tools that make the PARA-Programming methodology easy to use within Claude Code sessions. It eliminates manual setup, enforces workflow consistency, and helps you build better software with AI.
+**This directory contains the legacy manual installation method.**
 
-**Why this skill?**
-- ✅ Maximum automation with slash commands
-- ✅ Smart workflow guidance and decision helpers
-- ✅ Full MCP support for token efficiency
-- ✅ One-command setup: `make setup claude-skill`
+**✨ New: Official Claude Code Plugin Available!**
 
-**Note:** While we recommend this skill for the best experience, the PARA methodology works with any AI assistant. The workflow is universal—only the automation level differs. See the [main README](../README.md) for other platforms.
+The PARA-Programming commands are now available as an **official Claude Code plugin** with one-command installation and automatic updates.
+
+### Quick Install (Recommended)
+
+```bash
+# Add the marketplace
+/plugin marketplace add brian-lai/para-programming-plugin
+
+# Install the plugin
+/plugin install para-program@brian-lai/para-programming-plugin
+```
+
+**Plugin Repository:** https://github.com/brian-lai/para-programming-plugin
+
+---
+
+## Why Use the Plugin?
+
+- ✅ One-command installation
+- ✅ Automatic updates
+- ✅ Official Claude Code plugin structure
+- ✅ Better discoverability
+- ✅ Simplified maintenance
+
+**See [DEPRECATED.md](DEPRECATED.md) for migration guide.**
+
+---
+
+# Legacy Documentation (Manual Installation)
+
+**Note:** The information below is for the deprecated manual installation method.
 
 ---
 

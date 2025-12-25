@@ -9,17 +9,21 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 > **🚀 Ready to start now?** Get up and running in 10 seconds:
 >
 > ```bash
+> # Recommended: Install the Claude Code plugin
+> /plugin marketplace add brian-lai/para-programming-plugin
+> /plugin install para-program@brian-lai/para-programming-plugin
+>
+> # Alternative: Manual setup for other AI assistants
 > git clone https://github.com/brian-lai/para-programming.git
 > cd para-programming
-> make setup claude-skill  # Recommended - full automation!
-> # Also available: cursor, copilot, gemini, or any other AI assistant
+> # Setup available for: cursor, copilot, gemini, and more
 > ```
 >
-> **⭐ We recommend Claude Code with the skill** for the best experience—automated commands, smart guidance, and full MCP support. **However, the PARA methodology works with any AI assistant.** Choose what fits your workflow!
+> **⭐ We recommend the Claude Code plugin** for the best experience—one-command installation, automated commands, smart guidance, and full MCP support. **However, the PARA methodology works with any AI assistant.** Choose what fits your workflow!
 >
-> **[→ Automated Setup Guide](AUTOMATED-SETUP.md)** - One-command installation
+> **[→ Plugin Repository](https://github.com/brian-lai/para-programming-plugin)** - Official Claude Code plugin
 >
-> **[→ Manual Setup Guide](SETUP-GUIDE.md)** - Step-by-step instructions
+> **[→ Setup Guide](SETUP-GUIDE.md)** - Installation for all AI assistants
 
 ---
 
@@ -459,16 +463,17 @@ PARA-Programming is a **methodology**, not a tool. The workflow (Plan → Review
 
 ### 🎯 Choose Your Approach
 
-**⭐ Recommended: Claude Code with Skill** (Best experience)
+**⭐ Recommended: Claude Code Plugin** (Best experience)
 
-The PARA-Programming skill for Claude Code provides the most integrated experience:
-- ✅ Automated slash commands (`/para-init`, `/para-plan`, `/para-summarize`)
+The official PARA-Programming plugin for Claude Code provides the most integrated experience:
+- ✅ One-command installation via plugin system
+- ✅ Automated slash commands (`/para-init`, `/para-plan`, `/para-execute`, `/para-summarize`)
 - ✅ Smart workflow guidance and decision helpers
 - ✅ Full MCP support for token efficiency
 - ✅ SessionStart hooks for automatic status display
-- ✅ One-command setup with `make setup claude-skill`
+- ✅ Automatic updates through plugin system
 
-**[→ Claude Code Skill Guide](claude-skill/)** | **[→ Quick Start](claude/QUICKSTART.md)**
+**[→ Plugin Repository](https://github.com/brian-lai/para-programming-plugin)** | **[→ Manual Setup Guide](claude/QUICKSTART.md)**
 
 ---
 
@@ -478,7 +483,7 @@ The PARA methodology works identically across all platforms—only the setup dif
 
 | AI Assistant | Platform | Guide | Experience Level |
 |--------------|----------|-------|------------------|
-| **🤖 Claude Code (Skill)** | CLI | **[→ Guide](claude-skill/)** | ⭐⭐⭐⭐⭐ Automated |
+| **🤖 Claude Code (Plugin)** | CLI | **[→ Plugin Repo](https://github.com/brian-lai/para-programming-plugin)** | ⭐⭐⭐⭐⭐ Automated |
 | **🤖 Claude Code (Manual)** | CLI | **[→ Guide](claude/)** | ⭐⭐⭐⭐ Streamlined |
 | **🔮 Cursor** | Standalone IDE | **[→ Guide](cursor/)** | ⭐⭐⭐⭐ Streamlined |
 | **✨ GitHub Copilot** | VSCode, JetBrains | **[→ Guide](copilot/)** | ⭐⭐⭐ Manual |
