@@ -6,20 +6,25 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 
 ---
 
-> **🚀 Ready to start now?** Get up and running in 10 seconds:
+> **🚀 Ready to start now?** Get up and running in 30 seconds:
 >
 > ```bash
-> git clone https://github.com/brian-lai/para-programming.git
-> cd para-programming
-> make setup claude-skill  # Recommended - full automation!
-> # Also available: cursor, copilot, gemini, or any other AI assistant
+> # 1. Copy AGENTS.md to your project
+> curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+>
+> # 2. Create symlink for your tool (if needed)
+> ln -s AGENTS.md CLAUDE.md                    # For Claude Code
+> # Cursor and Codex read AGENTS.md directly - no symlink needed!
+>
+> # 3. Initialize context directory
+> mkdir -p context/{data,plans,summaries,archives,servers}
 > ```
 >
-> **⭐ We recommend Claude Code with the skill** for the best experience—automated commands, smart guidance, and full MCP support. **However, the PARA methodology works with any AI assistant.** Choose what fits your workflow!
+> **The single `AGENTS.md` file works across all tools!** Just symlink for tools that expect different filenames.
 >
-> **[→ Automated Setup Guide](AUTOMATED-SETUP.md)** - One-command installation
+> **[→ Setup Guide](SETUP-GUIDE.md)** - Detailed instructions for all tools
 >
-> **[→ Manual Setup Guide](SETUP-GUIDE.md)** - Step-by-step instructions
+> **[→ Tool-Specific Setup](tool-setup/)** - Claude, Cursor, Copilot, Codex, and more
 
 ---
 
@@ -353,38 +358,48 @@ This creates a full audit trail while keeping active context clean.
 
 ## Getting Started
 
-> **📖 Prefer detailed setup instructions?** See the **[Setup Guide](SETUP-GUIDE.md)** for step-by-step instructions tailored to your specific AI assistant.
+> **📖 Prefer detailed setup instructions?** See the **[Setup Guide](SETUP-GUIDE.md)** or tool-specific guides in **[tool-setup/](tool-setup/)**.
 
-This section provides a quick overview of the setup process. For complete guides with templates and examples, see the dedicated guides for [Claude](claude/), [Copilot](copilot/), [Cursor](cursor/), or [Gemini](gemini/).
+### 1. Get AGENTS.md
 
-### 1. Set Up Global Methodology
-
-Copy the global `CLAUDE.md` to your home directory:
+Copy the unified methodology file to your project:
 
 ```bash
-cp CLAUDE.md ~/.claude/CLAUDE.md
+# Option A: Download directly
+curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+
+# Option B: Clone and copy
+git clone https://github.com/brian-lai/para-programming.git
+cp para-programming/AGENTS.md your-project/
 ```
 
-This file defines **how** you work with AI across all projects.
-
-### 2. Initialize Your Project
-
-Create the PARA structure in your project:
+### 2. Create Symlink for Your Tool
 
 ```bash
 cd your-project/
+
+# For Claude Code
+ln -s AGENTS.md CLAUDE.md
+
+# For Cursor or Codex - no symlink needed (reads AGENTS.md directly)
+
+# For GitHub Copilot
+mkdir -p .github && ln -s ../AGENTS.md .github/copilot-instructions.md
+```
+
+### 3. Initialize Context Directory
+
+```bash
 mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
 ```
 
-### 3. Create Project Context File
+### 4. (Optional) Add Project-Specific Context
 
-Create a `CLAUDE.md` in your project root with project-specific information:
+Extend `AGENTS.md` with project-specific information or create a separate file:
 
 ````markdown
-# My Project
-
-> **Workflow Methodology:** Follow `~/.claude/CLAUDE.md`
+# Project-Specific Context
 
 ## About
 A web application for task management with real-time collaboration.
@@ -412,15 +427,9 @@ src/
 - Use Server Components by default
 - API routes in `src/app/api/`
 - Tailwind for styling
-
-## Getting Started
-```bash
-npm install
-npm run dev
-```
 ````
 
-### 4. Start Your First Task
+### 5. Start Your First Task
 
 Seed your `context/context.md`:
 
@@ -438,13 +447,13 @@ Setting up user authentication system.
 ```
 ````
 
-### 5. Follow the Workflow Loop
+### 6. Follow the Workflow Loop
 
 Tell your AI assistant:
 
-> "Follow the PARA-Programming methodology from `~/.claude/CLAUDE.md`. Let's implement user authentication. Start by creating a plan."
+> "Let's implement user authentication. Start by creating a plan."
 
-The AI will:
+The AI will read `AGENTS.md` (or the symlinked file) and:
 1. Create a plan in `context/plans/`
 2. Ask for your review
 3. Execute the plan
@@ -455,50 +464,66 @@ The AI will:
 
 ## IDE & Agent Setup
 
-PARA-Programming is a **methodology**, not a tool. The workflow (Plan → Review → Execute → Summarize → Archive) works with any AI assistant. We provide tools to make it easier, but the principles are universal.
+PARA-Programming is a **methodology**, not a tool. The workflow (Plan → Review → Execute → Summarize → Archive) works with any AI assistant. We use a **single `AGENTS.md` file** that works across all tools.
 
-### 🎯 Choose Your Approach
+### The Unified Approach
 
-**⭐ Recommended: Claude Code with Skill** (Best experience)
+**One file to rule them all:** `AGENTS.md` contains the complete PARA methodology and works directly with multiple tools:
 
-The PARA-Programming skill for Claude Code provides the most integrated experience:
-- ✅ Automated slash commands (`/para-init`, `/para-plan`, `/para-summarize`)
-- ✅ Smart workflow guidance and decision helpers
-- ✅ Full MCP support for token efficiency
-- ✅ SessionStart hooks for automatic status display
-- ✅ One-command setup with `make setup claude-skill`
+```bash
+# AGENTS.md works natively with:
+# - Cursor (reads AGENTS.md directly)
+# - OpenAI Codex CLI (reads AGENTS.md directly)
 
-**[→ Claude Code Skill Guide](claude-skill/)** | **[→ Quick Start](claude/QUICKSTART.md)**
+# For other tools, create symlinks:
+ln -s AGENTS.md CLAUDE.md                          # Claude Code
+mkdir -p .github && ln -s ../AGENTS.md .github/copilot-instructions.md  # GitHub Copilot
+```
 
----
+### Supported Tools (Tiered)
 
-### Other AI Assistants (Full Support)
+| Tier | Tool | Native Support | Setup |
+|------|------|----------------|-------|
+| **Tier 1** | **Claude Code** | Symlink to `CLAUDE.md` | **[→ Setup](tool-setup/claude-code.md)** |
+| **Tier 1** | **Cursor** | Reads `AGENTS.md` directly | **[→ Setup](tool-setup/cursor.md)** |
+| **Tier 1** | **GitHub Copilot** | Symlink to `.github/` | **[→ Setup](tool-setup/copilot.md)** |
+| **Tier 1** | **OpenAI Codex CLI** | Reads `AGENTS.md` directly | **[→ Setup](tool-setup/codex.md)** |
+| **Tier 2** | **Continue.dev** | `.continue/rules/` | **[→ Setup](tool-setup/community/continue.md)** |
+| **Tier 2** | **Windsurf (Codeium)** | `.windsurf/rules/` | **[→ Setup](tool-setup/community/windsurf.md)** |
+| **Tier 3** | **Others** | Varies | **[→ Reference](tool-setup/community/others.md)** |
 
-The PARA methodology works identically across all platforms—only the setup differs:
+**Tier definitions:**
+- **Tier 1 (Actively Supported):** Full documentation, tested workflows, maintained guides
+- **Tier 2 (Community Supported):** Setup guides, community contributions welcome
+- **Tier 3 (Reference Only):** Basic patterns, adapt as needed
 
-| AI Assistant | Platform | Guide | Experience Level |
-|--------------|----------|-------|------------------|
-| **🤖 Claude Code (Skill)** | CLI | **[→ Guide](claude-skill/)** | ⭐⭐⭐⭐⭐ Automated |
-| **🤖 Claude Code (Manual)** | CLI | **[→ Guide](claude/)** | ⭐⭐⭐⭐ Streamlined |
-| **🔮 Cursor** | Standalone IDE | **[→ Guide](cursor/)** | ⭐⭐⭐⭐ Streamlined |
-| **✨ GitHub Copilot** | VSCode, JetBrains | **[→ Guide](copilot/)** | ⭐⭐⭐ Manual |
-| **♊ Gemini** | CLI | **[→ Guide](gemini/)** | ⭐⭐⭐ Manual |
-| **🔷 Codex CLI** | CLI | **[→ Guide](codex/)** | ⭐⭐⭐ Manual |
-| **🛠️ Any Other Tool** | Various | **[→ Universal Guide](other-ai-assistants/)** | ⭐⭐ Adaptable |
+### Quick Setup (Any Tool)
 
-**Each guide contains:**
-- ✅ Complete setup instructions tailored to that tool
-- ✅ Configuration files and templates
-- ✅ Quickstart tutorials (5-10 minutes)
-- ✅ Working examples and best practices
+```bash
+# 1. Get AGENTS.md
+curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
 
-### Quick Setup
+# 2. Create symlink for your tool (see table above)
+ln -s AGENTS.md CLAUDE.md  # Example for Claude Code
 
-**1. Choose your AI assistant** from the table above
+# 3. Initialize context directory
+mkdir -p context/{data,plans,summaries,archives,servers}
+touch context/context.md
 
-**2. Follow the setup guide** for your chosen tool (typically 5-10 minutes)
+# 4. Start working!
+```
 
-**3. Start using PARA-Programming** with the same five-step workflow everywhere
+### Claude Code Skill (Optional Enhancement)
+
+For Claude Code users, the optional skill package adds automated commands:
+
+```bash
+cp -r claude-skill ~/.claude/skills/para-programming
+```
+
+This enables `/para:init`, `/para:plan`, `/para:execute`, `/para:summarize`, `/para:archive`, `/para:status`.
+
+**[→ Claude Code Skill Guide](claude-skill/)**
 
 ### Universal Principles
 
@@ -512,18 +537,7 @@ No matter which tool you use, the methodology is identical:
 5. Archive  → Maintain clear history
 ```
 
-The same `context/` directory structure, the same workflow, the same benefits—just different automation levels based on your tool's capabilities.
-
-### Why We Recommend Claude Code with Skill
-
-While PARA works everywhere, Claude Code with the skill offers:
-- **Maximum automation** - Commands handle workflow steps for you
-- **Best guidance** - Built-in decision helpers and status checks
-- **Token efficiency** - Full MCP support reduces costs
-- **Fastest setup** - One command: `make setup claude-skill`
-- **Auto-updates** - Symlinked methodology stays current
-
-**But if you prefer another tool, that's completely fine!** The methodology is what matters, not the tooling.
+The same `AGENTS.md` file, the same `context/` directory structure, the same workflow—just symlinked differently for each tool.
 
 ---
 

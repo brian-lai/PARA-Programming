@@ -18,7 +18,7 @@ Executing: Unify Configuration with AGENTS.md Standard (Phase 1)
 - [x] Create `tool-setup/community/continue.md` - Continue.dev setup
 - [x] Create `tool-setup/community/windsurf.md` - Windsurf setup
 - [x] Create `tool-setup/community/others.md` - Reference for other tools
-- [ ] Update `README.md` with unified approach and tiering
+- [x] Update `README.md` with unified approach and tiering
 - [ ] Update `SETUP-GUIDE.md` with consolidated setup instructions
 - [ ] Create `MIGRATION.md` for existing users
 
