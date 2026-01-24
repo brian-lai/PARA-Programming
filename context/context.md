@@ -1,29 +1,41 @@
 # Current Work Summary
 
-Executing: Create `para-execute` skill command
+Executing: Unify Configuration with AGENTS.md Standard (Phase 1)
 
-**Branch:** `main` (working directly on main for this documentation change)
-**Plan:** context/plans/2025-12-15-para-execute-skill.md
+**Branch:** `para/unified-agents-md`
+**Plan:** context/plans/2025-01-24-unified-agents-md.md
 
 ## To-Do List
 
-- [x] Create para-execute.md command file
-- [x] Update skill.json with new command entry
-- [x] Update README.md with command documentation
-- [x] Update para-init.md to list para-execute in available commands
+### Phase 1: Core Unification
+
+- [ ] Create unified `AGENTS.md` at project root (merge best content from existing files)
+- [ ] Create `tool-setup/` directory structure
+- [ ] Create `tool-setup/claude-code.md` - Claude Code setup guide
+- [ ] Create `tool-setup/cursor.md` - Cursor setup guide
+- [ ] Create `tool-setup/copilot.md` - GitHub Copilot setup guide
+- [ ] Create `tool-setup/codex.md` - OpenAI Codex CLI setup guide
+- [ ] Create `tool-setup/community/continue.md` - Continue.dev setup
+- [ ] Create `tool-setup/community/windsurf.md` - Windsurf setup
+- [ ] Create `tool-setup/community/others.md` - Reference for other tools
+- [ ] Update `README.md` with unified approach and tiering
+- [ ] Update `SETUP-GUIDE.md` with consolidated setup instructions
+- [ ] Create `MIGRATION.md` for existing users
 
 ## Progress Notes
 
-All implementation complete. Ready for summarize/commit.
+_Update this section as items are completed._
 
 ---
 
 ```json
 {
   "active_context": [
-    "context/plans/2025-12-15-para-execute-skill.md"
+    "context/plans/2025-01-24-unified-agents-md.md"
   ],
   "completed_summaries": [],
-  "last_updated": "2025-12-15T00:00:00Z"
+  "execution_branch": "para/unified-agents-md",
+  "execution_started": "2025-01-24T00:00:00Z",
+  "last_updated": "2025-01-24T00:00:00Z"
 }
 ```
