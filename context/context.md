@@ -10,11 +10,11 @@ Executing: Unify Configuration with AGENTS.md Standard (Phase 1)
 ### Phase 1: Core Unification
 
 - [x] Create unified `AGENTS.md` at project root (merge best content from existing files)
-- [ ] Create `tool-setup/` directory structure
-- [ ] Create `tool-setup/claude-code.md` - Claude Code setup guide
-- [ ] Create `tool-setup/cursor.md` - Cursor setup guide
-- [ ] Create `tool-setup/copilot.md` - GitHub Copilot setup guide
-- [ ] Create `tool-setup/codex.md` - OpenAI Codex CLI setup guide
+- [x] Create `tool-setup/` directory structure
+- [x] Create `tool-setup/claude-code.md` - Claude Code setup guide
+- [x] Create `tool-setup/cursor.md` - Cursor setup guide
+- [x] Create `tool-setup/copilot.md` - GitHub Copilot setup guide
+- [x] Create `tool-setup/codex.md` - OpenAI Codex CLI setup guide
 - [ ] Create `tool-setup/community/continue.md` - Continue.dev setup
 - [ ] Create `tool-setup/community/windsurf.md` - Windsurf setup
 - [ ] Create `tool-setup/community/others.md` - Reference for other tools
