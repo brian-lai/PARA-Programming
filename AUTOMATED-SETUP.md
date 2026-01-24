@@ -348,10 +348,10 @@ bash scripts/test-setup.sh
 
 After automated setup:
 
-1. **Read the quickstart for your assistant:**
-   - [Claude Code Quickstart](claude/QUICKSTART.md)
-   - [Cursor Quickstart](cursor/QUICKSTART.md)
-   - [Copilot Quickstart](copilot/QUICKSTART.md)
+1. **Read the setup guide for your assistant:**
+   - [Claude Code Setup](tool-setup/claude-code.md)
+   - [Cursor Setup](tool-setup/cursor.md)
+   - [Copilot Setup](tool-setup/copilot.md)
 
 2. **Initialize your first project:**
    - Claude: `/para-init`

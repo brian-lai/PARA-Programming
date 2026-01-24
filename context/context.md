@@ -16,12 +16,16 @@ Executing: Unify Configuration with AGENTS.md Standard (Phase 2)
 - [x] Archive `gemini/` directory (move to `_archived/gemini/`)
 - [x] Archive `other-ai-assistants/` directory (move to `_archived/other-ai-assistants/`)
 - [x] Create `examples/` directory with consolidated templates
-- [ ] Update internal links in documentation to point to new locations
-- [ ] Add deprecation notice to `_archived/` README
+- [x] Update internal links in documentation to point to new locations
+- [x] Add deprecation notice to `_archived/` README
 
 ## Progress Notes
 
-Phase 1 complete and merged (PR #9). Starting Phase 2 to archive old directories.
+Phase 1 complete and merged (PR #9). Phase 2 complete:
+- Archived 6 old tool directories to `_archived/`
+- Created `examples/` with consolidated templates
+- Updated links in AUTOMATED-SETUP.md
+- Added deprecation notice README to `_archived/`
 
 ---
 
