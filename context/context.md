@@ -9,12 +9,12 @@ Executing: Unify Configuration with AGENTS.md Standard (Phase 2)
 
 ### Phase 2: Archive Old Directories & Consolidate Templates
 
-- [ ] Archive `claude/` directory (move to `_archived/claude/`)
-- [ ] Archive `cursor/` directory (move to `_archived/cursor/`)
-- [ ] Archive `copilot/` directory (move to `_archived/copilot/`)
-- [ ] Archive `codex/` directory (move to `_archived/codex/`)
-- [ ] Archive `gemini/` directory (move to `_archived/gemini/`)
-- [ ] Archive `other-ai-assistants/` directory (move to `_archived/other-ai-assistants/`)
+- [x] Archive `claude/` directory (move to `_archived/claude/`)
+- [x] Archive `cursor/` directory (move to `_archived/cursor/`)
+- [x] Archive `copilot/` directory (move to `_archived/copilot/`)
+- [x] Archive `codex/` directory (move to `_archived/codex/`)
+- [x] Archive `gemini/` directory (move to `_archived/gemini/`)
+- [x] Archive `other-ai-assistants/` directory (move to `_archived/other-ai-assistants/`)
 - [ ] Create `examples/` directory with consolidated templates
 - [ ] Update internal links in documentation to point to new locations
 - [ ] Add deprecation notice to `_archived/` README
