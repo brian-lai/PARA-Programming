@@ -15,9 +15,9 @@ Executing: Unify Configuration with AGENTS.md Standard (Phase 1)
 - [x] Create `tool-setup/cursor.md` - Cursor setup guide
 - [x] Create `tool-setup/copilot.md` - GitHub Copilot setup guide
 - [x] Create `tool-setup/codex.md` - OpenAI Codex CLI setup guide
-- [ ] Create `tool-setup/community/continue.md` - Continue.dev setup
-- [ ] Create `tool-setup/community/windsurf.md` - Windsurf setup
-- [ ] Create `tool-setup/community/others.md` - Reference for other tools
+- [x] Create `tool-setup/community/continue.md` - Continue.dev setup
+- [x] Create `tool-setup/community/windsurf.md` - Windsurf setup
+- [x] Create `tool-setup/community/others.md` - Reference for other tools
 - [ ] Update `README.md` with unified approach and tiering
 - [ ] Update `SETUP-GUIDE.md` with consolidated setup instructions
 - [ ] Create `MIGRATION.md` for existing users
