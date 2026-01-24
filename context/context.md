@@ -15,7 +15,7 @@ Executing: Unify Configuration with AGENTS.md Standard (Phase 2)
 - [x] Archive `codex/` directory (move to `_archived/codex/`)
 - [x] Archive `gemini/` directory (move to `_archived/gemini/`)
 - [x] Archive `other-ai-assistants/` directory (move to `_archived/other-ai-assistants/`)
-- [ ] Create `examples/` directory with consolidated templates
+- [x] Create `examples/` directory with consolidated templates
 - [ ] Update internal links in documentation to point to new locations
 - [ ] Add deprecation notice to `_archived/` README
 
