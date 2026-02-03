@@ -209,22 +209,101 @@ show_claude_instructions() {
   echo ""
 }
 
-# Placeholder for setup logic (to be implemented in Phase 2)
+# Setup file-based tools (Tier 1 and Tier 2)
 setup_file_based_tools() {
-  local tier1_tools=("$@")
+  echo -e "${BOLD}Setting up PARA-Programming...${RESET}"
+  echo ""
 
-  echo -e "${YELLOW}⚠️  Setup logic not yet implemented (Phase 2)${RESET}"
+  local setup_success=true
+
+  # Setup Tier 1 tools (if any detected)
+  if [[ ${#DETECTED_TIER1_TOOLS[@]} -gt 0 ]]; then
+    if "$SCRIPT_DIR/setup-tier1.sh" $( [[ "$VERBOSE" == "true" ]] && echo "--verbose" ); then
+      # Show which Tier 1 tools were configured
+      for tool in "${DETECTED_TIER1_TOOLS[@]}"; do
+        case "$tool" in
+          cursor)
+            echo -e "  ${GREEN}✓${RESET} Cursor configured"
+            ;;
+          continue)
+            echo -e "  ${GREEN}✓${RESET} Continue.dev configured"
+            ;;
+        esac
+      done
+    else
+      echo -e "  ${RED}✗${RESET} Failed to set up Tier 1 tools"
+      setup_success=false
+    fi
+  fi
+
+  # Setup Tier 2 tools (if any detected)
+  if [[ ${#DETECTED_TIER2_TOOLS[@]} -gt 0 ]]; then
+    if "$SCRIPT_DIR/setup-tier2.sh" $( [[ "$VERBOSE" == "true" ]] && echo "--verbose" ); then
+      # Show which Tier 2 tools were configured
+      for tool in "${DETECTED_TIER2_TOOLS[@]}"; do
+        case "$tool" in
+          copilot)
+            echo -e "  ${GREEN}✓${RESET} GitHub Copilot configured"
+            ;;
+          gemini)
+            echo -e "  ${GREEN}✓${RESET} Gemini configured"
+            ;;
+        esac
+      done
+    else
+      echo -e "  ${RED}✗${RESET} Failed to set up Tier 2 tools"
+      setup_success=false
+    fi
+  fi
+
   echo ""
-  echo "The following tools will be configured in Phase 2:"
-  for tool in "${tier1_tools[@]}"; do
-    echo "  • $tool"
-  done
-  echo ""
-  echo -e "${BLUE}ℹ️  For now, refer to manual setup guides:${RESET}"
-  echo "  • Cursor: cursor/README.md"
-  echo "  • Continue.dev: continue/README.md"
-  echo "  • GitHub Copilot: copilot/README.md"
-  echo "  • Gemini: gemini/README.md"
+
+  if [[ "$setup_success" == "true" ]]; then
+    echo -e "${GREEN}✅ Setup complete!${RESET}"
+    echo ""
+
+    # Show capabilities for detected tools
+    echo -e "${BOLD}Tool Capabilities:${RESET}"
+    for tool in "${DETECTED_TIER1_TOOLS[@]}"; do
+      case "$tool" in
+        cursor)
+          echo "  • Cursor: Full PARA workflow with slash commands, multi-file editing"
+          ;;
+        continue)
+          echo "  • Continue.dev: Full PARA workflow with slash commands, multi-file editing"
+          ;;
+      esac
+    done
+
+    for tool in "${DETECTED_TIER2_TOOLS[@]}"; do
+      case "$tool" in
+        copilot)
+          echo "  • GitHub Copilot: PARA methodology (manual workflow, no slash commands)"
+          ;;
+        gemini)
+          echo "  • Gemini: PARA methodology (manual workflow, no slash commands)"
+          ;;
+      esac
+    done
+    echo ""
+
+    # Show next steps
+    echo -e "${BOLD}Next Steps:${RESET}"
+    if [[ ${#DETECTED_TIER1_TOOLS[@]} -gt 0 ]]; then
+      echo "  1. Restart your IDE to load the new configuration"
+      echo "  2. In Cursor/Continue: Try slash commands like /para:plan"
+      echo "  3. See AGENTS.md for complete methodology"
+    fi
+
+    if [[ ${#DETECTED_TIER2_TOOLS[@]} -gt 0 ]]; then
+      echo "  1. Reload your IDE to load the new instructions"
+      echo "  2. Read AGENTS.md to understand the workflow"
+      echo "  3. Follow the 5-step process manually: Plan → Review → Execute → Summarize → Archive"
+    fi
+  else
+    echo -e "${RED}⚠️  Some setup steps failed. Please check the errors above.${RESET}"
+    return 1
+  fi
 }
 
 # Main function

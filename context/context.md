@@ -55,14 +55,14 @@ Implement actual file creation logic for PARA-Programming setup:
 - [x] Verify symlinks use relative paths
 
 ### Integration into para-init
-- [ ] Update `scripts/para-init` setup_file_based_tools function
-  - [ ] Remove placeholder message
-  - [ ] Call setup-tier1.sh for Tier 1 tools
-  - [ ] Call setup-tier2.sh for Tier 2 tools
-  - [ ] Display success messages per tool
-  - [ ] Show next steps guidance
-- [ ] Test end-to-end: para-init detects tools and creates files
-- [ ] Test idempotence: running para-init twice doesn't break
+- [x] Update `scripts/para-init` setup_file_based_tools function
+  - [x] Remove placeholder message
+  - [x] Call setup-tier1.sh for Tier 1 tools
+  - [x] Call setup-tier2.sh for Tier 2 tools
+  - [x] Display success messages per tool
+  - [x] Show next steps guidance
+- [x] Test end-to-end: para-init detects tools and creates files
+- [x] Test idempotence: running para-init twice doesn't break
 
 ## Progress Notes
 
@@ -93,6 +93,16 @@ Implement actual file creation logic for PARA-Programming setup:
 - Supports --tool=copilot|gemini for selective setup
 - Verbose mode for debugging
 - Tested successfully: created both symlinks with relative paths
+
+**Integration Complete:**
+- Updated `scripts/para-init` setup_file_based_tools function
+- Replaced placeholder with actual setup script calls
+- Calls setup-tier1.sh for Cursor and Continue.dev
+- Calls setup-tier2.sh for Copilot and Gemini
+- Displays tool capabilities (full vs. methodology-only)
+- Shows appropriate next steps per tool type
+- Tested end-to-end: detects 4 tools, runs setup, shows clear guidance
+- Tested idempotence: running twice is safe, skips existing files
 
 ---
 
