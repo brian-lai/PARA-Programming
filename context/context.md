@@ -1,101 +1,110 @@
 # Current Work Summary
 
-Executing: PARA-Programming Cursor Extension - Phase 1: Repository & Extension Foundation
+Implementation Planning: Smart para-init with Auto-Detection
 
-**Phase:** 1 of 4
-**Phase Plan:** context/plans/2026-01-06-cursor-extension-phase-1.md
-**Master Plan:** context/plans/2026-01-06-cursor-extension.md
+**Plan:** context/plans/2026-02-02-smart-para-init-auto-detection.md
 
-**⚠️ Note:** Phase 1 involves creating a NEW repository at `github.com/brian-lai/para-programming-cursor`. Execution will happen in that new repository, not in the current `para-programming` repo.
+---
 
-## To-Do List
+## Objective
 
-### Repository Setup
-- [ ] Create GitHub repository `para-programming-cursor`
-- [ ] Clone repository locally to `~/dev/para-programming-cursor`
-- [ ] Create directory structure (src/, templates/, media/, test/, .vscode/)
+Implement an intelligent `para-init` command that auto-detects AI coding tools and configures PARA-Programming automatically, without exposing "tier" concepts to users.
 
-### Extension Scaffolding
-- [ ] Create package.json with extension manifest
-- [ ] Create tsconfig.json for TypeScript configuration
-- [ ] Create webpack.config.js for bundling
-- [ ] Create .vscodeignore and .gitignore
+**Key UX Improvement:** Replace `--tier1` / `--tier2` flags with smart detection.
 
-### Extension Entry Point
-- [ ] Create src/extension.ts with activation logic
-- [ ] Implement "Hello PARA" command for verification
+## Background
 
-### Development Workflow
-- [ ] Create .vscode/launch.json for debugging
-- [ ] Create .vscode/tasks.json for build tasks
-- [ ] Create .vscode/settings.json for workspace settings
+Based on completed research (2026-02-02):
+- ✅ Analyzed 6 AI coding tools
+- ✅ Identified two capability tiers
+- ✅ Discovered Claude Code uses native plugin (not file-based setup)
 
-### Documentation
-- [ ] Create README.md with project overview
-- [ ] Create LICENSE file (MIT)
+## Implementation Approach
 
-### PARA Structure (Meta - Apply PARA to extension repo itself!)
-- [ ] Create context/ directory structure in new repo
-- [ ] Create context/context.md for tracking Phase 1
-- [ ] Create CLAUDE.md for project-specific instructions
+### Tool Handling Strategy
 
-### Build & Test
-- [ ] Run npm install
-- [ ] Run npm run compile
-- [ ] Test extension in Cursor development host (F5)
-- [ ] Verify "PARA: Hello World" command works
+**Plugin-Based (External):**
+- **Claude Code** → Point to `github.com/brian-lai/para-programming-plugin`
+  - Don't configure files in this repo
+  - Display installation instructions
 
-### Initial Commit
-- [ ] Stage all files: git add .
-- [ ] Commit: "chore: Phase 1 foundation - extension scaffolding"
-- [ ] Push to GitHub
+**File-Based (This Repo):**
+- **Tier 1**: Cursor, Continue.dev → Create `AGENTS.md` (no symlinks)
+- **Tier 2**: Copilot, Gemini → Create `AGENTS.md` + symlinks
 
-## Progress Notes
+### Phased Execution Plan
 
-Phase 1 establishes the foundation for the Cursor extension. This phase must be completed before Phase 2 can begin.
+**Phase 1: Detection & Core Logic**
+- Create `scripts/detect-tools.sh`
+- Create `scripts/para-init` entry point
+- Test detection accuracy
 
-**Next location:** After creating the GitHub repo, work will continue in `~/dev/para-programming-cursor/`
+**Phase 2: File-Based Setup Scripts**
+- Create `scripts/setup-tier1.sh`
+- Create `scripts/setup-tier2.sh`
+- Create `templates/AGENTS.md` master template
+
+**Phase 3: User Experience & Display**
+- Interactive selection menu
+- Tool-specific guidance
+- Claude Code plugin instructions
+
+**Phase 4: Documentation Updates**
+- Update README with `para-init` as primary method
+- Update MIGRATION.md (realistic expectations)
+- Update tool-specific docs
+
+## Open Questions
+
+1. Verify Codex CLI AGENTS.md support before including in Tier 1?
+2. Best way to detect Continue.dev reliably?
+3. Windows symlink handling strategy?
+4. Keep Gemini in Tier 2 given under-developed docs?
+
+## Next Step
+
+Awaiting approval to begin Phase 1 implementation.
 
 ---
 
 ```json
 {
   "active_context": [
-    "context/plans/2026-01-06-cursor-extension.md",
-    "context/plans/2026-01-06-cursor-extension-phase-1.md"
+    "context/plans/2026-02-02-smart-para-init-auto-detection.md"
   ],
-  "completed_summaries": [],
-  "execution_started": "2026-01-06T00:00:00Z",
+  "completed_work": [
+    {
+      "plan": "context/plans/2026-02-02-tool-unification-research.md",
+      "summary": "context/summaries/2026-02-02-tool-unification-research-summary.md",
+      "status": "complete"
+    }
+  ],
   "phased_execution": {
-    "master_plan": "context/plans/2026-01-06-cursor-extension.md",
+    "master_plan": "context/plans/2026-02-02-smart-para-init-auto-detection.md",
     "phases": [
       {
         "phase": 1,
-        "plan": "context/plans/2026-01-06-cursor-extension-phase-1.md",
-        "status": "in_progress",
-        "description": "Repository & Extension Foundation"
+        "description": "Detection & Core Logic",
+        "status": "pending"
       },
       {
         "phase": 2,
-        "plan": "context/plans/2026-01-06-cursor-extension-phase-2.md",
-        "status": "pending",
-        "description": "Core PARA Commands"
+        "description": "File-Based Setup Scripts",
+        "status": "pending"
       },
       {
         "phase": 3,
-        "plan": "context/plans/2026-01-06-cursor-extension-phase-3.md",
-        "status": "pending",
-        "description": "UI Components & Enhanced Experience"
+        "description": "User Experience & Display",
+        "status": "pending"
       },
       {
         "phase": 4,
-        "plan": "context/plans/2026-01-06-cursor-extension-phase-4.md",
-        "status": "pending",
-        "description": "Polish, Documentation & Publishing"
+        "description": "Documentation Updates",
+        "status": "pending"
       }
     ],
-    "current_phase": 1
+    "current_phase": null
   },
-  "last_updated": "2026-01-06T00:00:00Z"
+  "last_updated": "2026-02-02T23:15:00Z"
 }
 ```
