@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "codetect-para": {
+      "command": "codetect",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}

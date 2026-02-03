@@ -1,0 +1,971 @@
+{
+  "root": {
+    "path": "",
+    "hash": "27ee578ddaf8d7f6c53a34cc22e288108efd984f5f518688c07d3a5814c4df94",
+    "is_dir": true,
+    "size": 800,
+    "mod_time": "2026-02-02T22:50:48.912024387-05:00",
+    "children": [
+      {
+        "path": "AGENTS.md",
+        "hash": "95d6d9a9a7d7c6c57bd9a296c6dd34645e2e3daa64b815b8a7aca6ed66b56f71",
+        "is_dir": false,
+        "size": 10526,
+        "mod_time": "2026-02-02T20:08:50.868664172-05:00"
+      },
+      {
+        "path": "AUTOMATED-SETUP.md",
+        "hash": "7a46f6f29cc9af4a76bf229e41f35bf8a4aa77fdcb36b19603dab6a91b550bb6",
+        "is_dir": false,
+        "size": 8081,
+        "mod_time": "2025-11-24T23:44:28.461537644-05:00"
+      },
+      {
+        "path": "CLAUDE.md",
+        "hash": "ba4f7b5161909ed18bd037e5cb7ed38ed7951773a597f85f747a7902f1ed5eee",
+        "is_dir": false,
+        "size": 13676,
+        "mod_time": "2026-02-02T20:10:58.423932916-05:00"
+      },
+      {
+        "path": "MIGRATION.md",
+        "hash": "3c90e743b7078e6855755fdd9a0ae9dfdc761971831c8299f88fb0b10d21db6b",
+        "is_dir": false,
+        "size": 5966,
+        "mod_time": "2026-02-02T20:08:50.868863674-05:00"
+      },
+      {
+        "path": "Makefile",
+        "hash": "9b3e4e7e95fa6513d12922806a66d558b07f0471449493af798eaea927b11c5e",
+        "is_dir": false,
+        "size": 6637,
+        "mod_time": "2025-11-27T12:57:51.686805252-05:00"
+      },
+      {
+        "path": "README.md",
+        "hash": "a4cd50e70541bf3e123f59321e41b5bda69edecd259edd2360d91f4ebdffbcfb",
+        "is_dir": false,
+        "size": 34896,
+        "mod_time": "2026-02-02T20:08:50.869380681-05:00"
+      },
+      {
+        "path": "SETUP-GUIDE.md",
+        "hash": "925d3446e811d1dbfa7d9e0024b3d990618099c9395aa6f3afa0473fcb1062c8",
+        "is_dir": false,
+        "size": 7620,
+        "mod_time": "2026-02-02T20:08:50.869888229-05:00"
+      },
+      {
+        "path": "claude",
+        "hash": "4b6d4d632714ec90047f169a416033048029d602bbfd5b7a9c75df84fb822f9e",
+        "is_dir": true,
+        "size": 160,
+        "mod_time": "2025-12-16T11:27:33.726535573-05:00",
+        "children": [
+          {
+            "path": "claude/CLAUDE.md",
+            "hash": "0c51121838f78e532baf62486f3e5868e98ed8d92443418d82a687bd0b281411",
+            "is_dir": false,
+            "size": 29399,
+            "mod_time": "2025-12-15T09:54:45.178653266-05:00"
+          },
+          {
+            "path": "claude/QUICKSTART.md",
+            "hash": "7770f59683ae95e943dedbcbc1eac3d555697853eb952afbb05a57019210f5a5",
+            "is_dir": false,
+            "size": 15499,
+            "mod_time": "2025-11-26T16:56:46.119168217-05:00"
+          },
+          {
+            "path": "claude/README.md",
+            "hash": "4c1bfaba8f135b81c9353a1ae4c2b671c6bcf551d141f99eb3ee4b85815e1e71",
+            "is_dir": false,
+            "size": 15761,
+            "mod_time": "2025-11-24T23:44:28.4654884-05:00"
+          }
+        ]
+      },
+      {
+        "path": "claude-skill",
+        "hash": "7a6ba256632da296b0ef82350ab6c5d1a09cc1ddb5811a6b202660cccf69f3df",
+        "is_dir": true,
+        "size": 480,
+        "mod_time": "2025-12-29T14:41:08.756873712-05:00",
+        "children": [
+          {
+            "path": "claude-skill/CHANGELOG.md",
+            "hash": "f5abdd663f014d2354db6c0ad72ff22f2c1a3374983d20f257b6a030d868e98a",
+            "is_dir": false,
+            "size": 2497,
+            "mod_time": "2025-11-24T23:44:28.462575104-05:00"
+          },
+          {
+            "path": "claude-skill/INSTALL.md",
+            "hash": "07cf4845ce70854095300d427ce6ea7aff3d079789e396f7cb6195065aa0c5a0",
+            "is_dir": false,
+            "size": 7447,
+            "mod_time": "2025-12-16T11:20:18.479361825-05:00"
+          },
+          {
+            "path": "claude-skill/LICENSE",
+            "hash": "78aad6d7213ea2f5a10289447df955c849064df2a28aa450637c07c49f449af6",
+            "is_dir": false,
+            "size": 1083,
+            "mod_time": "2025-11-24T23:44:28.462802101-05:00"
+          },
+          {
+            "path": "claude-skill/README.md",
+            "hash": "969d2dc4187a01a6d2e948ebde032823e45277350ccfd338a6c48c2d4af88d49",
+            "is_dir": false,
+            "size": 11410,
+            "mod_time": "2025-12-29T14:41:08.755002224-05:00"
+          },
+          {
+            "path": "claude-skill/RELEASE-NOTES.md",
+            "hash": "883445c7518e4167cfcf85fc52dfb3da48bc9c30b4e95ac20cff6a4f21ff8cbc",
+            "is_dir": false,
+            "size": 5944,
+            "mod_time": "2025-11-24T23:44:28.463023598-05:00"
+          },
+          {
+            "path": "claude-skill/UPGRADING.md",
+            "hash": "aa0aa859ec781467f89a7b9af68ffabfdf30e2f6e8eda00114b736a45e19d968",
+            "is_dir": false,
+            "size": 5930,
+            "mod_time": "2025-11-24T23:44:28.463111831-05:00"
+          },
+          {
+            "path": "claude-skill/commands",
+            "hash": "3694da9d7c644c1fd1bd4e808c340854ed10852b8eb0a8bc2d105d2cb7ba1d40",
+            "is_dir": true,
+            "size": 384,
+            "mod_time": "2025-12-29T14:41:08.756643958-05:00",
+            "children": [
+              {
+                "path": "claude-skill/commands/init-para-claude.md",
+                "hash": "c887acf8ca7bf1bc3d7cabc9d9581504f9922122aefbed7b6d1a64713263511d",
+                "is_dir": false,
+                "size": 7362,
+                "mod_time": "2025-11-24T23:44:28.463246137-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-archive.md",
+                "hash": "0b8bd15e9cc8a34f6c91de0a6a03ab01c43b074be6ecfa76fe12620bdf256452",
+                "is_dir": false,
+                "size": 2134,
+                "mod_time": "2025-11-24T23:44:28.463318081-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-check.md",
+                "hash": "53f64a7445c63d2c4f8507e2cb06da0c6239927d9249ac6c5011ecb06dc16495",
+                "is_dir": false,
+                "size": 4136,
+                "mod_time": "2025-11-24T23:44:28.463406272-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-execute.md",
+                "hash": "4d1ad1688868b75e7fc0e7bdc4f7dc35c9aaf85b3127137b0d71fed590fd4a2f",
+                "is_dir": false,
+                "size": 9646,
+                "mod_time": "2025-12-29T14:41:08.755838404-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-help.md",
+                "hash": "4a11bb753b25dca338723eecd4ba6b050cfca724f4f8768854ab529446ac516d",
+                "is_dir": false,
+                "size": 11027,
+                "mod_time": "2025-11-24T23:44:28.463523457-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-init-gemini.md",
+                "hash": "5f8634b034fe06e4154db7157595a00e2ca92911528c3cea39fef38ab18298b2",
+                "is_dir": false,
+                "size": 1562,
+                "mod_time": "2025-11-27T12:56:52.083659146-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-init.md",
+                "hash": "8582eed9023d5d02d229c3dacbb3881072d511e61c40fe8f74077b7ac813cea3",
+                "is_dir": false,
+                "size": 3891,
+                "mod_time": "2025-12-16T11:08:49.561525635-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-plan.md",
+                "hash": "96b1c164f7b5c4389a28a7b17eaab21dc864e030c8c72c00a5daae25b2863153",
+                "is_dir": false,
+                "size": 9054,
+                "mod_time": "2025-12-29T14:41:08.756542332-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-status.md",
+                "hash": "f0f86b0bc6676fe0cc399a165a3e51fb825e094f93c63f00eef05c1cc600db57",
+                "is_dir": false,
+                "size": 2416,
+                "mod_time": "2025-11-24T23:44:28.463737831-05:00"
+              },
+              {
+                "path": "claude-skill/commands/para-summarize.md",
+                "hash": "365052eeb71ee029b9d090017cefb79e409bd7f16009a535d97bbf07ce1f5627",
+                "is_dir": false,
+                "size": 2774,
+                "mod_time": "2025-12-29T14:41:08.756830045-05:00"
+              }
+            ]
+          },
+          {
+            "path": "claude-skill/docs",
+            "hash": "bc00282dce5f2c741e0a3ad53f80f0d56c91767a5635dc72e788d57b8ab03fb8",
+            "is_dir": true,
+            "size": 160,
+            "mod_time": "2025-12-29T14:41:08.757710517-05:00",
+            "children": [
+              {
+                "path": "claude-skill/docs/PHASED-PLANS-CHANGELOG.md",
+                "hash": "4ba16134c3438b430d74d978591f533cdc41e15ad1382daa98ef4abf596c6ab7",
+                "is_dir": false,
+                "size": 10541,
+                "mod_time": "2025-12-29T14:41:08.757216509-05:00"
+              },
+              {
+                "path": "claude-skill/docs/phased-plan-example.md",
+                "hash": "1fd7be1ef304069fd184b86e55fd3f4dbf1d30fd9eac44e2812caee28853478c",
+                "is_dir": false,
+                "size": 12434,
+                "mod_time": "2025-12-29T14:41:08.7576681-05:00"
+              },
+              {
+                "path": "claude-skill/docs/phased-plans-quick-reference.md",
+                "hash": "f16b96726645679c19735b8b38765a8ffaf012e399b8b4a0b847222854485c38",
+                "is_dir": false,
+                "size": 7891,
+                "mod_time": "2025-12-29T14:41:08.758006688-05:00"
+              }
+            ]
+          },
+          {
+            "path": "claude-skill/examples",
+            "hash": "ba159b4ecf4ebea9780afda8a6942b5ba220b3439a753410cc4f8d992fdb6f84",
+            "is_dir": true,
+            "size": 96,
+            "mod_time": "2025-11-24T23:44:28.463886426-05:00",
+            "children": [
+              {
+                "path": "claude-skill/examples/example-workflow.md",
+                "hash": "3335855f172d5b72cdabc46219304476d8173a0f1ff312b93bb35e4d4ca1da47",
+                "is_dir": false,
+                "size": 6948,
+                "mod_time": "2025-11-24T23:44:28.463950206-05:00"
+              }
+            ]
+          },
+          {
+            "path": "claude-skill/hooks",
+            "hash": "5cbc9ea42dfe0c303d1d1e2d25309ff4303cf67aba2facee4bca732d4f622e67",
+            "is_dir": true,
+            "size": 96,
+            "mod_time": "2025-11-24T23:44:28.464032523-05:00",
+            "children": [
+              {
+                "path": "claude-skill/hooks/para-session-start.sh",
+                "hash": "273c624193fb0e84a59b1f0004050a946f3e5642158b6ddb5223956cd09a134d",
+                "is_dir": false,
+                "size": 1506,
+                "mod_time": "2025-11-24T23:44:28.464080763-05:00"
+              }
+            ]
+          },
+          {
+            "path": "claude-skill/scripts",
+            "hash": "87e6bf43d887e9a7addcdda858c84bb4df70539eeadf8936e20276d5baec18b4",
+            "is_dir": true,
+            "size": 128,
+            "mod_time": "2025-12-16T11:19:35.758399487-05:00",
+            "children": [
+              {
+                "path": "claude-skill/scripts/install.sh",
+                "hash": "83a32fea0b427c0bf97eaa95e2c8e3cd15c16772bf620a879dcf0f364c6e902d",
+                "is_dir": false,
+                "size": 3580,
+                "mod_time": "2025-12-16T11:19:35.754335356-05:00"
+              },
+              {
+                "path": "claude-skill/scripts/uninstall.sh",
+                "hash": "c4676f501e6f4d3e843ef98f4c4131667a0db1dcb7bfae23ba73f2cae0277de7",
+                "is_dir": false,
+                "size": 1951,
+                "mod_time": "2025-11-24T23:44:28.464279932-05:00"
+              }
+            ]
+          },
+          {
+            "path": "claude-skill/skill.json",
+            "hash": "2f3b3ec59ab07807ac92da8daaf4eb4bf892ad3ab7e11777781d539db700feda",
+            "is_dir": false,
+            "size": 1824,
+            "mod_time": "2025-12-16T11:07:06.960947944-05:00"
+          },
+          {
+            "path": "claude-skill/templates",
+            "hash": "d1481c9e702f845316ead8479941529bda19272f4ed198b3a14479303cc07c9a",
+            "is_dir": true,
+            "size": 288,
+            "mod_time": "2025-12-29T14:41:08.758275651-05:00",
+            "children": [
+              {
+                "path": "claude-skill/templates/claude-basic-template.md",
+                "hash": "442da2fe815c19c1c1d6774ec23be3a93e7e6b94ed1c74dd62143f4c193e63a9",
+                "is_dir": false,
+                "size": 472,
+                "mod_time": "2025-11-24T23:44:28.46446227-05:00"
+              },
+              {
+                "path": "claude-skill/templates/claude-full-template.md",
+                "hash": "25fd97fc5d5f25bea9be1e1561966f30d776d5a9f2679977166f8823e13de641",
+                "is_dir": false,
+                "size": 4054,
+                "mod_time": "2025-11-24T23:44:28.464537339-05:00"
+              },
+              {
+                "path": "claude-skill/templates/context-template.md",
+                "hash": "fad6c9b72796b2cbefa4e0f1e37ba8ef45e3efa2bc5b30d594240a0f12f42a45",
+                "is_dir": false,
+                "size": 197,
+                "mod_time": "2025-11-24T23:44:28.464600535-05:00"
+              },
+              {
+                "path": "claude-skill/templates/phased-plan-master-template.md",
+                "hash": "26c00a72295d38c26a2c5220b066ad36762ca55003b20af15921e03fda6a0fdc",
+                "is_dir": false,
+                "size": 3717,
+                "mod_time": "2025-12-29T14:41:08.758241192-05:00"
+              },
+              {
+                "path": "claude-skill/templates/phased-plan-sub-template.md",
+                "hash": "255e7e4128083e77b637d63884a4a15423e7aaf2d5443860ca0a2db0a9649a22",
+                "is_dir": false,
+                "size": 3373,
+                "mod_time": "2025-12-29T14:41:08.758470738-05:00"
+              },
+              {
+                "path": "claude-skill/templates/plan-template.md",
+                "hash": "a772f102b351dd7e3a7fa93220d355def15e6aa921065aeeaee2a5713089f7a6",
+                "is_dir": false,
+                "size": 1319,
+                "mod_time": "2025-11-24T23:44:28.464663689-05:00"
+              },
+              {
+                "path": "claude-skill/templates/summary-template.md",
+                "hash": "0bfb38f28712884c3166d28d6355d875d30e994630756d652b38e8e97e89bfea",
+                "is_dir": false,
+                "size": 1367,
+                "mod_time": "2025-11-24T23:44:28.464721719-05:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "codex",
+        "hash": "091d09129f4601240d20874ad15aa8d80c7f60864f027055fea1e664e36b987d",
+        "is_dir": true,
+        "size": 192,
+        "mod_time": "2025-12-02T04:11:00.372295928-05:00",
+        "children": [
+          {
+            "path": "codex/AGENTS.md",
+            "hash": "9770a73b0659125a3b87cc2de51d6d299567ce3ea546fa8c47c3a5790c15469c",
+            "is_dir": false,
+            "size": 27015,
+            "mod_time": "2025-12-02T04:11:00.372519048-05:00"
+          },
+          {
+            "path": "codex/QUICKSTART.md",
+            "hash": "89f8ed0e0e623aebbd55857afd518c7e82768b0c9c54e2bc1c102b0e34f0e41a",
+            "is_dir": false,
+            "size": 11074,
+            "mod_time": "2025-11-15T21:00:57.841125706-05:00"
+          },
+          {
+            "path": "codex/README.md",
+            "hash": "4f028bf3de3b331b23c0344133f040de6adbc35072405573a8982ff527103f55",
+            "is_dir": false,
+            "size": 19879,
+            "mod_time": "2025-11-15T21:00:57.845581634-05:00"
+          },
+          {
+            "path": "codex/templates",
+            "hash": "b0d83c5df348f7c6bddc9dd627163a2560a3257db7d5a65f4189ee72bbbcf9dc",
+            "is_dir": true,
+            "size": 96,
+            "mod_time": "2025-11-15T20:28:00.376373162-05:00",
+            "children": [
+              {
+                "path": "codex/templates/basic-AGENTS.md",
+                "hash": "b72772ce81904d298d4f97ab567c2bada1e66bbe78236a8592d3e99167adf3c5",
+                "is_dir": false,
+                "size": 465,
+                "mod_time": "2025-11-15T20:28:00.373351171-05:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "context",
+        "hash": "1f34c6e92d3a44df9b37258581062f14898d972630515c2434e0cdb66dfdc1ab",
+        "is_dir": true,
+        "size": 256,
+        "mod_time": "2026-02-02T22:28:30.956884697-05:00",
+        "children": [
+          {
+            "path": "context/context.md",
+            "hash": "db9622f92670d73bc5231f04b5326a6af477905d57951bab6888862214450e10",
+            "is_dir": false,
+            "size": 2927,
+            "mod_time": "2026-02-02T22:28:30.956669324-05:00"
+          },
+          {
+            "path": "context/data",
+            "hash": "72cb15184e5dea5b13195dfd3be0a6de8cdf18dcf7cda2b43773a8dc40599d66",
+            "is_dir": true,
+            "size": 128,
+            "mod_time": "2026-02-02T21:17:36.429723978-05:00",
+            "children": [
+              {
+                "path": "context/data/2026-02-02-tool-comparison-matrix.md",
+                "hash": "681e96a956645812dcc35947ffc1c2fbc9d2c2619037f50743b8ad4154e8fe7e",
+                "is_dir": false,
+                "size": 14465,
+                "mod_time": "2026-02-02T21:15:43.289825712-05:00"
+              },
+              {
+                "path": "context/data/2026-02-02-tool-unification-findings.md",
+                "hash": "1f3e1d391e00077e2261ac7c81910aec3894fd75db0627bcffe11f5edc2d463f",
+                "is_dir": false,
+                "size": 18626,
+                "mod_time": "2026-02-02T21:17:36.429607561-05:00"
+              }
+            ]
+          },
+          {
+            "path": "context/plans",
+            "hash": "2437f607f80b876cb638b28c0aa773fdec30d81375fd664c951237bd70971fec",
+            "is_dir": true,
+            "size": 320,
+            "mod_time": "2026-02-02T22:27:59.747835065-05:00",
+            "children": [
+              {
+                "path": "context/plans/2025-01-24-unified-agents-md.md",
+                "hash": "70d80ddb283fb0d36ad64cdc12833a5c3833a6abbae158615fe9470fedef9f4d",
+                "is_dir": false,
+                "size": 8551,
+                "mod_time": "2026-02-02T20:08:50.870533695-05:00"
+              },
+              {
+                "path": "context/plans/2026-01-06-cursor-extension-phase-1.md",
+                "hash": "de0379d6e4de480e781bd7d2540e909e7a0ad416e9c03917950760c63adb4fd3",
+                "is_dir": false,
+                "size": 16217,
+                "mod_time": "2026-02-02T20:10:58.424334963-05:00"
+              },
+              {
+                "path": "context/plans/2026-01-06-cursor-extension-phase-2.md",
+                "hash": "9465132ea724937e8cbf25869dfe9caceda185d4b778999f8bd2eea43c234ea9",
+                "is_dir": false,
+                "size": 25032,
+                "mod_time": "2026-02-02T20:10:58.424602466-05:00"
+              },
+              {
+                "path": "context/plans/2026-01-06-cursor-extension-phase-3.md",
+                "hash": "a358066fecc2a38e3bf254b754f81f64fc7f4b9c81e535c6aee5e25ff6e91d5a",
+                "is_dir": false,
+                "size": 24043,
+                "mod_time": "2026-02-02T20:10:58.425087098-05:00"
+              },
+              {
+                "path": "context/plans/2026-01-06-cursor-extension-phase-4.md",
+                "hash": "eb13d63d7c9d394dfee6f4ea211d5b73ba8cc007074ead2277100e3b62fb3782",
+                "is_dir": false,
+                "size": 17798,
+                "mod_time": "2026-02-02T20:10:58.425282433-05:00"
+              },
+              {
+                "path": "context/plans/2026-01-06-cursor-extension.md",
+                "hash": "917f7e020ba7498e6d8a4822226b1d1e1096012ae2aa28b4e59a19ed55753c15",
+                "is_dir": false,
+                "size": 11705,
+                "mod_time": "2026-02-02T20:10:58.425504311-05:00"
+              },
+              {
+                "path": "context/plans/2026-02-02-smart-para-init-auto-detection.md",
+                "hash": "f8d756e42a3a779402c305c48806f05764ae4ba9294ef142fc3635e4d7c6abb5",
+                "is_dir": false,
+                "size": 13390,
+                "mod_time": "2026-02-02T22:27:59.747684983-05:00"
+              },
+              {
+                "path": "context/plans/2026-02-02-tool-unification-research.md",
+                "hash": "a9cf8bd16b521143cfd03d54bf7798560422965d1fd3a6eef46f572a3a8d2672",
+                "is_dir": false,
+                "size": 9254,
+                "mod_time": "2026-02-02T21:51:26.068420206-05:00"
+              }
+            ]
+          },
+          {
+            "path": "context/summaries",
+            "hash": "e53cb9bfd212d77eab48f9c918da7463689e02411dc1b8ca5970d068aed57844",
+            "is_dir": true,
+            "size": 96,
+            "mod_time": "2026-02-02T21:19:20.790978611-05:00",
+            "children": [
+              {
+                "path": "context/summaries/2026-02-02-tool-unification-research-summary.md",
+                "hash": "e3234ae8978e4f53309665c2648002b0ce9c0aadc1334d6369fbfd6c87869dc1",
+                "is_dir": false,
+                "size": 14419,
+                "mod_time": "2026-02-02T21:19:20.790859943-05:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "copilot",
+        "hash": "0deb78678f5e708f3bf6695b654403e7aa8c5753bf0de6f1d91b0b554aad36f6",
+        "is_dir": true,
+        "size": 192,
+        "mod_time": "2025-12-02T04:11:00.372605463-05:00",
+        "children": [
+          {
+            "path": "copilot/QUICKSTART.md",
+            "hash": "1f067f31627fc6153f35bd575a6057c513eeda1d5136875e2107e8d805788686",
+            "is_dir": false,
+            "size": 11529,
+            "mod_time": "2025-11-26T16:56:46.119539969-05:00"
+          },
+          {
+            "path": "copilot/README.md",
+            "hash": "637682d876960fb0a01a0cca1bed4989dec39368c1d3a37c0fe50581971d6432",
+            "is_dir": false,
+            "size": 30228,
+            "mod_time": "2025-11-26T16:56:46.119844296-05:00"
+          },
+          {
+            "path": "copilot/copilot-instructions.md",
+            "hash": "909e4a46e12e6c7a414ebaa5393938789c09b08064d1c4378899c9d7969bfa21",
+            "is_dir": false,
+            "size": 24469,
+            "mod_time": "2025-12-02T04:11:00.372803541-05:00"
+          },
+          {
+            "path": "copilot/templates",
+            "hash": "acb5e79ead8a57d7e32177700157f7fe6704f5df57cf4ce0620b6b621652d970",
+            "is_dir": true,
+            "size": 192,
+            "mod_time": "2025-11-11T22:41:12.536004518-05:00",
+            "children": [
+              {
+                "path": "copilot/templates/claude-template.md",
+                "hash": "0d6ce3bf30cb6f884bc50f91f54a86bf0533cf2c760343d8c23b0280583a14b1",
+                "is_dir": false,
+                "size": 9496,
+                "mod_time": "2025-11-11T22:41:12.535662224-05:00"
+              },
+              {
+                "path": "copilot/templates/context-template.md",
+                "hash": "b2a2f64368a17eff3df7ed4b637a93d6e3fef81545ad976e697b56c9c13e052e",
+                "is_dir": false,
+                "size": 1398,
+                "mod_time": "2025-11-11T22:41:12.535824892-05:00"
+              },
+              {
+                "path": "copilot/templates/plan-template.md",
+                "hash": "b04a443b12dd020fdb97f8c3ff4199ef39ecabad08d021db99f172d1ac055a97",
+                "is_dir": false,
+                "size": 2299,
+                "mod_time": "2025-11-11T22:41:12.535954476-05:00"
+              },
+              {
+                "path": "copilot/templates/summary-template.md",
+                "hash": "4efedbae8c478544c4f862f16c32cedcee87745c2b68995cb109d0c405886e6d",
+                "is_dir": false,
+                "size": 5432,
+                "mod_time": "2025-11-11T22:41:12.536121102-05:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "cursor",
+        "hash": "7c5bb5d0eada1285b8d955bbc21a937ec5316b32e2da866d6438acc5f337a606",
+        "is_dir": true,
+        "size": 192,
+        "mod_time": "2025-11-26T16:56:46.120524876-05:00",
+        "children": [
+          {
+            "path": "cursor/QUICKSTART.md",
+            "hash": "a3808de2473ab0f7bb7560062a06221be07f533263d8d5744e8277992dcfbef4",
+            "is_dir": false,
+            "size": 9758,
+            "mod_time": "2025-11-26T16:56:46.120219841-05:00"
+          },
+          {
+            "path": "cursor/README.md",
+            "hash": "96547e036f3320d767c7d8119b4e3de0ef55273d8d3521cb07b0f4a71bd2f9d0",
+            "is_dir": false,
+            "size": 29329,
+            "mod_time": "2025-11-26T16:56:46.120655767-05:00"
+          },
+          {
+            "path": "cursor/cursorrules",
+            "hash": "557666fd3b34da3aa3f00cc7dd0aa06399c9e79dc417cc327a647947c58d4faa",
+            "is_dir": false,
+            "size": 21024,
+            "mod_time": "2025-11-24T23:44:28.46637589-05:00"
+          },
+          {
+            "path": "cursor/templates",
+            "hash": "acb5e79ead8a57d7e32177700157f7fe6704f5df57cf4ce0620b6b621652d970",
+            "is_dir": true,
+            "size": 192,
+            "mod_time": "2025-11-11T22:41:12.53728982-05:00",
+            "children": [
+              {
+                "path": "cursor/templates/claude-template.md",
+                "hash": "0d6ce3bf30cb6f884bc50f91f54a86bf0533cf2c760343d8c23b0280583a14b1",
+                "is_dir": false,
+                "size": 9496,
+                "mod_time": "2025-11-11T22:41:12.536973151-05:00"
+              },
+              {
+                "path": "cursor/templates/context-template.md",
+                "hash": "b2a2f64368a17eff3df7ed4b637a93d6e3fef81545ad976e697b56c9c13e052e",
+                "is_dir": false,
+                "size": 1398,
+                "mod_time": "2025-11-11T22:41:12.537114777-05:00"
+              },
+              {
+                "path": "cursor/templates/plan-template.md",
+                "hash": "b04a443b12dd020fdb97f8c3ff4199ef39ecabad08d021db99f172d1ac055a97",
+                "is_dir": false,
+                "size": 2299,
+                "mod_time": "2025-11-11T22:41:12.537233153-05:00"
+              },
+              {
+                "path": "cursor/templates/summary-template.md",
+                "hash": "4efedbae8c478544c4f862f16c32cedcee87745c2b68995cb109d0c405886e6d",
+                "is_dir": false,
+                "size": 5432,
+                "mod_time": "2025-11-11T22:41:12.537409529-05:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "docs",
+        "hash": "d2cc5eef5b2f925f532a2c458f59d898bd628ac9bf932b879e13686ea7f5b29f",
+        "is_dir": true,
+        "size": 128,
+        "mod_time": "2025-12-29T14:54:47.514011808-05:00",
+        "children": [
+          {
+            "path": "docs/_config.yml",
+            "hash": "d5ef3c1e3a8d4551ecc12426d8dd6fcf04a8a30694660a8bd7350c0c7067b20c",
+            "is_dir": false,
+            "size": 148,
+            "mod_time": "2025-12-29T14:54:47.509884742-05:00"
+          },
+          {
+            "path": "docs/index.md",
+            "hash": "01b9804872815f30d3a0643b9af42514e19e6e416371070869e213ab576a6f80",
+            "is_dir": false,
+            "size": 10219,
+            "mod_time": "2025-12-29T14:41:51.469738106-05:00"
+          }
+        ]
+      },
+      {
+        "path": "gemini",
+        "hash": "258a7f4ae0661b9a005591b49692ec9545bbb36fe06e767d1ca74f417cf3e78e",
+        "is_dir": true,
+        "size": 192,
+        "mod_time": "2025-11-27T12:58:01.918382737-05:00",
+        "children": [
+          {
+            "path": "gemini/GEMINI.md",
+            "hash": "6a4ab243771f0c76191cd4e395c1c111ec31062bb8cd7c3eb5c8c6f073874031",
+            "is_dir": false,
+            "size": 7385,
+            "mod_time": "2025-11-27T12:47:59.783018359-05:00"
+          },
+          {
+            "path": "gemini/QUICKSTART.md",
+            "hash": "5ba8ea1ba74b4dbda6eaf3562413d45ee1c1325ffa42c0fd9cdf88445d4f8d5d",
+            "is_dir": false,
+            "size": 1083,
+            "mod_time": "2025-11-27T12:58:01.923293967-05:00"
+          },
+          {
+            "path": "gemini/README.md",
+            "hash": "8d0d795dabf293c3b75f494a067bba6d069d652187ac90f40b0e02f66af9b137",
+            "is_dir": false,
+            "size": 1753,
+            "mod_time": "2025-11-27T12:57:58.445527169-05:00"
+          },
+          {
+            "path": "gemini/templates",
+            "hash": "92b7e70e31a80921cf185b1cd2271d470cef123bcbb359d4fddf07cc1816d75d",
+            "is_dir": true,
+            "size": 96,
+            "mod_time": "2025-11-27T12:48:04.600429083-05:00",
+            "children": [
+              {
+                "path": "gemini/templates/para-programming-prompt.md",
+                "hash": "a180c9a684e0930dbe8045f09d49aee4905795a0e98f33101aba37fb1f184c24",
+                "is_dir": false,
+                "size": 213,
+                "mod_time": "2025-11-27T12:48:04.605757694-05:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "other-ai-assistants",
+        "hash": "79c9888528b7f25658c00f996fa2dc5b5cd92188d3c4bb25c2d606115566c3ee",
+        "is_dir": true,
+        "size": 128,
+        "mod_time": "2025-12-02T20:56:47.804438111-05:00",
+        "children": [
+          {
+            "path": "other-ai-assistants/AGENT-INSTRUCTIONS.md",
+            "hash": "d802f96ba56302411af1b178b3b13e786ade8a5a8c8b7a99b7683fb4dfb73fff",
+            "is_dir": false,
+            "size": 28266,
+            "mod_time": "2025-12-02T20:56:47.804356653-05:00"
+          },
+          {
+            "path": "other-ai-assistants/examples",
+            "hash": "c29783b70e799a265d28e5756ed66b86464e1abb69cd3b8f9fa52acfb17f3763",
+            "is_dir": true,
+            "size": 96,
+            "mod_time": "2025-12-02T20:56:47.804490902-05:00",
+            "children": [
+              {
+                "path": "other-ai-assistants/examples/agent-configs",
+                "hash": "ffb9887307a2dd59ae47d95a203b610cc4ee75fce5112ddfce4e620b9ef627d6",
+                "is_dir": true,
+                "size": 192,
+                "mod_time": "2025-12-02T20:56:47.805211477-05:00",
+                "children": [
+                  {
+                    "path": "other-ai-assistants/examples/agent-configs/README.md",
+                    "hash": "6836dbf784d6fb6c86f9fe50e6e7cfadd08246d733e4be46c92f51b1522cc9f1",
+                    "is_dir": false,
+                    "size": 10091,
+                    "mod_time": "2025-12-02T20:56:47.804682941-05:00"
+                  },
+                  {
+                    "path": "other-ai-assistants/examples/agent-configs/cursor-rules.md",
+                    "hash": "a1270c080a5d610b62b322a0b08643134fc074eff7e103c27480e15b2ed195ab",
+                    "is_dir": false,
+                    "size": 16240,
+                    "mod_time": "2025-12-02T20:56:47.804927147-05:00"
+                  },
+                  {
+                    "path": "other-ai-assistants/examples/agent-configs/github-copilot-instructions.md",
+                    "hash": "0ec56dd2d5236cea40876b2e7073239e645c4ab7a0be52d411bfc32fde059eff",
+                    "is_dir": false,
+                    "size": 12338,
+                    "mod_time": "2025-12-02T20:56:47.805160603-05:00"
+                  },
+                  {
+                    "path": "other-ai-assistants/examples/agent-configs/jetbrains-ai-instructions.md",
+                    "hash": "54c909f5490dc11c46a8cf46890ead593cb658849b10c462c2df319eadbd90b5",
+                    "is_dir": false,
+                    "size": 17446,
+                    "mod_time": "2025-12-02T20:56:47.805356851-05:00"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "scripts",
+        "hash": "e6f4ec12178b57e6337e652804982b6cba17878a32111bf9bf49d669cbe2b3de",
+        "is_dir": true,
+        "size": 480,
+        "mod_time": "2025-11-27T12:57:08.802858697-05:00",
+        "children": [
+          {
+            "path": "scripts/common.sh",
+            "hash": "9424ed7d9623b23d0aed73ff04a09a58531cb78b66f1fefc252c8adac12c05d7",
+            "is_dir": false,
+            "size": 7302,
+            "mod_time": "2025-11-24T23:44:28.466509613-05:00"
+          },
+          {
+            "path": "scripts/setup-claude-skill.sh",
+            "hash": "546a11d9ca5019e9722e96a7ce523884c94a234a46b1e45bdd2a919960bd0b05",
+            "is_dir": false,
+            "size": 5233,
+            "mod_time": "2025-11-24T23:44:28.466601678-05:00"
+          },
+          {
+            "path": "scripts/setup-claude.sh",
+            "hash": "03d6b526420fda153e19dc350e34e489c9a55fc6de0129c28c36f1b7dd28d968",
+            "is_dir": false,
+            "size": 1371,
+            "mod_time": "2025-11-24T23:44:28.466674289-05:00"
+          },
+          {
+            "path": "scripts/setup-copilot.sh",
+            "hash": "de98e6cb26acc425ae99a35733da25877301943e48b096c6faeb1484bac78525",
+            "is_dir": false,
+            "size": 1753,
+            "mod_time": "2025-11-24T23:44:28.466738026-05:00"
+          },
+          {
+            "path": "scripts/setup-cursor.sh",
+            "hash": "fc4b8566344e7aac6308e9a8a8cca9d0f9066806c5f351cd22d29b4c4ceba730",
+            "is_dir": false,
+            "size": 2181,
+            "mod_time": "2025-11-24T23:44:28.466804721-05:00"
+          },
+          {
+            "path": "scripts/setup-gemini.sh",
+            "hash": "ea29ecbe10c3ad384ae330085bf62a13cf7a27414514803d5d327f28014af142",
+            "is_dir": false,
+            "size": 459,
+            "mod_time": "2025-11-27T12:48:07.513809058-05:00"
+          },
+          {
+            "path": "scripts/test-setup.sh",
+            "hash": "7897d3018e7a57dbdb179d76336e9d93a9a0f7d166b2b1bc9ed021d5fa420c16",
+            "is_dir": false,
+            "size": 2204,
+            "mod_time": "2025-11-24T23:44:28.466865084-05:00"
+          },
+          {
+            "path": "scripts/uninstall-gemini.sh",
+            "hash": "df529b21469de6ab18447c3ef87ed8f1408cb4d2840f71c4f258e14a871e12fc",
+            "is_dir": false,
+            "size": 220,
+            "mod_time": "2025-11-27T12:57:08.807287671-05:00"
+          },
+          {
+            "path": "scripts/update-claude-skill.sh",
+            "hash": "aa6fb40fe0174bea3dea2f52d61c9590a720c953762a14f829f3ef26233b8f43",
+            "is_dir": false,
+            "size": 5818,
+            "mod_time": "2025-11-24T23:44:28.466958607-05:00"
+          },
+          {
+            "path": "scripts/update-claude.sh",
+            "hash": "c725a07dbdbe66a743d0b984d84c1a1c987dede24dbd61de21088cc4cbbba59b",
+            "is_dir": false,
+            "size": 2441,
+            "mod_time": "2025-11-24T23:44:28.467037425-05:00"
+          },
+          {
+            "path": "scripts/update-copilot.sh",
+            "hash": "1bb037563743832b4d459774ccf3649e7482c807763e77395b382268eb353ce1",
+            "is_dir": false,
+            "size": 2156,
+            "mod_time": "2025-11-24T23:44:28.467088914-05:00"
+          },
+          {
+            "path": "scripts/update-cursor.sh",
+            "hash": "659c8842d38d4dd03b2c959af9901569ce33475dae94751f705109803e835223",
+            "is_dir": false,
+            "size": 2158,
+            "mod_time": "2025-11-24T23:44:28.467143195-05:00"
+          },
+          {
+            "path": "scripts/update-gemini.sh",
+            "hash": "e2dab09862da0a561b2d730e148f00974edd39c99ff46294197c8a882d6e0da5",
+            "is_dir": false,
+            "size": 296,
+            "mod_time": "2025-11-27T12:56:43.235675741-05:00"
+          }
+        ]
+      },
+      {
+        "path": "tool-setup",
+        "hash": "e67b4fe82cee6030db6fb945eeb964ff9976f6be37f0ed7dd15f4566f0c95940",
+        "is_dir": true,
+        "size": 224,
+        "mod_time": "2026-02-02T20:08:50.871632918-05:00",
+        "children": [
+          {
+            "path": "tool-setup/claude-code.md",
+            "hash": "38bbbd924b71aff3a4f228f9fc06fd56aa8fff1e4c7b73a86f54403c2f962be7",
+            "is_dir": false,
+            "size": 5275,
+            "mod_time": "2026-02-02T20:08:50.870743615-05:00"
+          },
+          {
+            "path": "tool-setup/codex.md",
+            "hash": "5b6b38c5f620c0e1e8b883a17e9d38d94c0e1f48d82e063df73c7679af0775ce",
+            "is_dir": false,
+            "size": 3691,
+            "mod_time": "2026-02-02T20:08:50.870910117-05:00"
+          },
+          {
+            "path": "tool-setup/community",
+            "hash": "9068e3ace45d8936f86f590942ea7eb092d05e2b5c2297e44a4fd7208e631cc6",
+            "is_dir": true,
+            "size": 160,
+            "mod_time": "2026-02-02T20:08:50.871317247-05:00",
+            "children": [
+              {
+                "path": "tool-setup/community/continue.md",
+                "hash": "d4d0279e12e5a3a981ae2d1c0ceea81674bb7bcb4a6ff7f6d384383c381e9b95",
+                "is_dir": false,
+                "size": 2665,
+                "mod_time": "2026-02-02T20:08:50.871117953-05:00"
+              },
+              {
+                "path": "tool-setup/community/others.md",
+                "hash": "052dfc6a1e3d8e02c9558770323de161d69008e0e7d1da3db904373cf26444ed",
+                "is_dir": false,
+                "size": 4583,
+                "mod_time": "2026-02-02T20:08:50.871284663-05:00"
+              },
+              {
+                "path": "tool-setup/community/windsurf.md",
+                "hash": "8219a332f73c4d0435cad7a616e457acc5d0d4e16df17f1b6c4c322c84f50852",
+                "is_dir": false,
+                "size": 2653,
+                "mod_time": "2026-02-02T20:08:50.871426582-05:00"
+              }
+            ]
+          },
+          {
+            "path": "tool-setup/copilot.md",
+            "hash": "2e6390c2cffcf4e28b07a3c5dec32b3df80abec18ef8d40e4828ccd1d8d33cfe",
+            "is_dir": false,
+            "size": 6203,
+            "mod_time": "2026-02-02T20:08:50.871595667-05:00"
+          },
+          {
+            "path": "tool-setup/cursor.md",
+            "hash": "aade656811a9f9e3ddab81236c40ffde4d132f0a8f2f6683d5be4466d2eb96a5",
+            "is_dir": false,
+            "size": 5730,
+            "mod_time": "2026-02-02T20:08:50.87177517-05:00"
+          }
+        ]
+      }
+    ]
+  },
+  "repo_path": "/Users/brianlai/dev/projects/tooling/para-programming",
+  "build_time": "2026-02-02T22:50:48.940114-05:00",
+  "file_count": 102
+}
