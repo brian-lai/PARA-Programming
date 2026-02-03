@@ -39,20 +39,20 @@ Implement actual file creation logic for PARA-Programming setup:
 - [x] Test Tier 1 setup creates AGENTS.md correctly
 
 ### Tier 2 Setup Script (Methodology Only)
-- [ ] Create `scripts/setup-tier2.sh`
-  - [ ] Add shebang and script header documentation
-  - [ ] Implement AGENTS.md creation (copy from template)
-  - [ ] Create .github/ directory if needed (for Copilot)
-  - [ ] Create symlink: .github/copilot-instructions.md → ../AGENTS.md
-  - [ ] Create symlink: GEMINI.md → AGENTS.md
-  - [ ] Use relative paths for symlinks (not absolute)
-  - [ ] Check if files already exist (don't overwrite)
-  - [ ] Set correct file permissions
-  - [ ] Return success/failure status
-  - [ ] Add verbose mode for debugging
-- [ ] Make `scripts/setup-tier2.sh` executable
-- [ ] Test Tier 2 setup creates AGENTS.md + symlinks correctly
-- [ ] Verify symlinks use relative paths
+- [x] Create `scripts/setup-tier2.sh`
+  - [x] Add shebang and script header documentation
+  - [x] Implement AGENTS.md creation (copy from template)
+  - [x] Create .github/ directory if needed (for Copilot)
+  - [x] Create symlink: .github/copilot-instructions.md → ../AGENTS.md
+  - [x] Create symlink: GEMINI.md → AGENTS.md
+  - [x] Use relative paths for symlinks (not absolute)
+  - [x] Check if files already exist (don't overwrite)
+  - [x] Set correct file permissions
+  - [x] Return success/failure status
+  - [x] Add verbose mode for debugging
+- [x] Make `scripts/setup-tier2.sh` executable
+- [x] Test Tier 2 setup creates AGENTS.md + symlinks correctly
+- [x] Verify symlinks use relative paths
 
 ### Integration into para-init
 - [ ] Update `scripts/para-init` setup_file_based_tools function
@@ -82,6 +82,17 @@ Implement actual file creation logic for PARA-Programming setup:
 - Sets correct permissions (644)
 - Verbose mode for debugging
 - Tested successfully: detects existing AGENTS.md and skips
+
+**Tier 2 Setup Script Complete:**
+- Created `scripts/setup-tier2.sh` (162 lines)
+- Copies AGENTS.md from template (if needed)
+- Creates `.github/` directory for Copilot
+- Creates symlink: `.github/copilot-instructions.md` → `../AGENTS.md` (relative)
+- Creates symlink: `GEMINI.md` → `AGENTS.md` (relative)
+- Checks for existing files (doesn't overwrite)
+- Supports --tool=copilot|gemini for selective setup
+- Verbose mode for debugging
+- Tested successfully: created both symlinks with relative paths
 
 ---
 
