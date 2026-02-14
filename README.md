@@ -1,26 +1,28 @@
-# PARA-Programming
+# Pret-a-Program
 
 **A systematic methodology for AI-assisted development using structured context, persistent memory, and intelligent execution.**
 
-PARA-Programming combines the organizational principles of [Tiago Forte's PARA method](https://fortelabs.com/blog/para/) (Projects, Areas, Resources, Archives) with the collaborative nature of pair programming to create an efficient, auditable, and scalable approach to working with AI coding assistants like Claude.
+Pret-a-Program combines the organizational principles of [Tiago Forte's PARA method](https://fortelabs.com/blog/para/) (Projects, Areas, Resources, Archives) with the collaborative nature of pair programming to create an efficient, auditable, and scalable approach to working with AI coding assistants like Claude.
 
 ---
 
 > **🚀 Ready to start now?** Get up and running in 30 seconds:
 >
 > ```bash
-> # 1. Copy AGENTS.md to your project
-> curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+> # Install the CLI
+> brew install brian-lai/pret/pret-a-program
 >
-> # 2. Create symlink for your tool (if needed)
-> ln -s AGENTS.md CLAUDE.md                    # For Claude Code
-> # Cursor and Codex read AGENTS.md directly - no symlink needed!
+> # Initialize in your project
+> cd your-project
+> pret init
 >
-> # 3. Initialize context directory
-> mkdir -p context/{data,plans,summaries,archives,servers}
+> # Install AI tool skills (optional)
+> pret install-skills --claude   # Claude Code
+> pret install-skills --cursor   # Cursor
+> pret install-skills --codex    # Codex CLI
 > ```
 >
-> **The single `AGENTS.md` file works across all tools!** Just symlink for tools that expect different filenames.
+> **Or manually:** Copy `AGENTS.md` to your project and create `context/` directory.
 >
 > **[→ Setup Guide](SETUP-GUIDE.md)** - Detailed instructions for all tools
 >
@@ -30,10 +32,10 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 
 ## Table of Contents
 
-- [What is PARA-Programming?](#what-is-para-programming)
-- [Why PARA-Programming?](#why-para-programming)
+- [What is Pret-a-Program?](#what-is-pret-a-program)
+- [Why Pret-a-Program?](#why-pret-a-program)
 - [Core Principles](#core-principles)
-- [The PARA Structure](#the-para-structure)
+- [The Pret Structure](#the-pret-structure)
 - [The Workflow Loop](#the-workflow-loop)
 - [Getting Started](#getting-started)
 - [IDE & Agent Setup](#ide--agent-setup)
@@ -44,27 +46,27 @@ PARA-Programming combines the organizational principles of [Tiago Forte's PARA m
 
 ---
 
-## What is PARA-Programming?
+## What is Pret-a-Program?
 
-PARA-Programming is a methodology for organizing AI-assisted software development into a structured, persistent, and token-efficient workflow. It treats your collaboration with AI as a **shared cognitive system**:
+Pret-a-Program is a methodology for organizing AI-assisted software development into a structured, persistent, and token-efficient workflow. It treats your collaboration with AI as a **shared cognitive system**:
 
 - **AI = Active Reasoning** – Analyzing, planning, and generating code
 - **Human = Intent & Judgment** – Providing goals, reviewing decisions, and validating outputs
 - **Context Directory = Memory Layer** – Persistent storage of plans, data, and summaries
 - **MCP Servers = Execution Layer** – Tools that preprocess data and execute tasks outside the AI's context window
 
-By separating **what to do** (project context) from **how to work** (methodology), PARA-Programming enables consistent, efficient, and auditable collaboration across all your projects.
+By separating **what to do** (project context) from **how to work** (methodology), Pret-a-Program enables consistent, efficient, and auditable collaboration across all your projects.
 
 ### The Name
 
-**PARA-Programming** draws inspiration from two sources:
+**Pret-a-Program** draws inspiration from two sources:
 
 1. **PARA Method** – Tiago Forte's knowledge management system that organizes information into Projects, Areas, Resources, and Archives
 2. **Pair Programming** – The collaborative practice of two developers working together, adapted here for human-AI collaboration
 
 ---
 
-## Why PARA-Programming?
+## Why Pret-a-Program?
 
 ### Traditional Problems with AI Coding Assistants
 
@@ -74,9 +76,9 @@ By separating **what to do** (project context) from **how to work** (methodology
 - **Inconsistent methodology** across projects
 - **Lack of preprocessing** leading to information overload
 
-### The PARA-Programming Solution
+### The Pret-a-Program Solution
 
-| Problem | PARA-Programming Solution |
+| Problem | Pret-a-Program Solution |
 |---------|---------------------------|
 | Context loss | Structured `context/` directory with persistent plans, summaries, and archives |
 | Token waste | MCP preprocessing and selective context loading (1-2k tokens per step) |
@@ -142,11 +144,11 @@ Every action includes:
 
 ---
 
-## The PARA Structure
+## The Pret Structure
 
 ### Directory Layout
 
-Every project following PARA-Programming includes:
+Every project following Pret-a-Program includes:
 
 ```
 project-root/
@@ -221,7 +223,7 @@ Implementing authentication system with OAuth2 support.
 - MCP tools to be used
 - Success criteria
 
-For complex work spanning multiple architectural layers or affecting many files, PARA-Programming supports **phased plans** where work is broken into independently reviewable and mergeable phases. See [Phased Plans Documentation](claude-skill/docs/phased-plans-quick-reference.md) for details.
+For complex work spanning multiple architectural layers or affecting many files, Pret-a-Program supports **phased plans** where work is broken into independently reviewable and mergeable phases. See [Phased Plans Documentation](skills/claude-code/docs/phased-plans-quick-reference.md) for details.
 
 **Example:** `context/plans/add-user-authentication.md`
 
@@ -360,38 +362,46 @@ This creates a full audit trail while keeping active context clean.
 
 > **📖 Prefer detailed setup instructions?** See the **[Setup Guide](SETUP-GUIDE.md)** or tool-specific guides in **[tool-setup/](tool-setup/)**.
 
-### 1. Get AGENTS.md
-
-Copy the unified methodology file to your project:
+### 1. Install the CLI
 
 ```bash
-# Option A: Download directly
-curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+# Via Homebrew (recommended)
+brew install brian-lai/pret/pret-a-program
 
-# Option B: Clone and copy
-git clone https://github.com/brian-lai/para-programming.git
-cp para-programming/AGENTS.md your-project/
+# Or run directly from the repo
+git clone https://github.com/brian-lai/pret-a-program.git
+export PATH="$PWD/pret-a-program/cli/bin:$PATH"
 ```
 
-### 2. Create Symlink for Your Tool
+### 2. Initialize Your Project
 
 ```bash
 cd your-project/
-
-# For Claude Code
-ln -s AGENTS.md CLAUDE.md
-
-# For Cursor or Codex - no symlink needed (reads AGENTS.md directly)
-
-# For GitHub Copilot
-mkdir -p .github && ln -s ../AGENTS.md .github/copilot-instructions.md
+pret init
 ```
 
-### 3. Initialize Context Directory
+This creates the `context/` directory structure and `AGENTS.md`.
+
+### 3. Install AI Tool Skills (Optional)
 
 ```bash
+pret install-skills --claude   # Claude Code slash commands
+pret install-skills --cursor   # Cursor rules
+pret install-skills --codex    # Codex AGENTS.md
+```
+
+### Manual Setup (Alternative)
+
+```bash
+# Download AGENTS.md directly
+curl -O https://raw.githubusercontent.com/brian-lai/pret-a-program/main/AGENTS.md
+
+# Create context directory
 mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
+
+# Symlink for Claude Code
+ln -s AGENTS.md CLAUDE.md
 ```
 
 ### 4. (Optional) Add Project-Specific Context
@@ -464,11 +474,11 @@ The AI will read `AGENTS.md` (or the symlinked file) and:
 
 ## IDE & Agent Setup
 
-PARA-Programming is a **methodology**, not a tool. The workflow (Plan → Review → Execute → Summarize → Archive) works with any AI assistant. We use a **single `AGENTS.md` file** that works across all tools.
+Pret-a-Program is a **methodology**, not a tool. The workflow (Plan → Review → Execute → Summarize → Archive) works with any AI assistant. We use a **single `AGENTS.md` file** that works across all tools.
 
 ### The Unified Approach
 
-**One file to rule them all:** `AGENTS.md` contains the complete PARA methodology and works directly with multiple tools:
+**One file to rule them all:** `AGENTS.md` contains the complete Pret methodology and works directly with multiple tools:
 
 ```bash
 # AGENTS.md works natively with:
@@ -501,7 +511,7 @@ mkdir -p .github && ln -s ../AGENTS.md .github/copilot-instructions.md  # GitHub
 
 ```bash
 # 1. Get AGENTS.md
-curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+curl -O https://raw.githubusercontent.com/brian-lai/pret-a-program/main/AGENTS.md
 
 # 2. Create symlink for your tool (see table above)
 ln -s AGENTS.md CLAUDE.md  # Example for Claude Code
@@ -515,15 +525,15 @@ touch context/context.md
 
 ### Claude Code Skill (Optional Enhancement)
 
-For Claude Code users, the optional skill package adds automated commands:
+For Claude Code users, the optional skill package adds automated slash commands:
 
 ```bash
-cp -r claude-skill ~/.claude/skills/para-programming
+pret install-skills --claude
 ```
 
-This enables `/para:init`, `/para:plan`, `/para:execute`, `/para:summarize`, `/para:archive`, `/para:status`.
+This enables `/pret:init`, `/pret:plan`, `/pret:execute`, `/pret:summarize`, `/pret:archive`, `/pret:status`.
 
-**[→ Claude Code Skill Guide](claude-skill/)**
+**[→ Claude Code Skill Guide](skills/claude-code/)**
 
 ### Universal Principles
 
@@ -550,7 +560,7 @@ Modern LLMs have large context windows (100k-200k tokens), but:
 - **Costs scale linearly** – More tokens = more money and slower responses
 - **Context overflow** – Large codebases can't fit entirely in context
 
-### The PARA Solution: Hybrid Architecture
+### The Pret Solution: Hybrid Architecture
 
 ```
 ┌──────────────────────────────────────────────┐
@@ -577,7 +587,7 @@ Modern LLMs have large context windows (100k-200k tokens), but:
 
 ### Example: Efficient Repository Analysis
 
-**Without PARA-Programming (wasteful):**
+**Without Pret-a-Program (wasteful):**
 ```
 Input: Entire 50,000-line codebase (150k tokens)
 AI: Analyze entire codebase to find authentication logic
@@ -585,7 +595,7 @@ Cost: $0.30 per query
 Speed: 15 seconds
 ```
 
-**With PARA-Programming (efficient):**
+**With Pret-a-Program (efficient):**
 ```
 1. MCP Server: Scan codebase, filter for auth-related files
 2. MCP Server: Extract and summarize key functions
@@ -884,7 +894,7 @@ context/servers/
 | **Naive prompting** | ❌ Lost between sessions | ❌ Loads everything | ❌ No record | ❌ Doesn't scale |
 | **Copy-paste workflow** | ⚠️ Manual context assembly | ❌ Repetitive loading | ⚠️ Partial (in chat) | ❌ High maintenance |
 | **Custom RAG system** | ✅ Vector DB storage | ⚠️ Requires indexing | ❌ Black box | ⚠️ Complex setup |
-| **PARA-Programming** | ✅ Structured files + MCP | ✅ Preprocessed context | ✅ Full audit trail | ✅ Works across projects |
+| **Pret-a-Program** | ✅ Structured files + MCP | ✅ Preprocessed context | ✅ Full audit trail | ✅ Works across projects |
 
 ---
 
@@ -904,7 +914,7 @@ ln -s ~/.claude/shared-servers/ ./context/servers/shared
 
 ### CI/CD Integration
 
-Add PARA artifacts to your CI pipeline:
+Add Pret artifacts to your CI pipeline:
 
 ```yaml
 # .github/workflows/claude-audit.yml
@@ -944,13 +954,13 @@ grep -r "why we chose JWT" context/summaries/
 
 ## FAQ
 
-### Q: Do I need MCP to use PARA-Programming?
+### Q: Do I need MCP to use Pret-a-Program?
 
 **A:** No, but MCP significantly enhances efficiency. You can start with just the Plan → Review → Execute → Summarize → Archive workflow and add MCP preprocessing later.
 
 ### Q: How is this different from just using a good prompt?
 
-**A:** PARA-Programming is a **methodology**, not a prompt. It provides:
+**A:** Pret-a-Program is a **methodology**, not a prompt. It provides:
 - Persistent structure across sessions
 - Separation of global workflow from project context
 - Audit trail of all changes
@@ -959,7 +969,7 @@ grep -r "why we chose JWT" context/summaries/
 
 ### Q: Can I use this with GitHub Copilot / Cursor / other tools?
 
-**A:** Yes! PARA-Programming is tool-agnostic. The `context/` directory and `CLAUDE.md` files work with any AI coding assistant. The methodology adapts to your tool of choice.
+**A:** Yes! Pret-a-Program is tool-agnostic. The `context/` directory and `CLAUDE.md` files work with any AI coding assistant. The methodology adapts to your tool of choice.
 
 ### Q: How much time does this add to development?
 
@@ -977,7 +987,7 @@ grep -r "why we chose JWT" context/summaries/
 
 ## Contributing
 
-We welcome contributions to improve PARA-Programming! Areas for contribution:
+We welcome contributions to improve Pret-a-Program! Areas for contribution:
 
 - **MCP Server Examples** – Share your preprocessing tools
 - **Local CLAUDE.md Templates** – For different tech stacks (Python, Go, Rust, etc.)
@@ -989,7 +999,7 @@ We welcome contributions to improve PARA-Programming! Areas for contribution:
 
 1. Fork this repository
 2. Create a feature branch (`git checkout -b feature/amazing-contribution`)
-3. Make your changes following the PARA-Programming methodology
+3. Make your changes following the Pret-a-Program methodology
    - Create a plan in `context/plans/`
    - Implement your changes
    - Write a summary in `context/summaries/`
@@ -1040,13 +1050,13 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ## Quick Start Checklist
 
-> **💡 New to PARA-Programming?** For detailed, step-by-step setup instructions, see the **[Setup Guide →](SETUP-GUIDE.md)**
+> **💡 New to Pret-a-Program?** For detailed, step-by-step setup instructions, see the **[Setup Guide →](SETUP-GUIDE.md)**
 
-Ready to adopt PARA-Programming? Follow this checklist:
+Ready to adopt Pret-a-Program? Follow this checklist:
 
-- [ ] Copy `CLAUDE.md` to `~/.claude/CLAUDE.md` (global workflow)
-- [ ] Create `context/` directory structure in your project
-- [ ] Write a local `CLAUDE.md` for your project (architecture, tech stack, conventions)
+- [ ] Install `pret` CLI (`brew install brian-lai/pret/pret-a-program`)
+- [ ] Run `pret init` in your project
+- [ ] Run `pret install-skills` for your AI tool
 - [ ] Initialize `context/context.md` with your first task
 - [ ] Create your first plan in `context/plans/`
 - [ ] Execute with human review
@@ -1054,7 +1064,7 @@ Ready to adopt PARA-Programming? Follow this checklist:
 - [ ] Archive your context when complete
 - [ ] (Optional) Set up your first MCP server for preprocessing
 
-**Welcome to PARA-Programming! Build better software, faster, with AI.**
+**Welcome to Pret-a-Program! Build better software, faster, with AI.**
 
 ---
 

@@ -1,12 +1,54 @@
 # Migration Guide
 
-**Upgrading from tool-specific configuration to unified AGENTS.md**
+**Upgrading to Pret-a-Program**
 
 ---
 
-## Overview
+## Migrating from PARA-Programming v1
 
-PARA-Programming now uses a **single `AGENTS.md` file** that works across all AI coding tools. This guide helps you migrate from the previous tool-specific configuration files.
+If you were using the previous "PARA-Programming" branding, here's what changed:
+
+| Before | After |
+|--------|-------|
+| PARA-Programming | Pret-a-Program |
+| `para/` branch prefix | `pret/` branch prefix |
+| `/para-*` slash commands | `/pret-*` slash commands |
+| `claude-skill/` directory | `skills/claude-code/` |
+| `make setup` | `pret install-skills` |
+| Manual `mkdir -p context/...` | `pret init` |
+
+### Quick Migration
+
+```bash
+# 1. Install the new CLI
+brew install brian-lai/pret/pret-a-program
+
+# 2. Re-initialize (preserves existing context/)
+pret init
+
+# 3. Update AI tool skills
+pret install-skills --claude   # Replaces old claude-skill
+pret install-skills --cursor   # New
+pret install-skills --codex    # New
+
+# 4. Rename branches (optional)
+git branch -m para/my-feature pret/my-feature
+
+# 5. Remove old skill installation
+rm -rf ~/.claude/skills/para-programming/
+```
+
+**What stays the same:** The `context/` directory structure, file formats, and workflow steps (Plan, Review, Execute, Summarize, Archive) are all unchanged.
+
+---
+
+## Migrating from Tool-Specific Configuration
+
+This section covers migrating from per-tool config files to the unified `AGENTS.md` approach.
+
+### Overview
+
+Pret-a-Program uses a **single `AGENTS.md` file** that works across all AI coding tools. This guide helps you migrate from the previous tool-specific configuration files.
 
 ---
 
@@ -42,12 +84,12 @@ CLAUDE.md → AGENTS.md
 
 ```bash
 # In your project root
-curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+curl -O https://raw.githubusercontent.com/brian-lai/pret-a-program/main/AGENTS.md
 ```
 
 Or if you cloned the repository:
 ```bash
-cp /path/to/para-programming/AGENTS.md ./
+cp /path/to/pret-a-program/AGENTS.md ./
 ```
 
 ### Step 2: Create Symlinks
@@ -70,7 +112,7 @@ If you had global `~/.claude/CLAUDE.md`:
 # Just use project-level AGENTS.md + symlink
 
 # Option B: Global methodology
-ln -s /path/to/para-programming/AGENTS.md ~/.claude/CLAUDE.md
+ln -s /path/to/pret-a-program/AGENTS.md ~/.claude/CLAUDE.md
 ```
 
 #### Cursor
@@ -112,7 +154,7 @@ If your old files contained project-specific context (not just methodology), add
 ```markdown
 # AGENTS.md
 
-[... PARA methodology content ...]
+[... Pret methodology content ...]
 
 ---
 # Project-Specific Context (add below this line)
@@ -164,7 +206,7 @@ rm ~/.gemini/GEMINI.md
 
 ### If You Had Custom Methodology
 
-If you modified the PARA methodology, you have options:
+If you modified the Pret methodology, you have options:
 
 1. **Contribute upstream**: Submit a PR with your improvements
 2. **Fork the repository**: Maintain your own version
@@ -177,7 +219,7 @@ Move project-specific content to the bottom of `AGENTS.md` or a separate file:
 ```markdown
 # AGENTS.md
 
-[... standard PARA methodology ...]
+[... standard Pret methodology ...]
 
 ---
 # Project: My App
@@ -199,8 +241,8 @@ Move project-specific content to the bottom of `AGENTS.md` or a separate file:
 ### Claude Code
 
 The skill package still works with this setup:
-- `/para:init` - Works normally
-- `/para:plan` - Works normally
+- `/pret:init` - Works normally
+- `/pret:plan` - Works normally
 - Commands read from `CLAUDE.md` symlink
 
 ### Cursor
@@ -290,5 +332,5 @@ After migrating, you get:
 ## Questions?
 
 - **Setup issues**: See [tool-setup/](tool-setup/) for detailed guides
-- **General help**: [GitHub Discussions](https://github.com/brian-lai/para-programming/discussions)
-- **Bug reports**: [GitHub Issues](https://github.com/brian-lai/para-programming/issues)
+- **General help**: [GitHub Discussions](https://github.com/brian-lai/pret-a-program/discussions)
+- **Bug reports**: [GitHub Issues](https://github.com/brian-lai/pret-a-program/issues)

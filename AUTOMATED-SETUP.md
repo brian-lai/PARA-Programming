@@ -1,8 +1,12 @@
-# Automated Setup Guide
+# Automated Setup Guide (Deprecated)
 
-**One-command installation for PARA-Programming**
+> **This guide is superseded by the `pret` CLI.** Install via `brew install pret-a-program` or see [README.md](README.md) for setup instructions.
+>
+> The Makefile-based setup described below still works but is no longer the recommended approach.
 
-This guide shows you how to use the automated setup system to install PARA-Programming for your AI coding assistant in seconds.
+**Legacy one-command installation for Pret-a-Program**
+
+This guide shows you how to use the legacy automated setup system to install Pret-a-Program for your AI coding assistant.
 
 ---
 
@@ -10,15 +14,15 @@ This guide shows you how to use the automated setup system to install PARA-Progr
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/para-programming/para-programming.git
-cd para-programming
+git clone https://github.com/pret-a-program/pret-a-program.git
+cd pret-a-program
 
 # 2. Run automated setup
 make setup claude-skill  # For Claude Code (recommended)
 make setup cursor        # For Cursor IDE
 make setup copilot       # For GitHub Copilot
 
-# 3. Done! Start coding with PARA methodology
+# 3. Done! Start coding with Pret methodology
 ```
 
 ---
@@ -73,18 +77,18 @@ make setup claude-skill
 **Installs:**
 - ✅ Global CLAUDE.md symlinked to `~/.claude/CLAUDE.md`
 - ✅ 6 slash commands in `~/.claude/commands/`:
-  - `/para-init` - Initialize PARA structure
-  - `/para-plan` - Create a plan
-  - `/para-summarize` - Generate summary
-  - `/para-archive` - Archive context
-  - `/para-status` - Show status
-  - `/para-check` - Decision helper
+  - `/pret-init` - Initialize Pret structure
+  - `/pret-plan` - Create a plan
+  - `/pret-summarize` - Generate summary
+  - `/pret-archive` - Archive context
+  - `/pret-status` - Show status
+  - `/pret-check` - Decision helper
 - ✅ All templates
 
 **Next Steps:**
 1. Open your project: `cd your-project`
 2. Start Claude Code: `claude`
-3. Initialize PARA: `/para-init`
+3. Initialize Pret: `/pret-init`
 
 ### Cursor IDE
 
@@ -98,7 +102,7 @@ make setup cursor
 **Next Steps:**
 1. Open your project in Cursor
 2. Open Composer (Cmd/Ctrl+I)
-3. Ask: "Initialize PARA structure"
+3. Ask: "Initialize Pret structure"
 
 ### GitHub Copilot
 
@@ -112,7 +116,7 @@ make setup copilot
 **Next Steps:**
 1. Open your project in VS Code
 2. Open Copilot Chat (Cmd/Ctrl+I)
-3. Ask: "Initialize PARA structure"
+3. Ask: "Initialize Pret structure"
 
 ---
 
@@ -134,7 +138,7 @@ The automated setup creates **symlinks** instead of copying files:
 
 ```bash
 # Symlink example
-~/.claude/CLAUDE.md -> /path/to/para-programming/CLAUDE.md
+~/.claude/CLAUDE.md -> /path/to/pret-a-program/CLAUDE.md
 ```
 
 **Benefits:**
@@ -162,12 +166,12 @@ make test
 
 **Example output:**
 ```
-🧪 Testing PARA-Programming Installation
+🧪 Testing Pret-a-Program Installation
 
 ▶ Testing Claude Code Setup
 ✅ Global CLAUDE.md symlink
 ✅ Global CLAUDE.md readable
-✅ All 6 PARA commands found
+✅ All 6 Pret commands found
 
 ▶ Testing Cursor Setup
 ✅ Cursor rules symlink
@@ -195,7 +199,7 @@ One of the key benefits of automated setup is automatic updates:
 
 ```bash
 # Navigate to repository
-cd /path/to/para-programming
+cd /path/to/pret-a-program
 
 # Pull latest changes
 git pull origin main
@@ -210,7 +214,7 @@ git pull origin main
 If new slash commands were added:
 
 ```bash
-cp claude-skill/commands/*.md ~/.claude/commands/
+cp skills/claude-code/commands/*.md ~/.claude/commands/
 
 # Or re-run setup
 make setup claude-skill
@@ -220,7 +224,7 @@ make setup claude-skill
 
 ## 🗑️ Uninstalling
 
-Remove PARA-Programming setup cleanly:
+Remove Pret-a-Program setup cleanly:
 
 ```bash
 # Uninstall specific assistant
@@ -252,7 +256,7 @@ make uninstall all
 
 **Solution:** Ensure you're in the repository directory:
 ```bash
-cd /path/to/para-programming
+cd /path/to/pret-a-program
 make setup claude-skill
 ```
 
@@ -286,7 +290,7 @@ ls -la ~/.claude/CLAUDE.md
 
 # Remove and recreate
 rm ~/.claude/CLAUDE.md
-cd /path/to/para-programming
+cd /path/to/pret-a-program
 make setup claude-skill
 ```
 
@@ -354,12 +358,12 @@ After automated setup:
    - [Copilot Quickstart](copilot/QUICKSTART.md)
 
 2. **Initialize your first project:**
-   - Claude: `/para-init`
-   - Others: Ask to initialize PARA structure
+   - Claude: `/pret-init`
+   - Others: Ask to initialize Pret structure
 
 3. **Start building:**
    - Create your first plan
-   - Follow PARA workflow
+   - Follow Pret workflow
    - Experience structured AI collaboration
 
 ---
@@ -368,8 +372,8 @@ After automated setup:
 
 Found a bug or have an improvement for the setup system?
 
-1. **Report issues:** [GitHub Issues](https://github.com/para-programming/para-programming/issues)
-2. **Suggest improvements:** [GitHub Discussions](https://github.com/para-programming/para-programming/discussions)
+1. **Report issues:** [GitHub Issues](https://github.com/pret-a-program/pret-a-program/issues)
+2. **Suggest improvements:** [GitHub Discussions](https://github.com/pret-a-program/pret-a-program/discussions)
 3. **Submit PRs:** Contributions welcome!
 
 ---
@@ -378,8 +382,8 @@ Found a bug or have an improvement for the setup system?
 
 ```bash
 # Clone & setup
-git clone https://github.com/para-programming/para-programming.git
-cd para-programming
+git clone https://github.com/pret-a-program/pret-a-program.git
+cd pret-a-program
 make setup claude-skill
 
 # Test
@@ -397,6 +401,6 @@ make help
 
 ---
 
-**Automated setup makes PARA-Programming installation effortless! 🚀**
+**Automated setup makes Pret-a-Program installation effortless! 🚀**
 
 *For manual setup instructions, see the individual assistant guides.*
