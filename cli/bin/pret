@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+#
+# pret - Pret-a-Program CLI
+# Structured AI-assisted development workflow
+#
+# Usage: pret <command> [options]
+#
+
+set -euo pipefail
+
+# Version
+PRET_VERSION="2.0.0"
+
+# Resolve paths - supports both local dev and Homebrew install
+# When installed via Homebrew, these get replaced by inreplace
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PRET_LIBEXEC="${PRET_LIBEXEC:-$SCRIPT_DIR/../lib}"
+PRET_SHARE="${PRET_SHARE:-$SCRIPT_DIR/..}"
+
+# Source common utilities
+source "$PRET_LIBEXEC/common.sh"
+
+# Help text
+show_help() {
+    cat <<'HELP'
+pret - Pret-a-Program CLI
+
+Structured AI-assisted development workflow:
+  Plan -> Review -> Execute -> Summarize -> Archive
+
+Usage: pret <command> [options]
+
+Commands:
+  init              Initialize Pret-a-Program in current project
+  plan <name>       Create a new plan document
+  execute           Start execution with branch and tracking
+  summarize         Generate post-work summary
+  archive           Archive current context
+  status            Show current workflow state
+  check             Decision helper: should I use the Pret workflow?
+  install-skills    Install AI tool skills (Claude Code, Cursor, Codex)
+
+Options:
+  --version, -v     Show version
+  --help, -h        Show this help
+
+Examples:
+  pret init                      # Set up context/ directory
+  pret plan add-auth             # Create plan for a task
+  pret execute                   # Create branch and start tracking
+  pret summarize                 # Generate summary after work
+  pret archive                   # Archive and reset for next task
+  pret install-skills --claude   # Install Claude Code skills
+
+Documentation: https://github.com/brian-lai/pret-a-program
+HELP
+}
+
+# Command router
+case "${1:-}" in
+    init)
+        shift
+        source "$PRET_LIBEXEC/commands/init.sh"
+        cmd_init "$@"
+        ;;
+    plan)
+        shift
+        source "$PRET_LIBEXEC/commands/plan.sh"
+        cmd_plan "$@"
+        ;;
+    execute)
+        shift
+        source "$PRET_LIBEXEC/commands/execute.sh"
+        cmd_execute "$@"
+        ;;
+    summarize)
+        shift
+        source "$PRET_LIBEXEC/commands/summarize.sh"
+        cmd_summarize "$@"
+        ;;
+    archive)
+        shift
+        source "$PRET_LIBEXEC/commands/archive.sh"
+        cmd_archive "$@"
+        ;;
+    status)
+        shift
+        source "$PRET_LIBEXEC/commands/status.sh"
+        cmd_status "$@"
+        ;;
+    check)
+        shift
+        source "$PRET_LIBEXEC/commands/check.sh"
+        cmd_check "$@"
+        ;;
+    install-skills)
+        shift
+        source "$PRET_LIBEXEC/commands/install-skills.sh"
+        cmd_install_skills "$@"
+        ;;
+    --version|-v)
+        echo "pret $PRET_VERSION"
+        ;;
+    --help|-h)
+        show_help
+        ;;
+    "")
+        show_help
+        ;;
+    *)
+        print_error "Unknown command: $1"
+        echo ""
+        show_help
+        exit 1
+        ;;
+esac

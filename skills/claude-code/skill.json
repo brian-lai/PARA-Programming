@@ -1,0 +1,58 @@
+{
+  "name": "pret-a-program",
+  "version": "2.0.0",
+  "description": "Pret-a-Program methodology for Claude Code - structured context, persistent memory, and intelligent execution",
+  "author": "Pret-a-Program",
+  "namespace": "@pret-a-program",
+  "homepage": "https://github.com/brian-lai/pret-a-program",
+  "license": "MIT",
+  "keywords": [
+    "pret",
+    "methodology",
+    "workflow",
+    "context",
+    "planning",
+    "ai-assisted-development"
+  ],
+  "commands": [
+    {
+      "name": "pret-init",
+      "description": "Initialize Pret-a-Program structure in current project",
+      "file": "commands/pret-init.md"
+    },
+    {
+      "name": "pret-plan",
+      "description": "Create a new plan with template",
+      "file": "commands/pret-plan.md"
+    },
+    {
+      "name": "pret-execute",
+      "description": "Execute active plan: create branch and track to-dos",
+      "file": "commands/pret-execute.md"
+    },
+    {
+      "name": "pret-summarize",
+      "description": "Generate summary from current work",
+      "file": "commands/pret-summarize.md"
+    },
+    {
+      "name": "pret-archive",
+      "description": "Archive current context with timestamp",
+      "file": "commands/pret-archive.md"
+    },
+    {
+      "name": "pret-status",
+      "description": "Show current Pret context state",
+      "file": "commands/pret-status.md"
+    },
+    {
+      "name": "pret-check",
+      "description": "Decision helper: Should I use Pret workflow for this request?",
+      "file": "commands/pret-check.md"
+    }
+  ],
+  "templates": [
+    "templates/"
+  ],
+  "documentation": "README.md"
+}
