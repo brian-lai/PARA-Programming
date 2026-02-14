@@ -29,11 +29,11 @@ Executing: Rebrand PARA-Programming to Pret-a-Program — Phase 1: CLI + Skills 
 - [x] Create `cli/lib/templates/phased-plan-master.md`
 - [x] Create `cli/lib/templates/phased-plan-sub.md`
 
-### Task 4: Restructure skills directory
-- [ ] Create `skills/claude-code/` (skill.json + rebranded commands)
-- [ ] Create `skills/cursor/` (rules file + README)
-- [ ] Create `skills/codex/` (AGENTS.md + README)
-- [ ] Create `cli/lib/commands/install-skills.sh`
+### Task 4: Restructure skills directory ✅
+- [x] Create `skills/claude-code/` (skill.json + rebranded commands)
+- [x] Create `skills/cursor/` (rules file + README)
+- [x] Create `skills/codex/` (AGENTS.md + README)
+- [x] Create `cli/lib/commands/install-skills.sh`
 
 ## Progress Notes
 
@@ -44,6 +44,8 @@ Task 1 complete: CLI skeleton with pret init working. Tested: --version, --help,
 Task 2 complete: All 6 commands working. Full flow tested: init → plan → execute → summarize → archive → status. Fixed grep exit codes for set -euo pipefail compatibility.
 
 Task 3 complete: 6 templates created. Rebranded from PARA to Pret. Tested: pret init now creates AGENTS.md from template, pret plan uses plan template.
+
+Task 4 complete: Skills restructured for 3 tools. Claude Code: 7 rebranded commands + skill.json. Cursor: rules file. Codex: AGENTS.md. install-skills command tested for --claude and --cursor.
 
 ---
 

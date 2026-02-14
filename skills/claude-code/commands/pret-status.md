@@ -1,0 +1,88 @@
+# Command: pret-status
+
+Display the current state of Pret context and workflow progress.
+
+## What This Does
+
+This command shows you where you are in the Pret workflow:
+
+1. Reads and parses `context/context.md`
+2. Displays current work summary
+3. Lists active plans and their status
+4. Shows completed summaries
+5. Indicates next recommended action
+
+## Usage
+
+```
+/pret-status
+```
+
+### Options
+
+```
+/pret-status --verbose         # Include file contents preview
+/pret-status --files           # List all context files
+```
+
+## Output Format
+
+```
+📊 Pret Status
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 Current Work:
+   Implementing user authentication system
+
+📋 Active Plans:
+   ✓ context/plans/2025-11-24-user-auth.md (created 2h ago)
+
+✅ Completed Summaries:
+   → context/summaries/2025-11-23-api-setup-summary.md
+
+⏰ Last Updated: 2025-11-24T14:30:00Z
+
+🎯 Next Action:
+   Continue executing the plan, or run /pret-summarize when complete
+```
+
+## Workflow State Detection
+
+The command detects your current workflow state:
+
+- **Planning** - Active plan exists, no recent changes
+- **Executing** - Active plan + git changes detected
+- **Ready to Summarize** - Active plan + completed changes
+- **Ready to Archive** - Summary completed, no active plans
+- **Idle** - No active context, ready for new task
+
+## Implementation
+
+1. Check if `context/context.md` exists
+2. Parse the JSON block to extract:
+   - `active_context` array
+   - `completed_summaries` array
+   - `last_updated` timestamp
+3. Read the human-readable summary section
+4. Check git status for uncommitted changes
+5. Determine workflow state
+6. Format and display output
+7. Suggest next action based on state
+
+## Next Action Suggestions
+
+Based on state, suggest:
+
+- **No context** → Run `/pret-init` to set up Pret structure
+- **Idle** → Run `/pret-plan` to start new task
+- **Planning** → Review plan and begin execution
+- **Executing** → Continue work or run `/pret-summarize` if done
+- **Summarized** → Run `/pret-archive` to clean up
+- **Changes uncommitted** → Commit changes before archiving
+
+## Notes
+
+- Use this to quickly orient yourself when returning to a project
+- Helpful for understanding context before running other commands
+- Integrates with git to show uncommitted work
+- Provides intelligent suggestions for next steps
