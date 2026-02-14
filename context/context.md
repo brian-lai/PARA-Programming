@@ -8,10 +8,10 @@ Executing: Rebrand PARA-Programming to Pret-a-Program — Phase 1: CLI + Skills 
 
 ## To-Do List
 
-### Task 1: Build `pret` CLI skeleton with `pret init`
-- [ ] Create `cli/bin/pret` (main entry point + command router)
-- [ ] Create `cli/lib/common.sh` (shared utilities)
-- [ ] Create `cli/lib/commands/init.sh` (pret init implementation)
+### Task 1: Build `pret` CLI skeleton with `pret init` ✅
+- [x] Create `cli/bin/pret` (main entry point + command router)
+- [x] Create `cli/lib/common.sh` (shared utilities)
+- [x] Create `cli/lib/commands/init.sh` (pret init implementation)
 
 ### Task 2: Add remaining CLI commands
 - [ ] Create `cli/lib/commands/plan.sh`
@@ -38,6 +38,8 @@ Executing: Rebrand PARA-Programming to Pret-a-Program — Phase 1: CLI + Skills 
 ## Progress Notes
 
 Branch created. Starting Task 1.
+
+Task 1 complete: CLI skeleton with pret init working. Tested: --version, --help, init in empty dir, idempotency.
 
 ---
 
