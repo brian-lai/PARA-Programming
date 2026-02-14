@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Test script to verify PARA-Programming installation
+# Test script to verify Pret-a-Program installation
 #
 
 set -e
@@ -11,7 +11,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Source common functions
 source "$SCRIPT_DIR/common.sh"
 
-print_header "Testing PARA-Programming Installation"
+print_header "Testing Pret-a-Program Installation"
 
 # Test results
 PASSED=0
@@ -44,13 +44,13 @@ test_component "Global CLAUDE.md readable" "[ -r ~/.claude/CLAUDE.md ]"
 if [ -d ~/.claude/commands ]; then
     command_count=$(ls -1 ~/.claude/commands/para-*.md 2>/dev/null | wc -l | tr -d ' ')
     if [ "$command_count" -eq 6 ]; then
-        print_success "All 6 PARA commands found"
+        print_success "All 6 Pret commands found"
         ((PASSED++))
     elif [ "$command_count" -gt 0 ]; then
-        print_warning "Found $command_count PARA commands (expected 6)"
+        print_warning "Found $command_count Pret commands (expected 6)"
         ((FAILED++))
     else
-        print_info "No PARA commands installed (legacy setup)"
+        print_info "No Pret commands installed (legacy setup)"
     fi
 else
     print_info "Commands directory not found (legacy setup)"

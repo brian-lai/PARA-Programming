@@ -14,7 +14,7 @@ Continue.dev reads from `.continue/rules/`:
 
 ```bash
 mkdir -p .continue/rules
-ln -s ../../AGENTS.md .continue/rules/para-programming.md
+ln -s ../../AGENTS.md .continue/rules/pret-a-program.md
 ```
 
 ### 2. Initialize context directory
@@ -24,7 +24,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
 ```
 
-### 3. Start using PARA workflow
+### 3. Start using Pret workflow
 
 Open VS Code with Continue, then in the chat panel:
 > "Create a plan for [your task]"
@@ -47,10 +47,10 @@ Rules can use YAML frontmatter:
 
 ```yaml
 ---
-name: PARA Workflow
+name: Pret Workflow
 globs: "**/*"
 alwaysApply: true
-description: PARA-Programming methodology
+description: Pret-a-Program methodology
 ---
 [Content from AGENTS.md]
 ```
@@ -61,7 +61,7 @@ Prefix files with numbers to control order:
 
 ```
 .continue/rules/
-├── 01-para-programming.md    # Symlink → ../../AGENTS.md
+├── 01-pret-a-program.md    # Symlink → ../../AGENTS.md
 ├── 02-architecture.md        # Project architecture
 └── 03-testing.md             # Testing conventions
 ```
@@ -91,10 +91,10 @@ Or in `~/.continue/config.json` for global tools.
 
 ```
 my-project/
-├── AGENTS.md                    # Full PARA methodology
+├── AGENTS.md                    # Full Pret methodology
 ├── .continue/
 │   └── rules/
-│       └── para-programming.md  # Symlink → ../../AGENTS.md
+│       └── pret-a-program.md  # Symlink → ../../AGENTS.md
 ├── context/
 │   ├── context.md
 │   ├── plans/
@@ -109,7 +109,7 @@ my-project/
 
 ### Continue not reading rules
 
-1. Verify symlink: `readlink .continue/rules/para-programming.md`
+1. Verify symlink: `readlink .continue/rules/pret-a-program.md`
 2. Restart VS Code
 3. Check Continue extension is enabled
 
@@ -126,6 +126,6 @@ my-project/
 1. Create the `.continue/rules/` symlink
 2. Open VS Code with Continue extension
 3. Use chat to create a plan
-4. Follow PARA workflow
+4. Follow Pret workflow
 
-**Need help?** See the main [PARA-Programming documentation](../README.md).
+**Need help?** See the main [Pret-a-Program documentation](../README.md).

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Deprecated: Use `pret install-skills` instead. See README.md for details.
 #
 # Setup script for Claude Code (legacy, without skill)
 # Use setup-claude-skill.sh for the recommended setup with commands
@@ -53,4 +54,4 @@ echo "  Claude README: $REPO_ROOT/claude/README.md"
 echo "  Quickstart:    $REPO_ROOT/claude/QUICKSTART.md"
 echo ""
 
-print_success "Setup complete! Start Claude Code and begin using PARA methodology"
+print_success "Setup complete! Start Claude Code and begin using Pret methodology"

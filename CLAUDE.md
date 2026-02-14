@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> **Workflow Methodology:** This repository DEFINES the PARA-Programming workflow. Do not follow the global `~/.claude/CLAUDE.md` methodology when working on this project - you are working on the methodology itself.
+> **Workflow Methodology:** This repository DEFINES the Pret-a-Program workflow. Do not follow the global `~/.claude/CLAUDE.md` methodology when working on this project - you are working on the methodology itself.
 
 ---
 
@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 | Property | Value |
 |----------|-------|
-| **Purpose** | Documentation and templates for PARA-Programming methodology |
+| **Purpose** | Documentation and templates for Pret-a-Program methodology |
 | **Type** | Documentation repository (no runtime code) |
 | **Primary Format** | Markdown |
 | **Target Audience** | Developers using AI coding assistants (Claude, Copilot, Cursor, etc.) |
@@ -19,21 +19,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 🎯 What This Project Does
 
-PARA-Programming is a methodology for AI-assisted software development that combines:
+Pret-a-Program is a methodology for AI-assisted software development that combines:
 - **PARA Method** organizational principles (Projects, Areas, Resources, Archives)
 - **Pair Programming** collaborative approach adapted for human-AI collaboration
 - **Structured context management** via `context/` directories
 - **Token efficiency** through MCP (Model Context Protocol) integration
 - **Persistent memory** across development sessions
 
-This repository contains the official documentation, setup guides, templates, and examples for implementing PARA-Programming with various AI assistants.
+This repository contains the official documentation, setup guides, templates, and examples for implementing Pret-a-Program with various AI assistants.
 
 ---
 
 ## 📂 Repository Structure
 
 ```
-para-programming/
+pret-a-program/
 ├── README.md                    # Main overview and complete documentation
 ├── SETUP-GUIDE.md              # Quick setup reference for different AI assistants
 │
@@ -69,7 +69,7 @@ para-programming/
 ## 🛠 Key Documentation Files
 
 ### Core Documentation
-- **README.md** (1014 lines): The complete PARA-Programming guide
+- **README.md** (1014 lines): The complete Pret-a-Program guide
   - Comprehensive overview of methodology
   - Detailed workflow explanations with examples
   - MCP integration patterns
@@ -90,7 +90,7 @@ Each AI assistant has its own directory with:
 
 ### Global Methodology File
 
-- **claude/CLAUDE.md** (623 lines): The source of truth for PARA workflow
+- **claude/CLAUDE.md** (623 lines): The source of truth for Pret workflow
   - Users copy this to `~/.claude/CLAUDE.md`
   - Defines the five-step workflow (Plan → Review → Execute → Summarize → Archive)
   - MCP integration patterns
@@ -166,7 +166,7 @@ Before modifying documentation:
 
 ## 🧩 Terminology & Concepts
 
-### PARA-Programming Concepts
+### Pret-a-Program Concepts
 
 | Term | Definition |
 |------|----------|
@@ -260,7 +260,7 @@ This is a **documentation repository**. It should not contain:
 - Database schemas or migrations
 
 ### Don't Fragment the Methodology
-The core PARA workflow must stay consistent. Don't create:
+The core Pret workflow must stay consistent. Don't create:
 - Alternative workflows without strong justification
 - Platform-specific methodology variations (only implementation details vary)
 - Competing terminology for the same concepts
@@ -277,7 +277,7 @@ Keep documentation:
 
 Before committing documentation changes:
 
-1. **Read as a newcomer**: Would someone new to PARA-Programming understand this?
+1. **Read as a newcomer**: Would someone new to Pret-a-Program understand this?
 2. **Follow the instructions**: Can you actually complete the setup steps?
 3. **Check examples**: Do all code examples work? Are file paths correct?
 4. **Verify links**: Do all internal references point to existing sections?
@@ -361,7 +361,7 @@ A good documentation change:
 - ✅ Is easy to scan and navigate
 - ✅ Works when copy-pasted (for code/command examples)
 - ✅ Improves clarity without adding unnecessary length
-- ✅ Aligns with PARA-Programming terminology and principles
+- ✅ Aligns with Pret-a-Program terminology and principles
 
 ---
 

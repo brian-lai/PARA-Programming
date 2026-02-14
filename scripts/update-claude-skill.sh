@@ -1,6 +1,7 @@
 #!/bin/bash
+# Deprecated: Use `pret install-skills` instead. See README.md for details.
 #
-# Update script for Claude Code with PARA-Programming skill
+# Update script for Claude Code with Pret-a-Program skill
 # Checks if using symlinks and provides update guidance
 #
 
@@ -13,13 +14,13 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # Source common functions
 source "$SCRIPT_DIR/common.sh"
 
-print_header "Update Claude Code + PARA-Programming Skill"
+print_header "Update Claude Code + Pret-a-Program Skill"
 
 # Set paths
 CLAUDE_DIR="$HOME/.claude"
 COMMANDS_DIR="$CLAUDE_DIR/commands"
 GLOBAL_CLAUDE_MD="$REPO_ROOT/CLAUDE.md"
-SKILL_DIR="$REPO_ROOT/claude-skill"
+SKILL_DIR="$REPO_ROOT/skills/claude-code"
 
 # Check if setup exists
 if [ ! -e "$CLAUDE_DIR/CLAUDE.md" ]; then
@@ -57,14 +58,14 @@ if check_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"; then
     fi
 
     # Copy updated commands
-    copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "*.md" "PARA commands"
+    copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "*.md" "Pret commands"
 
     # Count installed commands
     command_count=$(ls -1 "$COMMANDS_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
     expected_count=$(ls -1 "$SKILL_DIR/commands"/*.md 2>/dev/null | wc -l | tr -d ' ')
 
     if [ "$command_count" -eq "$expected_count" ]; then
-        print_success "All $command_count PARA commands updated"
+        print_success "All $command_count Pret commands updated"
     else
         print_warning "Expected $expected_count commands, found $command_count"
     fi
@@ -137,14 +138,14 @@ else
         fi
 
         # Copy updated commands
-        copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "*.md" "PARA commands"
+        copy_directory "$SKILL_DIR/commands" "$COMMANDS_DIR" "*.md" "Pret commands"
 
         # Count installed commands
         command_count=$(ls -1 "$COMMANDS_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
         expected_count=$(ls -1 "$SKILL_DIR/commands"/*.md 2>/dev/null | wc -l | tr -d ' ')
 
         if [ "$command_count" -eq "$expected_count" ]; then
-            print_success "All $command_count PARA commands updated"
+            print_success "All $command_count Pret commands updated"
         else
             print_warning "Expected $expected_count commands, found $command_count"
         fi

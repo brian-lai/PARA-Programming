@@ -210,11 +210,11 @@ Because we load only what’s needed, and preprocess in code, token usage is far
 
 ### Backed by Cognitive and Empirical Evidence
 
-PARA‑Programming is effective because it mirrors how both **humans and LLMs process information most efficiently**— through **focused working memory** and **externalized long‑term memory**.
+Pret-a-Program is effective because it mirrors how both **humans and LLMs process information most efficiently**— through **focused working memory** and **externalized long‑term memory**.
 
 ### 1. Cognitive Parallel
 
-Humans use short‑term memory to process active tasks and rely on external systems (notes, documents, tools) for recall. PARA‑Programming formalizes the same behavior for Claude:
+Humans use short‑term memory to process active tasks and rely on external systems (notes, documents, tools) for recall. Pret-a-Program formalizes the same behavior for Claude:
 
 - The **prompt window** is analogous to human working memory.
 - The **context directory** acts as long‑term memory.
@@ -239,7 +239,7 @@ These findings validate the Second Brain model: persistent memory and selective 
 - **Scalability**: Multi‑agent and multi‑engineer work remains consistent across sessions.
 - **Auditability**: Clear trace of what Claude knew, when, and why.
 
-In short, PARA‑Programming applies the same evidence‑based design principles that Anthropic uses internally to make Claude efficient — turning context management into an engineering discipline.
+In short, Pret-a-Program applies the same evidence‑based design principles that Anthropic uses internally to make Claude efficient — turning context management into an engineering discipline.
 
 ---
 
@@ -273,4 +273,4 @@ Worth mentioning again:
 > “Your mind is for having ideas, not holding them.” — Tiago Forte
 > 
 
-PARA‑Programming applies this principle to Claude; we externalize memory into structure, freeing ourselves to focus purely on reasoning and creativity.
+Pret-a-Program applies this principle to Claude; we externalize memory into structure, freeing ourselves to focus purely on reasoning and creativity.

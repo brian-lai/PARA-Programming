@@ -1,8 +1,8 @@
-# AGENTS.md – PARA-Programming Methodology
+# AGENTS.md – Pret-a-Program Methodology
 
 **Universal instructions for AI coding assistants**
 
-> **Purpose:** This file defines the PARA-Programming workflow – a structured, auditable methodology for AI-assisted software development with persistent context management.
+> **Purpose:** This file defines the Pret-a-Program workflow – a structured, auditable methodology for AI-assisted software development with persistent context management.
 >
 > **Compatibility:** Works with Claude Code, Cursor, OpenAI Codex CLI, GitHub Copilot, and other AI coding tools via symlinks.
 
@@ -14,7 +14,7 @@
 |----------|-----------------------------------------------|
 | **Use for** | Code changes, features, bug fixes, refactoring, architecture decisions |
 | **Skip for** | Simple queries, code navigation, explanations, quick lookups |
-| **Rule of thumb** | If it results in git changes, use the PARA workflow |
+| **Rule of thumb** | If it results in git changes, use the Pret workflow |
 
 ---
 
@@ -22,7 +22,7 @@
 
 ### The Second Brain System
 
-PARA-Programming structures human-AI collaboration as a *shared cognitive system*:
+Pret-a-Program structures human-AI collaboration as a *shared cognitive system*:
 
 * **AI Agent = Active Reasoning** – Processes context, generates plans and code
 * **Human = Intent & Judgment** – Provides direction, reviews, approves
@@ -40,7 +40,7 @@ PARA-Programming structures human-AI collaboration as a *shared cognitive system
 
 ## Directory Structure
 
-Every project using PARA-Programming includes a `context/` directory:
+Every project using Pret-a-Program includes a `context/` directory:
 
 ```
 project-root/
@@ -74,7 +74,7 @@ project-root/
         Human Review                 Context Refresh
 ```
 
-### When to Use PARA Workflow
+### When to Use Pret Workflow
 
 **Always use for:**
 - All code changes – Features, bug fixes, refactoring, optimizations
@@ -146,7 +146,7 @@ After creating the plan:
 
 1. **Create a new branch** when starting:
    ```bash
-   git checkout -b para/task-name
+   git checkout -b pret/task-name
    ```
 
 2. **Track todos in `context/context.md`** during execution
@@ -230,7 +230,7 @@ This file tracks active work with human-readable summary and JSON metadata:
 
 [Brief description of current focus]
 
-**Branch:** `para/task-name`
+**Branch:** `pret/task-name`
 **Plan:** context/plans/YYYY-MM-DD-task-name.md
 
 ## To-Do List
@@ -248,7 +248,7 @@ This file tracks active work with human-readable summary and JSON metadata:
     "context/plans/YYYY-MM-DD-task-name.md"
   ],
   "completed_summaries": [],
-  "execution_branch": "para/task-name",
+  "execution_branch": "pret/task-name",
   "last_updated": "YYYY-MM-DDTHH:MM:SSZ"
 }
 ```
@@ -374,11 +374,11 @@ ln -s ../AGENTS.md .github/copilot-instructions.md
 
 # Windsurf (Codeium)
 mkdir -p .windsurf/rules
-ln -s ../../AGENTS.md .windsurf/rules/para-programming.md
+ln -s ../../AGENTS.md .windsurf/rules/pret-a-program.md
 
 # Continue.dev
 mkdir -p .continue/rules
-ln -s ../../AGENTS.md .continue/rules/para-programming.md
+ln -s ../../AGENTS.md .continue/rules/pret-a-program.md
 ```
 
 See `tool-setup/` for detailed setup guides per tool.
@@ -387,7 +387,7 @@ See `tool-setup/` for detailed setup guides per tool.
 
 ## Summary
 
-PARA-Programming creates a **persistent, auditable, efficient development system** where human and AI work as a unified team:
+Pret-a-Program creates a **persistent, auditable, efficient development system** where human and AI work as a unified team:
 
 - **Plan** before coding – No code without a reviewed plan
 - **Human review** required – AI proposes, human approves

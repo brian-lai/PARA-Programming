@@ -21,9 +21,9 @@ auto-commits: true
 dark-mode: true
 ```
 
-### Using PARA with Aider
+### Using Pret with Aider
 
-PARA methodology can be followed manually:
+Pret methodology can be followed manually:
 1. Create plans in `context/plans/` before starting Aider
 2. Reference plans in your prompts
 3. Create summaries after completion
@@ -45,11 +45,11 @@ Built into JetBrains IDEs with limited customization.
 2. Add custom instructions in the settings UI
 3. Or create `.idea/ai-assistant.md`
 
-### Using PARA with JetBrains AI
+### Using Pret with JetBrains AI
 
 Copy key sections from `AGENTS.md` into the AI Assistant settings:
 - Core workflow (Plan → Review → Execute → Summarize → Archive)
-- When to use PARA vs skip
+- When to use Pret vs skip
 - Quality checklist
 
 ### Limitations
@@ -64,17 +64,17 @@ Copy key sections from `AGENTS.md` into the AI Assistant settings:
 
 Primarily focused on code completions, limited custom instructions.
 
-### Using PARA with CodeWhisperer
+### Using Pret with CodeWhisperer
 
 1. Use comments to guide completions:
    ```python
-   # Following PARA plan: context/plans/task.md
+   # Following Pret plan: context/plans/task.md
    # Step 1: Create authentication middleware
    def auth_middleware():
        # CodeWhisperer suggests implementation
    ```
 
-2. Manually maintain PARA workflow:
+2. Manually maintain Pret workflow:
    - Create plans before coding
    - Use CodeWhisperer for implementation
    - Create summaries after
@@ -90,10 +90,10 @@ Primarily focused on code completions, limited custom instructions.
 
 AI code completion with limited customization.
 
-### Using PARA with Tabnine
+### Using Pret with Tabnine
 
 1. Use Tabnine for code completions
-2. Manually manage PARA workflow:
+2. Manually manage Pret workflow:
    - Plans in `context/plans/`
    - Summaries in `context/summaries/`
 
@@ -121,7 +121,7 @@ Depends on the specific integration:
 - **Gemini in VS Code:** May read workspace settings
 - **Gemini CLI:** May support configuration files
 
-### Using PARA with Gemini
+### Using Pret with Gemini
 
 Copy AGENTS.md content to:
 - `~/.gemini/GEMINI.md` for global instructions
@@ -136,7 +136,7 @@ Check specific integration documentation for supported formats.
 ### Pattern 1: Comment-Driven
 
 ```python
-# PARA Plan: context/plans/2025-01-24-task.md
+# Pret plan: context/plans/2025-01-24-task.md
 # Objective: Add user authentication
 # Step 1: Create JWT middleware
 
@@ -146,7 +146,7 @@ def jwt_middleware():
 
 ### Pattern 2: Copy-Paste Context
 
-Start each session by pasting key PARA sections:
+Start each session by pasting key Pret sections:
 1. Paste workflow overview
 2. Paste current plan
 3. Reference context files explicitly
@@ -190,18 +190,18 @@ If your tool supports custom instructions in any form:
 
 Have experience with a tool not listed here?
 
-1. Test PARA methodology with the tool
+1. Test Pret methodology with the tool
 2. Document configuration approach
 3. Add to this file or create separate guide
-4. Submit PR to PARA-Programming repository
+4. Submit PR to Pret-a-Program repository
 
 ---
 
 ## Next Steps
 
-For best PARA support, consider:
+For best Pret support, consider:
 1. **Tier 1 tools** (Claude Code, Cursor, Copilot, Codex) for full integration
 2. **Tier 2 tools** (Continue, Windsurf) for good integration
 3. **Manual workflow** for unsupported tools
 
-**Need help?** See the main [PARA-Programming documentation](../README.md).
+**Need help?** See the main [Pret-a-Program documentation](../README.md).

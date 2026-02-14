@@ -1,4 +1,4 @@
-# PARA-Programming Setup Guide
+# Pret-a-Program Setup Guide
 
 **Unified setup instructions for all AI coding assistants**
 
@@ -6,25 +6,24 @@
 
 ## The Unified Approach
 
-PARA-Programming uses a **single `AGENTS.md` file** that works across all AI coding tools. Instead of maintaining separate configuration files, you:
-
-1. Copy `AGENTS.md` to your project
-2. Create a symlink for tools that expect different filenames
-3. Start working with the PARA workflow
+Pret-a-Program uses a **single `AGENTS.md` file** that works across all AI coding tools. The `pret` CLI handles setup automatically.
 
 ---
 
 ## Quick Setup (Any Tool)
 
 ```bash
-# 1. Get AGENTS.md
-curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+# Option A: Via Homebrew (recommended)
+brew install brian-lai/pret/pret-a-program
+cd your-project
+pret init
+pret install-skills --claude   # or --cursor, --codex
 
-# 2. Initialize context directory
+# Option B: Manual
+curl -O https://raw.githubusercontent.com/brian-lai/pret-a-program/main/AGENTS.md
 mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
-
-# 3. Create symlink for your tool (see below)
+ln -s AGENTS.md CLAUDE.md  # Symlink for your tool
 ```
 
 ---
@@ -106,7 +105,7 @@ These tools have setup guides with community contributions welcome.
 
 ```bash
 mkdir -p .continue/rules
-ln -s ../../AGENTS.md .continue/rules/para-programming.md
+ln -s ../../AGENTS.md .continue/rules/pret-a-program.md
 ```
 
 **[→ Full Setup Guide](tool-setup/community/continue.md)**
@@ -115,7 +114,7 @@ ln -s ../../AGENTS.md .continue/rules/para-programming.md
 
 ```bash
 mkdir -p .windsurf/rules
-ln -s ../../AGENTS.md .windsurf/rules/para-programming.md
+ln -s ../../AGENTS.md .windsurf/rules/pret-a-program.md
 ```
 
 **[→ Full Setup Guide](tool-setup/community/windsurf.md)**
@@ -140,8 +139,8 @@ Includes: Aider, JetBrains AI, CodeWhisperer, Tabnine, Gemini
 | Cursor | *(reads AGENTS.md directly)* |
 | GitHub Copilot | `mkdir -p .github && ln -s ../AGENTS.md .github/copilot-instructions.md` |
 | Codex CLI | *(reads AGENTS.md directly)* |
-| Continue.dev | `mkdir -p .continue/rules && ln -s ../../AGENTS.md .continue/rules/para-programming.md` |
-| Windsurf | `mkdir -p .windsurf/rules && ln -s ../../AGENTS.md .windsurf/rules/para-programming.md` |
+| Continue.dev | `mkdir -p .continue/rules && ln -s ../../AGENTS.md .continue/rules/pret-a-program.md` |
+| Windsurf | `mkdir -p .windsurf/rules && ln -s ../../AGENTS.md .windsurf/rules/pret-a-program.md` |
 
 ### Windows Symlinks
 
@@ -179,7 +178,7 @@ After setup, your project should look like:
 
 ```
 my-project/
-├── AGENTS.md                         # PARA methodology (canonical)
+├── AGENTS.md                         # Pret methodology (canonical)
 ├── CLAUDE.md                         # Symlink → AGENTS.md (for Claude Code)
 ├── .github/
 │   └── copilot-instructions.md       # Symlink → ../AGENTS.md (for Copilot)
@@ -214,18 +213,18 @@ For Claude Code users, the skill package adds automated commands:
 
 ```bash
 # Install skill
-cp -r claude-skill ~/.claude/skills/para-programming
+pret install-skills --claude
 ```
 
 This enables:
-- `/para:init` - Initialize PARA structure
-- `/para:plan` - Create a plan
-- `/para:execute` - Start execution with branch
-- `/para:summarize` - Create summary
-- `/para:archive` - Archive completed work
-- `/para:status` - Check workflow status
+- `/pret:init` - Initialize Pret structure
+- `/pret:plan` - Create a plan
+- `/pret:execute` - Start execution with branch
+- `/pret:summarize` - Create summary
+- `/pret:archive` - Archive completed work
+- `/pret:status` - Check workflow status
 
-**[→ Skill Documentation](claude-skill/)**
+**[→ Skill Documentation](skills/claude-code/)**
 
 ---
 
@@ -241,7 +240,7 @@ This enables:
 ### Agent skips planning step
 
 Be explicit in your prompt:
-> "Following PARA methodology, create a plan FIRST before implementing"
+> "Following Pret methodology, create a plan FIRST before implementing"
 
 ### Symlink doesn't work (Windows)
 
@@ -263,8 +262,8 @@ Explicitly mention in prompts:
 With symlinks, updates are automatic:
 
 ```bash
-# Navigate to PARA-Programming repository
-cd para-programming
+# Navigate to Pret-a-Program repository
+cd pret-a-program
 
 # Pull latest
 git pull origin main
@@ -274,7 +273,7 @@ git pull origin main
 
 If you copied instead of symlinking, manually update:
 ```bash
-curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS.md
+curl -O https://raw.githubusercontent.com/brian-lai/pret-a-program/main/AGENTS.md
 ```
 
 ---
@@ -285,14 +284,14 @@ curl -O https://raw.githubusercontent.com/brian-lai/para-programming/main/AGENTS
 2. **Start with a simple task** to test the workflow
 3. **Review the examples** in `AGENTS.md` for workflow patterns
 
-**Need help?** See [troubleshooting](#troubleshooting) or [open a discussion](https://github.com/brian-lai/para-programming/discussions).
+**Need help?** See [troubleshooting](#troubleshooting) or [open a discussion](https://github.com/brian-lai/pret-a-program/discussions).
 
 ---
 
 ## Quick Reference
 
 ```
-📋 PARA Workflow
+📋 Pret Workflow
 ├── 1. Plan → Create context/plans/[task].md
 ├── 2. Review → Human approves
 ├── 3. Execute → AI implements
@@ -319,4 +318,4 @@ project-root/
 
 ---
 
-**Ready to start?** Follow your tool's setup guide and begin with PARA workflow!
+**Ready to start?** Follow your tool's setup guide and begin with Pret workflow!

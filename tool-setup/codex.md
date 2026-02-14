@@ -24,7 +24,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
 ```
 
-### 3. Start using PARA workflow
+### 3. Start using Pret workflow
 
 ```bash
 codex  # Start Codex CLI in your project
@@ -49,7 +49,7 @@ Codex CLI reads instructions from:
 
 ---
 
-## Codex CLI Workflow with PARA
+## Codex CLI Workflow with Pret
 
 ### Planning Phase
 
@@ -101,11 +101,11 @@ Reference in plans:
 
 ## Git Workflow
 
-Codex CLI follows standard PARA git workflow:
+Codex CLI follows standard Pret git workflow:
 
 ```bash
 # Starting new plan
-git checkout -b para/task-name
+git checkout -b pret/task-name
 
 # After each todo
 git add .
@@ -133,7 +133,7 @@ export CODEX_MODEL=gpt-4  # or other model
 
 ```
 my-project/
-├── AGENTS.md              # Full PARA methodology
+├── AGENTS.md              # Full Pret methodology
 ├── context/
 │   ├── context.md
 │   ├── plans/
@@ -163,7 +163,7 @@ my-project/
 
 ---
 
-## Tips for Codex + PARA
+## Tips for Codex + Pret
 
 1. **Be specific in task descriptions** – Codex works better with clear goals
 2. **Use preprocessing** – Create summaries for large codebases
@@ -178,6 +178,6 @@ my-project/
 2. Start Codex CLI
 3. Describe your task to create a plan
 4. Review and approve the plan
-5. Let Codex implement with PARA workflow
+5. Let Codex implement with Pret workflow
 
-**Need help?** See the main [PARA-Programming documentation](../README.md).
+**Need help?** See the main [Pret-a-Program documentation](../README.md).

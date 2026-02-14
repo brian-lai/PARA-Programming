@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Common functions for PARA-Programming setup scripts
+# Common functions for Pret-a-Program setup scripts
 #
 
 # Colors for output
@@ -244,12 +244,12 @@ print_completion() {
 
     print_header "✨ Installation Complete!"
     echo ""
-    echo "PARA-Programming is now set up for $assistant"
+    echo "Pret-a-Program is now set up for $assistant"
     echo ""
     echo "Next Steps:"
     echo "1. Open your project in $assistant"
-    echo "2. Initialize PARA structure (see assistant-specific guide)"
-    echo "3. Start building with PARA methodology!"
+    echo "2. Initialize Pret structure (see assistant-specific guide)"
+    echo "3. Start building with Pret methodology!"
     echo ""
     echo "Documentation:"
     echo "  Setup Guide: SETUP-GUIDE.md"

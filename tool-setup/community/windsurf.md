@@ -14,7 +14,7 @@ Windsurf reads from `.windsurf/rules/`:
 
 ```bash
 mkdir -p .windsurf/rules
-ln -s ../../AGENTS.md .windsurf/rules/para-programming.md
+ln -s ../../AGENTS.md .windsurf/rules/pret-a-program.md
 ```
 
 ### 2. Initialize context directory
@@ -24,7 +24,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
 ```
 
-### 3. Start using PARA workflow
+### 3. Start using Pret workflow
 
 Open your project in Windsurf, then in chat:
 > "Create a plan for [your task]"
@@ -70,10 +70,10 @@ For managed deployments:
 
 ```
 my-project/
-├── AGENTS.md                     # Full PARA methodology
+├── AGENTS.md                     # Full Pret methodology
 ├── .windsurf/
 │   └── rules/
-│       └── para-programming.md   # Symlink → ../../AGENTS.md
+│       └── pret-a-program.md   # Symlink → ../../AGENTS.md
 ├── context/
 │   ├── context.md
 │   ├── plans/
@@ -88,7 +88,7 @@ my-project/
 
 ### Windsurf not reading rules
 
-1. Verify symlink: `readlink .windsurf/rules/para-programming.md`
+1. Verify symlink: `readlink .windsurf/rules/pret-a-program.md`
 2. Check file size under 12,000 characters
 3. Restart Windsurf
 
@@ -100,7 +100,7 @@ my-project/
 
 ---
 
-## Tips for Windsurf + PARA
+## Tips for Windsurf + Pret
 
 1. **Use Cascade** – Windsurf's Cascade feature for multi-file editing
 2. **Keep rules concise** – 12k char limit means prioritizing key content
@@ -113,6 +113,6 @@ my-project/
 1. Create the `.windsurf/rules/` symlink
 2. Open project in Windsurf
 3. Use chat to create a plan
-4. Follow PARA workflow
+4. Follow Pret workflow
 
-**Need help?** See the main [PARA-Programming documentation](../README.md).
+**Need help?** See the main [Pret-a-Program documentation](../README.md).

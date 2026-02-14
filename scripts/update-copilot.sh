@@ -1,6 +1,7 @@
 #!/bin/bash
+# Deprecated: Use `pret install-skills` instead. See README.md for details.
 #
-# Update script for GitHub Copilot with PARA-Programming
+# Update script for GitHub Copilot with Pret-a-Program
 #
 
 set -e
@@ -12,7 +13,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # Source common functions
 source "$SCRIPT_DIR/common.sh"
 
-print_header "Update GitHub Copilot + PARA-Programming"
+print_header "Update GitHub Copilot + Pret-a-Program"
 
 # Set paths
 COPILOT_SOURCE="$REPO_ROOT/copilot/copilot-instructions.md"

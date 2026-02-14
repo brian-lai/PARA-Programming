@@ -6,7 +6,7 @@
 # and categorizes them by their setup requirements:
 #
 # - PLUGIN: Tools that use native plugins (Claude Code)
-# - FILE_BASED_TIER1: Tools with full PARA support (Cursor, Continue.dev)
+# - FILE_BASED_TIER1: Tools with full Pret support (Cursor, Continue.dev)
 # - FILE_BASED_TIER2: Tools with methodology-only support (Copilot, Gemini)
 #
 # Output format (one line per category):

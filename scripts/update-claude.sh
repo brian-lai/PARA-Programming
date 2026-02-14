@@ -1,4 +1,5 @@
 #!/bin/bash
+# Deprecated: Use `pret install-skills` instead. See README.md for details.
 #
 # Update script for Claude Code (legacy, no skill)
 #
@@ -12,7 +13,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # Source common functions
 source "$SCRIPT_DIR/common.sh"
 
-print_header "Update Claude Code (Legacy) + PARA-Programming"
+print_header "Update Claude Code (Legacy) + Pret-a-Program"
 
 # Set paths
 CLAUDE_DIR="$HOME/.claude"
@@ -36,7 +37,7 @@ if check_symlink "$GLOBAL_CLAUDE_MD" "$CLAUDE_DIR/CLAUDE.md"; then
     echo ""
     print_info "No action needed. You're already on the latest version!"
     echo ""
-    print_info "💡 Tip: Consider upgrading to claude-skill for slash commands:"
+    print_info "💡 Tip: Consider upgrading to skills/claude-code for slash commands:"
     print_info "   make setup claude-skill"
     exit 0
 else
@@ -62,7 +63,7 @@ else
         echo ""
         print_info "Future updates are now automatic with 'git pull'!"
         echo ""
-        print_info "💡 Tip: Consider upgrading to claude-skill for slash commands:"
+        print_info "💡 Tip: Consider upgrading to skills/claude-code for slash commands:"
         print_info "   make setup claude-skill"
     else
         print_step "Re-copying files..."

@@ -1,4 +1,4 @@
-# PARA-Programming Setup Makefile
+# Pret-a-Program Setup Makefile
 # Automated setup for different AI coding assistants
 
 .PHONY: help setup setup-all update update-all uninstall clean test claude-skill claude cursor copilot uninstall-claude-skill uninstall-claude uninstall-cursor uninstall-copilot uninstall-all
@@ -6,11 +6,11 @@
 # Default target - show help
 help:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-	@echo "  PARA-Programming Setup"
+	@echo "  Pret-a-Program Setup"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo ""
 	@echo "Usage:"
-	@echo "  make setup <assistant>        Set up PARA for specific assistant"
+	@echo "  make setup <assistant>        Set up Pret for specific assistant"
 	@echo "  make setup-all                Set up for all assistants"
 	@echo "  make update-<assistant>       Update global methodology for assistant"
 	@echo "  make update-all               Update for all (or just: git pull)"
@@ -35,7 +35,7 @@ help:
 	@echo ""
 	@echo "For manual setup instructions, see:"
 	@echo "  - SETUP-GUIDE.md (overview)"
-	@echo "  - claude-skill/INSTALL.md (Claude Code skill)"
+	@echo "  - skills/claude-code/INSTALL.md (Claude Code skill)"
 	@echo "  - claude/QUICKSTART.md (Claude Code)"
 	@echo "  - cursor/QUICKSTART.md (Cursor)"
 	@echo "  - copilot/QUICKSTART.md (GitHub Copilot)"
@@ -53,7 +53,7 @@ setup:
 	fi
 
 claude-skill:
-	@echo "🚀 Setting up Claude Code with PARA-Programming skill..."
+	@echo "🚀 Setting up Claude Code with Pret-a-Program skill..."
 	@bash scripts/setup-claude-skill.sh
 
 claude:
@@ -61,21 +61,21 @@ claude:
 	@bash scripts/setup-claude.sh
 
 cursor:
-	@echo "🚀 Setting up Cursor IDE with PARA-Programming..."
+	@echo "🚀 Setting up Cursor IDE with Pret-a-Program..."
 	@bash scripts/setup-cursor.sh
 
 copilot:
-	@echo "🚀 Setting up GitHub Copilot with PARA-Programming..."
+	@echo "🚀 Setting up GitHub Copilot with Pret-a-Program..."
 	@bash scripts/setup-copilot.sh
 
 gemini:
-	@echo "🚀 Setting up Gemini with PARA-Programming..."
+	@echo "🚀 Setting up Gemini with Pret-a-Program..."
 	@bash scripts/setup-gemini.sh
 
 # Setup for all assistants
 setup-all:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-	@echo "  Setting up PARA-Programming for ALL assistants"
+	@echo "  Setting up Pret-a-Program for ALL assistants"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo ""
 	@$(MAKE) claude-skill
@@ -108,7 +108,7 @@ update-gemini:
 
 update-all:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-	@echo "  Updating PARA-Programming"
+	@echo "  Updating Pret-a-Program"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo ""
 	@echo "✨ With symlinks, updates are automatic!"
@@ -131,7 +131,7 @@ uninstall:
 
 uninstall-claude-skill:
 	@echo "🗑️  Uninstalling Claude Code skill..."
-	@bash claude-skill/scripts/uninstall.sh
+	@bash skills/claude-code/scripts/uninstall.sh
 
 uninstall-claude:
 	@echo "🗑️  Uninstalling Claude Code setup..."
@@ -150,7 +150,7 @@ uninstall-gemini:
 	@bash scripts/uninstall-gemini.sh
 
 uninstall-all:
-	@echo "⚠️  This will remove PARA-Programming setup for ALL assistants"
+	@echo "⚠️  This will remove Pret-a-Program setup for ALL assistants"
 	@read -p "Continue? (y/N): " confirm; \
 	if [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]; then \
 		$(MAKE) uninstall-claude-skill; \
@@ -163,7 +163,7 @@ uninstall-all:
 
 # Test installation
 test:
-	@echo "🧪 Testing PARA-Programming installation..."
+	@echo "🧪 Testing Pret-a-Program installation..."
 	@bash scripts/test-setup.sh
 
 # Clean temporary files
@@ -182,7 +182,7 @@ install: setup
 
 # Help for specific assistants
 help-claude-skill:
-	@cat claude-skill/README.md | head -50
+	@cat skills/claude-code/README.md | head -50
 
 help-cursor:
 	@cat cursor/README.md | head -50
