@@ -13,13 +13,13 @@ Executing: Rebrand PARA-Programming to Pret-a-Program — Phase 1: CLI + Skills 
 - [x] Create `cli/lib/common.sh` (shared utilities)
 - [x] Create `cli/lib/commands/init.sh` (pret init implementation)
 
-### Task 2: Add remaining CLI commands
-- [ ] Create `cli/lib/commands/plan.sh`
-- [ ] Create `cli/lib/commands/execute.sh`
-- [ ] Create `cli/lib/commands/summarize.sh`
-- [ ] Create `cli/lib/commands/archive.sh`
-- [ ] Create `cli/lib/commands/status.sh`
-- [ ] Create `cli/lib/commands/check.sh`
+### Task 2: Add remaining CLI commands ✅
+- [x] Create `cli/lib/commands/plan.sh`
+- [x] Create `cli/lib/commands/execute.sh`
+- [x] Create `cli/lib/commands/summarize.sh`
+- [x] Create `cli/lib/commands/archive.sh`
+- [x] Create `cli/lib/commands/status.sh`
+- [x] Create `cli/lib/commands/check.sh`
 
 ### Task 3: Add templates for CLI
 - [ ] Create `cli/lib/templates/agents.md`
@@ -40,6 +40,8 @@ Executing: Rebrand PARA-Programming to Pret-a-Program — Phase 1: CLI + Skills 
 Branch created. Starting Task 1.
 
 Task 1 complete: CLI skeleton with pret init working. Tested: --version, --help, init in empty dir, idempotency.
+
+Task 2 complete: All 6 commands working. Full flow tested: init → plan → execute → summarize → archive → status. Fixed grep exit codes for set -euo pipefail compatibility.
 
 ---
 

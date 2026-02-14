@@ -148,14 +148,14 @@ has_context() {
 read_context_json() {
     local key="$1"
     if [ -f "context/context.md" ]; then
-        grep -o "\"$key\": *\"[^\"]*\"" context/context.md | head -1 | sed 's/.*: *"\(.*\)"/\1/'
+        grep -o "\"$key\": *\"[^\"]*\"" context/context.md 2>/dev/null | head -1 | sed 's/.*: *"\(.*\)"/\1/' || true
     fi
 }
 
 # Read the active plan path from context.md
 read_active_plan() {
     if [ -f "context/context.md" ]; then
-        grep -o '"context/plans/[^"]*"' context/context.md | head -1 | tr -d '"'
+        grep -o '"context/plans/[^"]*"' context/context.md 2>/dev/null | head -1 | tr -d '"' || true
     fi
 }
 
