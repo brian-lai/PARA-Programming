@@ -21,13 +21,13 @@ Executing: Rebrand PARA-Programming to Pret-a-Program — Phase 1: CLI + Skills 
 - [x] Create `cli/lib/commands/status.sh`
 - [x] Create `cli/lib/commands/check.sh`
 
-### Task 3: Add templates for CLI
-- [ ] Create `cli/lib/templates/agents.md`
-- [ ] Create `cli/lib/templates/context.md`
-- [ ] Create `cli/lib/templates/plan.md`
-- [ ] Create `cli/lib/templates/summary.md`
-- [ ] Create `cli/lib/templates/phased-plan-master.md`
-- [ ] Create `cli/lib/templates/phased-plan-sub.md`
+### Task 3: Add templates for CLI ✅
+- [x] Create `cli/lib/templates/agents.md`
+- [x] Create `cli/lib/templates/context.md`
+- [x] Create `cli/lib/templates/plan.md`
+- [x] Create `cli/lib/templates/summary.md`
+- [x] Create `cli/lib/templates/phased-plan-master.md`
+- [x] Create `cli/lib/templates/phased-plan-sub.md`
 
 ### Task 4: Restructure skills directory
 - [ ] Create `skills/claude-code/` (skill.json + rebranded commands)
@@ -42,6 +42,8 @@ Branch created. Starting Task 1.
 Task 1 complete: CLI skeleton with pret init working. Tested: --version, --help, init in empty dir, idempotency.
 
 Task 2 complete: All 6 commands working. Full flow tested: init → plan → execute → summarize → archive → status. Fixed grep exit codes for set -euo pipefail compatibility.
+
+Task 3 complete: 6 templates created. Rebranded from PARA to Pret. Tested: pret init now creates AGENTS.md from template, pret plan uses plan template.
 
 ---
 
