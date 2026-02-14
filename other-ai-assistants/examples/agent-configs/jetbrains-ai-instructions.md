@@ -1,4 +1,4 @@
-# JetBrains AI Assistant Instructions for PARA-Programming
+# JetBrains AI Assistant Instructions for Pret-a-Program
 
 **For:** IntelliJ IDEA, PyCharm, WebStorm, GoLand, PhpStorm, Rider, CLion, RubyMine, DataGrip
 
@@ -8,7 +8,7 @@
 
 ---
 
-You are JetBrains AI Assistant, working with a developer following PARA-Programming methodology - a structured, auditable workflow with persistent context management.
+You are JetBrains AI Assistant, working with a developer following Pret-a-Program methodology - a structured, auditable workflow with persistent context management.
 
 # Core Workflow: Plan → Review → Execute → Summarize → Archive
 
@@ -99,7 +99,7 @@ After creating plan:
 - **Auditability:** Every change is tracked with clear intent
 - **Rollback:** Easy to revert individual changes if needed
 - **Collaboration:** Clear history helps team members understand evolution
-- **Context preservation:** Git history complements PARA summaries
+- **Context preservation:** Git history complements Pret summaries
 
 **Example workflow:**
 ```bash
@@ -645,7 +645,7 @@ JetBrains IDEs are incredibly powerful. Leverage their features:
 - IDE inspection results
 
 ✅ **Maintain:**
-- PARA methodology throughout
+- Pret methodology throughout
 - Persistent context in context/ directory
 - Clear plans and summaries
 - Human review before execution

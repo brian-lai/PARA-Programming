@@ -220,7 +220,7 @@ Codex pauses and requests human validation:
 - **Auditability:** Every change is tracked with clear intent
 - **Rollback:** Easy to revert individual changes if needed
 - **Collaboration:** Clear history helps team members understand evolution
-- **Context preservation:** Git history complements PARA summaries
+- **Context preservation:** Git history complements Pret summaries
 
 **Example workflow:**
 ```bash
@@ -638,17 +638,17 @@ By separating workflow methodology (global) from project context (local), we ach
 
 ---
 
-## 🤖 Tool Output Guidance: Presenting PARA-Programming
+## 🤖 Tool Output Guidance: Presenting Pret-a-Program
 
-This section instructs Codex and other agentic tools on how to present PARA-Programming methodology to users in a helpful, consistent way.
+This section instructs Codex and other agentic tools on how to present Pret-a-Program methodology to users in a helpful, consistent way.
 
 ### When to Proactively Show Guidance
 
-Show PARA-Programming guidance in these situations:
-1. **After Initialization** - When PARA structure is newly created
-2. **User Asks for Help** - When user asks about PARA workflow
+Show Pret-a-Program guidance in these situations:
+1. **After Initialization** - When Pret structure is newly created
+2. **User Asks for Help** - When user asks about Pret workflow
 3. **User Seems Uncertain** - When user appears unsure about methodology
-4. **First Interaction** - If user mentions PARA but hasn't used it yet
+4. **First Interaction** - If user mentions Pret but hasn't used it yet
 5. **After Archiving** - Brief reminder of next steps
 
 ### Standard Output Format for Agentic Tools
@@ -656,7 +656,7 @@ Show PARA-Programming guidance in these situations:
 #### For Initial Setup (Comprehensive)
 
 \`\`\`markdown
-## ✅ PARA-Programming Structure Initialized
+## ✅ Pret-a-Program Structure Initialized
 
 ### Directory Structure
 \`\`\`
@@ -673,14 +673,14 @@ context/
 
 **Workflow:** Plan → Review → Execute → Summarize → Archive
 
-| Use PARA For | Skip PARA For |
+| Use Pret For | Skip Pret For |
 |--------------|---------------|
 | Code changes, features, bug fixes | Simple queries |
 | Architecture decisions | Code navigation |
 | Refactoring, optimizations | Explanations |
 | Complex debugging | Quick lookups |
 
-**Rule of thumb:** If it results in git changes, use PARA workflow.
+**Rule of thumb:** If it results in git changes, use Pret workflow.
 
 ### 🚀 Next Steps
 1. Describe your task
@@ -701,11 +701,11 @@ Ready to start! What would you like to build?
 #### For General Guidance (Compact)
 
 \`\`\`markdown
-## 📋 PARA Workflow
+## 📋 Pret Workflow
 
 **Flow:** Plan → Review → Execute → Summarize → Archive
 
-**Use PARA for code changes** | **Skip for questions/explanations**
+**Use Pret for code changes** | **Skip for questions/explanations**
 
 **Next:** Describe your task and I'll create a plan!
 \`\`\`
@@ -753,11 +753,11 @@ Ready to start! What would you like to build?
 
 ### Example Interactions
 
-#### Example 1: User Asks About PARA
+#### Example 1: User Asks About Pret
 \`\`\`
-User: "How does PARA work with Codex?"
+User: "How does Pret work with Codex?"
 
-Codex: PARA-Programming with agentic tools like me works like this:
+Codex: Pret-a-Program with agentic tools like me works like this:
 
 **Plan** → I create a detailed implementation plan
 **Review** → You approve the approach
@@ -811,7 +811,7 @@ Running tests...
 Implementation complete! Creating summary...
 \`\`\`
 
-#### Example 4: Simple Question (No PARA)
+#### Example 4: Simple Question (No Pret)
 \`\`\`
 User: "What does the UserService do?"
 
@@ -827,7 +827,7 @@ Key methods:
 - update(id, data): Updates user info
 - delete(id): Soft deletes user
 
-[No PARA workflow - this is informational]
+[No Pret workflow - this is informational]
 \`\`\`
 
 ### MCP Integration Notes
@@ -857,7 +857,7 @@ Codex: "Using context/servers/test-runner.ts to execute full test suite...
 
 ### Summary: Key Points
 
-**Goal:** Enable autonomous, reliable implementation with PARA methodology
+**Goal:** Enable autonomous, reliable implementation with Pret methodology
 
 **Method:**
 1. Detailed planning before execution
@@ -870,5 +870,5 @@ Codex: "Using context/servers/test-runner.ts to execute full test suite...
 
 **Key Strength:** Autonomous execution while maintaining human oversight and full auditability
 
-**Outcome:** Users get reliable, well-documented implementations through agent autonomy within PARA structure
+**Outcome:** Users get reliable, well-documented implementations through agent autonomy within Pret structure
 

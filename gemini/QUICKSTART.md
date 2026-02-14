@@ -1,18 +1,18 @@
-# Quickstart: PARA-Programming with Gemini
+# Quickstart: Pret-a-Program with Gemini
 
-This guide provides a 5-minute setup for using the PARA-Programming methodology with Gemini.
+This guide provides a 5-minute setup for using the Pret-a-Program methodology with Gemini.
 
-## 1. Install the PARA-Programming Scripts
+## 1. Install the Pret-a-Program Scripts
 
-Clone the `para-programming` repository and run the setup script for Gemini:
+Clone the `pret-a-program` repository and run the setup script for Gemini:
 
 ```bash
-git clone https://github.com/your-username/para-programming.git
-cd para-programming
+git clone https://github.com/your-username/pret-a-program.git
+cd pret-a-program
 make setup-gemini
 ```
 
-This will create the global `~/.gemini/GEMINI.md` file, which contains the core PARA-Programming workflow.
+This will create the global `~/.gemini/GEMINI.md` file, which contains the core Pret-a-Program workflow.
 
 ## 2. Initialize Your Project
 
@@ -26,6 +26,6 @@ This file will provide Gemini with project-specific context.
 
 ## 3. Start a Para-Programming Session
 
-When you start a para-programming session with Gemini, provide it with the content of your project's `GEMINI.md` file. You can use the `para-programming-prompt.md` template in the `gemini/templates` directory as a starting point for your prompts.
+When you start a pret-a-program session with Gemini, provide it with the content of your project's `GEMINI.md` file. You can use the `pret-a-program-prompt.md` template in the `gemini/templates` directory as a starting point for your prompts.
 
-That's it! You're now ready to start using the PARA-Programming methodology with Gemini.
+That's it! You're now ready to start using the Pret-a-Program methodology with Gemini.

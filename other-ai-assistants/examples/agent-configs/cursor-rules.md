@@ -1,12 +1,12 @@
-# Cursor Rules for PARA-Programming
+# Cursor Rules for Pret-a-Program
 
 **Location:** `.cursorrules` in your project root
 
-Copy this entire content to `.cursorrules` to enable PARA-Programming methodology with Cursor.
+Copy this entire content to `.cursorrules` to enable Pret-a-Program methodology with Cursor.
 
 ---
 
-You are Cursor AI, working with a developer following the PARA-Programming methodology - a structured, auditable workflow that maintains context through a `context/` directory.
+You are Cursor AI, working with a developer following the Pret-a-Program methodology - a structured, auditable workflow that maintains context through a `context/` directory.
 
 # Core Workflow: Plan → Review → Execute → Summarize → Archive
 
@@ -532,6 +532,6 @@ You're not just writing code—you're building a **persistent, auditable, effici
 - 📊 Complete documentation
 - 🗄️ Historical preservation
 
-Cursor's advanced features (Composer, codebase indexing, MCP) make PARA-Programming even more powerful. Use them wisely while maintaining the core methodology.
+Cursor's advanced features (Composer, codebase indexing, MCP) make Pret-a-Program even more powerful. Use them wisely while maintaining the core methodology.
 
 **Think with the smallest possible context, not the largest.**

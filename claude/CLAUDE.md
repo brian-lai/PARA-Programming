@@ -172,11 +172,11 @@ mv context/context.md context/archives/$(date +%F)-context.md
 
 ---
 
-## ⚠️ CRITICAL: When to Apply PARA Workflow
+## ⚠️ CRITICAL: When to Apply Pret Workflow
 
-**The PARA workflow MUST be strictly followed for all project work. Do NOT skip or shortcut this process for complex projects.**
+**The Pret workflow MUST be strictly followed for all project work. Do NOT skip or shortcut this process for complex projects.**
 
-### ✅ ALWAYS Use PARA Workflow For:
+### ✅ ALWAYS Use Pret Workflow For:
 
 - **All code changes** - Features, bug fixes, refactoring, optimizations
 - **Architecture decisions** - Adding libraries, changing patterns, major refactors
@@ -189,9 +189,9 @@ mv context/context.md context/archives/$(date +%F)-context.md
 - **Performance optimizations** - Requiring measurement and code changes
 - **Security implementations** - Authentication, authorization, encryption
 
-**Rule of thumb:** If it results in git changes to project files, use PARA workflow.
+**Rule of thumb:** If it results in git changes to project files, use Pret workflow.
 
-### ❌ Do NOT Use PARA Workflow For:
+### ❌ Do NOT Use Pret Workflow For:
 
 - **Simple informational queries** - "What does this function do?" "Where is X defined?"
 - **Codebase navigation** - "Show me the authentication logic" "List all API routes"
@@ -200,13 +200,13 @@ mv context/context.md context/archives/$(date +%F)-context.md
 - **Quick lookups** - "What's the current version?" "What dependencies do we have?"
 - **Summary documentation** - Generating docs that describe existing code without changes
 
-**Rule of thumb:** If it's read-only or informational, skip PARA workflow and answer directly.
+**Rule of thumb:** If it's read-only or informational, skip Pret workflow and answer directly.
 
 ### 🤔 Decision Tree
 
 ```
 Is this request asking for code/file changes?
-├─ YES → Use PARA Workflow (Plan → Review → Execute → Summarize → Archive)
+├─ YES → Use Pret Workflow (Plan → Review → Execute → Summarize → Archive)
 └─ NO → Is it asking about this project's code?
     ├─ YES → Provide direct answer with file references
     └─ NO → Provide standard Claude response
@@ -214,33 +214,33 @@ Is this request asking for code/file changes?
 
 ### Examples
 
-**✅ Use PARA Workflow:**
+**✅ Use Pret Workflow:**
 ```
 User: "Add user authentication to the API"
 Claude: I'll create a plan for implementing authentication...
 [Creates context/plans/2025-11-24-user-auth.md]
 ```
 
-**✅ Use PARA Workflow:**
+**✅ Use Pret Workflow:**
 ```
 User: "Fix the memory leak in the WebSocket handler"
 Claude: I'll create a plan to debug and fix this issue...
 [Creates context/plans/2025-11-24-fix-memory-leak.md]
 ```
 
-**❌ Skip PARA Workflow:**
+**❌ Skip Pret Workflow:**
 ```
 User: "Where is the authentication middleware defined?"
 Claude: The authentication middleware is in src/middleware/auth.ts:45-89
 ```
 
-**❌ Skip PARA Workflow:**
+**❌ Skip Pret Workflow:**
 ```
 User: "Explain how the caching system works"
 Claude: The caching system uses Redis for storing frequently accessed data...
 ```
 
-**❌ Skip PARA Workflow:**
+**❌ Skip Pret Workflow:**
 ```
 User: "What's the difference between OAuth and JWT?"
 Claude: OAuth is an authorization framework while JWT is a token format...
@@ -300,7 +300,7 @@ Claude pauses and requests human validation:
 - **Auditability:** Every change is tracked with clear intent
 - **Rollback:** Easy to revert individual changes if needed
 - **Collaboration:** Clear history helps team members understand evolution
-- **Context preservation:** Git history complements PARA summaries
+- **Context preservation:** Git history complements Pret summaries
 
 **Example workflow:**
 ```bash
@@ -761,25 +761,25 @@ By separating workflow methodology (global) from project context (local), we ach
 
 ---
 
-## 🤖 Tool Output Guidance: Presenting PARA-Programming
+## 🤖 Tool Output Guidance: Presenting Pret-a-Program
 
-This section instructs Claude Code (and other AI tools) on how to present PARA-Programming methodology to users in a helpful, consistent way.
+This section instructs Claude Code (and other AI tools) on how to present Pret-a-Program methodology to users in a helpful, consistent way.
 
 ### When to Proactively Show Guidance
 
-Show PARA-Programming guidance in these situations:
+Show Pret-a-Program guidance in these situations:
 
-1. **After Initialization** - Always show comprehensive output after `/para-init`
-2. **User Asks for Help** - When user asks "how do I use PARA?" or similar
+1. **After Initialization** - Always show comprehensive output after `/pret-init`
+2. **User Asks for Help** - When user asks "how do I use Pret?" or similar
 3. **User Seems Uncertain** - When user appears unsure about workflow
-4. **After Archiving** - Brief reminder of next steps after `/para-archive`
-5. **First Interaction** - If user mentions PARA but hasn't used it yet
+4. **After Archiving** - Brief reminder of next steps after `/pret-archive`
+5. **First Interaction** - If user mentions Pret but hasn't used it yet
 
 ### Standard Output Format
 
-When presenting PARA-Programming guidance, use this structure:
+When presenting Pret-a-Program guidance, use this structure:
 
-#### For `/para-init` (Comprehensive Onboarding)
+#### For `/pret-init` (Comprehensive Onboarding)
 
 ```markdown
 ## ✅ Directory Structure Created/Verified
@@ -791,51 +791,51 @@ When presenting PARA-Programming guidance, use this structure:
 ## 📋 Quick Reference
 **Workflow:** Plan → Review → Execute → Summarize → Archive
 
-**Use PARA for:** Code changes, architecture decisions, complex tasks
-**Skip PARA for:** Simple queries, code navigation, explanations
+**Use Pret for:** Code changes, architecture decisions, complex tasks
+**Skip Pret for:** Simple queries, code navigation, explanations
 
-**Rule of thumb:** If it results in git changes, use PARA workflow.
+**Rule of thumb:** If it results in git changes, use Pret workflow.
 
 ## 🚀 Next Steps
-1. Create your first plan: `/para-plan <task-description>`
-2. Check workflow status: `/para-status`
-3. Get help anytime: `/para-help`
+1. Create your first plan: `/pret-plan <task-description>`
+2. Check workflow status: `/pret-status`
+3. Get help anytime: `/pret-help`
 
 ## 📚 Available Commands
-[List all 6 PARA commands with brief descriptions]
+[List all 6 Pret commands with brief descriptions]
 
-Your PARA-Programming environment is ready! 🎉
+Your Pret-a-Program environment is ready! 🎉
 ```
 
 #### For General Guidance (Compact Version)
 
 ```markdown
-## 📋 PARA-Programming Quick Reference
+## 📋 Pret-a-Program Quick Reference
 
 **Workflow:** Plan → Review → Execute → Summarize → Archive
 
-**When to use PARA:**
+**When to use Pret:**
 - ✅ Code changes, features, bug fixes
 - ✅ Architecture decisions
 - ✅ File modifications
 - ✅ Complex debugging
 
-**When to skip PARA:**
+**When to skip Pret:**
 - ❌ Simple queries ("What does X do?")
 - ❌ Code navigation ("Show me X")
 - ❌ Explanations ("How does X work?")
 
 **Commands:**
-- `/para-plan` - Create plan
-- `/para-help` - Full guide
-- `/para-status` - Check state
+- `/pret-plan` - Create plan
+- `/pret-help` - Full guide
+- `/pret-status` - Check state
 
-**Need help?** Run `/para-help` for the complete guide.
+**Need help?** Run `/pret-help` for the complete guide.
 ```
 
 ### Communication Principles
 
-When interacting with users about PARA-Programming:
+When interacting with users about Pret-a-Program:
 
 #### ✅ DO:
 - **Be helpful, not overwhelming** - Show what they need now, not everything at once
@@ -859,7 +859,7 @@ When interacting with users about PARA-Programming:
 
 #### For CLI Tools (Claude Code)
 - Use tree command output format for directory structures
-- Format commands with backticks: `/para-init`
+- Format commands with backticks: `/pret-init`
 - Use markdown tables for comparisons
 - Keep output scannable with clear headers
 
@@ -872,9 +872,9 @@ When interacting with users about PARA-Programming:
 ### Timing and Frequency
 
 **First Time Users:**
-- Show comprehensive guidance after `/para-init`
-- Offer `/para-help` in every response until they use it
-- Provide decision support with `/para-check` reference
+- Show comprehensive guidance after `/pret-init`
+- Offer `/pret-help` in every response until they use it
+- Provide decision support with `/pret-check` reference
 
 **Returning Users:**
 - Compact reminders when needed
@@ -882,23 +882,23 @@ When interacting with users about PARA-Programming:
 - Focus on specific help they request
 
 **All Users:**
-- Always available via `/para-help`
-- Status check via `/para-status`
-- Decision support via `/para-check`
+- Always available via `/pret-help`
+- Status check via `/pret-status`
+- Decision support via `/pret-check`
 
 ### Example Interactions
 
-#### Example 1: User Asks About PARA
+#### Example 1: User Asks About Pret
 ```
-User: "How do I use PARA-Programming?"
-Claude: I'll help you learn PARA-Programming! It's a structured workflow for working with AI assistants. Let me show you the basics:
+User: "How do I use Pret-a-Program?"
+Claude: I'll help you learn Pret-a-Program! It's a structured workflow for working with AI assistants. Let me show you the basics:
 
 [Shows compact version of guidance from above]
 
-For the complete guide, run `/para-help`.
+For the complete guide, run `/pret-help`.
 ```
 
-#### Example 2: After Running `/para-init`
+#### Example 2: After Running `/pret-init`
 ```
 [Claude automatically shows comprehensive onboarding output per template above]
 ```
@@ -907,9 +907,9 @@ For the complete guide, run `/para-help`.
 ```
 User: "Add authentication to the API"
 
-Claude: I'll create a plan for implementing authentication. This requires code changes, so let's follow the PARA workflow.
+Claude: I'll create a plan for implementing authentication. This requires code changes, so let's follow the Pret workflow.
 
-[Claude runs /para-plan internally or prompts user to run it]
+[Claude runs /pret-plan internally or prompts user to run it]
 ```
 
 #### Example 4: User Asks Simple Question
@@ -918,24 +918,24 @@ User: "Where is the authentication middleware defined?"
 
 Claude: The authentication middleware is in src/middleware/auth.ts:45-89.
 
-[No PARA workflow - this is informational only]
+[No Pret workflow - this is informational only]
 ```
 
 ---
 
 ### Summary: Key Points
 
-**Goal:** Make PARA-Programming accessible and intuitive for all users, especially newcomers.
+**Goal:** Make Pret-a-Program accessible and intuitive for all users, especially newcomers.
 
 **Method:**
-1. **Automatic guidance** after `/para-init`
-2. **On-demand help** via `/para-help`
+1. **Automatic guidance** after `/pret-init`
+2. **On-demand help** via `/pret-help`
 3. **Context-aware assistance** based on user familiarity
-4. **Decision support** via `/para-check`
+4. **Decision support** via `/pret-check`
 
 **Tone:** Helpful, encouraging, practical (not overwhelming or academic)
 
 **Format:** Visual, scannable, action-oriented
 
-**Outcome:** Users feel guided and confident using PARA-Programming methodology.
+**Outcome:** Users feel guided and confident using Pret-a-Program methodology.
 

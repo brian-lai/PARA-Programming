@@ -1,15 +1,15 @@
 # Codex CLI Quickstart Guide
 
-**Get up and running with PARA-Programming and Codex CLI in 5 minutes**
+**Get up and running with Pret-a-Program and Codex CLI in 5 minutes**
 
-This guide will take you from zero to your first PARA-Programming session with Codex CLI.
+This guide will take you from zero to your first Pret-a-Program session with Codex CLI.
 
 ---
 
 ## ⚡ Quick Navigation
 
 - **Already have Codex CLI?** → [Skip to Setup](#step-1-install-global-codexmd)
-- **New to PARA?** → [Read Overview First](README.md)
+- **New to Pret?** → [Read Overview First](README.md)
 - **Want examples?** → [See Templates](templates/)
 
 ---
@@ -41,7 +41,7 @@ cp AGENTS.md ~/.codex/AGENTS.md
 ls -la ~/.codex/AGENTS.md
 ```
 
-**What this does:** Tells Codex CLI how to follow the PARA-Programming methodology (Plan → Review → Execute → Summarize → Archive) across all your projects.
+**What this does:** Tells Codex CLI how to follow the Pret-a-Program methodology (Plan → Review → Execute → Summarize → Archive) across all your projects.
 
 **✅ You only need to do this once!** After this, every project will use the same workflow.
 
@@ -100,7 +100,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 cat > context/context.md << 'EOF'
 # Current Work Summary
 
-Ready to start using PARA-Programming with Codex CLI.
+Ready to start using Pret-a-Program with Codex CLI.
 
 ---
 
@@ -145,7 +145,7 @@ cat > AGENTS.md << 'EOF'
 > **Workflow Methodology:** Follow `~/.codex/AGENTS.md`
 
 ## About
-A sample project for testing PARA-Programming with Codex CLI.
+A sample project for testing Pret-a-Program with Codex CLI.
 
 ## Tech Stack
 - Node.js (or your stack)
@@ -184,7 +184,7 @@ codex
 Then in the Codex prompt:
 
 ```
-You: "Following PARA methodology, create a plan for adding a health check endpoint"
+You: "Following Pret methodology, create a plan for adding a health check endpoint"
 
 Codex: "I'll create a plan for adding a health check endpoint.
 
@@ -229,7 +229,7 @@ Creating summary at context/summaries/2025-11-15-health-check-summary.md...
 Summary complete! The /health endpoint is now available at http://localhost:3000/health"
 ```
 
-**🎉 Congratulations!** You just completed your first PARA-Programming workflow with Codex CLI!
+**🎉 Congratulations!** You just completed your first Pret-a-Program workflow with Codex CLI!
 
 ---
 
@@ -244,7 +244,7 @@ Let's break down what Codex did automatically:
 5. **🗄️ Archive** - (Would happen next when you start a new task)
 
 All of this happened because:
-- Codex read `~/.codex/AGENTS.md` and knows to follow the PARA workflow
+- Codex read `~/.codex/AGENTS.md` and knows to follow the Pret workflow
 - Codex read `./AGENTS.md` and understands your project structure
 - Codex maintains the `context/` directory automatically
 
@@ -256,10 +256,10 @@ All of this happened because:
 
 ```
 # Feature development
-"Let's add user authentication following PARA methodology"
+"Let's add user authentication following Pret methodology"
 
 # Bug fixing
-"Fix the memory leak in the WebSocket handler (PARA workflow)"
+"Fix the memory leak in the WebSocket handler (Pret workflow)"
 
 # Refactoring
 "The UserService class is too complex. Let's refactor it."
@@ -285,7 +285,7 @@ Edit `~/.codex/AGENTS.md` to:
 
 ## Common First-Time Issues
 
-### Issue: Codex doesn't follow PARA workflow
+### Issue: Codex doesn't follow Pret workflow
 
 **Check:**
 ```bash
@@ -394,9 +394,9 @@ your-project/
 
 ---
 
-## What Makes Codex CLI Great for PARA?
+## What Makes Codex CLI Great for Pret?
 
-Codex CLI works excellently with PARA-Programming:
+Codex CLI works excellently with Pret-a-Program:
 
 ✅ **Automatic AGENTS.md discovery** - Auto-reads AGENTS.md files
 ✅ **Structured prompting** - Responds well to methodology instructions
@@ -404,7 +404,7 @@ Codex CLI works excellently with PARA-Programming:
 ✅ **OpenAI's powerful models** - Excellent code understanding
 ✅ **CLI workflow** - Perfect for terminal-based developers
 
-**This is why Codex CLI gets ⭐⭐⭐⭐⭐ for PARA compatibility!**
+**This is why Codex CLI gets ⭐⭐⭐⭐⭐ for Pret compatibility!**
 
 ---
 
@@ -412,7 +412,7 @@ Codex CLI works excellently with PARA-Programming:
 
 ### Documentation
 - 📖 [Full Codex CLI Guide](README.md)
-- 📚 [Main PARA-Programming Docs](../README.md)
+- 📚 [Main Pret-a-Program Docs](../README.md)
 - 🎓 [Understanding AGENTS.md](README.md#understanding-the-agentsmd-system)
 
 ### Templates & Examples
@@ -432,7 +432,7 @@ You now have:
 - ✅ Global AGENTS.md defining workflow
 - ✅ Project AGENTS.md defining your project
 - ✅ Context directory structure
-- ✅ Working PARA-Programming setup
+- ✅ Working Pret-a-Program setup
 
 **Start coding with Codex CLI and enjoy:**
 - Consistent, auditable workflows
@@ -440,7 +440,7 @@ You now have:
 - Token-efficient operations
 - Professional documentation automatically generated
 
-**Happy PARA-Programming! 🚀**
+**Happy Pret-a-Program! 🚀**
 
 ---
 

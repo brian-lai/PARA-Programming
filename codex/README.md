@@ -1,14 +1,14 @@
-# PARA-Programming for Codex CLI
+# Pret-a-Program for Codex CLI
 
-**The complete guide to using PARA-Programming methodology with OpenAI's Codex CLI**
+**The complete guide to using Pret-a-Program methodology with OpenAI's Codex CLI**
 
-Codex CLI is OpenAI's command-line interface for code generation and assistance. This guide shows you how to integrate it with PARA-Programming for structured, auditable, and token-efficient development workflows.
+Codex CLI is OpenAI's command-line interface for code generation and assistance. This guide shows you how to integrate it with Pret-a-Program for structured, auditable, and token-efficient development workflows.
 
 ---
 
 ## 📋 Table of Contents
 
-- [Why Codex CLI for PARA-Programming?](#why-codex-cli-for-para-programming)
+- [Why Codex CLI for Pret-a-Program?](#why-codex-cli-for-pret-a-program)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Understanding the AGENTS.md System](#understanding-the-codexmd-system)
@@ -20,9 +20,9 @@ Codex CLI is OpenAI's command-line interface for code generation and assistance.
 
 ---
 
-## Why Codex CLI for PARA-Programming?
+## Why Codex CLI for Pret-a-Program?
 
-Codex CLI earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
+Codex CLI earns a **⭐⭐⭐⭐⭐ Excellent** rating for Pret compatibility:
 
 ### Advantages
 
@@ -38,7 +38,7 @@ Codex CLI earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
 ⚠️ **Configuration Required** - Needs setup to auto-load AGENTS.md files (unlike Claude Code's native support)
 ⚠️ **CLI-Only** - No GUI (though this can be an advantage for automation)
 ⚠️ **API Costs** - Requires OpenAI API key with usage-based pricing
-⚠️ **Manual Workflow Reminder** - May need explicit reminders to follow PARA methodology
+⚠️ **Manual Workflow Reminder** - May need explicit reminders to follow Pret methodology
 
 ### Perfect For
 
@@ -50,7 +50,7 @@ Codex CLI earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
 
 ### The Codex Advantage
 
-Codex CLI works excellently with PARA-Programming:
+Codex CLI works excellently with Pret-a-Program:
 - Automatically discovers and loads `~/.codex/AGENTS.md` on startup
 - Understands the Plan → Review → Execute → Summarize → Archive loop
 - Can create and manage context files when instructed
@@ -147,7 +147,7 @@ echo 'export OPENAI_API_KEY="your-api-key-here"' >> ~/.bashrc
 # or ~/.zshrc for zsh
 ```
 
-### Configure PARA-Programming Integration
+### Configure Pret-a-Program Integration
 
 ```bash
 # Create Codex config directory
@@ -261,12 +261,12 @@ Codex CLI will (with proper configuration):
 1. ✅ Read `~/.codex/AGENTS.md` (global methodology)
 2. ✅ Read `<project>/AGENTS.md` (project context)
 3. ✅ Load `context/context.md` (current work state)
-4. ✅ Understand the PARA workflow
+4. ✅ Understand the Pret workflow
 
 ### Typical Conversation
 
 ```
-You: "Let's add user authentication following PARA methodology"
+You: "Let's add user authentication following Pret methodology"
 
 Codex: "I'll create a plan for adding user authentication.
 Creating context/plans/2025-11-15-user-auth.md...
@@ -314,13 +314,13 @@ Ready for the next task!"
 
 ### Key Workflow Points
 
-**Explicit Reminders:** Unlike Claude Code's native PARA support, you may need to remind Codex to follow the methodology:
+**Explicit Reminders:** Unlike Claude Code's native Pret support, you may need to remind Codex to follow the methodology:
 
 ```
 # Good prompts
-"Following PARA methodology from ~/.codex/AGENTS.md, let's add feature X"
-"Using the PARA workflow, create a plan for refactoring Y"
-"PARA mode: Fix bug Z"
+"Following Pret methodology from ~/.codex/AGENTS.md, let's add feature X"
+"Using the Pret workflow, create a plan for refactoring Y"
+"Pret mode: Fix bug Z"
 ```
 
 **Context Loading:** Ensure Codex has loaded the context files:
@@ -393,18 +393,18 @@ Since Codex may need explicit reminders:
 
 **Start of session:**
 ```
-"Load PARA methodology from ~/.codex/AGENTS.md and project context from ./AGENTS.md.
+"Load Pret methodology from ~/.codex/AGENTS.md and project context from ./AGENTS.md.
 We'll follow the Plan → Review → Execute → Summarize → Archive workflow."
 ```
 
 **For each task:**
 ```
-"Following PARA workflow: [your task description]"
+"Following Pret workflow: [your task description]"
 ```
 
 **If Codex forgets:**
 ```
-"Before implementing, please create a plan in context/plans/ as per PARA methodology"
+"Before implementing, please create a plan in context/plans/ as per Pret methodology"
 ```
 
 ---
@@ -414,7 +414,7 @@ We'll follow the Plan → Review → Execute → Summarize → Archive workflow.
 ### Example 1: Simple Feature Addition
 
 ```
-You: "PARA workflow: Add a /health endpoint to check database connectivity"
+You: "Pret workflow: Add a /health endpoint to check database connectivity"
 
 Codex: "I'll create a plan for adding a health check endpoint.
 
@@ -438,7 +438,7 @@ Health endpoint working at /api/health"
 ### Example 2: Complex Refactoring
 
 ```
-You: "The UserService is too complex. Let's refactor it following PARA methodology"
+You: "The UserService is too complex. Let's refactor it following Pret methodology"
 
 Codex: "I'll analyze UserService and create a refactoring plan.
 
@@ -473,7 +473,7 @@ Summary at context/summaries/2025-11-15-refactor-user-service-summary.md"
 ### Example 3: Using Preprocessing for Data Analysis
 
 ```
-You: "Analyze our API logs from the last week to find slow endpoints (PARA mode)"
+You: "Analyze our API logs from the last week to find slow endpoints (Pret mode)"
 
 Codex: "I'll use a preprocessing script to analyze the logs.
 
@@ -502,14 +502,14 @@ Review the plan?"
 
 ## Troubleshooting
 
-### Codex CLI doesn't follow PARA workflow
+### Codex CLI doesn't follow Pret workflow
 
 **Problem:** Codex implements without creating a plan
 
 **Solution:**
 1. Check that `~/.codex/AGENTS.md` exists and is correct
 2. Verify project `AGENTS.md` references the global file
-3. Be explicit in prompts: "Following PARA methodology from ~/.codex/AGENTS.md, create a plan first"
+3. Be explicit in prompts: "Following Pret methodology from ~/.codex/AGENTS.md, create a plan first"
 4. Check Codex configuration to ensure auto-loading of context files
 
 ### Can't find global AGENTS.md
@@ -523,7 +523,7 @@ ls -la ~/.codex/AGENTS.md
 
 # If not, create it
 mkdir -p ~/.codex
-cp /path/to/PARA-Programming/codex/AGENTS.md ~/.codex/
+cp /path/to/Pret-a-Program/codex/AGENTS.md ~/.codex/
 
 # Explicitly reference in prompt
 "Please read ~/.codex/AGENTS.md for workflow methodology"
@@ -574,7 +574,7 @@ EOF
 
 **Solution:**
 ```
-"Stop. Before implementing, we need to follow PARA methodology:
+"Stop. Before implementing, we need to follow Pret methodology:
 1. Create plan in context/plans/
 2. Get my review
 3. Then implement
@@ -646,7 +646,7 @@ echo "context/archives/*" >> .gitignore
 
 ```bash
 #!/bin/bash
-# scripts/para-archive.sh
+# scripts/pret-archive.sh
 # Archive completed work
 
 DATE=$(date +%F-%H%M)
@@ -680,7 +680,7 @@ echo "✅ Archived to context/archives/${DATE}-context.md"
 
 ```yaml
 # .github/workflows/codex-audit.yml
-name: PARA Context Audit
+name: Pret Context Audit
 
 on: [pull_request]
 
@@ -718,7 +718,7 @@ See the [templates/](templates/) directory for ready-to-use examples:
 
 | Feature | Codex CLI | Claude Code | Cursor | Copilot |
 |---------|-----------|-------------|--------|---------|
-| **PARA Compatibility** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| **Pret Compatibility** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
 | **Auto-read AGENTS.md** | ⚠️ Config needed | ✅ Native | ✅ Native | ⚠️ Limited |
 | **Multi-file edits** | ✅ | ✅ | ✅ | ❌ |
 | **Preprocessing support** | ✅ | ✅ (MCP) | ✅ | ❌ |
@@ -730,7 +730,7 @@ See the [templates/](templates/) directory for ready-to-use examples:
 ## Next Steps
 
 ### Learn More
-- 📖 [Full PARA-Programming Documentation](../README.md)
+- 📖 [Full Pret-a-Program Documentation](../README.md)
 - 🚀 [5-Minute Quickstart Guide](QUICKSTART.md)
 - 📝 [Template Library](templates/)
 
@@ -755,13 +755,13 @@ cp templates/basic-AGENTS.md ./AGENTS.md
 
 # Start working
 codex
-# Explicitly mention PARA methodology in prompts if needed
+# Explicitly mention Pret methodology in prompts if needed
 ```
 
-**The PARA Advantage with Codex CLI:**
+**The Pret Advantage with Codex CLI:**
 - ✅ Powerful OpenAI models for code understanding
 - ✅ Flexible configuration options
 - ✅ Excellent for complex, multi-file projects
 - ✅ Works great with explicit workflow reminders
 
-**Happy PARA-Programming with Codex CLI! 🚀**
+**Happy Pret-a-Program with Codex CLI! 🚀**

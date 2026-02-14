@@ -1,14 +1,14 @@
-# PARA-Programming for Claude Code
+# Pret-a-Program for Claude Code
 
-**The complete guide to using PARA-Programming methodology with Claude Code CLI**
+**The complete guide to using Pret-a-Program methodology with Claude Code CLI**
 
-Claude Code is Anthropic's official CLI tool that provides the most integrated PARA-Programming experience. It's designed from the ground up to work with structured context, persistent memory, and the global/local CLAUDE.md file system.
+Claude Code is Anthropic's official CLI tool that provides the most integrated Pret-a-Program experience. It's designed from the ground up to work with structured context, persistent memory, and the global/local CLAUDE.md file system.
 
 ---
 
 ## 📋 Table of Contents
 
-- [Why Claude Code for PARA-Programming?](#why-claude-code-for-para-programming)
+- [Why Claude Code for Pret-a-Program?](#why-claude-code-for-pret-a-program)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Understanding the CLAUDE.md System](#understanding-the-claudemd-system)
@@ -20,9 +20,9 @@ Claude Code is Anthropic's official CLI tool that provides the most integrated P
 
 ---
 
-## Why Claude Code for PARA-Programming?
+## Why Claude Code for Pret-a-Program?
 
-Claude Code earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
+Claude Code earns a **⭐⭐⭐⭐⭐ Excellent** rating for Pret compatibility:
 
 ### Advantages
 
@@ -49,7 +49,7 @@ Claude Code earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
 
 ### The Claude Advantage
 
-Claude Code is **PARA-native**:
+Claude Code is **Pret-native**:
 - Automatically loads and follows `~/.claude/CLAUDE.md`
 - Understands the Plan → Review → Execute → Summarize → Archive loop
 - Can create and manage context files without explicit instruction
@@ -71,8 +71,8 @@ Claude Code is **PARA-native**:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/para-programming/para-programming.git
-cd para-programming
+git clone https://github.com/pret-a-program/pret-a-program.git
+cd pret-a-program
 
 # 2. Create symlink to global CLAUDE.md (one-time setup, automatic updates)
 mkdir -p ~/.claude
@@ -81,12 +81,12 @@ ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 # 3. Navigate to your project
 cd your-project/
 
-# 4. Initialize PARA structure
+# 4. Initialize Pret structure
 claude
-/para-init
+/pret-init
 
 # 5. Start building!
-/para-plan "your first task"
+/pret-plan "your first task"
 ```
 
 **Benefits of symlink:**
@@ -182,12 +182,12 @@ Claude Code automatically:
 1. ✅ Reads `~/.claude/CLAUDE.md` (global methodology)
 2. ✅ Reads `<project>/CLAUDE.md` (project context)
 3. ✅ Loads `context/context.md` (current work state)
-4. ✅ Understands the PARA workflow
+4. ✅ Understands the Pret workflow
 
 ### Typical Conversation
 
 ```
-You: "Let's add user authentication following PARA methodology"
+You: "Let's add user authentication following Pret methodology"
 
 Claude: "I'll create a plan for adding user authentication.
 Creating context/plans/2025-11-12-user-auth.md...
@@ -222,7 +222,7 @@ Ready for the next task!"
 
 **With Cursor/Copilot:** You often need to explicitly remind the AI about the workflow
 
-**With Claude Code:** It automatically follows PARA because:
+**With Claude Code:** It automatically follows Pret because:
 - Reads the global CLAUDE.md on startup
 - Knows to create plans before executing
 - Asks for human review automatically
@@ -315,7 +315,7 @@ Health endpoint working at /api/health"
 ### Example 2: Complex Refactoring
 
 ```
-You: "The UserService is too complex. Let's refactor it following PARA methodology"
+You: "The UserService is too complex. Let's refactor it following Pret methodology"
 
 Claude: "I'll analyze UserService and create a refactoring plan.
 
@@ -371,14 +371,14 @@ Review the plan?"
 
 ## Troubleshooting
 
-### Claude Code doesn't follow PARA workflow
+### Claude Code doesn't follow Pret workflow
 
 **Problem:** Claude implements without creating a plan
 
 **Solution:**
 1. Check that `~/.claude/CLAUDE.md` exists and is correct
 2. Verify project `CLAUDE.md` references the global file
-3. Try: "Following the PARA methodology from ~/.claude/CLAUDE.md, create a plan first"
+3. Try: "Following the Pret methodology from ~/.claude/CLAUDE.md, create a plan first"
 
 ### Can't find global CLAUDE.md
 
@@ -391,7 +391,7 @@ ls -la ~/.claude/CLAUDE.md
 
 # If not, create it
 mkdir -p ~/.claude
-cp /path/to/PARA-Programming/claude/CLAUDE.md ~/.claude/
+cp /path/to/Pret-a-Program/claude/CLAUDE.md ~/.claude/
 
 # Restart Claude Code
 ```
@@ -486,7 +486,7 @@ echo "context/archives/*" >> .gitignore
 
 ```yaml
 # .github/workflows/claude-audit.yml
-name: PARA Context Audit
+name: Pret Context Audit
 
 on: [pull_request]
 
@@ -512,7 +512,7 @@ jobs:
 
 ```bash
 #!/bin/bash
-# scripts/para-archive.sh
+# scripts/pret-archive.sh
 # Archive completed work
 
 DATE=$(date +%F-%H%M)
@@ -557,7 +557,7 @@ See the [templates/](templates/) directory for ready-to-use examples:
 ## Next Steps
 
 ### Learn More
-- 📖 [Full PARA-Programming Documentation](../README.md)
+- 📖 [Full Pret-a-Program Documentation](../README.md)
 - 🚀 [5-Minute Quickstart Guide](QUICKSTART.md)
 - 📝 [Template Library](templates/)
 
@@ -582,13 +582,13 @@ cp templates/basic-CLAUDE.md ./CLAUDE.md
 
 # Start working
 claude-code
-# Claude automatically follows PARA methodology!
+# Claude automatically follows Pret methodology!
 ```
 
-**The PARA Advantage with Claude Code:**
+**The Pret Advantage with Claude Code:**
 - ✅ Zero configuration per-project (after global setup)
 - ✅ Automatic workflow following
 - ✅ Full MCP support for token efficiency
 - ✅ Perfect for complex, multi-file projects
 
-**Happy PARA-Programming with Claude Code! 🚀**
+**Happy Pret-a-Program with Claude Code! 🚀**

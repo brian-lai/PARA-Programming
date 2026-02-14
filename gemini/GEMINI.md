@@ -2,7 +2,7 @@
 
 This file provides guidance to Gemini when working with code in this repository.
 
-> **Workflow Methodology:** This repository DEFINES the PARA-Programming workflow. Do not follow the global `~/.gemini/GEMINI.md` methodology when working on this project - you are working on the methodology itself.
+> **Workflow Methodology:** This repository DEFINES the Pret-a-Program workflow. Do not follow the global `~/.gemini/GEMINI.md` methodology when working on this project - you are working on the methodology itself.
 
 ---
 
@@ -10,7 +10,7 @@ This file provides guidance to Gemini when working with code in this repository.
 
 | Property | Value |
 |----------|-------|
-| **Purpose** | Documentation and templates for PARA-Programming methodology |
+| **Purpose** | Documentation and templates for Pret-a-Program methodology |
 | **Type** | Documentation repository (no runtime code) |
 | **Primary Format** | Markdown |
 | **Target Audience** | Developers using AI coding assistants (Gemini, Claude, Copilot, Cursor, etc.) |
@@ -19,21 +19,21 @@ This file provides guidance to Gemini when working with code in this repository.
 
 ## 🎯 What This Project Does
 
-PARA-Programming is a methodology for AI-assisted software development that combines:
+Pret-a-Program is a methodology for AI-assisted software development that combines:
 - **PARA Method** organizational principles (Projects, Areas, Resources, Archives)
 - **Pair Programming** collaborative approach adapted for human-AI collaboration
 - **Structured context management** via `context/` directories
 - **Token efficiency** through MCP (Model Context Protocol) integration
 - **Persistent memory** across development sessions
 
-This repository contains the official documentation, setup guides, templates, and examples for implementing PARA-Programming with various AI assistants.
+This repository contains the official documentation, setup guides, templates, and examples for implementing Pret-a-Program with various AI assistants.
 
 ---
 
 ## 📂 Repository Structure
 
 ```
-para-programming/
+pret-a-program/
 ├── README.md                    # Main overview and complete documentation
 ├── SETUP-GUIDE.md              # Quick setup reference for different AI assistants
 │
@@ -74,7 +74,7 @@ para-programming/
 ## 🛠 Key Documentation Files
 
 ### Core Documentation
-- **README.md**: The complete PARA-Programming guide
+- **README.md**: The complete Pret-a-Program guide
 - **SETUP-GUIDE.md**: Quick reference for initial setup
 
 ### Platform-Specific Guides
@@ -87,7 +87,7 @@ Each AI assistant has its own directory with:
 
 ### Global Methodology File
 
-- **gemini/GEMINI.md**: The source of truth for PARA workflow
+- **gemini/GEMINI.md**: The source of truth for Pret workflow
   - Users copy this to `~/.gemini/GEMINI.md`
   - Defines the five-step workflow (Plan → Review → Execute → Summarize → Archive)
   - Token efficiency strategies
@@ -127,7 +127,7 @@ Each AI assistant has its own directory with:
 
 ## 🧩 Terminology & Concepts
 
-### PARA-Programming Concepts
+### Pret-a-Program Concepts
 
 | Term | Definition |
 |------|----------|
@@ -164,7 +164,7 @@ Each AI assistant has its own directory with:
 This is a **documentation repository**. It should not contain runtime code.
 
 ### Don't Fragment the Methodology
-The core PARA workflow must stay consistent.
+The core Pret workflow must stay consistent.
 
 ---
 
@@ -177,7 +177,7 @@ A good documentation change:
 - ✅ Is easy to scan and navigate
 - ✅ Works when copy-pasted (for code/command examples)
 - ✅ Improves clarity without adding unnecessary length
-- ✅ Aligns with PARA-Programming terminology and principles
+- ✅ Aligns with Pret-a-Program terminology and principles
 
 ---
 
