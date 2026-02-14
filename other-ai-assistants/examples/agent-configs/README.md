@@ -1,6 +1,6 @@
 # Agent Configuration Examples
 
-This directory contains ready-to-use configuration files for implementing PARA-Programming methodology across different AI coding assistants and IDEs.
+This directory contains ready-to-use configuration files for implementing Pret-a-Program methodology across different AI coding assistants and IDEs.
 
 ## 📁 Available Configurations
 
@@ -51,7 +51,7 @@ mkdir -p .idea
 cp jetbrains-ai-instructions.md .idea/ai-instructions.md
 ```
 
-### 3. Initialize PARA Structure
+### 3. Initialize Pret Structure
 
 ```bash
 # Create context directory
@@ -61,7 +61,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 cat > context/context.md << 'EOF'
 # Current Work Summary
 
-Ready to start PARA-Programming workflow.
+Ready to start Pret-a-Program workflow.
 
 ---
 
@@ -95,7 +95,7 @@ cat > CLAUDE.md << 'EOF'
 ## Structure
 - `src/` - Source code
 - `tests/` - Test files
-- `context/` - PARA-Programming context files
+- `context/` - Pret-a-Program context files
 
 ## Getting Started
 ```bash
@@ -128,7 +128,7 @@ If your AI follows this workflow, you're all set! 🎉
 
 All configurations include:
 
-### Core PARA Workflow
+### Core Pret Workflow
 1. **Plan Phase** - Creating structured plans before coding
 2. **Review Phase** - Human approval gate
 3. **Execute Phase** - Implementation with minimal context
@@ -290,7 +290,7 @@ Mention plugin results in summaries.
 **Problem:** Agent ignores instructions and implements directly
 
 **Solutions:**
-1. Be explicit in prompts: "Following PARA methodology, create a plan first"
+1. Be explicit in prompts: "Following Pret methodology, create a plan first"
 2. Check configuration file is in correct location
 3. Try: "Read the agent instructions and confirm you'll follow them"
 
@@ -325,7 +325,7 @@ Mention plugin results in summaries.
 
 ### Main Documentation
 - [AGENT-INSTRUCTIONS.md](../../AGENT-INSTRUCTIONS.md) - Universal agent guide
-- [README.md](../../../README.md) - Full PARA-Programming documentation
+- [README.md](../../../README.md) - Full Pret-a-Program documentation
 - [claude/CLAUDE.md](../../../claude/CLAUDE.md) - Global methodology template
 
 ### Templates

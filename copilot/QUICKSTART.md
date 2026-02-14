@@ -1,6 +1,6 @@
-# GitHub Copilot + PARA-Programming Quick Start
+# GitHub Copilot + Pret-a-Program Quick Start
 
-**Get started with PARA-Programming in GitHub Copilot in under 10 minutes**
+**Get started with Pret-a-Program in GitHub Copilot in under 10 minutes**
 
 ---
 
@@ -28,19 +28,19 @@ In your project directory:
 # Navigate to project
 cd your-project/
 
-# Create PARA structure
+# Create Pret structure
 mkdir -p context/{data,plans,summaries,archives,servers}
 mkdir -p .github
 
 # Download Copilot instructions
 curl -o .github/copilot-instructions.md \
-  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/copilot/copilot-instructions.md
+  https://raw.githubusercontent.com/brian-lai/Pret-a-Program/main/copilot/copilot-instructions.md
 
 # Initialize context
 cat > context/context.md << 'EOF'
 # Current Work Summary
 
-Ready to start PARA-Programming with GitHub Copilot.
+Ready to start Pret-a-Program with GitHub Copilot.
 
 ---
 
@@ -105,9 +105,9 @@ code .  # VSCode
 **Test:**
 
 ```
-You: "Are you following PARA-Programming methodology?"
+You: "Are you following Pret-a-Program methodology?"
 
-Copilot: "Yes! I'm following PARA-Programming from .github/copilot-instructions.md.
+Copilot: "Yes! I'm following Pret-a-Program from .github/copilot-instructions.md.
 I'll create plans before implementing, wait for approval, and work file-by-file.
 Ready to start?"
 ```
@@ -374,7 +374,7 @@ You: "Fill out the plan template for adding OAuth"
 **Fix:**
 1. Verify file exists: `ls .github/copilot-instructions.md`
 2. Restart VSCode
-3. Be explicit: "Following PARA methodology, create a plan..."
+3. Be explicit: "Following Pret methodology, create a plan..."
 
 ### "Copilot starts coding before I approve plan"
 
@@ -513,9 +513,9 @@ You: "Great work!"
 ### Share with Team
 
 ```bash
-# Commit PARA structure
+# Commit Pret structure
 git add .github/copilot-instructions.md context/ CLAUDE.md
-git commit -m "Add PARA-Programming for GitHub Copilot"
+git commit -m "Add Pret-a-Program for GitHub Copilot"
 git push
 
 # Now whole team uses same methodology!
@@ -538,7 +538,7 @@ git push
 
 ---
 
-**Ready to build better software with GitHub Copilot + PARA-Programming! 🚀**
+**Ready to build better software with GitHub Copilot + Pret-a-Program! 🚀**
 
 ---
 

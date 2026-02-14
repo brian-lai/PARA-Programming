@@ -1,14 +1,14 @@
-# PARA-Programming for GitHub Copilot
+# Pret-a-Program for GitHub Copilot
 
-**The complete guide to using PARA-Programming methodology with GitHub Copilot**
+**The complete guide to using Pret-a-Program methodology with GitHub Copilot**
 
-GitHub Copilot is widely available and integrates seamlessly with VSCode, JetBrains IDEs, and other editors. While it has different capabilities than Cursor, it works excellently with PARA-Programming when you understand its strengths and work within its constraints.
+GitHub Copilot is widely available and integrates seamlessly with VSCode, JetBrains IDEs, and other editors. While it has different capabilities than Cursor, it works excellently with Pret-a-Program when you understand its strengths and work within its constraints.
 
 ---
 
 ## 📋 Table of Contents
 
-- [Why GitHub Copilot for PARA-Programming?](#why-github-copilot-for-para-programming)
+- [Why GitHub Copilot for Pret-a-Program?](#why-github-copilot-for-pret-a-program)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Copilot-Specific Features](#copilot-specific-features)
@@ -20,9 +20,9 @@ GitHub Copilot is widely available and integrates seamlessly with VSCode, JetBra
 
 ---
 
-## Why GitHub Copilot for PARA-Programming?
+## Why GitHub Copilot for Pret-a-Program?
 
-GitHub Copilot earns a **⭐⭐⭐ Good** rating for PARA compatibility:
+GitHub Copilot earns a **⭐⭐⭐ Good** rating for Pret compatibility:
 
 ### Advantages
 
@@ -49,12 +49,12 @@ GitHub Copilot earns a **⭐⭐⭐ Good** rating for PARA compatibility:
 
 ### Working Within Constraints
 
-PARA-Programming adapts to Copilot's strengths:
+Pret-a-Program adapts to Copilot's strengths:
 - **Human does more orchestration** - You manage the workflow
 - **Sequential file editing** - One file at a time, planned order
 - **Chat for planning** - Copilot Chat creates plans and summaries
 - **Inline for implementation** - Use suggestions for coding
-- **Still maintains audit trail** - Full PARA workflow preserved
+- **Still maintains audit trail** - Full Pret workflow preserved
 
 ---
 
@@ -66,19 +66,19 @@ PARA-Programming adapts to Copilot's strengths:
 # 1. Navigate to your project
 cd your-project/
 
-# 2. Create PARA structure
+# 2. Create Pret structure
 mkdir -p context/{data,plans,summaries,archives,servers}
 
 # 3. Create .github directory and instructions
 mkdir -p .github
 curl -o .github/copilot-instructions.md \
-  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/copilot/copilot-instructions.md
+  https://raw.githubusercontent.com/brian-lai/Pret-a-Program/main/copilot/copilot-instructions.md
 
 # 4. Initialize context
 cat > context/context.md << 'EOF'
 # Current Work Summary
 
-Ready to start PARA-Programming with GitHub Copilot.
+Ready to start Pret-a-Program with GitHub Copilot.
 
 ---
 
@@ -117,7 +117,7 @@ Open VSCode and try Copilot Chat:
 ```
 You: "@workspace Create a plan for adding a health check endpoint"
 
-Copilot: "I'll create a plan following PARA methodology.
+Copilot: "I'll create a plan following Pret methodology.
 Creating context/plans/health-check.md..."
 
 [Copilot creates plan]
@@ -201,7 +201,7 @@ Open Copilot Chat and test:
 ```
 You: "What methodology are you following?"
 
-Copilot: "I'm following PARA-Programming methodology from
+Copilot: "I'm following Pret-a-Program methodology from
 .github/copilot-instructions.md. I'll create plans before implementing,
 wait for your approval, and document all changes in summaries."
 ```
@@ -214,7 +214,7 @@ wait for your approval, and document all changes in summaries."
 
 **Best for:** Planning, discussion, understanding code
 
-**Using Chat for PARA:**
+**Using Chat for Pret:**
 
 ```
 # Create Plans
@@ -246,7 +246,7 @@ Copilot: [Lists and summarizes completed work]
 
 **Best for:** Implementing code from plans, routine coding
 
-**Using Inline for PARA:**
+**Using Inline for Pret:**
 
 1. **Open plan in split view**
    - Left: `context/plans/task-name.md`
@@ -330,7 +330,7 @@ add OAuth support"
 
 ## Workflow Modes
 
-### Mode 1: Chat-Driven (Recommended for PARA)
+### Mode 1: Chat-Driven (Recommended for Pret)
 
 **Best for:** Planning, complex features, refactoring
 
@@ -892,7 +892,7 @@ Summary complete!"
 
 ### Issue: Copilot doesn't see `.github/copilot-instructions.md`
 
-**Symptoms:** Copilot ignores PARA methodology
+**Symptoms:** Copilot ignores Pret methodology
 
 **Solutions:**
 
@@ -906,7 +906,7 @@ Summary complete!"
 
 3. **Be explicit in prompts:**
    ```
-   "Following PARA methodology from .github/copilot-instructions.md,
+   "Following Pret methodology from .github/copilot-instructions.md,
    create a plan for..."
    ```
 
@@ -1107,7 +1107,7 @@ context/data/coding-patterns.md, implement OAuth"
 Copilot: [Uses established patterns]
 ```
 
-### 4. Test-Driven PARA Development
+### 4. Test-Driven Pret Development
 
 Add testing to every step:
 
@@ -1265,13 +1265,13 @@ Copilot: [Checks each item, reports results]
 
 ### Standardizing Across Team
 
-**Commit PARA structure to git:**
+**Commit Pret structure to git:**
 
 ```bash
 git add .github/copilot-instructions.md
 git add context/
 git add CLAUDE.md
-git commit -m "Add PARA-Programming structure"
+git commit -m "Add Pret-a-Program structure"
 git push
 ```
 
@@ -1286,7 +1286,7 @@ git push
 **In PR description:**
 
 ```markdown
-## PARA Artifacts
+## Pret Artifacts
 
 **Plan:** context/plans/feature-x.md
 **Summary:** context/summaries/feature-x-summary.md
@@ -1325,7 +1325,7 @@ grep -r "API endpoint" context/summaries/
 **Key differences:**
 - No Composer (multi-file editor)
 - Work file-by-file instead
-- Same PARA workflow
+- Same Pret workflow
 - Same context structure
 
 **Migration:**
@@ -1354,7 +1354,7 @@ mv .cursorrules .github/copilot-instructions.md
 - [Copilot Instructions File](copilot-instructions.md) - Copy to `.github/`
 - [Templates](templates/) - Plan and summary templates
 - [Examples](examples/) - Real-world usage
-- [Main PARA Documentation](../README.md) - Full methodology
+- [Main Pret Documentation](../README.md) - Full methodology
 - [GitHub Copilot Docs](https://docs.github.com/en/copilot) - Official docs
 
 ---
@@ -1367,4 +1367,4 @@ mv .cursorrules .github/copilot-instructions.md
 
 ---
 
-**Ready to use GitHub Copilot with PARA-Programming? Start with the [Quick Start](#quick-start)!** 🚀
+**Ready to use GitHub Copilot with Pret-a-Program? Start with the [Quick Start](#quick-start)!** 🚀

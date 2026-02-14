@@ -1,14 +1,14 @@
-# PARA-Programming for Cursor
+# Pret-a-Program for Cursor
 
-**The complete guide to using PARA-Programming methodology with Cursor IDE**
+**The complete guide to using Pret-a-Program methodology with Cursor IDE**
 
-Cursor is one of the best IDEs for PARA-Programming due to its powerful multi-file editing (Composer), MCP support, and intelligent codebase understanding. This guide shows you how to leverage Cursor's unique features while maintaining the PARA methodology.
+Cursor is one of the best IDEs for Pret-a-Program due to its powerful multi-file editing (Composer), MCP support, and intelligent codebase understanding. This guide shows you how to leverage Cursor's unique features while maintaining the Pret methodology.
 
 ---
 
 ## 📋 Table of Contents
 
-- [Why Cursor for PARA-Programming?](#why-cursor-for-para-programming)
+- [Why Cursor for Pret-a-Program?](#why-cursor-for-pret-a-program)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Cursor-Specific Features](#cursor-specific-features)
@@ -20,9 +20,9 @@ Cursor is one of the best IDEs for PARA-Programming due to its powerful multi-fi
 
 ---
 
-## Why Cursor for PARA-Programming?
+## Why Cursor for Pret-a-Program?
 
-Cursor earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
+Cursor earns a **⭐⭐⭐⭐⭐ Excellent** rating for Pret compatibility:
 
 ### Advantages
 
@@ -51,18 +51,18 @@ Cursor earns a **⭐⭐⭐⭐⭐ Excellent** rating for PARA compatibility:
 # 1. Navigate to your project
 cd your-project/
 
-# 2. Create PARA structure
+# 2. Create Pret structure
 mkdir -p context/{data,plans,summaries,archives,servers}
 
 # 3. Copy Cursor rules
 curl -o .cursorrules \
-  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/cursorrules
+  https://raw.githubusercontent.com/brian-lai/Pret-a-Program/main/cursor/cursorrules
 
 # 4. Initialize context
 cat > context/context.md << 'EOF'
 # Current Work Summary
 
-Ready to start PARA-Programming with Cursor.
+Ready to start Pret-a-Program with Cursor.
 
 ---
 
@@ -79,7 +79,7 @@ EOF
 cat > CLAUDE.md << 'EOF'
 # [Your Project Name]
 
-> **Workflow Methodology:** Follow `.cursorrules` for PARA-Programming
+> **Workflow Methodology:** Follow `.cursorrules` for Pret-a-Program
 
 ## About
 [Your project description]
@@ -104,7 +104,7 @@ Open Cursor and try:
 ```
 You: "Create a plan for adding a dark mode toggle"
 
-Cursor: "I'll create a plan following PARA methodology.
+Cursor: "I'll create a plan following Pret methodology.
 Creating context/plans/dark-mode.md..."
 
 [Cursor creates detailed plan]
@@ -130,8 +130,8 @@ Download from [cursor.sh](https://cursor.sh)
 ### Step 2: Clone or Download This Repository
 
 ```bash
-git clone https://github.com/brian-lai/PARA-Programming.git
-cd PARA-Programming
+git clone https://github.com/brian-lai/Pret-a-Program.git
+cd Pret-a-Program
 ```
 
 ### Step 3: Copy Cursor Rules to Your Project
@@ -144,7 +144,7 @@ cp cursor/cursorrules /path/to/your-project/.cursorrules
 ln -s $(pwd)/cursor/cursorrules /path/to/your-project/.cursorrules
 ```
 
-### Step 4: Initialize PARA Structure
+### Step 4: Initialize Pret Structure
 
 In your project directory:
 
@@ -165,9 +165,9 @@ cursor CLAUDE.md
 Open Cursor in your project and test:
 
 ```
-You: "Are you following PARA-Programming methodology?"
+You: "Are you following Pret-a-Program methodology?"
 
-Cursor: "Yes! I'm following the PARA-Programming methodology from .cursorrules.
+Cursor: "Yes! I'm following the Pret-a-Program methodology from .cursorrules.
 I'll use the Plan → Review → Execute → Summarize → Archive workflow for all
 non-trivial tasks. Would you like to start with a planning task?"
 ```
@@ -180,7 +180,7 @@ non-trivial tasks. Would you like to start with a planning task?"
 
 **Best for:** Multi-file implementations, complex refactoring, feature additions
 
-**How PARA works with Composer:**
+**How Pret works with Composer:**
 
 ```
 1. Create plan in context/plans/ (using Chat)
@@ -215,7 +215,7 @@ Should I create the summary now?"
 
 **Best for:** Single-file edits, quick refactoring, inline improvements
 
-**How PARA works with CMD+K:**
+**How Pret works with CMD+K:**
 
 ```
 1. Skip planning for trivial edits
@@ -247,7 +247,7 @@ Apply changes?"
 
 **Best for:** Planning, discussions, understanding code, creating summaries
 
-**How PARA works with Chat:**
+**How Pret works with Chat:**
 
 ```
 1. Use Chat for Plan creation
@@ -311,7 +311,7 @@ You: "@src Looking at everything, maybe add dark mode?"
 Cursor: [Loads massive context unnecessarily]
 ```
 
-**PARA Approach:**
+**Pret Approach:**
 ```
 You: "Search for hardcoded colors and summarize findings in
 context/data/hardcoded-colors.md"
@@ -416,12 +416,12 @@ Cursor: [Documents what was done]
 - Fixing a specific bug
 - Adding tests to one file
 
-**Skip PARA workflow** for:
+**Skip Pret workflow** for:
 - Trivial changes (< 10 lines)
 - Obvious fixes
 - Formatting
 
-**Use PARA workflow** for:
+**Use Pret workflow** for:
 - Complex refactoring (even in one file)
 - Logic changes
 - Anything with edge cases
@@ -912,13 +912,13 @@ Summary complete!"
 
 3. **Be explicit in prompts:**
    ```
-   "Following PARA methodology from .cursorrules, create a plan first"
+   "Following Pret methodology from .cursorrules, create a plan first"
    ```
 
 4. **Check if rules are loaded:**
    ```
    You: "What methodology are you following?"
-   Cursor: "I'm following PARA-Programming from .cursorrules..."
+   Cursor: "I'm following Pret-a-Program from .cursorrules..."
    ```
 
 ### Issue: Composer edits too many files
@@ -1111,35 +1111,35 @@ Add to `.cursorrules`:
 ## Custom Commands
 
 When the user types:
-- `/para-plan [task]` - Create a plan for the task
+- `/pret-plan [task]` - Create a plan for the task
 - `/para-implement` - Open Composer with current plan
-- `/para-summarize` - Create summary of recent changes
-- `/para-archive` - Archive current context and start fresh
+- `/pret-summarize` - Create summary of recent changes
+- `/pret-archive` - Archive current context and start fresh
 ```
 
 **Usage:**
 
 ```
-You: "/para-plan Add OAuth authentication"
+You: "/pret-plan Add OAuth authentication"
 Cursor: [Creates plan in context/plans/]
 
 You: "/para-implement"
 Cursor: [Opens Composer with plan loaded]
 
-You: "/para-summarize"
+You: "/pret-summarize"
 Cursor: [Creates summary]
 ```
 
 ### 3. Multi-Developer Workflows
 
-**Scenario:** Team of 3 developers, all using Cursor with PARA
+**Scenario:** Team of 3 developers, all using Cursor with Pret
 
 **Setup:**
 
 ```bash
-# Commit PARA structure to git
+# Commit Pret structure to git
 git add .cursorrules context/ CLAUDE.md
-git commit -m "Add PARA-Programming structure"
+git commit -m "Add Pret-a-Program structure"
 git push
 
 # Each developer clones and gets:
@@ -1252,7 +1252,7 @@ All documentation updated!"
 
 1. **Install Cursor** - Download from [cursor.sh](https://cursor.sh)
 2. **Copy `.cursorrules`** - [Get the file](cursorrules)
-3. **Initialize PARA structure** - Use templates
+3. **Initialize Pret structure** - Use templates
 4. **Try a simple task** - Create your first plan
 5. **Use Composer** - Experience multi-file magic
 6. **Create MCP servers** - Add preprocessing (optional)
@@ -1265,7 +1265,7 @@ All documentation updated!"
 - [Cursor Rules File](cursorrules) - Copy this to `.cursorrules`
 - [Templates](templates/) - Plan and summary templates
 - [Examples](examples/) - Real-world usage examples
-- [Main PARA Documentation](../README.md) - Full methodology
+- [Main Pret Documentation](../README.md) - Full methodology
 - [Cursor Documentation](https://cursor.sh/docs) - Official Cursor docs
 
 ---
@@ -1278,4 +1278,4 @@ All documentation updated!"
 
 ---
 
-**Ready to supercharge your development with Cursor + PARA? Start with the [Quick Start](#quick-start)!** 🚀
+**Ready to supercharge your development with Cursor + Pret? Start with the [Quick Start](#quick-start)!** 🚀

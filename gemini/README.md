@@ -1,14 +1,14 @@
-# PARA-Programming with Gemini
+# Pret-a-Program with Gemini
 
-This guide explains how to use the PARA-Programming methodology with Google's Gemini models.
+This guide explains how to use the Pret-a-Program methodology with Google's Gemini models.
 
 ## Introduction
 
-PARA-Programming is a structured approach to AI-assisted development that helps you maintain context, manage complexity, and collaborate effectively with your AI assistant. This guide focuses on implementing the PARA-Programming workflow using Gemini.
+Pret-a-Program is a structured approach to AI-assisted development that helps you maintain context, manage complexity, and collaborate effectively with your AI assistant. This guide focuses on implementing the Pret-a-Program workflow using Gemini.
 
-## The PARA-Programming Workflow
+## The Pret-a-Program Workflow
 
-The core of PARA-Programming is a five-step workflow:
+The core of Pret-a-Program is a five-step workflow:
 
 1.  **Plan:** Define the task and create a plan.
 2.  **Review:** Share the plan with your AI assistant and refine it.
@@ -18,7 +18,7 @@ The core of PARA-Programming is a five-step workflow:
 
 ## Getting Started
 
-To get started with PARA-Programming with Gemini, you'll need to set up your environment.
+To get started with Pret-a-Program with Gemini, you'll need to set up your environment.
 
 ### Global Setup
 
@@ -38,8 +38,8 @@ To get started with PARA-Programming with Gemini, you'll need to set up your env
 
 2.  Commit the `GEMINI.md` file to your project's version control.
 
-## Using Gemini for PARA-Programming
+## Using Gemini for Pret-a-Program
 
-When you start a para-programming session with Gemini, you should provide it with the content of your project's `GEMINI.md` file. This will give Gemini the context it needs to help you with your task.
+When you start a pret-a-program session with Gemini, you should provide it with the content of your project's `GEMINI.md` file. This will give Gemini the context it needs to help you with your task.
 
-You can use the `para-programming-prompt.md` template in the `gemini/templates` directory as a starting point for your prompts.
+You can use the `pret-a-program-prompt.md` template in the `gemini/templates` directory as a starting point for your prompts.

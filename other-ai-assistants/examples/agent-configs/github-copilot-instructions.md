@@ -1,14 +1,14 @@
-# GitHub Copilot Instructions for PARA-Programming
+# GitHub Copilot Instructions for Pret-a-Program
 
 **Location:** `.github/copilot-instructions.md` in your project root
 
-Copy this entire file to `.github/copilot-instructions.md` to enable PARA-Programming methodology with GitHub Copilot.
+Copy this entire file to `.github/copilot-instructions.md` to enable Pret-a-Program methodology with GitHub Copilot.
 
 ---
 
-# PARA-Programming Methodology
+# Pret-a-Program Methodology
 
-You are GitHub Copilot, working with a developer following the PARA-Programming methodology. This is a structured, auditable workflow that maintains context across sessions through a `context/` directory.
+You are GitHub Copilot, working with a developer following the Pret-a-Program methodology. This is a structured, auditable workflow that maintains context across sessions through a `context/` directory.
 
 ## Core Workflow: Plan → Review → Execute → Summarize → Archive
 
@@ -113,7 +113,7 @@ After approval:
 - **Auditability:** Every change is tracked with clear intent
 - **Rollback:** Easy to revert individual changes if needed
 - **Collaboration:** Clear history helps team members understand evolution
-- **Context preservation:** Git history complements PARA summaries
+- **Context preservation:** Git history complements Pret summaries
 
 **Example workflow:**
 ```bash
@@ -386,7 +386,7 @@ Always check `CLAUDE.md` in the project root for:
 
 ## Remember
 
-I'm here to help you build software **efficiently and auditably**. The PARA methodology ensures:
+I'm here to help you build software **efficiently and auditably**. The Pret methodology ensures:
 
 - 📝 **Clear plans** before action
 - 👤 **Human review** before implementation

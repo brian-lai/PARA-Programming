@@ -1,20 +1,20 @@
 # Claude Code Quickstart Guide
 
-**Get up and running with PARA-Programming and Claude Code in under 5 minutes**
+**Get up and running with Pret-a-Program and Claude Code in under 5 minutes**
 
-This guide will take you from zero to your first PARA-Programming session with Claude Code.
+This guide will take you from zero to your first Pret-a-Program session with Claude Code.
 
 ---
 
 ## 🌟 About This Guide
 
-PARA-Programming is a **methodology** that works with any AI assistant. This guide shows you how to use it with Claude Code—the **recommended platform** for the best experience.
+Pret-a-Program is a **methodology** that works with any AI assistant. This guide shows you how to use it with Claude Code—the **recommended platform** for the best experience.
 
 **Why Claude Code?**
 - ✅ Native CLAUDE.md file support
 - ✅ Full MCP integration for token efficiency
 - ✅ Multi-file operations
-- ✅ Perfect for the PARA workflow
+- ✅ Perfect for the Pret workflow
 
 **Two Setup Options:**
 1. **Skill (Recommended)** - Automated commands, maximum productivity
@@ -26,7 +26,7 @@ PARA-Programming is a **methodology** that works with any AI assistant. This gui
 
 - **Want the fastest setup?** → [Use the Skill](#option-a-automated-installation-fastest) (⭐ Recommended)
 - **Prefer manual control?** → [Manual Setup](#option-c-legacy-method-no-skill)
-- **New to PARA?** → [Read Overview First](README.md)
+- **New to Pret?** → [Read Overview First](README.md)
 - **Want examples?** → [See Templates](templates/)
 
 ---
@@ -42,21 +42,21 @@ Before you begin, make sure you have:
 
 ---
 
-## 🚀 Step 1: Install PARA-Programming
+## 🚀 Step 1: Install Pret-a-Program
 
 ### ⭐ Recommended: Use the Skill (Maximum Automation)
 
-The PARA-Programming skill provides **automated slash commands** that make the methodology easy to use.
+The Pret-a-Program skill provides **automated slash commands** that make the methodology easy to use.
 
 ### Option A: Automated Installation (Fastest)
 
 ```bash
 # Clone the repository
-git clone https://github.com/para-programming/para-programming.git
-cd para-programming
+git clone https://github.com/pret-a-program/pret-a-program.git
+cd pret-a-program
 
 # Run the installation script
-./claude-skill/scripts/install.sh
+./skills/claude-code/scripts/install.sh
 ```
 
 **What this does:**
@@ -66,14 +66,14 @@ cd para-programming
 
 **What this installs:**
 - ✅ Global `CLAUDE.md` methodology file
-- ✅ `/para-init` - Initialize PARA structure in projects
-- ✅ `/para-plan` - Create structured planning documents
-- ✅ `/para-summarize` - Generate summaries automatically
-- ✅ `/para-archive` - Archive completed contexts
-- ✅ `/para-status` - Display current workflow state
-- ✅ `/para-check` - Decision helper for workflow application
+- ✅ `/pret-init` - Initialize Pret structure in projects
+- ✅ `/pret-plan` - Create structured planning documents
+- ✅ `/pret-summarize` - Generate summaries automatically
+- ✅ `/pret-archive` - Archive completed contexts
+- ✅ `/pret-status` - Display current workflow state
+- ✅ `/pret-check` - Decision helper for workflow application
 
-**✅ Done!** Skip to [Step 2](#step-2-navigate-to-your-project) and use `/para-init` instead of manual setup.
+**✅ Done!** Skip to [Step 2](#step-2-navigate-to-your-project) and use `/pret-init` instead of manual setup.
 
 ---
 
@@ -81,7 +81,7 @@ cd para-programming
 
 ```bash
 # Ensure you're in the cloned repo
-cd /path/to/para-programming
+cd /path/to/pret-a-program
 
 # Create directories
 mkdir -p ~/.claude/commands
@@ -90,16 +90,16 @@ mkdir -p ~/.claude/commands
 ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 
 # Copy slash commands
-cp claude-skill/commands/*.md ~/.claude/commands/
+cp skills/claude-code/commands/*.md ~/.claude/commands/
 
 # Verify installation
 ls -la ~/.claude/CLAUDE.md        # Should show symlink
-ls ~/.claude/commands/para-*.md   # Should show 6 commands
+ls ~/.claude/commands/pret-*.md   # Should show 6 commands
 ```
 
 **Symlink benefit:** Automatic updates when you `git pull`!
 
-**✅ Done!** Skip to [Step 2](#step-2-navigate-to-your-project) and use `/para-init` instead of manual setup.
+**✅ Done!** Skip to [Step 2](#step-2-navigate-to-your-project) and use `/pret-init` instead of manual setup.
 
 ---
 
@@ -109,7 +109,7 @@ If you prefer not to use the skill, you can install just the global methodology:
 
 ```bash
 # Ensure you're in the cloned repo
-cd /path/to/para-programming
+cd /path/to/pret-a-program
 
 # Create .claude directory in your home folder
 mkdir -p ~/.claude
@@ -119,10 +119,10 @@ ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 
 # Verify the symlink
 ls -la ~/.claude/CLAUDE.md
-# Should show: ~/.claude/CLAUDE.md -> /path/to/para-programming/CLAUDE.md
+# Should show: ~/.claude/CLAUDE.md -> /path/to/pret-a-program/CLAUDE.md
 ```
 
-**What this does:** Tells Claude Code how to follow the PARA-Programming methodology (Plan → Review → Execute → Summarize → Archive) across all your projects.
+**What this does:** Tells Claude Code how to follow the Pret-a-Program methodology (Plan → Review → Execute → Summarize → Archive) across all your projects.
 
 **✅ You only need to do this once!** After this, every project will use the same workflow.
 
@@ -139,7 +139,7 @@ ls -la ~/.claude/CLAUDE.md
 
 **Our recommendation:** Start with the skill (Option A). It automates the workflow while teaching you the methodology. You can always switch to manual later if you want more control.
 
-**Remember:** The underlying PARA methodology is identical in both approaches—only the automation differs. And the same methodology works across all AI assistants, not just Claude Code!
+**Remember:** The underlying Pret methodology is identical in both approaches—only the automation differs. And the same methodology works across all AI assistants, not just Claude Code!
 
 ---
 
@@ -159,7 +159,7 @@ npm init -y  # or your language's equivalent
 
 ---
 
-## Step 3: Initialize PARA Structure
+## Step 3: Initialize Pret Structure
 
 ### If You Installed the Skill (Recommended)
 
@@ -167,8 +167,8 @@ npm init -y  # or your language's equivalent
 # Start Claude Code
 claude
 
-# Initialize PARA structure with one command
-/para-init
+# Initialize Pret structure with one command
+/pret-init
 ```
 
 **That's it!** The command automatically creates:
@@ -230,7 +230,7 @@ tree context/
 Use the slash commands for a streamlined experience:
 
 ```
-You: "/para-plan add-health-check-endpoint"
+You: "/pret-plan add-health-check-endpoint"
 
 Claude: "I'll create a plan for adding a health check endpoint.
 
@@ -246,7 +246,7 @@ You: "Looks good, proceed"
 
 Claude: [Implements the plan]
 
-You: "/para-summarize"
+You: "/pret-summarize"
 
 Claude: "Analyzing changes and creating summary...
 
@@ -254,19 +254,19 @@ Summary created at context/summaries/2025-11-12-add-health-check-endpoint-summar
 
 All tests passing ✅"
 
-You: "/para-status"
+You: "/pret-status"
 
-Claude: "📊 PARA Status
+Claude: "📊 Pret Status
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ✅ Completed Summaries:
    → context/summaries/2025-11-12-add-health-check-endpoint-summary.md
 
 🎯 Next Action:
-   Run /para-archive to clean up and prepare for next task"
+   Run /pret-archive to clean up and prepare for next task"
 ```
 
-**🎉 That's the skill workflow!** Much faster than manual PARA.
+**🎉 That's the skill workflow!** Much faster than manual Pret.
 
 ---
 
@@ -275,7 +275,7 @@ Claude: "📊 PARA Status
 Try this to verify everything works:
 
 ```
-You: "Following PARA methodology, create a plan for adding a health check endpoint"
+You: "Following Pret methodology, create a plan for adding a health check endpoint"
 
 Claude: "I'll create a plan for adding a health check endpoint.
 
@@ -320,7 +320,7 @@ Creating summary at context/summaries/2025-11-12-health-check-summary.md...
 Summary complete! The /health endpoint is now available at http://localhost:3000/health"
 ```
 
-**🎉 Congratulations!** You just completed your first PARA-Programming workflow with Claude Code!
+**🎉 Congratulations!** You just completed your first Pret-a-Program workflow with Claude Code!
 
 ---
 
@@ -335,7 +335,7 @@ Let's break down what Claude did automatically:
 5. **🗄️ Archive** - (Would happen next when you start a new task)
 
 All of this happened because:
-- Claude read `~/.claude/CLAUDE.md` and knows to follow the PARA workflow
+- Claude read `~/.claude/CLAUDE.md` and knows to follow the Pret workflow
 - Claude read `./CLAUDE.md` and understands your project structure
 - Claude maintains the `context/` directory automatically
 
@@ -347,10 +347,10 @@ All of this happened because:
 
 ```
 # Feature development
-"Let's add user authentication following PARA methodology"
+"Let's add user authentication following Pret methodology"
 
 # Bug fixing
-"Fix the memory leak in the WebSocket handler (PARA workflow)"
+"Fix the memory leak in the WebSocket handler (Pret workflow)"
 
 # Refactoring
 "The UserService class is too complex. Let's refactor it."
@@ -376,7 +376,7 @@ Edit `~/.claude/CLAUDE.md` to:
 
 ## Common First-Time Issues
 
-### Issue: Claude doesn't follow PARA workflow
+### Issue: Claude doesn't follow Pret workflow
 
 **Check:**
 ```bash
@@ -477,28 +477,28 @@ your-project/
 
 ## Why We Recommend Claude Code (But It's Not Required!)
 
-Claude Code offers the best experience for PARA-Programming:
+Claude Code offers the best experience for Pret-a-Program:
 
 ✅ **Automatically reads CLAUDE.md files** - No need to paste or reference
-✅ **Follows PARA workflow natively** - Creates plans/summaries without prompting
+✅ **Follows Pret workflow natively** - Creates plans/summaries without prompting
 ✅ **Full MCP support** - Can use preprocessing tools for token efficiency
 ✅ **Multi-file operations** - Handles complex refactors across many files
 ✅ **Perfect memory** - Maintains project context across sessions
 
-**This is why Claude Code gets ⭐⭐⭐⭐⭐ for PARA compatibility!**
+**This is why Claude Code gets ⭐⭐⭐⭐⭐ for Pret compatibility!**
 
-**However:** The PARA methodology works identically with Cursor (⭐⭐⭐⭐), Copilot (⭐⭐⭐), and any other AI assistant. The workflow is universal—only the automation level differs. Use what fits your workflow!
+**However:** The Pret methodology works identically with Cursor (⭐⭐⭐⭐), Copilot (⭐⭐⭐), and any other AI assistant. The workflow is universal—only the automation level differs. Use what fits your workflow!
 
 ---
 
 ## Learn More
 
 ### Documentation
-- 🚀 [**Claude Code Skill Guide**](../claude-skill/README.md) - Using slash commands
+- 🚀 [**Claude Code Skill Guide**](../skills/claude-code/README.md) - Using slash commands
 - 📖 [Full Claude Code Guide](README.md)
-- 📚 [Main PARA-Programming Docs](../README.md)
+- 📚 [Main Pret-a-Program Docs](../README.md)
 - 🎓 [Understanding CLAUDE.md](README.md#understanding-the-claudemd-system)
-- 🔧 [Skill Installation Guide](../claude-skill/INSTALL.md)
+- 🔧 [Skill Installation Guide](../skills/claude-code/INSTALL.md)
 
 ### Templates & Examples
 - 📝 [Project Templates](templates/)
@@ -517,7 +517,7 @@ You now have:
 - ✅ Global CLAUDE.md defining workflow
 - ✅ Project CLAUDE.md defining your project
 - ✅ Context directory structure
-- ✅ Working PARA-Programming setup
+- ✅ Working Pret-a-Program setup
 
 **Start coding with Claude Code and enjoy:**
 - Consistent, auditable workflows
@@ -525,7 +525,7 @@ You now have:
 - Token-efficient operations
 - Professional documentation automatically generated
 
-**Happy PARA-Programming! 🚀**
+**Happy Pret-a-Program! 🚀**
 
 ---
 
@@ -535,28 +535,28 @@ You now have:
 
 ```bash
 # One-time setup
-./claude-skill/scripts/install.sh
+./skills/claude-code/scripts/install.sh
 
 # Per-project setup
 cd your-project/
 claude
-/para-init
+/pret-init
 
-# Working with PARA
-/para-plan "your task"        # Create plan
+# Working with Pret
+/pret-plan "your task"        # Create plan
 # [Review and approve]
 # [Claude implements]
-/para-summarize               # Generate summary
-/para-archive                 # Clean up
-/para-status                  # Check status anytime
-/para-check "query"           # Should I use PARA for this?
+/pret-summarize               # Generate summary
+/pret-archive                 # Clean up
+/pret-status                  # Check status anytime
+/pret-check "query"           # Should I use Pret for this?
 ```
 
 ### Without Skill (Legacy)
 
 ```bash
 # One-time setup (in cloned repo directory)
-cd /path/to/para-programming
+cd /path/to/pret-a-program
 mkdir -p ~/.claude
 ln -s "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
 

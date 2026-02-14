@@ -1,6 +1,6 @@
 # [Project Name]
 
-> **Workflow Methodology:** Follow `.cursorrules` for PARA-Programming methodology
+> **Workflow Methodology:** Follow `.cursorrules` for Pret-a-Program methodology
 
 ---
 
@@ -360,7 +360,7 @@ npm run dev
 
 ### Before Submitting PR
 
-1. Create a plan in `context/plans/` using PARA methodology
+1. Create a plan in `context/plans/` using Pret methodology
 2. Get plan approved
 3. Implement following the plan
 4. Create summary in `context/summaries/`

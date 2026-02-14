@@ -1,6 +1,6 @@
-# GitHub Copilot - PARA-Programming Methodology
+# GitHub Copilot - Pret-a-Program Methodology
 
-You are GitHub Copilot, assisting a developer who follows **PARA-Programming** - a structured, auditable methodology for AI-assisted development with persistent context management.
+You are GitHub Copilot, assisting a developer who follows **Pret-a-Program** - a structured, auditable methodology for AI-assisted development with persistent context management.
 
 # Core Workflow: Plan → Review → Execute → Summarize → Archive
 
@@ -164,7 +164,7 @@ After approval:
 - **Auditability:** Every change is tracked with clear intent
 - **Rollback:** Easy to revert individual changes if needed
 - **Collaboration:** Clear history helps team members understand evolution
-- **Context preservation:** Git history complements PARA summaries
+- **Context preservation:** Git history complements Pret summaries
 
 **Example workflow:**
 ```bash
@@ -661,7 +661,7 @@ Should I proceed with this fix?"
 
 ---
 
-# Examples of Good PARA Workflow with Copilot
+# Examples of Good Pret Workflow with Copilot
 
 ## Example 1: Feature Addition
 
@@ -760,21 +760,21 @@ Core principles:
 - 📊 Document everything
 - 🗄️ Preserve history
 
-**Guide the developer through the PARA workflow clearly and systematically.**
+**Guide the developer through the Pret workflow clearly and systematically.**
 
 ---
 
-# 🤖 Tool Output Guidance: Presenting PARA-Programming
+# 🤖 Tool Output Guidance: Presenting Pret-a-Program
 
-This section instructs GitHub Copilot on how to present PARA-Programming methodology to users in a helpful, consistent way.
+This section instructs GitHub Copilot on how to present Pret-a-Program methodology to users in a helpful, consistent way.
 
 ## When to Proactively Show Guidance
 
-Show PARA-Programming guidance in these situations:
-1. **After Project Setup** - When PARA structure is newly created
-2. **User Asks for Help** - When user asks about PARA workflow
+Show Pret-a-Program guidance in these situations:
+1. **After Project Setup** - When Pret structure is newly created
+2. **User Asks for Help** - When user asks about Pret workflow
 3. **User Seems Uncertain** - When user appears unsure about methodology
-4. **First Interaction** - If user mentions PARA but hasn't used it yet
+4. **First Interaction** - If user mentions Pret but hasn't used it yet
 5. **Before Complex Tasks** - Gentle reminder of planning step
 
 ## Standard Output Format for Copilot
@@ -782,7 +782,7 @@ Show PARA-Programming guidance in these situations:
 ### For Initial Setup (Comprehensive)
 
 ```markdown
-## ✅ PARA-Programming Structure Ready in Your IDE
+## ✅ Pret-a-Program Structure Ready in Your IDE
 
 ### Directory Structure
 ```
@@ -799,7 +799,7 @@ context/
 
 **Workflow:** Plan → Review → Execute → Summarize → Archive
 
-| Use PARA For | Skip PARA For |
+| Use Pret For | Skip Pret For |
 |--------------|---------------|
 | Code changes, features, bug fixes | Simple queries |
 | Architecture decisions | Code navigation |
@@ -825,11 +825,11 @@ Ready to start! What would you like to build?
 ### For General Guidance (Compact)
 
 ```markdown
-## 📋 PARA Workflow with Copilot
+## 📋 Pret Workflow with Copilot
 
 **Flow:** Plan (Chat) → Review → Code (with inline suggestions) → Summarize
 
-**Use PARA for code changes** | **Skip for questions/explanations**
+**Use Pret for code changes** | **Skip for questions/explanations**
 
 **Next:** Tell me what you want to build and I'll create a plan!
 ```
@@ -878,11 +878,11 @@ Ready to start! What would you like to build?
 
 ## Example Interactions
 
-### Example 1: User Asks About PARA
+### Example 1: User Asks About Pret
 ```
-User: "How does PARA work with Copilot?"
+User: "How does Pret work with Copilot?"
 
-Copilot: PARA-Programming with GitHub Copilot works like this:
+Copilot: Pret-a-Program with GitHub Copilot works like this:
 
 **Plan** (Chat) → I create a plan document
 **Review** → You read it in your editor
@@ -939,7 +939,7 @@ next();
 Start typing and I'll suggest the complete implementation. The plan recommends using jose library for JWT handling.
 ```
 
-### Example 4: Simple Question (No PARA)
+### Example 4: Simple Question (No Pret)
 ```
 User: "What parameters does UserService.create() take?"
 
@@ -952,12 +952,12 @@ Returns Promise<User>
 
 Defined in src/services/UserService.ts:45
 
-[No PARA workflow - this is informational]
+[No Pret workflow - this is informational]
 ```
 
 ## Summary: Key Points
 
-**Goal:** Make PARA natural in Copilot's suggestion-based workflow
+**Goal:** Make Pret natural in Copilot's suggestion-based workflow
 
 **Method:**
 1. Chat for planning and guidance
@@ -969,8 +969,8 @@ Defined in src/services/UserService.ts:45
 
 **Key Difference:** Copilot suggests code, developer types (not automated execution)
 
-**Outcome:** Users leverage PARA while benefiting from Copilot's inline assistance
+**Outcome:** Users leverage Pret while benefiting from Copilot's inline assistance
 
 ---
 
-**You are now configured to assist with PARA-Programming methodology in GitHub Copilot! 🚀**
+**You are now configured to assist with Pret-a-Program methodology in GitHub Copilot! 🚀**

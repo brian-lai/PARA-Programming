@@ -1,8 +1,8 @@
-# Universal Agent Instructions for PARA-Programming
+# Universal Agent Instructions for Pret-a-Program
 
 **A unified methodology for AI-assisted development across all coding assistants and IDEs**
 
-> **Core Principle:** The PARA-Programming workflow remains consistent regardless of which AI agent you use. Only the implementation details change.
+> **Core Principle:** The Pret-a-Program workflow remains consistent regardless of which AI agent you use. Only the implementation details change.
 
 ---
 
@@ -19,7 +19,7 @@
 
 ## Overview
 
-This document provides instructions for implementing PARA-Programming methodology with popular AI coding assistants:
+This document provides instructions for implementing Pret-a-Program methodology with popular AI coding assistants:
 
 - **GitHub Copilot** (VSCode, JetBrains, Neovim)
 - **Cursor** (Standalone IDE)
@@ -29,7 +29,7 @@ This document provides instructions for implementing PARA-Programming methodolog
 - **Amazon CodeWhisperer** (VSCode, JetBrains)
 - **Tabnine** (Multi-IDE)
 
-### Core PARA Principles (Agent-Agnostic)
+### Core Pret Principles (Agent-Agnostic)
 
 These principles apply to **all** agents:
 
@@ -51,13 +51,13 @@ These principles apply to **all** agents:
 | **Custom Instructions** | ✅ | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ |
 | **MCP Support** | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
 | **Chat Interface** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
-| **PARA Compatibility** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐ |
+| **Pret Compatibility** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐ |
 
 **Legend:**
 - ✅ Full support
 - ⚠️ Partial support or workaround needed
 - ❌ Not supported
-- ⭐ = 1-5 star PARA compatibility rating
+- ⭐ = 1-5 star Pret compatibility rating
 
 ---
 
@@ -68,9 +68,9 @@ These principles apply to **all** agents:
 Use this as the foundation for **any** AI coding assistant. Adapt the configuration section for your specific IDE:
 
 ````markdown
-# AI Agent Instructions - PARA-Programming Methodology
+# AI Agent Instructions - Pret-a-Program Methodology
 
-You are an AI coding assistant following the PARA-Programming methodology. Your purpose is to help the developer write code efficiently while maintaining a structured, auditable, and token-efficient workflow.
+You are an AI coding assistant following the Pret-a-Program methodology. Your purpose is to help the developer write code efficiently while maintaining a structured, auditable, and token-efficient workflow.
 
 ## Core Workflow: Plan → Review → Execute → Summarize → Archive
 
@@ -179,7 +179,7 @@ After plan approval:
 - **Auditability:** Every change is tracked with clear intent
 - **Rollback:** Easy to revert individual changes if needed
 - **Collaboration:** Clear history helps team members understand evolution
-- **Context preservation:** Git history complements PARA summaries
+- **Context preservation:** Git history complements Pret summaries
 
 **Example workflow:**
 ```bash
@@ -295,7 +295,7 @@ When the task is completely done:
 
 ## Context Directory Structure
 
-Every project using PARA-Programming should have:
+Every project using Pret-a-Program should have:
 
 ```
 project-root/
@@ -540,7 +540,7 @@ Continue has excellent MCP support. Configuration example:
 
 ```json
 {
-  "customInstructions": "Follow PARA-Programming methodology from AGENT-INSTRUCTIONS.md in project root",
+  "customInstructions": "Follow Pret-a-Program methodology from AGENT-INSTRUCTIONS.md in project root",
   "contextProviders": [
     {
       "name": "code",
@@ -581,9 +581,9 @@ Continue can auto-load context:
 
 ### Slash Commands
 Create custom commands:
-- `/para-plan` - Start a new plan
-- `/para-summarize` - Generate summary
-- `/para-archive` - Archive current context
+- `/pret-plan` - Start a new plan
+- `/pret-summarize` - Generate summary
+- `/pret-archive` - Archive current context
 ```
 
 ---
@@ -611,7 +611,7 @@ Codeium excels at autocomplete:
 
 ### Chat Mode
 When using Codeium Chat:
-- Follow full PARA workflow
+- Follow full Pret workflow
 - Reference context files explicitly
 - Create plans/summaries as normal
 
@@ -691,7 +691,7 @@ Developer: [saves to context/summaries/auth-summary.md]
 3. **Human creates summaries** - You write `context/summaries/[task].md` manually
 4. **Archive together** - You maintain context/context.md
 
-**This is still PARA-Programming!** The principles apply even if the human does more of the orchestration.
+**This is still Pret-a-Program!** The principles apply even if the human does more of the orchestration.
 
 ---
 
@@ -699,7 +699,7 @@ Developer: [saves to context/summaries/auth-summary.md]
 
 ### Using Git Integration
 
-Most IDEs have git integration. Enhance PARA workflow:
+Most IDEs have git integration. Enhance Pret workflow:
 
 **In Plans:**
 ```markdown
@@ -763,7 +763,7 @@ Most IDEs have git integration. Enhance PARA workflow:
 
 ## Quick Start Checklist
 
-To adopt PARA-Programming with your AI agent:
+To adopt Pret-a-Program with your AI agent:
 
 ### One-Time Setup
 - [ ] Choose your AI agent from the list above
@@ -793,7 +793,7 @@ To adopt PARA-Programming with your AI agent:
 ### Example: GitHub Copilot Chat Workflow
 
 ```
-Developer: "@workspace Let's add user authentication. Please create a plan following PARA methodology."
+Developer: "@workspace Let's add user authentication. Please create a plan following Pret methodology."
 
 Copilot: "I'll create a plan for adding user authentication. Let me create context/plans/user-auth.md:
 
@@ -821,7 +821,7 @@ Developer: "Perfect, thanks!"
 ### Example: Cursor Composer Workflow
 
 ```
-Developer: [Opens Composer] "Add user authentication following PARA methodology"
+Developer: [Opens Composer] "Add user authentication following Pret methodology"
 
 Cursor: "I'll start by creating a plan. Creating context/plans/user-auth.md..."
 
@@ -921,7 +921,7 @@ The `context/` directory enables handoffs between agents!
 
 Multiple developers using different agents on same project:
 
-1. Everyone follows PARA methodology
+1. Everyone follows Pret methodology
 2. Context directory is committed to git
 3. Each person uses their preferred agent
 4. Consistency maintained through shared plans/summaries
@@ -936,13 +936,13 @@ For complex tasks:
 4. AI creates summary draft
 5. Human finalizes summary
 
-**This is still PARA!** The workflow adapts to capability boundaries.
+**This is still Pret!** The workflow adapts to capability boundaries.
 
 ---
 
 ## Conclusion
 
-PARA-Programming is **methodology-first, tool-agnostic**. The five-step workflow and context directory structure work with any AI agent:
+Pret-a-Program is **methodology-first, tool-agnostic**. The five-step workflow and context directory structure work with any AI agent:
 
 - **Plan** → Always plan before acting
 - **Review** → Always get human approval
@@ -958,7 +958,7 @@ The specific agent you use affects **how** you implement each step, not **whethe
 
 ## Resources
 
-- [PARA-Programming Main Documentation](../README.md)
+- [Pret-a-Program Main Documentation](../README.md)
 - [Global CLAUDE.md Template](../claude/CLAUDE.md)
 - [Agent Configuration Examples](other-ai-assistants/examples/agent-configs/)
 - [Community Contributions](../../discussions)
@@ -967,11 +967,11 @@ The specific agent you use affects **how** you implement each step, not **whethe
 
 ## Contributing
 
-Have you adapted PARA-Programming for an agent not listed here? Please contribute:
+Have you adapted Pret-a-Program for an agent not listed here? Please contribute:
 
 1. Create example configuration
 2. Document agent-specific features
 3. Add to the compatibility matrix
 4. Share workflows and tips
 
-Help make PARA-Programming work for everyone, regardless of their tool choice!
+Help make Pret-a-Program work for everyone, regardless of their tool choice!

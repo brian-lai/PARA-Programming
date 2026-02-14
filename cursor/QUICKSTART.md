@@ -1,6 +1,6 @@
-# Cursor + PARA-Programming Quick Start
+# Cursor + Pret-a-Program Quick Start
 
-**Get started with PARA-Programming in Cursor in under 10 minutes**
+**Get started with Pret-a-Program in Cursor in under 10 minutes**
 
 ---
 
@@ -22,20 +22,20 @@ In your project directory:
 # Navigate to your project
 cd your-project/
 
-# Create PARA directory structure
+# Create Pret directory structure
 mkdir -p context/{data,plans,summaries,archives,servers}
 
 # Download and copy .cursorrules
 curl -o .cursorrules \
-  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/cursorrules
+  https://raw.githubusercontent.com/brian-lai/Pret-a-Program/main/cursor/cursorrules
 
 # Download context template
 curl -o context/context.md \
-  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/templates/context-template.md
+  https://raw.githubusercontent.com/brian-lai/Pret-a-Program/main/cursor/templates/context-template.md
 
 # Download CLAUDE.md template
 curl -o CLAUDE.md \
-  https://raw.githubusercontent.com/brian-lai/PARA-Programming/main/cursor/templates/claude-template.md
+  https://raw.githubusercontent.com/brian-lai/Pret-a-Program/main/cursor/templates/claude-template.md
 
 # Edit CLAUDE.md with your project details
 cursor CLAUDE.md
@@ -52,7 +52,7 @@ Copy content from: cursor/cursorrules
 ```markdown
 # Current Work Summary
 
-Ready to start PARA-Programming with Cursor.
+Ready to start Pret-a-Program with Cursor.
 
 ---
 
@@ -69,7 +69,7 @@ Ready to start PARA-Programming with Cursor.
 ```markdown
 # Your Project Name
 
-> **Workflow Methodology:** Follow `.cursorrules` for PARA-Programming
+> **Workflow Methodology:** Follow `.cursorrules` for Pret-a-Program
 
 ## About
 [Brief description of your project]
@@ -99,9 +99,9 @@ cursor .
 Open Chat (CMD+L) and test:
 
 ```
-You: "Are you following PARA-Programming methodology?"
+You: "Are you following Pret-a-Program methodology?"
 
-Cursor: "Yes! I'm following the PARA-Programming methodology from .cursorrules.
+Cursor: "Yes! I'm following the Pret-a-Program methodology from .cursorrules.
 I'll use the Plan → Review → Execute → Summarize → Archive workflow for all
 non-trivial tasks. Would you like to start with something?"
 ```
@@ -317,10 +317,10 @@ See: [Advanced Usage](README.md#advanced-usage)
 Add these to your workflow:
 
 ```
-/para-plan [task]        → Create plan
+/pret-plan [task]        → Create plan
 /para-composer          → Open Composer with plan
-/para-summarize         → Create summary
-/para-archive           → Archive context
+/pret-summarize         → Create summary
+/pret-archive           → Archive context
 ```
 
 ---
@@ -373,7 +373,7 @@ Chat: "Create summary"
 
 ### Cursor implements without creating plan
 
-**Fix:** Be explicit: "Following PARA methodology, create a plan FIRST"
+**Fix:** Be explicit: "Following Pret methodology, create a plan FIRST"
 
 ### Plans are too generic
 
@@ -433,7 +433,7 @@ Close unnecessary files. Reference summaries instead of re-loading old code.
 
 ## What's Next?
 
-You now know the basics of PARA-Programming with Cursor!
+You now know the basics of Pret-a-Program with Cursor!
 
 **Continue learning:**
 1. Read the [full Cursor guide](README.md)
@@ -448,7 +448,7 @@ You now know the basics of PARA-Programming with Cursor!
 3. Have everyone follow the same workflow
 4. Review each other's plans and summaries
 
-**Happy PARA-Programming! 🚀**
+**Happy Pret-a-Program! 🚀**
 
 ---
 
