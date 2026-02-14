@@ -14,7 +14,7 @@ Pret-a-Program uses a **single `AGENTS.md` file** that works across all AI codin
 
 ```bash
 # Option A: Via Homebrew (recommended)
-brew install brian-lai/pret-a-program
+brew install brian-lai/pret-a-program/pret-a-program
 cd your-project
 pret init
 pret install-skills --claude   # or --cursor, --codex

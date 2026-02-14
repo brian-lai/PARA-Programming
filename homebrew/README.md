@@ -11,10 +11,10 @@ brew tap brian-lai/pret-a-program
 brew install pret-a-program
 ```
 
-### Direct Formula
+### Direct Install
 
 ```bash
-brew install brian-lai/pret-a-program
+brew install brian-lai/pret-a-program/pret-a-program
 ```
 
 ## How It Works

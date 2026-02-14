@@ -9,7 +9,7 @@ This guide helps existing PARA-Programming users migrate to the rebranded Pret-a
 | Before (v1) | After (v2) |
 |-------------|------------|
 | **PARA-Programming** | **Pret-a-Program** |
-| No CLI tool | `pret` CLI (`brew install pret-a-program`) |
+| No CLI tool | `pret` CLI (`brew install brian-lai/pret-a-program/pret-a-program`) |
 | `para/` branch prefix | `pret/` branch prefix |
 | `/para-*` slash commands | `/pret-*` slash commands |
 | `claude-skill/` directory | `skills/claude-code/` |
@@ -30,7 +30,7 @@ This guide helps existing PARA-Programming users migrate to the rebranded Pret-a
 
 ```bash
 # 1. Install the pret CLI
-brew install brian-lai/pret-a-program
+brew install brian-lai/pret-a-program/pret-a-program
 
 # 2. Re-initialize your project (preserves existing context/)
 cd your-project

@@ -1,6 +1,6 @@
 # Automated Setup Guide (Deprecated)
 
-> **This guide is superseded by the `pret` CLI.** Install via `brew install pret-a-program` or see [README.md](README.md) for setup instructions.
+> **This guide is superseded by the `pret` CLI.** Install via `brew install brian-lai/pret-a-program/pret-a-program` or see [README.md](README.md) for setup instructions.
 >
 > The Makefile-based setup described below still works but is no longer the recommended approach.
 

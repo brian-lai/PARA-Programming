@@ -21,7 +21,7 @@ If you were using the previous "PARA-Programming" branding, here's what changed:
 
 ```bash
 # 1. Install the new CLI
-brew install brian-lai/pret-a-program
+brew install brian-lai/pret-a-program/pret-a-program
 
 # 2. Re-initialize (preserves existing context/)
 pret init
