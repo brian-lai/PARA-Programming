@@ -10,7 +10,7 @@ Pret-a-Program combines the organizational principles of [Tiago Forte's PARA met
 >
 > ```bash
 > # Install the CLI
-> brew install brian-lai/pret/pret-a-program
+> brew install brian-lai/pret-a-program
 >
 > # Initialize in your project
 > cd your-project
@@ -366,7 +366,7 @@ This creates a full audit trail while keeping active context clean.
 
 ```bash
 # Via Homebrew (recommended)
-brew install brian-lai/pret/pret-a-program
+brew install brian-lai/pret-a-program
 
 # Or run directly from the repo
 git clone https://github.com/brian-lai/pret-a-program.git
@@ -1054,7 +1054,7 @@ MIT License - see [LICENSE](LICENSE) for details
 
 Ready to adopt Pret-a-Program? Follow this checklist:
 
-- [ ] Install `pret` CLI (`brew install brian-lai/pret/pret-a-program`)
+- [ ] Install `pret` CLI (`brew install brian-lai/pret-a-program`)
 - [ ] Run `pret init` in your project
 - [ ] Run `pret install-skills` for your AI tool
 - [ ] Initialize `context/context.md` with your first task

@@ -7,14 +7,14 @@ This directory contains the Homebrew formula for Pret-a-Program.
 ### Via Homebrew Tap
 
 ```bash
-brew tap brian-lai/pret
+brew tap brian-lai/pret-a-program
 brew install pret-a-program
 ```
 
 ### Direct Formula
 
 ```bash
-brew install brian-lai/pret/pret-a-program
+brew install brian-lai/pret-a-program
 ```
 
 ## How It Works
@@ -34,10 +34,10 @@ Path resolution in the `pret` script is updated by `inreplace` during installati
 2. Create a GitHub release from the tag
 3. Get the tarball SHA256: `curl -sL https://github.com/brian-lai/pret-a-program/archive/refs/tags/v2.0.0.tar.gz | shasum -a 256`
 4. Update the `sha256` in `Formula/pret-a-program.rb`
-5. Copy the formula to the tap repository: `brian-lai/homebrew-pret`
+5. Copy the formula to the tap repository: `brian-lai/homebrew-pret-a-program`
 
 ## Tap Repository
 
-The Homebrew tap is a separate repository: [brian-lai/homebrew-pret](https://github.com/brian-lai/homebrew-pret)
+The Homebrew tap is a separate repository: [brian-lai/homebrew-pret-a-program](https://github.com/brian-lai/homebrew-pret-a-program)
 
 This must be created manually on GitHub. The formula file here serves as the source.

@@ -30,7 +30,7 @@ This guide helps existing PARA-Programming users migrate to the rebranded Pret-a
 
 ```bash
 # 1. Install the pret CLI
-brew install brian-lai/pret/pret-a-program
+brew install brian-lai/pret-a-program
 
 # 2. Re-initialize your project (preserves existing context/)
 cd your-project
@@ -56,7 +56,7 @@ rm -rf ~/.claude/skills/para-programming/
 
 ```bash
 # Via Homebrew (recommended)
-brew tap brian-lai/pret
+brew tap brian-lai/pret-a-program
 brew install pret-a-program
 
 # Verify installation
