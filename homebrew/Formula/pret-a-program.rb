@@ -1,8 +1,8 @@
 class PretAProgram < Formula
   desc "Structured AI-assisted development workflow CLI"
-  homepage "https://github.com/brian-lai/pret-a-program"
-  url "https://github.com/brian-lai/pret-a-program/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "PLACEHOLDER_SHA256"
+  homepage "https://github.com/brian-lai/PARA-Programming"
+  url "https://github.com/brian-lai/PARA-Programming/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "3038e0d087f28ebc614554a83bdc627b286588716253fa14efdcfae5a939bb52"
   license "MIT"
 
   def install
