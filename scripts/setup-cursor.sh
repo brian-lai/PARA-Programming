@@ -1,6 +1,7 @@
 #!/bin/bash
+# Deprecated: Use `pret install-skills` instead. See README.md for details.
 #
-# Setup script for Cursor IDE with PARA-Programming
+# Setup script for Cursor IDE with Pret-a-Program
 #
 
 set -e
@@ -12,7 +13,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # Source common functions
 source "$SCRIPT_DIR/common.sh"
 
-print_header "Cursor IDE + PARA-Programming Setup"
+print_header "Cursor IDE + Pret-a-Program Setup"
 
 # Check requirements
 check_requirements || exit 1
@@ -69,11 +70,11 @@ verify_symlink "$CURSOR_RULES_TARGET" "Cursor rules"
 # Print completion
 print_completion "Cursor IDE"
 
-echo "Using PARA with Cursor:"
+echo "Using Pret with Cursor:"
 echo "1. Open your project in Cursor"
 echo "2. Open Cursor Composer (Cmd/Ctrl+I)"
-echo "3. Ask: 'Initialize PARA structure for this project'"
-echo "4. Cursor will follow the PARA methodology automatically"
+echo "3. Ask: 'Initialize Pret structure for this project'"
+echo "4. Cursor will follow the Pret methodology automatically"
 echo ""
 
 print_update_instructions
@@ -83,4 +84,4 @@ echo "  Cursor README:     $REPO_ROOT/cursor/README.md"
 echo "  Cursor Quickstart: $REPO_ROOT/cursor/QUICKSTART.md"
 echo ""
 
-print_success "Setup complete! Open Cursor and start using PARA methodology"
+print_success "Setup complete! Open Cursor and start using Pret methodology"

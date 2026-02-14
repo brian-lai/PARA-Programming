@@ -24,7 +24,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
 ```
 
-### 3. Start using PARA workflow
+### 3. Start using Pret workflow
 
 Open your project in Cursor, then in Chat:
 > "Create a plan for [your task]"
@@ -106,7 +106,7 @@ mv .cursorrules .cursor/rules/project.mdc
 
 ---
 
-## Cursor Workflow with PARA
+## Cursor Workflow with Pret
 
 ### Planning Phase (Use Chat)
 
@@ -195,7 +195,7 @@ Reference in plans:
 
 ```
 my-project/
-├── AGENTS.md              # Full PARA methodology
+├── AGENTS.md              # Full Pret methodology
 ├── .cursor/
 │   └── rules/             # Optional: modular rules
 │       └── testing.mdc
@@ -233,7 +233,7 @@ my-project/
 
 ---
 
-## Tips for Cursor + PARA
+## Tips for Cursor + Pret
 
 1. **Keep plan open** in split pane during implementation
 2. **Use Composer** for multi-file changes, not Chat
@@ -250,4 +250,4 @@ my-project/
 4. Use Composer to implement
 5. Check `context/summaries/` for documentation
 
-**Need help?** See the main [PARA-Programming documentation](../README.md).
+**Need help?** See the main [Pret-a-Program documentation](../README.md).

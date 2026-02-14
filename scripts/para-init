@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
+# Deprecated: Use `pret init` and `pret install-skills` instead. See README.md for details.
 #
-# para-init - Smart initialization for PARA-Programming
+# pret init - Smart initialization for Pret-a-Program
 #
-# Auto-detects installed AI coding tools and configures PARA-Programming
+# Auto-detects installed AI coding tools and configures Pret-a-Program
 # without requiring users to understand "tiers" or implementation details.
 #
 # Usage:
-#   para-init                    # Auto-detect and configure
-#   para-init --tool=cursor      # Configure specific tool
-#   para-init --tools=cursor,copilot  # Configure multiple specific tools
-#   para-init --all              # Configure all detected tools
-#   para-init --help             # Show help message
+#   pret init                    # Auto-detect and configure
+#   pret init --tool=cursor      # Configure specific tool
+#   pret init --tools=cursor,copilot  # Configure multiple specific tools
+#   pret init --all              # Configure all detected tools
+#   pret init --help             # Show help message
 
 set -euo pipefail
 
@@ -43,10 +44,10 @@ CONFIGURE_ALL=false
 # Help message
 show_help() {
   cat <<EOF
-${BOLD}para-init${RESET} - Smart initialization for PARA-Programming
+${BOLD}pret init${RESET} - Smart initialization for Pret-a-Program
 
 ${BOLD}USAGE:${RESET}
-  para-init [OPTIONS]
+  pret init [OPTIONS]
 
 ${BOLD}OPTIONS:${RESET}
   --tool=<tool>         Configure only the specified tool
@@ -63,20 +64,20 @@ ${BOLD}OPTIONS:${RESET}
   --help                Show this help message
 
 ${BOLD}EXAMPLES:${RESET}
-  para-init                      # Auto-detect and configure
-  para-init --tool=cursor        # Configure only Cursor
-  para-init --tools=cursor,copilot  # Configure Cursor and Copilot
-  para-init --all                # Configure all detected tools
+  pret init                      # Auto-detect and configure
+  pret init --tool=cursor        # Configure only Cursor
+  pret init --tools=cursor,copilot  # Configure Cursor and Copilot
+  pret init --all                # Configure all detected tools
 
 ${BOLD}DESCRIPTION:${RESET}
   This script automatically detects which AI coding tools you have installed
-  and configures PARA-Programming for them. No need to understand "tiers" or
+  and configures Pret-a-Program for them. No need to understand "tiers" or
   implementation details - just run the command and it works!
 
   Supported tools:
   • Claude Code (native plugin - installation instructions provided)
-  • Cursor (full PARA support with slash commands)
-  • Continue.dev (full PARA support with slash commands)
+  • Cursor (full Pret support with slash commands)
+  • Continue.dev (full Pret support with slash commands)
   • GitHub Copilot (methodology only, manual workflow)
   • Gemini (methodology only, manual workflow)
 
@@ -108,7 +109,7 @@ parse_args() {
         ;;
       *)
         echo -e "${RED}Error: Unknown option: $arg${RESET}" >&2
-        echo "Run 'para-init --help' for usage information." >&2
+        echo "Run 'pret init --help' for usage information." >&2
         exit 1
         ;;
     esac
@@ -197,13 +198,13 @@ show_claude_instructions() {
     return
   fi
 
-  echo -e "${BOLD}Claude Code uses a native plugin for PARA-Programming.${RESET}"
+  echo -e "${BOLD}Claude Code uses a native plugin for Pret-a-Program.${RESET}"
   echo ""
   echo "Install the plugin:"
-  echo -e "  ${BLUE}https://github.com/brian-lai/para-programming-plugin${RESET}"
+  echo -e "  ${BLUE}https://github.com/brian-lai/pret-a-program-plugin${RESET}"
   echo ""
   echo "Or use Claude Code's plugin manager:"
-  echo -e "  ${BOLD}/install brian-lai/para-programming-plugin${RESET}"
+  echo -e "  ${BOLD}/install brian-lai/pret-a-program-plugin${RESET}"
   echo ""
   echo -e "${GREEN}✅ After installation, restart Claude Code and you're ready!${RESET}"
   echo ""
@@ -231,7 +232,7 @@ setup_file_based_tools() {
 main() {
   parse_args "$@"
 
-  echo -e "${BOLD}PARA-Programming Setup${RESET}"
+  echo -e "${BOLD}Pret-a-Program Setup${RESET}"
   echo ""
 
   # Detect tools

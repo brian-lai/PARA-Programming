@@ -1,6 +1,7 @@
 #!/bin/bash
+# Deprecated: Use `pret install-skills` instead. See README.md for details.
 #
-# Setup script for GitHub Copilot with PARA-Programming
+# Setup script for GitHub Copilot with Pret-a-Program
 #
 
 set -e
@@ -12,7 +13,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # Source common functions
 source "$SCRIPT_DIR/common.sh"
 
-print_header "GitHub Copilot + PARA-Programming Setup"
+print_header "GitHub Copilot + Pret-a-Program Setup"
 
 # Check requirements
 check_requirements || exit 1
@@ -41,11 +42,11 @@ verify_symlink "$COPILOT_INSTRUCTIONS_TARGET" "Copilot instructions"
 # Print completion
 print_completion "GitHub Copilot"
 
-echo "Using PARA with Copilot:"
+echo "Using Pret with Copilot:"
 echo "1. Open your project in VS Code (or supported IDE)"
 echo "2. Open Copilot Chat (Cmd/Ctrl+I or Copilot icon)"
-echo "3. Ask: 'Initialize PARA structure for this project'"
-echo "4. Copilot will follow the PARA methodology automatically"
+echo "3. Ask: 'Initialize Pret structure for this project'"
+echo "4. Copilot will follow the Pret methodology automatically"
 echo ""
 
 print_update_instructions
@@ -54,8 +55,8 @@ echo "Documentation:"
 echo "  Copilot README:     $REPO_ROOT/copilot/README.md"
 echo "  Copilot Quickstart: $REPO_ROOT/copilot/QUICKSTART.md"
 echo ""
-echo "Note: Copilot's PARA support depends on its current context window."
-echo "You may need to remind it about PARA methodology in longer sessions."
+echo "Note: Copilot's Pret support depends on its current context window."
+echo "You may need to remind it about Pret methodology in longer sessions."
 echo ""
 
-print_success "Setup complete! Open VS Code and start using PARA methodology"
+print_success "Setup complete! Open VS Code and start using Pret methodology"

@@ -25,7 +25,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
 ```
 
-### 3. Start using PARA workflow
+### 3. Start using Pret workflow
 
 Open VS Code with Copilot, then in Copilot Chat:
 > "Create a plan for [your task]"
@@ -85,7 +85,7 @@ When working on API files:
 
 ---
 
-## Copilot Workflow with PARA
+## Copilot Workflow with Pret
 
 ### Key Difference: Copilot Suggests, You Type
 
@@ -207,7 +207,7 @@ cp AGENTS.md .github/copilot-instructions.md
 
 ```
 my-project/
-├── AGENTS.md                          # Full PARA methodology (canonical)
+├── AGENTS.md                          # Full Pret methodology (canonical)
 ├── .github/
 │   ├── copilot-instructions.md        # Symlink → ../AGENTS.md
 │   └── instructions/                  # Optional path-specific rules
@@ -247,7 +247,7 @@ my-project/
 
 ---
 
-## Tips for Copilot + PARA
+## Tips for Copilot + Pret
 
 1. **You drive the workflow** – Copilot assists, doesn't orchestrate
 2. **File-by-file is your friend** – Work through implementation order
@@ -265,4 +265,4 @@ my-project/
 4. Create plan file manually
 5. Implement file-by-file with Copilot suggestions
 
-**Need help?** See the main [PARA-Programming documentation](../README.md).
+**Need help?** See the main [Pret-a-Program documentation](../README.md).

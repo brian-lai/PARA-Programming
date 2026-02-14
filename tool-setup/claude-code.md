@@ -24,7 +24,7 @@ mkdir -p context/{data,plans,summaries,archives,servers}
 touch context/context.md
 ```
 
-### 3. Start using PARA workflow
+### 3. Start using Pret workflow
 
 ```bash
 claude  # Start Claude Code in your project
@@ -47,7 +47,7 @@ Claude Code reads instructions from multiple locations (highest to lowest preced
 ### Recommended Setup
 
 1. **Project root:** Symlink `CLAUDE.md` → `AGENTS.md` (shared with team)
-2. **Global:** Copy full PARA methodology to `~/.claude/CLAUDE.md`
+2. **Global:** Copy full Pret methodology to `~/.claude/CLAUDE.md`
 3. **Local overrides:** Use `CLAUDE.local.md` for personal preferences
 
 ---
@@ -70,7 +70,7 @@ ln -s AGENTS.md CLAUDE.md
 ```markdown
 # Project AGENTS.md
 
-> **Workflow:** Follow ~/.claude/CLAUDE.md for PARA methodology
+> **Workflow:** Follow ~/.claude/CLAUDE.md for Pret methodology
 
 ## About This Project
 [Project-specific context here...]
@@ -101,20 +101,20 @@ Reference in plans:
 
 ## Claude Code Skills
 
-For automated PARA commands, install the `claude-skill` package from this repository:
+For automated Pret commands, install the skill package:
 
 ```bash
-# From PARA-Programming repository
-cp -r claude-skill ~/.claude/skills/para-programming
+# From Pret-a-Program repository
+cp -r skills/claude-code ~/.claude/skills/pret-a-program
 ```
 
 This enables slash commands:
-- `/para:init` – Initialize PARA structure
-- `/para:plan` – Create a plan
-- `/para:execute` – Start execution
-- `/para:summarize` – Create summary
-- `/para:archive` – Archive completed work
-- `/para:status` – Check workflow status
+- `/pret:init` – Initialize Pret structure
+- `/pret:plan` – Create a plan
+- `/pret:execute` – Start execution
+- `/pret:summarize` – Create summary
+- `/pret:archive` – Archive completed work
+- `/pret:status` – Check workflow status
 
 ---
 
@@ -133,7 +133,7 @@ For complex projects, split instructions:
 ```
 .claude/
 ├── rules/
-│   ├── 01-workflow.md      # PARA methodology (symlink to AGENTS.md)
+│   ├── 01-workflow.md      # Pret methodology (symlink to AGENTS.md)
 │   ├── 02-architecture.md  # Project architecture
 │   ├── 03-testing.md       # Testing conventions
 │   └── 04-api-patterns.md  # API design patterns
@@ -197,7 +197,7 @@ Claude Code merges all discovered files. If you have conflicts:
 
 ```
 my-project/
-├── AGENTS.md              # Full PARA methodology (canonical)
+├── AGENTS.md              # Full Pret methodology (canonical)
 ├── CLAUDE.md              # Symlink → AGENTS.md
 ├── context/
 │   ├── context.md
@@ -216,7 +216,7 @@ my-project/
 
 1. Create your first plan: Start Claude Code, describe your task
 2. Review the plan when presented
-3. Watch Claude execute with PARA workflow
+3. Watch Claude execute with Pret workflow
 4. Check `context/summaries/` for documentation
 
-**Need help?** See the main [PARA-Programming documentation](../README.md).
+**Need help?** See the main [Pret-a-Program documentation](../README.md).
